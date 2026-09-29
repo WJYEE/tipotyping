@@ -6,7 +6,7 @@ import { IconPlate } from "@/components/ui/IconPlate";
 export default function App() {
   return (
     <main className="mx-auto flex max-w-3xl flex-col gap-8 p-10">
-      <h1 className="font-display text-3xl font-extrabold">AnkiTyping UI Primitives</h1>
+      <h1 className="font-display text-3xl font-extrabold">TipoTyping UI Primitives</h1>
 
       <Card emphasized className="flex flex-col gap-4">
         <div className="flex items-center gap-3">

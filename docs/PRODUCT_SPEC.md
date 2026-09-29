@@ -1,8 +1,8 @@
-# AnkiTyping Product Specification
+# TipoTyping Product Specification
 
 ## 1. Product Overview
 
-AnkiTyping은 취업 및 학습에 필요한 지식을 타자검정처럼 빠르게 직접 입력하며 반복 인출(Recall)하는 개인용 학습 웹앱이다.
+TipoTyping은 취업 및 학습에 필요한 지식을 타자검정처럼 빠르게 직접 입력하며 반복 인출(Recall)하는 개인용 학습 웹앱이다.
 
 단순 암기뿐 아니라 SQL/Python 코딩테스트, 데이터 분석, 금융, CS, AI, NCS, 인적성, 언어, 면접 등 다양한 지식을 하나의 개인 학습 공간에 축적하는 것을 목표로 한다.
 
@@ -463,7 +463,7 @@ Category/Theme/Tag 상세 화면으로 들어가면:
 
 공식 문서, 공개 학습자료, 코딩 문제 유형 등을 참고해:
 1. 핵심 지식/출제 포인트 파악
-2. AnkiTyping에 적합한 짧은 자체 문제 생성
+2. TipoTyping에 적합한 짧은 자체 문제 생성
 3. 내용 검증
 4. 기본 데이터로 포함
 
