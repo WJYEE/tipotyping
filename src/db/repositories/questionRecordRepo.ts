@@ -25,6 +25,11 @@ export const questionRecordRepo = {
     return record;
   },
 
+  /** 문제 수정 시 "학습기록 초기화"를 선택했을 때 사용 (12장) */
+  async reset(questionId: string): Promise<void> {
+    await db.questionRecords.put(emptyRecord(questionId));
+  },
+
   /** Attempt 저장과 같은 트랜잭션 안에서 호출되어 누적 통계를 갱신한다. */
   async applyAttempt(
     questionId: string,

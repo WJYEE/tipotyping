@@ -1,4 +1,5 @@
 import { db } from "@/db/db";
+import { questionRecordRepo } from "@/db/repositories/questionRecordRepo";
 import { sessionRepo } from "@/db/repositories/sessionRepo";
 import type { Question } from "@/types/domain";
 
@@ -19,10 +20,21 @@ export const questionRepo = {
     return db.questions.where("tagIds").equals(tagId).toArray();
   },
 
-  /** Question 생성과 동시에 비어있는 QuestionRecord를 함께 만들어 1:1 관계를 항상 보장한다. */
-  async create(data: Omit<Question, "id" | "createdAt" | "updatedAt">): Promise<Question> {
+  /**
+   * Question 생성과 동시에 비어있는 QuestionRecord를 함께 만들어 1:1 관계를 항상 보장한다.
+   * options.id: Import 시 원본 문제의 id를 그대로 유지하기 위한 override (13장 "동일 ID → Skip" 판별에 사용).
+   */
+  async create(
+    data: Omit<Question, "id" | "createdAt" | "updatedAt">,
+    options?: { id?: string },
+  ): Promise<Question> {
     const now = Date.now();
-    const question = { id: crypto.randomUUID(), ...data, createdAt: now, updatedAt: now } as Question;
+    const question = {
+      id: options?.id ?? crypto.randomUUID(),
+      ...data,
+      createdAt: now,
+      updatedAt: now,
+    } as Question;
 
     await db.transaction("rw", db.questions, db.questionRecords, async () => {
       await db.questions.add(question);
@@ -39,11 +51,19 @@ export const questionRepo = {
     return question;
   },
 
+  /**
+   * options.resetRecord: true면 QuestionRecord(누적 학습기록)를 초기화한다.
+   * 기본값은 유지(false) — 12장 "문제 수정 시 기존 학습 기록 처리: 유지/초기화, 기본값은 유지".
+   */
   async update(
     id: string,
     patch: Partial<Omit<Question, "id" | "createdAt">>,
+    options?: { resetRecord?: boolean },
   ): Promise<void> {
     await db.questions.update(id, { ...patch, updatedAt: Date.now() });
+    if (options?.resetRecord) {
+      await questionRecordRepo.reset(id);
+    }
   },
 
   /**

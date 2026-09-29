@@ -352,6 +352,61 @@ describe("Session / Attempt / QuestionRecord", () => {
     expect(updatedSession?.correctCount).toBe(0);
     expect(updatedSession?.wrongCount).toBe(1);
   });
+
+  it("questionRepo.update는 기본적으로 QuestionRecord를 유지하고, resetRecord 옵션을 주면 초기화한다", async () => {
+    const category = await categoryRepo.create({ name: "카테고리", order: 0, isCustom: true });
+    const theme = await themeRepo.create({
+      categoryId: category.id,
+      name: "테마",
+      order: 0,
+      isCustom: true,
+      useDifficulty: false,
+    });
+    const question = await questionRepo.create({
+      categoryId: category.id,
+      themeId: theme.id,
+      type: "answer-input",
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+      payload: { prompt: "1+1=?", answer: "2" },
+    });
+    const session = await sessionRepo.create({
+      startedAt: Date.now(),
+      endedAt: null,
+      totalDurationMs: 0,
+      themeIds: [theme.id],
+      tagIds: [],
+      questionTypes: ["answer-input"],
+      difficulties: [],
+      orderMode: "sequential",
+      totalAttempts: 0,
+      correctCount: 0,
+      wrongCount: 0,
+      accuracy: 0,
+    });
+    await attemptRepo.record({
+      sessionId: session.id,
+      questionId: question.id,
+      questionType: "answer-input",
+      isCorrect: true,
+      userAnswer: "2",
+      attemptedAt: Date.now(),
+    });
+
+    await questionRepo.update(question.id, { payload: { prompt: "수정됨", answer: "2" } });
+    let record = await questionRecordRepo.get(question.id);
+    expect(record?.totalAttempts).toBe(1);
+
+    await questionRepo.update(
+      question.id,
+      { payload: { prompt: "다시 수정", answer: "2" } },
+      { resetRecord: true },
+    );
+    record = await questionRecordRepo.get(question.id);
+    expect(record?.totalAttempts).toBe(0);
+    expect(record?.lastResult).toBeNull();
+  });
 });
 
 describe("Settings", () => {

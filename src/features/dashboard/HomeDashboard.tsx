@@ -1,6 +1,5 @@
 import { useLiveQuery } from "dexie-react-hooks";
 import { statsRepo } from "@/db/repositories";
-import { BottomCtas } from "@/features/dashboard/BottomCtas";
 import { RecentSessionsCard } from "@/features/dashboard/RecentSessionsCard";
 import { StatsRow } from "@/features/dashboard/StatsRow";
 import { ThemeStatsCard } from "@/features/dashboard/ThemeStatsCard";
@@ -21,7 +20,6 @@ export function HomeDashboard() {
         <RecentSessionsCard sessions={recentSessions} />
         <ThemeStatsCard rows={themeStats} />
       </div>
-      <BottomCtas />
     </div>
   );
 }
