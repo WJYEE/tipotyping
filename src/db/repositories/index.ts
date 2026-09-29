@@ -6,3 +6,4 @@ export { questionRecordRepo } from "./questionRecordRepo";
 export { sessionRepo } from "./sessionRepo";
 export { attemptRepo } from "./attemptRepo";
 export { settingsRepo } from "./settingsRepo";
+export { statsRepo } from "./statsRepo";
