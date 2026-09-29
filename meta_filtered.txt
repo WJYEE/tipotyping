@@ -1,0 +1,2549 @@
+<canvas id="0:1" name="Page 1" x="0" y="0" width="0" height="0">
+  <frame id="2:4" name="user-flow-diagram" x="0" y="0" width="1800" height="900">
+    <frame id="2:1836" name="flow-plane" x="0" y="0" width="1800" height="900">
+      <frame id="2:1837" name="header-section" x="64" y="48" width="1672" height="66">
+        <frame id="2:1838" name="Frame" x="0" y="0" width="507" height="66">
+          <text id="2:1839" name="User Flow — 타이핑 학습 웹앱" x="0" y="0" width="406" height="40" />
+          <text id="2:1840" name="Anki 암기 카드와 영문/국문 타자 연습을 결합한 자가 학습 데스크톱 서비스 흐름도" x="0" y="46" width="507" height="20" />
+        </frame>
+        <frame id="2:1841" name="Frame" x="1333" y="13" width="339" height="40">
+          <frame id="2:1842" name="Frame" x="12" y="12" width="77" height="16">
+            <line id="2:1843" name="Line" x="0" y="8" width="24" height="0" />
+            <text id="2:1844" name="메인 흐름" x="30" y="0" width="47" height="16" />
+          </frame>
+          <frame id="2:1845" name="Frame" x="105" y="12" width="106" height="16">
+            <line id="2:1846" name="Line" x="0" y="8" width="24" height="0" />
+            <text id="2:1847" name="일반/이동 흐름" x="30" y="0" width="76" height="16" />
+          </frame>
+          <frame id="2:1848" name="Frame" x="227" y="12" width="100" height="16">
+            <rounded-rectangle id="2:1849" name="Rectangle" x="0" y="1" width="14" height="14" />
+            <text id="2:1850" name="서브상태 / 모달" x="22" y="0" width="78" height="16" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:1851" name="Node-홈 / 대시보드" x="100" y="220" width="240" height="180">
+        <frame id="2:1852" name="Frame" x="16" y="16" width="208" height="37">
+          <frame id="2:1853" name="Frame" x="0" y="0" width="208" height="21">
+            <text id="2:1854" name="홈 / 대시보드" x="0" y="0" width="169" height="21" />
+            <frame id="2:1855" name="Frame" x="169" y="2" width="39" height="17">
+              <text id="2:1856" name="MAIN" x="6" y="2" width="27" height="13" />
+            </frame>
+          </frame>
+          <text id="2:1857" name="Home &amp; Dashboard" x="0" y="23" width="208" height="14" />
+        </frame>
+        <line id="2:1858" name="Line" x="16" y="65" width="208" height="0" />
+        <frame id="2:1859" name="Frame" x="16" y="77" width="208" height="63">
+          <frame id="2:1860" name="Frame" x="0" y="0" width="208" height="17">
+            <rounded-rectangle id="2:1861" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1862" name="전체 학습 진행도 요약" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1863" name="Frame" x="0" y="23" width="208" height="17">
+            <rounded-rectangle id="2:1864" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1865" name="최근 오답률 높은 단어" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1866" name="Frame" x="0" y="46" width="208" height="17">
+            <rounded-rectangle id="2:1867" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1868" name="바로가기 퀵메뉴" x="12" y="0" width="196" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:1869" name="Node-학습 테마 선택" x="440" y="220" width="240" height="180">
+        <frame id="2:1870" name="Frame" x="16" y="16" width="208" height="37">
+          <frame id="2:1871" name="Frame" x="0" y="0" width="208" height="21">
+            <text id="2:1872" name="학습 테마 선택" x="0" y="0" width="169" height="21" />
+            <frame id="2:1873" name="Frame" x="169" y="2" width="39" height="17">
+              <text id="2:1874" name="MAIN" x="6" y="2" width="27" height="13" />
+            </frame>
+          </frame>
+          <text id="2:1875" name="Theme Selection" x="0" y="23" width="208" height="14" />
+        </frame>
+        <line id="2:1876" name="Line" x="16" y="65" width="208" height="0" />
+        <frame id="2:1877" name="Frame" x="16" y="77" width="208" height="63">
+          <frame id="2:1878" name="Frame" x="0" y="0" width="208" height="17">
+            <rounded-rectangle id="2:1879" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1880" name="프로그래밍 단어 목록" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1881" name="Frame" x="0" y="23" width="208" height="17">
+            <rounded-rectangle id="2:1882" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1883" name="생활 영단어 / 회화" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1884" name="Frame" x="0" y="46" width="208" height="17">
+            <rounded-rectangle id="2:1885" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1886" name="유저 커스텀 테마" x="12" y="0" width="196" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:1887" name="Node-게임 세부 설정" x="780" y="220" width="240" height="180">
+        <frame id="2:1888" name="Frame" x="16" y="16" width="208" height="37">
+          <frame id="2:1889" name="Frame" x="0" y="0" width="208" height="21">
+            <text id="2:1890" name="게임 세부 설정" x="0" y="0" width="169" height="21" />
+            <frame id="2:1891" name="Frame" x="169" y="2" width="39" height="17">
+              <text id="2:1892" name="MAIN" x="6" y="2" width="27" height="13" />
+            </frame>
+          </frame>
+          <text id="2:1893" name="Game Setup" x="0" y="23" width="208" height="14" />
+        </frame>
+        <line id="2:1894" name="Line" x="16" y="65" width="208" height="0" />
+        <frame id="2:1895" name="Frame" x="16" y="77" width="208" height="63">
+          <frame id="2:1896" name="Frame" x="0" y="0" width="208" height="17">
+            <rounded-rectangle id="2:1897" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1898" name="학습 카드 갯수 설정" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1899" name="Frame" x="0" y="23" width="208" height="17">
+            <rounded-rectangle id="2:1900" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1901" name="타이핑 제한 시간" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1902" name="Frame" x="0" y="46" width="208" height="17">
+            <rounded-rectangle id="2:1903" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1904" name="소리 / 배경음 토글" x="12" y="0" width="196" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:1905" name="Node-타이핑 게임 진행" x="1120" y="220" width="240" height="180">
+        <frame id="2:1906" name="Frame" x="16" y="16" width="208" height="37">
+          <frame id="2:1907" name="Frame" x="0" y="0" width="208" height="21">
+            <text id="2:1908" name="타이핑 게임 진행" x="0" y="0" width="169" height="21" />
+            <frame id="2:1909" name="Frame" x="169" y="2" width="39" height="17">
+              <text id="2:1910" name="MAIN" x="6" y="2" width="27" height="13" />
+            </frame>
+          </frame>
+          <text id="2:1911" name="Game Board" x="0" y="23" width="208" height="14" />
+        </frame>
+        <line id="2:1912" name="Line" x="16" y="65" width="208" height="0" />
+        <frame id="2:1913" name="Frame" x="16" y="77" width="208" height="63">
+          <frame id="2:1914" name="Frame" x="0" y="0" width="208" height="17">
+            <rounded-rectangle id="2:1915" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1916" name="Anki 암기 단어 출제" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1917" name="Frame" x="0" y="23" width="208" height="17">
+            <rounded-rectangle id="2:1918" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1919" name="타이핑 타자 입력 체크" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1920" name="Frame" x="0" y="46" width="208" height="17">
+            <rounded-rectangle id="2:1921" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1922" name="실시간 정확도 및 속도" x="12" y="0" width="196" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:1923" name="Node-최종 학습 결과" x="1460" y="220" width="240" height="180">
+        <frame id="2:1924" name="Frame" x="16" y="16" width="208" height="37">
+          <frame id="2:1925" name="Frame" x="0" y="0" width="208" height="21">
+            <text id="2:1926" name="최종 학습 결과" x="0" y="0" width="169" height="21" />
+            <frame id="2:1927" name="Frame" x="169" y="2" width="39" height="17">
+              <text id="2:1928" name="MAIN" x="6" y="2" width="27" height="13" />
+            </frame>
+          </frame>
+          <text id="2:1929" name="Game Result" x="0" y="23" width="208" height="14" />
+        </frame>
+        <line id="2:1930" name="Line" x="16" y="65" width="208" height="0" />
+        <frame id="2:1931" name="Frame" x="16" y="77" width="208" height="63">
+          <frame id="2:1932" name="Frame" x="0" y="0" width="208" height="17">
+            <rounded-rectangle id="2:1933" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1934" name="종합 타수 &amp; 정확도 정보" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1935" name="Frame" x="0" y="23" width="208" height="17">
+            <rounded-rectangle id="2:1936" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1937" name="획득 점수 및 등급" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1938" name="Frame" x="0" y="46" width="208" height="17">
+            <rounded-rectangle id="2:1939" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1940" name="기록 갱신 애니메이션" x="12" y="0" width="196" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:1941" name="arrow-horizontal" x="340" y="290" width="100" height="40">
+        <line id="2:1942" name="Line" x="0" y="20" width="100" height="0" />
+        <regular-polygon id="2:1943" name="Polygon" x="85" y="12.5" width="15" height="15" />
+        <frame id="2:1944" name="Frame" x="28.5" y="0" width="43" height="24">
+          <text id="2:1945" name="시작" x="10" y="4" width="23" height="16" />
+        </frame>
+      </frame>
+      <frame id="2:1946" name="arrow-horizontal" x="680" y="290" width="100" height="40">
+        <line id="2:1947" name="Line" x="0" y="20" width="100" height="0" />
+        <regular-polygon id="2:1948" name="Polygon" x="85" y="12.5" width="15" height="15" />
+        <frame id="2:1949" name="Frame" x="16.5" y="0" width="67" height="24">
+          <text id="2:1950" name="선택 완료" x="10" y="4" width="47" height="16" />
+        </frame>
+      </frame>
+      <frame id="2:1951" name="arrow-horizontal" x="1020" y="290" width="100" height="40">
+        <line id="2:1952" name="Line" x="0" y="20" width="100" height="0" />
+        <regular-polygon id="2:1953" name="Polygon" x="85" y="12.5" width="15" height="15" />
+        <frame id="2:1954" name="Frame" x="16.5" y="0" width="67" height="24">
+          <text id="2:1955" name="설정 완료" x="10" y="4" width="47" height="16" />
+        </frame>
+      </frame>
+      <frame id="2:1956" name="arrow-horizontal" x="1360" y="290" width="100" height="40">
+        <line id="2:1957" name="Line" x="0" y="20" width="100" height="0" />
+        <regular-polygon id="2:1958" name="Polygon" x="85" y="12.5" width="15" height="15" />
+        <frame id="2:1959" name="Frame" x="28.5" y="0" width="43" height="24">
+          <text id="2:1960" name="완료" x="10" y="4" width="23" height="16" />
+        </frame>
+      </frame>
+      <frame id="2:1961" name="Node-문제 및 카드 관리" x="440" y="520" width="240" height="180">
+        <frame id="2:1962" name="Frame" x="16" y="16" width="208" height="37">
+          <frame id="2:1963" name="Frame" x="0" y="0" width="208" height="21">
+            <text id="2:1964" name="문제 및 카드 관리" x="0" y="0" width="208" height="21" />
+          </frame>
+          <text id="2:1965" name="Question Management" x="0" y="23" width="208" height="14" />
+        </frame>
+        <line id="2:1966" name="Line" x="16" y="65" width="208" height="0" />
+        <frame id="2:1967" name="Frame" x="16" y="77" width="208" height="63">
+          <frame id="2:1968" name="Frame" x="0" y="0" width="208" height="17">
+            <rounded-rectangle id="2:1969" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1970" name="테마별 단어/문항 검색" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1971" name="Frame" x="0" y="23" width="208" height="17">
+            <rounded-rectangle id="2:1972" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1973" name="문항 수정 / 개별 삭제" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1974" name="Frame" x="0" y="46" width="208" height="17">
+            <rounded-rectangle id="2:1975" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1976" name="새로운 테마 폴더 생성" x="12" y="0" width="196" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:1977" name="Node-문제 추가 폼" x="780" y="520" width="240" height="180">
+        <frame id="2:1978" name="Frame" x="16" y="16" width="208" height="37">
+          <frame id="2:1979" name="Frame" x="0" y="0" width="208" height="21">
+            <text id="2:1980" name="문제 추가 폼" x="0" y="0" width="208" height="21" />
+          </frame>
+          <text id="2:1981" name="Add Question Form" x="0" y="23" width="208" height="14" />
+        </frame>
+        <line id="2:1982" name="Line" x="16" y="65" width="208" height="0" />
+        <frame id="2:1983" name="Frame" x="16" y="77" width="208" height="63">
+          <frame id="2:1984" name="Frame" x="0" y="0" width="208" height="17">
+            <rounded-rectangle id="2:1985" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1986" name="테마 카테고리 지정" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1987" name="Frame" x="0" y="23" width="208" height="17">
+            <rounded-rectangle id="2:1988" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1989" name="카드 앞면 (정답/타이핑)" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:1990" name="Frame" x="0" y="46" width="208" height="17">
+            <rounded-rectangle id="2:1991" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:1992" name="카드 뒷면 (뜻/설명)" x="12" y="0" width="196" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:1993" name="Node-전체 기록실" x="1120" y="520" width="240" height="180">
+        <frame id="2:1994" name="Frame" x="16" y="16" width="208" height="37">
+          <frame id="2:1995" name="Frame" x="0" y="0" width="208" height="21">
+            <text id="2:1996" name="전체 기록실" x="0" y="0" width="208" height="21" />
+          </frame>
+          <text id="2:1997" name="Performance Records" x="0" y="23" width="208" height="14" />
+        </frame>
+        <line id="2:1998" name="Line" x="16" y="65" width="208" height="0" />
+        <frame id="2:1999" name="Frame" x="16" y="77" width="208" height="63">
+          <frame id="2:2000" name="Frame" x="0" y="0" width="208" height="17">
+            <rounded-rectangle id="2:2001" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:2002" name="날짜별 타수 트렌드 그래프" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:2003" name="Frame" x="0" y="23" width="208" height="17">
+            <rounded-rectangle id="2:2004" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:2005" name="강점/약점 테마 통계" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:2006" name="Frame" x="0" y="46" width="208" height="17">
+            <rounded-rectangle id="2:2007" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:2008" name="정확도 로그 리스트" x="12" y="0" width="196" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:2009" name="Node-오답 자세히 보기" x="1460" y="520" width="240" height="180">
+        <frame id="2:2010" name="Frame" x="16" y="16" width="208" height="37">
+          <frame id="2:2011" name="Frame" x="0" y="0" width="208" height="21">
+            <text id="2:2012" name="오답 자세히 보기" x="0" y="0" width="208" height="21" />
+          </frame>
+          <text id="2:2013" name="Incorrect Cards Details" x="0" y="23" width="208" height="14" />
+        </frame>
+        <line id="2:2014" name="Line" x="16" y="65" width="208" height="0" />
+        <frame id="2:2015" name="Frame" x="16" y="77" width="208" height="63">
+          <frame id="2:2016" name="Frame" x="0" y="0" width="208" height="17">
+            <rounded-rectangle id="2:2017" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:2018" name="게임 중 틀린 단어 목록" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:2019" name="Frame" x="0" y="23" width="208" height="17">
+            <rounded-rectangle id="2:2020" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:2021" name="타이핑 비교 분석 피드백" x="12" y="0" width="196" height="17" />
+          </frame>
+          <frame id="2:2022" name="Frame" x="0" y="46" width="208" height="17">
+            <rounded-rectangle id="2:2023" name="Rectangle" x="0" y="5.5" width="6" height="6" />
+            <text id="2:2024" name="Anki 암기 보관함 추가" x="12" y="0" width="196" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:2025" name="arrow-horizontal" x="680" y="590" width="100" height="40">
+        <line id="2:2026" name="Line" x="0" y="20" width="100" height="0" />
+        <regular-polygon id="2:2027" name="Polygon" x="88" y="14" width="12" height="12" />
+        <frame id="2:2028" name="Frame" x="17.5" y="0" width="65" height="24">
+          <text id="2:2029" name="추가하기" x="10" y="4" width="45" height="16" />
+        </frame>
+      </frame>
+      <frame id="2:2030" name="arrow-vertical" x="1540" y="400" width="80" height="120">
+        <line id="2:2031" name="Line" x="40" y="0" width="0" height="120" />
+        <regular-polygon id="2:2032" name="Polygon" x="34" y="108" width="12" height="12" />
+        <frame id="2:2033" name="Frame" x="9.5" y="49" width="61" height="22">
+          <text id="2:2034" name="오답보기" x="10" y="4" width="41" height="14" />
+        </frame>
+      </frame>
+      <frame id="2:2035" name="custom-path" x="0" y="0" width="1800" height="900">
+        <line id="2:2036" name="Line" x="1460" y="280" width="60.04202365875244" height="79.96846437454224" />
+        <line id="2:2037" name="Line" x="1400" y="200" width="120" height="2.842170943040401e-14" />
+        <line id="2:2038" name="Line" x="1280" y="200" width="60.01640847325325" height="19.96480131149292" />
+        <regular-polygon id="2:2039" name="Polygon" x="1212.5" y="212.5" width="18.96787704422468" height="18.967877044224792" />
+        <frame id="2:2040" name="Frame" x="1395" y="228" width="57" height="22">
+          <text id="2:2041" name="다시하기" x="8" y="4" width="41" height="14" />
+        </frame>
+      </frame>
+      <frame id="2:2042" name="custom-path" x="0" y="0" width="1800" height="900">
+        <line id="2:2043" name="Line" x="1580" y="400" width="0" height="90" />
+        <line id="2:2044" name="Line" x="1580" y="490" width="940" height="1.1368683772161603e-13" />
+        <line id="2:2045" name="Line" x="640" y="490" width="79.93672076442908" height="90.03489777705863" />
+        <regular-polygon id="2:2046" name="Polygon" x="554" y="394" width="16.941216230392456" height="16.941216230392456" />
+        <frame id="2:2047" name="Frame" x="1545" y="433" width="59" height="22">
+          <text id="2:2048" name="다른 테마" x="8" y="4" width="43" height="14" />
+        </frame>
+      </frame>
+      <frame id="2:2049" name="custom-path" x="0" y="0" width="1800" height="900">
+        <line id="2:2050" name="Line" x="1700" y="310" width="50" height="0" />
+        <line id="2:2051" name="Line" x="1750" y="310" width="0" height="160" />
+        <line id="2:2052" name="Line" x="1750" y="150" width="1530" height="1.9895196601282805e-13" />
+        <line id="2:2053" name="Line" x="220" y="150" width="0" height="70" />
+        <regular-polygon id="2:2054" name="Polygon" x="214" y="214" width="12" height="12" />
+        <frame id="2:2055" name="Frame" x="1690" y="298" width="47" height="22">
+          <text id="2:2056" name="홈으로" x="8" y="4" width="31" height="14" />
+        </frame>
+      </frame>
+      <frame id="2:2057" name="custom-path" x="0" y="0" width="1800" height="900">
+        <line id="2:2058" name="Line" x="220" y="400" width="0" height="50" />
+        <line id="2:2059" name="Line" x="220" y="450" width="220.0195848941803" height="110.03354609012604" />
+        <regular-polygon id="2:2060" name="Polygon" x="434" y="334" width="16.100151451416593" height="16.100151451416593" />
+        <frame id="2:2061" name="Frame" x="185" y="413" width="59" height="22">
+          <text id="2:2062" name="게임 시작" x="8" y="4" width="43" height="14" />
+        </frame>
+      </frame>
+      <frame id="2:2063" name="custom-path" x="0" y="0" width="1800" height="900">
+        <line id="2:2064" name="Line" x="150" y="400" width="0" height="210" />
+        <line id="2:2065" name="Line" x="150" y="610" width="290" height="0" />
+        <regular-polygon id="2:2066" name="Polygon" x="434" y="604" width="12" height="12" />
+        <frame id="2:2067" name="Frame" x="115" y="493" width="59" height="22">
+          <text id="2:2068" name="문제 관리" x="8" y="4" width="43" height="14" />
+        </frame>
+      </frame>
+      <frame id="2:2069" name="custom-path" x="0" y="0" width="1800" height="900">
+        <line id="2:2070" name="Line" x="100" y="310" width="60" height="0" />
+        <line id="2:2071" name="Line" x="40" y="310" width="2.842170943040401e-14" height="410" />
+        <line id="2:2072" name="Line" x="40" y="720" width="1200" height="0" />
+        <line id="2:2073" name="Line" x="1240" y="720" width="0" height="20" />
+        <regular-polygon id="2:2074" name="Polygon" x="1234" y="694" width="12" height="12" />
+        <frame id="2:2075" name="Frame" x="35" y="298" width="59" height="22">
+          <text id="2:2076" name="기록 보기" x="8" y="4" width="43" height="14" />
+        </frame>
+      </frame>
+      <frame id="2:2077" name="global-nav-diagram" x="440" y="750" width="920" height="97">
+        <frame id="2:2078" name="Frame" x="16" y="16" width="888" height="16">
+          <text id="2:2079" name="GLOBAL NAVIGATION ACTION BAR" x="0" y="0" width="217" height="16" />
+          <text id="2:2080" name="앱 전반에 걸쳐 하단에 항상 고정 노출되는 퀵 이동 내비게이션바" x="574" y="0" width="314" height="16" />
+        </frame>
+        <frame id="2:2081" name="Frame" x="16" y="44" width="888" height="37">
+          <frame id="2:2082" name="Frame" x="0" y="0" width="210" height="37">
+            <text id="2:2083" name="홈 / Dashboard" x="58" y="10" width="94" height="17" />
+          </frame>
+          <frame id="2:2084" name="Frame" x="226" y="0" width="210" height="37">
+            <text id="2:2085" name="테마 학습 (Play)" x="60" y="10" width="90" height="17" />
+          </frame>
+          <frame id="2:2086" name="Frame" x="452" y="0" width="210" height="37">
+            <text id="2:2087" name="문제 보관함" x="73.5" y="10" width="63" height="17" />
+          </frame>
+          <frame id="2:2088" name="Frame" x="678" y="0" width="210" height="37">
+            <text id="2:2089" name="성적 분석실" x="73.5" y="10" width="63" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:2090" name="custom-path" x="0" y="0" width="1800" height="900">
+        <line id="2:2091" name="Line" x="800" y="750" width="0" height="20" />
+        <line id="2:2092" name="Line" x="800" y="730" width="240" height="0" />
+        <line id="2:2093" name="Line" x="560" y="730" width="0" height="30" />
+        <regular-polygon id="2:2094" name="Polygon" x="554" y="694" width="12" height="12" />
+        <frame id="2:2095" name="Frame" x="765" y="728" width="63" height="22">
+          <text id="2:2096" name="Play 이동" x="8" y="4" width="47" height="14" />
+        </frame>
+      </frame>
+      <frame id="2:2097" name="custom-path" x="0" y="0" width="1800" height="900">
+        <line id="2:2098" name="Line" x="1020" y="750" width="0" height="40" />
+        <line id="2:2099" name="Line" x="1020" y="710" width="120" height="0" />
+        <line id="2:2100" name="Line" x="900" y="710" width="0" height="10" />
+        <regular-polygon id="2:2101" name="Polygon" x="894" y="694" width="12" height="12" />
+        <frame id="2:2102" name="Frame" x="985" y="718" width="70" height="22">
+          <text id="2:2103" name="보관함 이동" x="8" y="4" width="54" height="14" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2:2109" name="home-dashboard" x="0" y="1090" width="1280" height="868">
+    <frame id="2:2110" name="top-nav" x="0" y="0" width="1280" height="72">
+      <frame id="2:2111" name="logo" x="40" y="18" width="175" height="36">
+        <frame id="2:2112" name="logo-icon" x="0" y="0" width="36" height="36">
+          <text id="2:2113" name="A" x="11" y="5.5" width="14" height="25" />
+        </frame>
+        <text id="2:2114" name="AnkiTyping" x="44" y="4" width="131" height="28" />
+      </frame>
+      <frame id="2:2115" name="nav-right" x="694" y="17" width="546" height="38">
+        <frame id="2:2116" name="nav-links" x="0" y="1.5" width="387" height="35">
+          <frame id="2:2117" name="nav-tab-Home" x="0" y="0" width="77" height="35">
+            <text id="2:2118" name="Home" x="16" y="8" width="45" height="19" />
+          </frame>
+          <frame id="2:2119" name="nav-tab-Play" x="93" y="0" width="64" height="35">
+            <text id="2:2120" name="Play" x="16" y="8" width="32" height="19" />
+          </frame>
+          <frame id="2:2121" name="nav-tab-Questions" x="173" y="0" width="106" height="35">
+            <text id="2:2122" name="Questions" x="16" y="8" width="74" height="19" />
+          </frame>
+          <frame id="2:2123" name="nav-tab-Records" x="295" y="0" width="92" height="35">
+            <text id="2:2124" name="Records" x="16" y="8" width="60" height="19" />
+          </frame>
+        </frame>
+        <frame id="2:2125" name="quick-add-btn" x="419" y="0" width="127" height="38">
+          <frame id="2:2421" name="plus" x="20" y="12" width="14" height="14" />
+          <text id="2:2127" name="+ 문제 추가" x="40" y="10" width="67" height="18" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="2:2128" name="dashboard-body" x="0" y="72" width="1280" height="796">
+      <frame id="2:2129" name="welcome-hero" x="40" y="40" width="1200" height="147">
+        <frame id="2:2130" name="hero-text" x="32" y="32" width="500" height="83">
+          <text id="2:2131" name="오늘도 힘차게 타이핑 학습! ⚡️" x="0" y="0" width="500" height="35" />
+          <text id="2:2132" name="Anki 암기 카드와 영타/한타 타이핑 테스트가 결합된 효율적인 학습을 시작해보세요." x="0" y="43" width="500" height="40" />
+        </frame>
+        <frame id="2:2133" name="hero-cta" x="996" y="45" width="172" height="57">
+          <text id="2:2134" name="게임 시작 👉" x="32" y="16" width="108" height="25" />
+        </frame>
+      </frame>
+      <frame id="2:2135" name="stats-row" x="40" y="219" width="1200" height="76">
+        <frame id="2:2136" name="stats-학습시간" x="0" y="0" width="227.1999969482422" height="76">
+          <frame id="2:2137" name="stats-icon-box" x="16" y="16" width="44" height="44">
+            <frame id="2:2415" name="clock" x="12" y="12" width="20" height="20" />
+          </frame>
+          <frame id="2:2139" name="stats-info" x="76" y="16" width="135.1999969482422" height="44">
+            <text id="2:2140" name="학습시간" x="0" y="0" width="135.1999969482422" height="17" />
+            <text id="2:2141" name="01:24:15" x="0" y="19" width="135.1999969482422" height="25" />
+          </frame>
+        </frame>
+        <frame id="2:2142" name="stats-푼 문제" x="243.1999969482422" y="0" width="227.1999969482422" height="76">
+          <frame id="2:2143" name="stats-icon-box" x="16" y="16" width="44" height="44">
+            <frame id="2:2469" name="book-open" x="12" y="12" width="20" height="20" />
+          </frame>
+          <frame id="2:2145" name="stats-info" x="76" y="16" width="135.1999969482422" height="44">
+            <text id="2:2146" name="푼 문제" x="0" y="0" width="135.1999969482422" height="17" />
+            <text id="2:2147" name="128개" x="0" y="19" width="135.1999969482422" height="25" />
+          </frame>
+        </frame>
+        <frame id="2:2148" name="stats-정답" x="486.3999938964844" y="0" width="227.1999969482422" height="76">
+          <frame id="2:2149" name="stats-icon-box" x="16" y="16" width="44" height="44">
+            <frame id="2:2463" name="check" x="12" y="12" width="20" height="20" />
+          </frame>
+          <frame id="2:2151" name="stats-info" x="76" y="16" width="135.1999969482422" height="44">
+            <text id="2:2152" name="정답" x="0" y="0" width="135.1999969482422" height="17" />
+            <text id="2:2153" name="112개" x="0" y="19" width="135.1999969482422" height="25" />
+          </frame>
+        </frame>
+        <frame id="2:2154" name="stats-오답" x="729.5999755859375" y="0" width="227.19998168945312" height="76">
+          <frame id="2:2155" name="stats-icon-box" x="16" y="16" width="44" height="44">
+            <frame id="2:2418" name="x" x="12" y="12" width="20" height="20" />
+          </frame>
+          <frame id="2:2157" name="stats-info" x="76" y="16" width="135.19998168945312" height="44">
+            <text id="2:2158" name="오답" x="0" y="0" width="135.19998168945312" height="17" />
+            <text id="2:2159" name="16개" x="0" y="19" width="135.19998168945312" height="25" />
+          </frame>
+        </frame>
+        <frame id="2:2160" name="stats-정확도" x="972.7999267578125" y="0" width="227.19998168945312" height="76">
+          <frame id="2:2161" name="stats-icon-box" x="16" y="16" width="44" height="44">
+            <frame id="2:2412" name="target" x="12" y="12" width="20" height="20" />
+          </frame>
+          <frame id="2:2163" name="stats-info" x="76" y="16" width="135.19998168945312" height="44">
+            <text id="2:2164" name="정확도" x="0" y="0" width="135.19998168945312" height="17" />
+            <text id="2:2165" name="87.5%" x="0" y="19" width="135.19998168945312" height="25" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:2166" name="columns-section" x="40" y="327" width="1200" height="347">
+        <frame id="2:2167" name="col-recent" x="0" y="0" width="588" height="347">
+          <frame id="2:2168" name="recent-header" x="24" y="24" width="540" height="23">
+            <text id="2:2169" name="🕒 최근 기록" x="0" y="0" width="97" height="23" />
+            <text id="2:2170" name="최근 5개 세션" x="465" y="3" width="75" height="17" />
+          </frame>
+          <frame id="2:2171" name="recent-list" x="24" y="63" width="540" height="260">
+            <frame id="2:2172" name="recent-item-0" x="0" y="0" width="540" height="80">
+              <frame id="2:2173" name="recent-item-left" x="12" y="31" width="122" height="18">
+                <frame id="2:2174" name="Frame" x="0" y="5" width="8" height="8" />
+                <text id="2:2175" name="Python 기초 문법" x="18" y="0" width="104" height="18" />
+              </frame>
+              <frame id="2:2176" name="recent-item-right" x="410" y="12" width="118" height="56">
+                <frame id="9:4" name="recent-item-meta" x="0" y="0" width="62" height="56">
+                  <text id="9:5" name="문제수 24개" x="0" y="0" width="62" height="16" />
+                  <text id="9:6" name="정답 22개" x="3" y="18" width="59" height="18" />
+                  <text id="9:7" name="91.7%" x="21" y="38" width="41" height="18" />
+                </frame>
+                <text id="2:2178" name="10분 전" x="78" y="20" width="40" height="16" />
+              </frame>
+            </frame>
+            <frame id="2:2179" name="recent-item-1" x="0" y="90" width="540" height="80">
+              <frame id="2:2180" name="recent-item-left" x="12" y="31" width="116" height="18">
+                <frame id="2:2181" name="Frame" x="0" y="5" width="8" height="8" />
+                <text id="2:2182" name="CS 전공지식 / IT" x="18" y="0" width="98" height="18" />
+              </frame>
+              <frame id="2:2183" name="recent-item-right" x="406" y="12" width="122" height="56">
+                <frame id="9:8" name="recent-item-meta" x="0" y="0" width="62" height="56">
+                  <text id="9:9" name="문제수 18개" x="0" y="0" width="62" height="16" />
+                  <text id="9:10" name="정답 16개" x="2" y="18" width="60" height="18" />
+                  <text id="9:11" name="88.9%" x="20" y="38" width="42" height="18" />
+                </frame>
+                <text id="2:2185" name="1시간 전" x="78" y="20" width="44" height="16" />
+              </frame>
+            </frame>
+            <frame id="2:2186" name="recent-item-2" x="0" y="180" width="540" height="80">
+              <frame id="2:2187" name="recent-item-left" x="12" y="31" width="118" height="18">
+                <frame id="2:2188" name="Frame" x="0" y="5" width="8" height="8" />
+                <text id="2:2189" name="금융/핀테크 용어" x="18" y="0" width="100" height="18" />
+              </frame>
+              <frame id="2:2190" name="recent-item-right" x="427" y="12" width="101" height="56">
+                <frame id="9:12" name="recent-item-meta" x="0" y="0" width="62" height="56">
+                  <text id="9:13" name="문제수 12개" x="0" y="0" width="62" height="16" />
+                  <text id="9:14" name="정답 12개" x="3" y="18" width="59" height="18" />
+                  <text id="9:15" name="100%" x="21" y="38" width="41" height="18" />
+                </frame>
+                <text id="2:2192" name="어제" x="78" y="20" width="23" height="16" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+        <frame id="2:2193" name="col-themes" x="612" y="0" width="588" height="241">
+          <frame id="2:2194" name="themes-header" x="24" y="24" width="540" height="23">
+            <text id="2:2195" name="📊 테마별 현황" x="0" y="0" width="113" height="23" />
+            <text id="2:2196" name="진행률" x="504" y="3" width="36" height="17" />
+          </frame>
+          <frame id="2:2197" name="themes-list" x="24" y="63" width="540" height="154">
+            <frame id="2:2198" name="theme-prog-0" x="0" y="0" width="540" height="42">
+              <frame id="2:2199" name="theme-prog-label" x="0" y="0" width="540" height="18">
+                <text id="2:2200" name="SQL 데이터베이스" x="0" y="0" width="108" height="18" />
+                <text id="2:2201" name="82%" x="514" y="0" width="26" height="15" />
+              </frame>
+              <frame id="2:2202" name="theme-meta" x="0" y="24" width="540" height="18">
+                <text id="9:16" name="오늘 풀이 수" x="0" y="0" width="67" height="17" />
+                <text id="9:17" name="32개" x="511" y="0" width="29" height="18" />
+              </frame>
+            </frame>
+            <frame id="2:2204" name="theme-prog-1" x="0" y="56" width="540" height="42">
+              <frame id="2:2205" name="theme-prog-label" x="0" y="0" width="540" height="18">
+                <text id="2:2206" name="이커머스 실무 용어" x="0" y="0" width="110" height="18" />
+                <text id="2:2207" name="76%" x="515" y="0" width="25" height="15" />
+              </frame>
+              <frame id="2:2208" name="theme-meta" x="0" y="24" width="540" height="18">
+                <text id="9:18" name="오늘 풀이 수" x="0" y="0" width="67" height="17" />
+                <text id="9:19" name="18개" x="510" y="0" width="30" height="18" />
+              </frame>
+            </frame>
+            <frame id="2:2210" name="theme-prog-2" x="0" y="112" width="540" height="42">
+              <frame id="2:2211" name="theme-prog-label" x="0" y="0" width="540" height="18">
+                <text id="2:2212" name="NCS / 인적성 요약" x="0" y="0" width="109" height="18" />
+                <text id="2:2213" name="91%" x="514" y="0" width="26" height="15" />
+              </frame>
+              <frame id="2:2214" name="theme-meta" x="0" y="24" width="540" height="18">
+                <text id="9:20" name="오늘 풀이 수" x="0" y="0" width="67" height="17" />
+                <text id="9:21" name="41개" x="510" y="0" width="30" height="18" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:2216" name="bottom-ctas" x="40" y="706" width="1200" height="50">
+        <frame id="2:2217" name="sec-cta-1" x="416.5" y="8" width="103" height="42">
+          <text id="2:2218" name="문제 추가" x="24" y="12" width="55" height="18" />
+        </frame>
+        <frame id="2:2219" name="sec-cta-2" x="535.5" y="8" width="103" height="42">
+          <text id="2:2220" name="문제 관리" x="24" y="12" width="55" height="18" />
+        </frame>
+        <frame id="2:2221" name="sec-cta-3" x="654.5" y="8" width="129" height="42">
+          <text id="2:2222" name="기록 전체보기" x="24" y="12" width="81" height="18" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2:2224" name="theme-selection" x="1360" y="1090" width="1280" height="800">
+    <frame id="2:2225" name="top-nav" x="0" y="0" width="1280" height="72">
+      <frame id="2:2226" name="logo" x="40" y="18" width="175" height="36">
+        <frame id="2:2227" name="logo-icon" x="0" y="0" width="36" height="36">
+          <text id="2:2228" name="A" x="11" y="5.5" width="14" height="25" />
+        </frame>
+        <text id="2:2229" name="AnkiTyping" x="44" y="4" width="131" height="28" />
+      </frame>
+      <frame id="2:2230" name="nav-right" x="693" y="17" width="547" height="38">
+        <frame id="2:2231" name="nav-links" x="0" y="1.5" width="388" height="35">
+          <frame id="2:2232" name="nav-tab-Home" x="0" y="0" width="76" height="35">
+            <text id="2:2233" name="Home" x="16" y="8" width="44" height="19" />
+          </frame>
+          <frame id="2:2234" name="nav-tab-Play" x="92" y="0" width="66" height="35">
+            <text id="2:2235" name="Play" x="16" y="8" width="34" height="19" />
+          </frame>
+          <frame id="2:2236" name="nav-tab-Questions" x="174" y="0" width="106" height="35">
+            <text id="2:2237" name="Questions" x="16" y="8" width="74" height="19" />
+          </frame>
+          <frame id="2:2238" name="nav-tab-Records" x="296" y="0" width="92" height="35">
+            <text id="2:2239" name="Records" x="16" y="8" width="60" height="19" />
+          </frame>
+        </frame>
+        <frame id="2:2240" name="quick-add-btn" x="420" y="0" width="127" height="38">
+          <frame id="2:2424" name="plus" x="20" y="12" width="14" height="14" />
+          <text id="2:2242" name="+ 문제 추가" x="40" y="10" width="67" height="18" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="2:2243" name="theme-body" x="0" y="72" width="1280" height="590">
+      <frame id="2:2244" name="theme-title-bar" x="40" y="40" width="1200" height="54">
+        <frame id="2:2245" name="title-group" x="0" y="0" width="326" height="54">
+          <text id="2:2246" name="📚 학습 테마 선택" x="0" y="0" width="181" height="30" />
+          <text id="2:2247" name="학습할 카드 덱 테마를 골라 게임 대기실로 이동해보세요!" x="0" y="36" width="326" height="18" />
+        </frame>
+        <frame id="2:2248" name="theme-manage-link" x="1072" y="18" width="128" height="18">
+          <text id="2:2249" name="테마 관리 바로가기" x="0" y="0" width="110" height="18" />
+          <frame id="2:2472" name="chevron-right" x="114" y="2" width="14" height="14" />
+        </frame>
+      </frame>
+      <frame id="2:2251" name="themes-grid" x="40" y="118" width="1200" height="432">
+        <frame id="2:2252" name="theme-card-SQL" x="0" y="0" width="99" height="150">
+          <frame id="9:83" name="theme-card-actions" x="-13" y="12" width="64" height="28">
+            <frame id="9:84" name="edit-theme-btn" x="0" y="0" width="28" height="28">
+              <frame id="9:153" name="edit" x="7" y="7" width="14" height="14" />
+            </frame>
+            <frame id="9:86" name="delete-theme-btn" x="36" y="0" width="28" height="28">
+              <frame id="9:159" name="trash" x="7" y="7" width="14" height="14" />
+            </frame>
+          </frame>
+          <frame id="2:2253" name="theme-icon-plate" x="29.5" y="28" width="40" height="40">
+            <frame id="2:2430" name="file-code" x="11" y="11" width="18" height="18" />
+          </frame>
+          <frame id="2:2255" name="theme-text-info" x="24" y="82" width="51" height="40">
+            <text id="2:2256" name="SQL" x="11" y="0" width="29" height="20" />
+            <text id="2:2257" name="문제 42개" x="0" y="24" width="51" height="16" />
+          </frame>
+        </frame>
+        <frame id="2:2258" name="theme-card-Python" x="304" y="0" width="99" height="150">
+          <frame id="9:88" name="theme-card-actions" x="-13" y="12" width="64" height="28">
+            <frame id="9:89" name="edit-theme-btn" x="0" y="0" width="28" height="28">
+              <frame id="9:156" name="edit" x="7" y="7" width="14" height="14" />
+            </frame>
+            <frame id="9:91" name="delete-theme-btn" x="36" y="0" width="28" height="28">
+              <frame id="9:162" name="trash" x="7" y="7" width="14" height="14" />
+            </frame>
+          </frame>
+          <frame id="2:2259" name="theme-icon-plate" x="29.5" y="28" width="40" height="40">
+            <frame id="2:2433" name="file-code" x="11" y="11" width="18" height="18" />
+          </frame>
+          <frame id="2:2261" name="theme-text-info" x="24" y="82" width="51" height="40">
+            <text id="2:2262" name="Python" x="1.5" y="0" width="48" height="20" />
+            <text id="2:2263" name="문제 68개" x="0" y="24" width="51" height="16" />
+          </frame>
+        </frame>
+        <frame id="2:2264" name="theme-card-CS/IT 전공" x="608" y="0" width="119" height="150">
+          <frame id="9:93" name="theme-card-actions" x="7" y="12" width="64" height="28">
+            <frame id="9:94" name="edit-theme-btn" x="0" y="0" width="28" height="28">
+              <frame id="9:165" name="edit" x="7" y="7" width="14" height="14" />
+            </frame>
+            <frame id="9:96" name="delete-theme-btn" x="36" y="0" width="28" height="28">
+              <frame id="9:168" name="trash" x="7" y="7" width="14" height="14" />
+            </frame>
+          </frame>
+          <frame id="2:2265" name="theme-icon-plate" x="39.5" y="28" width="40" height="40">
+            <frame id="2:2436" name="file-code" x="11" y="11" width="18" height="18" />
+          </frame>
+          <frame id="2:2267" name="theme-text-info" x="24" y="82" width="71" height="40">
+            <text id="2:2268" name="CS/IT 전공" x="0" y="0" width="71" height="20" />
+            <text id="2:2269" name="문제 124개" x="6.5" y="24" width="58" height="16" />
+          </frame>
+        </frame>
+        <frame id="2:2270" name="theme-card-데이터분석·통계" x="912" y="0" width="149" height="150">
+          <frame id="9:98" name="theme-card-actions" x="37" y="12" width="64" height="28">
+            <frame id="9:99" name="edit-theme-btn" x="0" y="0" width="28" height="28">
+              <frame id="9:171" name="edit" x="7" y="7" width="14" height="14" />
+            </frame>
+            <frame id="9:101" name="delete-theme-btn" x="36" y="0" width="28" height="28">
+              <frame id="9:174" name="trash" x="7" y="7" width="14" height="14" />
+            </frame>
+          </frame>
+          <frame id="2:2271" name="theme-icon-plate" x="54.5" y="28" width="40" height="40">
+            <frame id="2:2439" name="file-code" x="11" y="11" width="18" height="18" />
+          </frame>
+          <frame id="2:2273" name="theme-text-info" x="24" y="82" width="101" height="40">
+            <text id="2:2274" name="데이터분석·통계" x="0" y="0" width="101" height="20" />
+            <text id="2:2275" name="문제 35개" x="25" y="24" width="51" height="16" />
+          </frame>
+        </frame>
+        <frame id="2:2276" name="theme-card-Product Analytics" x="0" y="166" width="168" height="150">
+          <frame id="9:103" name="theme-card-actions" x="56" y="12" width="64" height="28">
+            <frame id="9:104" name="edit-theme-btn" x="0" y="0" width="28" height="28">
+              <frame id="9:177" name="edit" x="7" y="7" width="14" height="14" />
+            </frame>
+            <frame id="9:106" name="delete-theme-btn" x="36" y="0" width="28" height="28">
+              <frame id="9:180" name="trash" x="7" y="7" width="14" height="14" />
+            </frame>
+          </frame>
+          <frame id="2:2277" name="theme-icon-plate" x="64" y="28" width="40" height="40">
+            <frame id="2:2442" name="file-code" x="11" y="11" width="18" height="18" />
+          </frame>
+          <frame id="2:2279" name="theme-text-info" x="24" y="82" width="120" height="40">
+            <text id="2:2280" name="Product Analytics" x="0" y="0" width="120" height="20" />
+            <text id="2:2281" name="문제 29개" x="34.5" y="24" width="51" height="16" />
+          </frame>
+        </frame>
+        <frame id="2:2282" name="theme-card-금융/핀테크" x="304" y="166" width="124" height="150">
+          <frame id="9:108" name="theme-card-actions" x="12" y="12" width="64" height="28">
+            <frame id="9:109" name="edit-theme-btn" x="0" y="0" width="28" height="28">
+              <frame id="9:183" name="edit" x="7" y="7" width="14" height="14" />
+            </frame>
+            <frame id="9:111" name="delete-theme-btn" x="36" y="0" width="28" height="28">
+              <frame id="9:186" name="trash" x="7" y="7" width="14" height="14" />
+            </frame>
+          </frame>
+          <frame id="2:2283" name="theme-icon-plate" x="42" y="28" width="40" height="40">
+            <frame id="2:2445" name="file-code" x="11" y="11" width="18" height="18" />
+          </frame>
+          <frame id="2:2285" name="theme-text-info" x="24" y="82" width="76" height="40">
+            <text id="2:2286" name="금융/핀테크" x="0" y="0" width="76" height="20" />
+            <text id="2:2287" name="문제 51개" x="12.5" y="24" width="51" height="16" />
+          </frame>
+        </frame>
+        <frame id="2:2288" name="theme-card-이커머스 실무" x="608" y="166" width="135" height="150">
+          <frame id="9:113" name="theme-card-actions" x="23" y="12" width="64" height="28">
+            <frame id="9:114" name="edit-theme-btn" x="0" y="0" width="28" height="28">
+              <frame id="9:189" name="edit" x="7" y="7" width="14" height="14" />
+            </frame>
+            <frame id="9:116" name="delete-theme-btn" x="36" y="0" width="28" height="28">
+              <frame id="9:192" name="trash" x="7" y="7" width="14" height="14" />
+            </frame>
+          </frame>
+          <frame id="2:2289" name="theme-icon-plate" x="47.5" y="28" width="40" height="40">
+            <frame id="2:2448" name="file-code" x="11" y="11" width="18" height="18" />
+          </frame>
+          <frame id="2:2291" name="theme-text-info" x="24" y="82" width="87" height="40">
+            <text id="2:2292" name="이커머스 실무" x="0" y="0" width="87" height="20" />
+            <text id="2:2293" name="문제 40개" x="18" y="24" width="51" height="16" />
+          </frame>
+        </frame>
+        <frame id="2:2294" name="theme-card-AI / 인공지능" x="912" y="166" width="131" height="150">
+          <frame id="9:118" name="theme-card-actions" x="19" y="12" width="64" height="28">
+            <frame id="9:119" name="edit-theme-btn" x="0" y="0" width="28" height="28">
+              <frame id="9:195" name="edit" x="7" y="7" width="14" height="14" />
+            </frame>
+            <frame id="9:121" name="delete-theme-btn" x="36" y="0" width="28" height="28">
+              <frame id="9:198" name="trash" x="7" y="7" width="14" height="14" />
+            </frame>
+          </frame>
+          <frame id="2:2295" name="theme-icon-plate" x="45.5" y="28" width="40" height="40">
+            <frame id="2:2451" name="file-code" x="11" y="11" width="18" height="18" />
+          </frame>
+          <frame id="2:2297" name="theme-text-info" x="24" y="82" width="83" height="40">
+            <text id="2:2298" name="AI / 인공지능" x="0" y="0" width="83" height="20" />
+            <text id="2:2299" name="문제 77개" x="16" y="24" width="51" height="16" />
+          </frame>
+        </frame>
+        <frame id="2:2300" name="theme-card-NCS 핵심" x="0" y="332" width="110" height="150">
+          <frame id="9:123" name="theme-card-actions" x="-2" y="12" width="64" height="28">
+            <frame id="9:124" name="edit-theme-btn" x="0" y="0" width="28" height="28">
+              <frame id="9:201" name="edit" x="7" y="7" width="14" height="14" />
+            </frame>
+            <frame id="9:126" name="delete-theme-btn" x="36" y="0" width="28" height="28">
+              <frame id="9:204" name="trash" x="7" y="7" width="14" height="14" />
+            </frame>
+          </frame>
+          <frame id="2:2301" name="theme-icon-plate" x="35" y="28" width="40" height="40">
+            <frame id="2:2454" name="file-code" x="11" y="11" width="18" height="18" />
+          </frame>
+          <frame id="2:2303" name="theme-text-info" x="24" y="82" width="62" height="40">
+            <text id="2:2304" name="NCS 핵심" x="0" y="0" width="62" height="20" />
+            <text id="2:2305" name="문제 110개" x="2" y="24" width="58" height="16" />
+          </frame>
+        </frame>
+        <frame id="2:2306" name="theme-card-인적성 검사" x="304" y="332" width="121" height="150">
+          <frame id="9:128" name="theme-card-actions" x="9" y="12" width="64" height="28">
+            <frame id="9:129" name="edit-theme-btn" x="0" y="0" width="28" height="28">
+              <frame id="9:207" name="edit" x="7" y="7" width="14" height="14" />
+            </frame>
+            <frame id="9:131" name="delete-theme-btn" x="36" y="0" width="28" height="28">
+              <frame id="9:210" name="trash" x="7" y="7" width="14" height="14" />
+            </frame>
+          </frame>
+          <frame id="2:2307" name="theme-icon-plate" x="40.5" y="28" width="40" height="40">
+            <frame id="2:2457" name="file-code" x="11" y="11" width="18" height="18" />
+          </frame>
+          <frame id="2:2309" name="theme-text-info" x="24" y="82" width="73" height="40">
+            <text id="2:2310" name="인적성 검사" x="0" y="0" width="73" height="20" />
+            <text id="2:2311" name="문제 95개" x="11" y="24" width="51" height="16" />
+          </frame>
+        </frame>
+        <frame id="2:2312" name="theme-card-비즈니스 영어" x="608" y="332" width="135" height="150">
+          <frame id="9:133" name="theme-card-actions" x="23" y="12" width="64" height="28">
+            <frame id="9:134" name="edit-theme-btn" x="0" y="0" width="28" height="28">
+              <frame id="9:213" name="edit" x="7" y="7" width="14" height="14" />
+            </frame>
+            <frame id="9:136" name="delete-theme-btn" x="36" y="0" width="28" height="28">
+              <frame id="9:216" name="trash" x="7" y="7" width="14" height="14" />
+            </frame>
+          </frame>
+          <frame id="2:2313" name="theme-icon-plate" x="47.5" y="28" width="40" height="40">
+            <frame id="2:2460" name="file-code" x="11" y="11" width="18" height="18" />
+          </frame>
+          <frame id="2:2315" name="theme-text-info" x="24" y="82" width="87" height="40">
+            <text id="2:2316" name="비즈니스 영어" x="0" y="0" width="87" height="20" />
+            <text id="2:2317" name="문제 60개" x="18" y="24" width="51" height="16" />
+          </frame>
+        </frame>
+        <frame id="2:2318" name="add-theme-card" x="912" y="332" width="83" height="150">
+          <frame id="2:2319" name="add-icon-plate" x="21.5" y="46" width="40" height="40">
+            <frame id="2:2475" name="plus" x="12" y="12" width="16" height="16" />
+          </frame>
+          <text id="2:2321" name="+ 새 테마 추가" x="0" y="86" width="83" height="18" />
+        </frame>
+      </frame>
+    </frame>
+    <rounded-rectangle id="9:138" name="theme-management-overlay" x="0" y="0" width="1280" height="800" />
+    <frame id="9:139" name="theme-management-modal" x="430" y="350" width="420" height="261">
+      <frame id="9:140" name="modal-header" x="24" y="24" width="372" height="52">
+        <text id="9:141" name="새 테마 추가" x="0" y="0" width="117" height="28" />
+        <text id="9:142" name="새로운 학습 테마를 추가하고 게임 대기실에 바로 반영해보세요." x="0" y="34" width="372" height="18" />
+      </frame>
+      <frame id="9:143" name="theme-name-field" x="24" y="96" width="372" height="73">
+        <text id="9:144" name="테마 이름" x="0" y="0" width="51" height="17" />
+        <frame id="9:145" name="theme-name-input" x="0" y="25" width="372" height="48">
+          <text id="9:146" name="예: 신용분석사" x="16" y="15" width="340" height="18" />
+        </frame>
+      </frame>
+      <frame id="9:147" name="modal-actions" x="24" y="189" width="372" height="48">
+        <frame id="9:148" name="cancel-button" x="0" y="0" width="190" height="48">
+          <text id="9:149" name="취소" x="82" y="15" width="26" height="18" />
+        </frame>
+        <frame id="9:150" name="add-button" x="202" y="0" width="190" height="48">
+          <text id="9:151" name="추가" x="82" y="15" width="26" height="18" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2:2323" name="game-setup" x="2720" y="1090" width="1280" height="800">
+    <frame id="2:2324" name="top-nav" x="0" y="0" width="1280" height="72">
+      <frame id="2:2325" name="logo" x="40" y="18" width="175" height="36">
+        <frame id="2:2326" name="logo-icon" x="0" y="0" width="36" height="36">
+          <text id="2:2327" name="A" x="11" y="5.5" width="14" height="25" />
+        </frame>
+        <text id="2:2328" name="AnkiTyping" x="44" y="4" width="131" height="28" />
+      </frame>
+      <frame id="2:2329" name="nav-right" x="693" y="17" width="547" height="38">
+        <frame id="2:2330" name="nav-links" x="0" y="1.5" width="388" height="35">
+          <frame id="2:2331" name="nav-tab-Home" x="0" y="0" width="76" height="35">
+            <text id="2:2332" name="Home" x="16" y="8" width="44" height="19" />
+          </frame>
+          <frame id="2:2333" name="nav-tab-Play" x="92" y="0" width="66" height="35">
+            <text id="2:2334" name="Play" x="16" y="8" width="34" height="19" />
+          </frame>
+          <frame id="2:2335" name="nav-tab-Questions" x="174" y="0" width="106" height="35">
+            <text id="2:2336" name="Questions" x="16" y="8" width="74" height="19" />
+          </frame>
+          <frame id="2:2337" name="nav-tab-Records" x="296" y="0" width="92" height="35">
+            <text id="2:2338" name="Records" x="16" y="8" width="60" height="19" />
+          </frame>
+        </frame>
+        <frame id="2:2339" name="quick-add-btn" x="420" y="0" width="127" height="38">
+          <frame id="2:2427" name="plus" x="20" y="12" width="14" height="14" />
+          <text id="2:2341" name="+ 문제 추가" x="40" y="10" width="67" height="18" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="2:2342" name="setup-body" x="0" y="72" width="1280" height="599">
+      <frame id="2:2343" name="setup-card" x="340" y="60" width="600" height="479">
+        <frame id="2:2344" name="setup-header" x="40" y="40" width="520" height="69">
+          <text id="2:2345" name="⚙️ 학습 게임 세팅" x="177" y="0" width="166" height="28" />
+          <frame id="2:2346" name="selected-theme-badge" x="154" y="40" width="212" height="29">
+            <frame id="2:2409" name="tag" x="16" y="7.5" width="14" height="14" />
+            <text id="2:2348" name="선택된 테마: CS 전공지식 / IT" x="36" y="6" width="160" height="17" />
+          </frame>
+        </frame>
+        <frame id="2:2349" name="setup-section-type" x="40" y="141" width="520" height="112">
+          <text id="2:2350" name="📝 문제 유형" x="0" y="0" width="75" height="18" />
+          <frame id="2:2351" name="type-pills-container" x="0" y="30" width="520" height="82">
+            <frame id="2:2352" name="type-pill-0" x="0" y="0" width="83" height="37">
+              <text id="2:2353" name="전체 랜덤" x="16" y="10" width="51" height="17" />
+            </frame>
+            <frame id="2:2354" name="type-pill-1" x="91" y="0" width="83" height="37">
+              <text id="2:2355" name="빈칸 블록" x="16" y="10" width="51" height="17" />
+            </frame>
+            <frame id="2:2356" name="type-pill-2" x="182" y="0" width="91" height="37">
+              <text id="2:2357" name="정의→용어" x="16" y="10" width="59" height="17" />
+            </frame>
+            <frame id="2:2358" name="type-pill-3" x="281" y="0" width="91" height="37">
+              <text id="2:2359" name="용어→정의" x="16" y="10" width="59" height="17" />
+            </frame>
+            <frame id="2:2360" name="type-pill-4" x="380" y="0" width="83" height="37">
+              <text id="2:2361" name="정답 입력" x="16" y="10" width="51" height="17" />
+            </frame>
+            <frame id="2:2362" name="type-pill-5" x="0" y="45" width="68" height="37">
+              <text id="2:2363" name="객관식" x="16" y="10" width="36" height="17" />
+            </frame>
+            <frame id="2:2364" name="type-pill-6" x="76" y="45" width="68" height="37">
+              <text id="2:2365" name="서술형" x="16" y="10" width="36" height="17" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="2:2366" name="setup-section-time" x="40" y="285" width="520" height="67">
+          <text id="2:2367" name="⏱️ 제한 시간" x="0" y="0" width="75" height="18" />
+          <frame id="2:2368" name="time-pills-container" x="0" y="30" width="520" height="37">
+            <frame id="2:2369" name="time-pill-0" x="0" y="0" width="124" height="37">
+              <text id="2:2370" name="1분" x="52" y="10" width="20" height="17" />
+            </frame>
+            <frame id="2:2371" name="time-pill-1" x="132" y="0" width="124" height="37">
+              <text id="2:2372" name="3분" x="52" y="10" width="20" height="17" />
+            </frame>
+            <frame id="2:2373" name="time-pill-2" x="264" y="0" width="124" height="37">
+              <text id="2:2374" name="5분" x="52" y="10" width="20" height="17" />
+            </frame>
+            <frame id="2:2375" name="time-pill-3" x="396" y="0" width="124" height="37">
+              <text id="2:2376" name="10분" x="48" y="10" width="28" height="17" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="2:2377" name="setup-start-btn" x="40" y="384" width="520" height="55">
+          <text id="2:2378" name="🏁 START GAME" x="187.5" y="16" width="145" height="23" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2:2380" name="game-typing" x="4080" y="1090" width="1280" height="800">
+    <frame id="9:24" name="typing-test-top-bar" x="0" y="0" width="1280" height="88">
+      <frame id="9:25" name="game-theme-badge" x="40" y="29.5" width="173" height="29">
+        <frame id="9:26" name="circle-x" x="16" y="7.5" width="14" height="14" />
+        <text id="9:28" name="테마: CS 전공지식 / IT" x="36" y="6" width="121" height="17" />
+      </frame>
+      <frame id="9:29" name="countdown-timer" x="555" y="5" width="128" height="78">
+        <frame id="9:30" name="timer" x="56" y="10" width="16" height="16" />
+        <text id="9:32" name="02:47" x="20" y="28" width="88" height="40" />
+      </frame>
+      <frame id="9:33" name="compact-stats" x="1025" y="29.5" width="215" height="29">
+        <frame id="9:34" name="Frame" x="0" y="0" width="81" height="29">
+          <text id="9:35" name="푼 문제 12" x="12" y="6" width="57" height="17" />
+        </frame>
+        <frame id="9:36" name="Frame" x="89" y="0" width="59" height="29">
+          <text id="9:37" name="정답 9" x="12" y="6" width="35" height="17" />
+        </frame>
+        <frame id="9:38" name="Frame" x="156" y="0" width="59" height="29">
+          <text id="9:39" name="오답 3" x="12" y="6" width="35" height="17" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="9:40" name="typing-test-workspace" x="0" y="88" width="1280" height="504">
+      <frame id="9:41" name="question-container" x="180" y="48" width="920" height="240">
+        <text id="9:42" name="Q. 다음 정의에 해당하는 IT 컴퓨터 용어를 타이핑하시오." x="289.5" y="40" width="341" height="18" />
+        <text id="9:43" name="&quot;컴퓨터 시스템의 자원을 효율적으로 관리하며, 사용자가 컴퓨터를 편리하고 효과적으로 사용할 수 있도록 환경을 제공하는 인터페이스 프로그램 세트&quot;" x="40" y="74" width="840" height="126" />
+      </frame>
+      <frame id="9:44" name="input-row" x="180" y="312" width="920" height="72">
+        <frame id="9:45" name="typing-input-field" x="0" y="0" width="818" height="72">
+          <text id="9:46" name="정답을 여기에 입력하세요 (예: Operating System)..." x="24" y="24.5" width="770" height="23" />
+        </frame>
+        <frame id="9:47" name="submit-btn" x="830" y="0" width="90" height="72">
+          <text id="9:48" name="제출" x="28" y="24.5" width="34" height="23" />
+        </frame>
+      </frame>
+      <frame id="9:49" name="feedback-area" x="180" y="408" width="920" height="48">
+        <frame id="9:50" name="feedback-badge" x="24" y="12" width="24" height="24">
+          <text id="9:51" name="✓" x="6" y="3" width="12" height="18" />
+        </frame>
+        <text id="9:52" name="정답입니다! 다음 문제로 자동 전환됩니다." x="56" y="15" width="240" height="18" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2:2484" name="result-screen" x="0" y="2038" width="1280" height="1000">
+    <frame id="2:2485" name="top-nav" x="0" y="0" width="1280" height="72">
+      <frame id="2:2486" name="logo" x="40" y="18" width="175" height="36">
+        <frame id="2:2487" name="logo-icon" x="0" y="0" width="36" height="36">
+          <text id="2:2488" name="A" x="11" y="5.5" width="14" height="25" />
+        </frame>
+        <text id="2:2489" name="AnkiTyping" x="44" y="4" width="131" height="28" />
+      </frame>
+      <frame id="2:2490" name="nav-right" x="693" y="17" width="547" height="38">
+        <frame id="2:2491" name="nav-links" x="0" y="1.5" width="388" height="35">
+          <frame id="2:2492" name="nav-tab-Home" x="0" y="0" width="76" height="35">
+            <text id="2:2493" name="Home" x="16" y="8" width="44" height="19" />
+          </frame>
+          <frame id="2:2494" name="nav-tab-Play" x="92" y="0" width="66" height="35">
+            <text id="2:2495" name="Play" x="16" y="8" width="34" height="19" />
+          </frame>
+          <frame id="2:2496" name="nav-tab-Questions" x="174" y="0" width="106" height="35">
+            <text id="2:2497" name="Questions" x="16" y="8" width="74" height="19" />
+          </frame>
+          <frame id="2:2498" name="nav-tab-Records" x="296" y="0" width="92" height="35">
+            <text id="2:2499" name="Records" x="16" y="8" width="60" height="19" />
+          </frame>
+        </frame>
+        <frame id="2:2500" name="quick-add-btn" x="420" y="0" width="127" height="38">
+          <frame id="2:2501" name="plus" x="20" y="12" width="14" height="14" />
+          <text id="2:2503" name="+ 문제 추가" x="40" y="10" width="67" height="18" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="2:2504" name="body" x="0" y="72" width="1280" height="756">
+      <frame id="2:2505" name="result-summary-header" x="40" y="40" width="1200" height="120">
+        <frame id="2:2506" name="Frame" x="24" y="24" width="315" height="72">
+          <frame id="2:2507" name="Frame" x="0" y="0" width="274" height="29">
+            <frame id="2:2508" name="theme-badge" x="0" y="0" width="153" height="29">
+              <text id="2:2509" name="테마: CS 전공지식 / IT" x="16" y="6" width="121" height="17" />
+            </frame>
+            <frame id="2:2510" name="type-badge" x="161" y="0" width="113" height="29">
+              <text id="2:2511" name="유형: 전체 랜덤" x="16" y="6" width="81" height="17" />
+            </frame>
+          </frame>
+          <text id="2:2512" name="학습이 완료되었습니다! 🎉" x="0" y="37" width="315" height="35" />
+        </frame>
+        <frame id="2:2513" name="time-badge" x="999" y="34" width="177" height="52">
+          <text id="2:2514" name="제한시간: 3분" x="24" y="12" width="129" height="28" />
+        </frame>
+      </frame>
+      <frame id="2:2515" name="stats-row" x="40" y="192" width="1200" height="88">
+        <frame id="2:2516" name="stat-푼 문제" x="0" y="0" width="288" height="88">
+          <frame id="2:2517" name="icon-box" x="20" y="20" width="48" height="48">
+            <frame id="2:2518" name="icon" x="13" y="13" width="22" height="22" />
+          </frame>
+          <frame id="2:2520" name="info" x="84" y="20" width="184" height="48">
+            <text id="2:2521" name="푼 문제" x="0" y="0" width="184" height="18" />
+            <text id="2:2522" name="15개" x="0" y="20" width="184" height="28" />
+          </frame>
+        </frame>
+        <frame id="2:2523" name="stat-정답" x="304" y="0" width="288" height="88">
+          <frame id="2:2524" name="icon-box" x="20" y="20" width="48" height="48">
+            <frame id="2:2525" name="icon" x="13" y="13" width="22" height="22" />
+          </frame>
+          <frame id="2:2527" name="info" x="84" y="20" width="184" height="48">
+            <text id="2:2528" name="정답" x="0" y="0" width="184" height="18" />
+            <text id="2:2529" name="12개" x="0" y="20" width="184" height="28" />
+          </frame>
+        </frame>
+        <frame id="2:2530" name="stat-오답" x="608" y="0" width="288" height="88">
+          <frame id="2:2531" name="icon-box" x="20" y="20" width="48" height="48">
+            <frame id="2:2532" name="icon" x="13" y="13" width="22" height="22" />
+          </frame>
+          <frame id="2:2534" name="info" x="84" y="20" width="184" height="48">
+            <text id="2:2535" name="오답" x="0" y="0" width="184" height="18" />
+            <text id="2:2536" name="3개" x="0" y="20" width="184" height="28" />
+          </frame>
+        </frame>
+        <frame id="2:2537" name="stat-정확도" x="912" y="0" width="288" height="88">
+          <frame id="2:2538" name="icon-box" x="20" y="20" width="48" height="48">
+            <frame id="2:2539" name="icon" x="13" y="13" width="22" height="22" />
+          </frame>
+          <frame id="2:2541" name="info" x="84" y="20" width="184" height="48">
+            <text id="2:2542" name="정확도" x="0" y="0" width="184" height="18" />
+            <text id="2:2543" name="80%" x="0" y="20" width="184" height="28" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:2544" name="incorrect-answers-section" x="40" y="312" width="1200" height="324">
+        <text id="2:2545" name="❌ 오답 노트 및 피드백 목록" x="24" y="24" width="214" height="23" />
+        <frame id="2:2546" name="incorrect-table" x="24" y="63" width="1152" height="237">
+          <frame id="2:2547" name="table-header" x="0" y="0" width="1152" height="42">
+            <text id="2:2548" name="문제" x="12" y="12" width="696" height="18" />
+            <text id="2:2549" name="내가 입력한 답" x="724" y="12" width="200" height="18" />
+            <text id="2:2550" name="실제 정답" x="940" y="12" width="200" height="18" />
+          </frame>
+          <frame id="2:2551" name="row-0" x="0" y="50" width="1152" height="57">
+            <text id="2:2552" name="컴퓨터 시스템의 자원을 효율적으로 관리하는 핵심 인터페이스 프로그램..." x="16" y="19.5" width="688" height="18" />
+            <frame id="2:2553" name="wrong-badge" x="720" y="16" width="200" height="25">
+              <text id="2:2554" name="CPU" x="12" y="4" width="176" height="17" />
+            </frame>
+            <frame id="2:2555" name="correct-badge" x="936" y="16" width="200" height="25">
+              <text id="2:2556" name="Operating System" x="12" y="4" width="176" height="17" />
+            </frame>
+          </frame>
+          <frame id="2:2557" name="row-1" x="0" y="115" width="1152" height="57">
+            <text id="2:2558" name="데이터를 테이블 형태로 저장하여 관리하는 데이터베이스 시스템 종류는?" x="16" y="19.5" width="688" height="18" />
+            <frame id="2:2559" name="wrong-badge" x="720" y="16" width="200" height="25">
+              <text id="2:2560" name="NoSQL" x="12" y="4" width="176" height="17" />
+            </frame>
+            <frame id="2:2561" name="correct-badge" x="936" y="16" width="200" height="25">
+              <text id="2:2562" name="RDBMS" x="12" y="4" width="176" height="17" />
+            </frame>
+          </frame>
+          <frame id="2:2563" name="row-2" x="0" y="180" width="1152" height="57">
+            <text id="2:2564" name="객체 지향 프로그래밍의 4대 특징 중 하나로, 외부로부터 정보를 숨기는 것..." x="16" y="19.5" width="688" height="18" />
+            <frame id="2:2565" name="wrong-badge" x="720" y="16" width="200" height="25">
+              <text id="2:2566" name="Inheritance" x="12" y="4" width="176" height="17" />
+            </frame>
+            <frame id="2:2567" name="correct-badge" x="936" y="16" width="200" height="25">
+              <text id="2:2568" name="Encapsulation" x="12" y="4" width="176" height="17" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:2569" name="bottom-actions" x="40" y="668" width="1200" height="48">
+        <frame id="2:2570" name="cta-retry" x="252.5" y="0" width="220" height="48">
+          <text id="2:2571" name="같은 설정으로 다시 시작" x="28" y="14" width="164" height="20" />
+        </frame>
+        <frame id="2:2572" name="cta-retry-wrong" x="488.5" y="0" width="170" height="48">
+          <text id="2:2573" name="오답만 다시 풀기" x="28" y="14" width="114" height="20" />
+        </frame>
+        <frame id="2:2574" name="cta-other-theme" x="674.5" y="0" width="156" height="48">
+          <text id="2:2575" name="다른 테마 선택" x="28" y="14" width="100" height="20" />
+        </frame>
+        <frame id="2:2576" name="cta-home" x="846.5" y="0" width="101" height="48">
+          <text id="2:2577" name="홈으로" x="28" y="14" width="45" height="20" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2:2579" name="question-management" x="1360" y="2038" width="1280" height="1000">
+    <frame id="2:2580" name="top-nav" x="0" y="0" width="1280" height="72">
+      <frame id="2:2581" name="logo" x="40" y="18" width="175" height="36">
+        <frame id="2:2582" name="logo-icon" x="0" y="0" width="36" height="36">
+          <text id="2:2583" name="A" x="11" y="5.5" width="14" height="25" />
+        </frame>
+        <text id="2:2584" name="AnkiTyping" x="44" y="4" width="131" height="28" />
+      </frame>
+      <frame id="2:2585" name="nav-right" x="693" y="17" width="547" height="38">
+        <frame id="2:2586" name="nav-links" x="0" y="1.5" width="388" height="35">
+          <frame id="2:2587" name="nav-tab-Home" x="0" y="0" width="76" height="35">
+            <text id="2:2588" name="Home" x="16" y="8" width="44" height="19" />
+          </frame>
+          <frame id="2:2589" name="nav-tab-Play" x="92" y="0" width="64" height="35">
+            <text id="2:2590" name="Play" x="16" y="8" width="32" height="19" />
+          </frame>
+          <frame id="2:2591" name="nav-tab-Questions" x="172" y="0" width="108" height="35">
+            <text id="2:2592" name="Questions" x="16" y="8" width="76" height="19" />
+          </frame>
+          <frame id="2:2593" name="nav-tab-Records" x="296" y="0" width="92" height="35">
+            <text id="2:2594" name="Records" x="16" y="8" width="60" height="19" />
+          </frame>
+        </frame>
+        <frame id="2:2595" name="quick-add-btn" x="420" y="0" width="127" height="38">
+          <frame id="2:2596" name="plus" x="20" y="12" width="14" height="14" />
+          <text id="2:2598" name="+ 문제 추가" x="40" y="10" width="67" height="18" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="2:2599" name="body" x="0" y="72" width="1280" height="928">
+      <frame id="2:2600" name="left-column" x="40" y="40" width="728" height="736">
+        <frame id="2:2601" name="filter-box" x="0" y="0" width="728" height="135">
+          <text id="2:2602" name="🔍 문제 필터링 및 검색" x="24" y="24" width="175" height="23" />
+          <frame id="2:2603" name="search-row" x="24" y="63" width="680" height="48">
+            <frame id="2:2604" name="search-input" x="0" y="0" width="155" height="48">
+              <text id="2:2605" name="문제 키워드 또는 본문 내용을 입력하세요..." x="16" y="-3" width="123" height="54" />
+            </frame>
+            <frame id="2:2606" name="filter-theme" x="167" y="0" width="107" height="48">
+              <text id="2:2607" name="전체 테마" x="16" y="15" width="55" height="18" />
+              <frame id="2:2608" name="arrow" x="79" y="18" width="12" height="12">
+                <frame id="2:2870" name="chevron-down" x="0" y="0" width="12" height="12" />
+              </frame>
+            </frame>
+            <frame id="2:2610" name="filter-type" x="286" y="0" width="394" height="48">
+              <text id="2:2611" name="빈칸 블록, 정의→용어, 용어→정의, 정답입력, 객관식, 서술형" x="16" y="15" width="342" height="18" />
+              <frame id="2:2612" name="arrow" x="366" y="18" width="12" height="12">
+                <frame id="2:2873" name="chevron-down" x="0" y="0" width="12" height="12" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+        <frame id="2:2614" name="list-header-row" x="0" y="159" width="728" height="20">
+          <text id="2:2615" name="📂 총 142개의 문제가 등록되어 있습니다" x="0" y="0" width="278" height="20" />
+        </frame>
+        <frame id="2:2616" name="question-list" x="0" y="203" width="728" height="464">
+          <frame id="2:2617" name="q-item-0" x="0" y="0" width="728" height="107">
+            <frame id="2:2618" name="item-info" x="16" y="16" width="600" height="75">
+              <frame id="2:2619" name="badges-row" x="0" y="0" width="156" height="22">
+                <frame id="2:2620" name="Frame" x="0" y="0" width="83" height="22">
+                  <text id="2:2621" name="CS 전공지식" x="10" y="3" width="63" height="16" />
+                </frame>
+                <frame id="2:2622" name="Frame" x="89" y="0" width="67" height="22">
+                  <text id="2:2623" name="정답 입력" x="10" y="3" width="47" height="16" />
+                </frame>
+              </frame>
+              <text id="2:2624" name="컴퓨터 시스템의 자원을 효율적으로 관리하는 프로그램 인터페이스 세트는?" x="0" y="30" width="600" height="20" />
+              <text id="2:2625" name="정답: Operating System" x="0" y="58" width="600" height="17" />
+            </frame>
+            <frame id="2:2626" name="actions" x="632" y="35.5" width="80" height="36">
+              <frame id="2:2627" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="2:2628" name="edit" x="10" y="10" width="16" height="16">
+                  <frame id="2:2876" name="pencil" x="0" y="0" width="16" height="16" />
+                </frame>
+              </frame>
+              <frame id="2:2630" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="2:2631" name="delete" x="10" y="10" width="16" height="16">
+                  <frame id="2:2879" name="trash" x="0" y="0" width="16" height="16" />
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+          <frame id="2:2633" name="q-item-1" x="0" y="119" width="728" height="107">
+            <frame id="2:2634" name="item-info" x="16" y="16" width="600" height="75">
+              <frame id="2:2635" name="badges-row" x="0" y="0" width="173" height="22">
+                <frame id="2:2636" name="Frame" x="0" y="0" width="113" height="22">
+                  <text id="2:2637" name="SQL 데이터베이스" x="10" y="3" width="93" height="16" />
+                </frame>
+                <frame id="2:2638" name="Frame" x="119" y="0" width="54" height="22">
+                  <text id="2:2639" name="객관식" x="10" y="3" width="34" height="16" />
+                </frame>
+              </frame>
+              <text id="2:2640" name="SQL 명령어 중 테이블의 스키마 구조를 변경하기 위해 사용되는 DDL 문은 무엇인가?" x="0" y="30" width="600" height="20" />
+              <text id="2:2641" name="정답: ALTER TABLE" x="0" y="58" width="600" height="17" />
+            </frame>
+            <frame id="2:2642" name="actions" x="632" y="35.5" width="80" height="36">
+              <frame id="2:2643" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="2:2644" name="edit" x="10" y="10" width="16" height="16">
+                  <frame id="2:2882" name="pencil" x="0" y="0" width="16" height="16" />
+                </frame>
+              </frame>
+              <frame id="2:2646" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="2:2647" name="delete" x="10" y="10" width="16" height="16">
+                  <frame id="2:2885" name="trash" x="0" y="0" width="16" height="16" />
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+          <frame id="2:2649" name="q-item-2" x="0" y="238" width="728" height="107">
+            <frame id="2:2650" name="item-info" x="16" y="16" width="600" height="75">
+              <frame id="2:2651" name="badges-row" x="0" y="0" width="157" height="22">
+                <frame id="2:2652" name="Frame" x="0" y="0" width="84" height="22">
+                  <text id="2:2653" name="Python 기초" x="10" y="3" width="64" height="16" />
+                </frame>
+                <frame id="2:2654" name="Frame" x="90" y="0" width="67" height="22">
+                  <text id="2:2655" name="빈칸 블록" x="10" y="3" width="47" height="16" />
+                </frame>
+              </frame>
+              <text id="2:2656" name="리스트에 요소를 맨 마지막 인덱스 뒤에 추가할 때 사용하는 내장 메소드는 ( ) 이다." x="0" y="30" width="600" height="20" />
+              <text id="2:2657" name="정답: append" x="0" y="58" width="600" height="17" />
+            </frame>
+            <frame id="2:2658" name="actions" x="632" y="35.5" width="80" height="36">
+              <frame id="2:2659" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="2:2660" name="edit" x="10" y="10" width="16" height="16">
+                  <frame id="2:2888" name="pencil" x="0" y="0" width="16" height="16" />
+                </frame>
+              </frame>
+              <frame id="2:2662" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="2:2663" name="delete" x="10" y="10" width="16" height="16">
+                  <frame id="2:2891" name="trash" x="0" y="0" width="16" height="16" />
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+          <frame id="2:2665" name="q-item-3" x="0" y="357" width="728" height="107">
+            <frame id="2:2666" name="item-info" x="16" y="16" width="600" height="75">
+              <frame id="2:2667" name="badges-row" x="0" y="0" width="143" height="22">
+                <frame id="2:2668" name="Frame" x="0" y="0" width="83" height="22">
+                  <text id="2:2669" name="CS 전공지식" x="10" y="3" width="63" height="16" />
+                </frame>
+                <frame id="2:2670" name="Frame" x="89" y="0" width="54" height="22">
+                  <text id="2:2671" name="서술형" x="10" y="3" width="34" height="16" />
+                </frame>
+              </frame>
+              <text id="2:2672" name="프로세스와 스레드의 결정적인 자원 관리 측면에서의 차이점을 서술하시오." x="0" y="30" width="600" height="20" />
+              <text id="2:2673" name="정답: 메모리 공유 구조" x="0" y="58" width="600" height="17" />
+            </frame>
+            <frame id="2:2674" name="actions" x="632" y="35.5" width="80" height="36">
+              <frame id="2:2675" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="2:2676" name="edit" x="10" y="10" width="16" height="16">
+                  <frame id="2:2894" name="pencil" x="0" y="0" width="16" height="16" />
+                </frame>
+              </frame>
+              <frame id="2:2678" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="2:2679" name="delete" x="10" y="10" width="16" height="16">
+                  <frame id="2:2897" name="trash" x="0" y="0" width="16" height="16" />
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+        <frame id="2:2681" name="pagination" x="0" y="691" width="728" height="45">
+          <frame id="2:2682" name="page-prev" x="212" y="12" width="48" height="33">
+            <text id="2:2683" name="이전" x="12" y="8" width="24" height="17" />
+          </frame>
+          <frame id="2:2684" name="page-1" x="268" y="12" width="32" height="33">
+            <text id="2:2685" name="1" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="2:2686" name="page-2" x="308" y="12" width="32" height="33">
+            <text id="2:2687" name="2" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="2:2688" name="page-3" x="348" y="12" width="32" height="33">
+            <text id="2:2689" name="3" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="2:2690" name="page-4" x="388" y="12" width="32" height="33">
+            <text id="2:2691" name="4" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="2:2692" name="page-5" x="428" y="12" width="32" height="33">
+            <text id="2:2693" name="5" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="2:2694" name="page-next" x="468" y="12" width="48" height="33">
+            <text id="2:2695" name="다음" x="12" y="8" width="24" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:2696" name="right-column-form" x="800" y="40" width="440" height="737">
+        <frame id="2:2697" name="form-header" x="32" y="32" width="376" height="48">
+          <text id="2:2698" name="📝 문제 추가 폼" x="0" y="0" width="133" height="25" />
+          <text id="2:2699" name="학습 데이터를 간편하게 추가하고 커스텀 퀴즈에 반영하세요." x="0" y="31" width="323" height="17" />
+        </frame>
+        <frame id="2:2700" name="Frame" x="32" y="104" width="376" height="68">
+          <text id="2:2701" name="선택 테마 *" x="0" y="0" width="63" height="16" />
+          <frame id="2:2702" name="form-dropdown" x="0" y="24" width="376" height="44">
+            <text id="2:2703" name="CS 전공지식 / IT" x="16" y="13" width="98" height="18" />
+            <frame id="2:2704" name="arrow" x="348" y="16" width="12" height="12">
+              <frame id="2:2900" name="chevron-down" x="0" y="0" width="12" height="12" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="2:2706" name="Frame" x="32" y="196" width="376" height="68">
+          <text id="2:2707" name="문제유형 *" x="0" y="0" width="59" height="16" />
+          <frame id="2:2708" name="form-dropdown" x="0" y="24" width="376" height="44">
+            <text id="2:2709" name="정의→용어 (폼이 유형에 따라 동적으로 변경됩니다)" x="16" y="13" width="332" height="18" />
+            <frame id="2:2710" name="arrow" x="348" y="16" width="12" height="12">
+              <frame id="2:2903" name="chevron-down" x="0" y="0" width="12" height="12" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="2:2712" name="Frame" x="32" y="288" width="376" height="124">
+          <text id="2:2713" name="질문 / 암기할 내용 *" x="0" y="0" width="116" height="16" />
+          <frame id="2:2714" name="form-textarea" x="0" y="24" width="376" height="100">
+            <text id="2:2715" name="암기 카드의 앞면에 표시될 질문 내용을 구체적으로 입력하세요..." x="12" y="12" width="352" height="36" />
+          </frame>
+        </frame>
+        <frame id="2:2716" name="Frame" x="32" y="436" width="376" height="68">
+          <text id="2:2717" name="정답 *" x="0" y="0" width="35" height="16" />
+          <frame id="2:2718" name="form-input" x="0" y="24" width="376" height="44">
+            <text id="2:2719" name="타이핑 테스트의 정답이 될 정확한 텍스트 입력" x="16" y="13" width="344" height="18" />
+          </frame>
+        </frame>
+        <frame id="2:2720" name="form-tip" x="32" y="528" width="376" height="41">
+          <text id="2:2721" name="💡 유형 선택에 따라 입력 필드가 변경됩니다." x="12" y="12" width="352" height="17" />
+        </frame>
+        <frame id="9:79" name="form-note" x="32" y="593" width="376" height="41">
+          <text id="9:80" name="유형에 따라 입력 필드가 변경됩니다" x="12" y="12" width="352" height="17" />
+        </frame>
+        <frame id="2:2722" name="btn-add" x="32" y="658" width="376" height="47">
+          <text id="2:2723" name="+ 신규 문제 저장" x="134.5" y="14" width="107" height="19" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2:2725" name="records-history" x="2720" y="2038" width="1280" height="1042">
+    <frame id="2:2726" name="top-nav" x="0" y="0" width="1280" height="72">
+      <frame id="2:2727" name="logo" x="40" y="18" width="175" height="36">
+        <frame id="2:2728" name="logo-icon" x="0" y="0" width="36" height="36">
+          <text id="2:2729" name="A" x="11" y="5.5" width="14" height="25" />
+        </frame>
+        <text id="2:2730" name="AnkiTyping" x="44" y="4" width="131" height="28" />
+      </frame>
+      <frame id="2:2731" name="nav-right" x="694" y="17" width="546" height="38">
+        <frame id="2:2732" name="nav-links" x="0" y="1.5" width="387" height="35">
+          <frame id="2:2733" name="nav-tab-Home" x="0" y="0" width="76" height="35">
+            <text id="2:2734" name="Home" x="16" y="8" width="44" height="19" />
+          </frame>
+          <frame id="2:2735" name="nav-tab-Play" x="92" y="0" width="64" height="35">
+            <text id="2:2736" name="Play" x="16" y="8" width="32" height="19" />
+          </frame>
+          <frame id="2:2737" name="nav-tab-Questions" x="172" y="0" width="106" height="35">
+            <text id="2:2738" name="Questions" x="16" y="8" width="74" height="19" />
+          </frame>
+          <frame id="2:2739" name="nav-tab-Records" x="294" y="0" width="93" height="35">
+            <text id="2:2740" name="Records" x="16" y="8" width="61" height="19" />
+          </frame>
+        </frame>
+        <frame id="2:2741" name="quick-add-btn" x="419" y="0" width="127" height="38">
+          <frame id="2:2742" name="plus" x="20" y="12" width="14" height="14" />
+          <text id="2:2744" name="+ 문제 추가" x="40" y="10" width="67" height="18" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="2:2745" name="body" x="0" y="72" width="1280" height="970">
+      <frame id="2:2746" name="title-bar" x="40" y="40" width="1200" height="54">
+        <frame id="2:2747" name="title-group" x="0" y="0" width="338" height="54">
+          <text id="2:2748" name="📈 학습 대시보드 및 통계" x="0" y="0" width="256" height="30" />
+          <text id="2:2749" name="누적된 데이터 통계와 최근 게임 기록을 한눈에 살펴보세요." x="0" y="36" width="338" height="18" />
+        </frame>
+        <frame id="2:2750" name="period-tabs" x="981" y="4.5" width="219" height="45">
+          <frame id="2:2751" name="pill-0" x="6" y="6" width="56" height="33">
+            <text id="2:2752" name="오늘" x="16" y="8" width="24" height="17" />
+          </frame>
+          <frame id="2:2753" name="pill-1" x="70" y="6" width="79" height="33">
+            <text id="2:2754" name="최근 7일" x="16" y="8" width="47" height="17" />
+          </frame>
+          <frame id="2:2755" name="pill-2" x="157" y="6" width="56" height="33">
+            <text id="2:2756" name="전체" x="16" y="8" width="24" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:2757" name="overview-stats-row" x="40" y="126" width="1200" height="88">
+        <frame id="2:2758" name="stat-학습시간" x="0" y="0" width="389.3333435058594" height="88">
+          <frame id="2:2759" name="icon-box" x="20" y="20" width="48" height="48">
+            <frame id="2:2760" name="icon" x="13" y="13" width="22" height="22" />
+          </frame>
+          <frame id="2:2762" name="info" x="84" y="20" width="285.3333435058594" height="48">
+            <text id="2:2763" name="학습시간" x="0" y="0" width="285.3333435058594" height="18" />
+            <text id="2:2764" name="14시간 25분" x="0" y="20" width="285.3333435058594" height="28" />
+          </frame>
+        </frame>
+        <frame id="2:2765" name="stat-풀이 문제 수" x="405.3333435058594" y="0" width="389.33331298828125" height="88">
+          <frame id="2:2766" name="icon-box" x="20" y="20" width="48" height="48">
+            <frame id="2:2767" name="icon" x="13" y="13" width="22" height="22" />
+          </frame>
+          <frame id="2:2769" name="info" x="84" y="20" width="285.33331298828125" height="48">
+            <text id="2:2770" name="풀이 문제 수" x="0" y="0" width="285.33331298828125" height="18" />
+            <text id="2:2771" name="840개" x="0" y="20" width="285.33331298828125" height="28" />
+          </frame>
+        </frame>
+        <frame id="2:2772" name="stat-정확도" x="810.6666259765625" y="0" width="389.33331298828125" height="88">
+          <frame id="2:2773" name="icon-box" x="20" y="20" width="48" height="48">
+            <frame id="2:2774" name="icon" x="13" y="13" width="22" height="22" />
+          </frame>
+          <frame id="2:2776" name="info" x="84" y="20" width="285.33331298828125" height="48">
+            <text id="2:2777" name="정확도" x="0" y="0" width="285.33331298828125" height="18" />
+            <text id="2:2778" name="88.4%" x="0" y="20" width="285.33331298828125" height="28" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:2779" name="theme-progress-section" x="40" y="246" width="1200" height="299">
+        <text id="2:2780" name="📊 테마별 학습 현황" x="24" y="24" width="153" height="23" />
+        <frame id="2:2781" name="progress-bars-container" x="24" y="67" width="1152" height="208">
+          <frame id="2:2782" name="prog-0" x="0" y="0" width="1152" height="40">
+            <frame id="2:2783" name="prog-meta" x="0" y="0" width="1152" height="18">
+              <frame id="2:2784" name="Frame" x="0" y="0" width="159" height="18">
+                <text id="2:2785" name="CS 전공지식 / IT" x="0" y="0" width="98" height="18" />
+                <text id="2:2786" name="(320문제)" x="106" y="1" width="53" height="16" />
+              </frame>
+              <text id="2:2787" name="92%" x="1121" y="0" width="31" height="18" />
+            </frame>
+            <frame id="2:2788" name="prog-track" x="0" y="24" width="1152" height="16">
+              <rounded-rectangle id="2:2789" name="prog-fill" x="0" y="0" width="800" height="16" />
+            </frame>
+          </frame>
+          <frame id="2:2790" name="prog-1" x="0" y="56" width="1152" height="40">
+            <frame id="2:2791" name="prog-meta" x="0" y="0" width="1152" height="18">
+              <frame id="2:2792" name="Frame" x="0" y="0" width="169" height="18">
+                <text id="2:2793" name="SQL 데이터베이스" x="0" y="0" width="108" height="18" />
+                <text id="2:2794" name="(210문제)" x="116" y="1" width="53" height="16" />
+              </frame>
+              <text id="2:2795" name="85%" x="1120" y="0" width="32" height="18" />
+            </frame>
+            <frame id="2:2796" name="prog-track" x="0" y="24" width="1152" height="16">
+              <rounded-rectangle id="2:2797" name="prog-fill" x="0" y="0" width="525" height="16" />
+            </frame>
+          </frame>
+          <frame id="2:2798" name="prog-2" x="0" y="112" width="1152" height="40">
+            <frame id="2:2799" name="prog-meta" x="0" y="0" width="1152" height="18">
+              <frame id="2:2800" name="Frame" x="0" y="0" width="164" height="18">
+                <text id="2:2801" name="Python 기초 문법" x="0" y="0" width="103" height="18" />
+                <text id="2:2802" name="(180문제)" x="111" y="1" width="53" height="16" />
+              </frame>
+              <text id="2:2803" name="89%" x="1120" y="0" width="32" height="18" />
+            </frame>
+            <frame id="2:2804" name="prog-track" x="0" y="24" width="1152" height="16">
+              <rounded-rectangle id="2:2805" name="prog-fill" x="0" y="0" width="450" height="16" />
+            </frame>
+          </frame>
+          <frame id="2:2806" name="prog-3" x="0" y="168" width="1152" height="40">
+            <frame id="2:2807" name="prog-meta" x="0" y="0" width="1152" height="18">
+              <frame id="2:2808" name="Frame" x="0" y="0" width="171" height="18">
+                <text id="2:2809" name="비즈니스 영어 회화" x="0" y="0" width="110" height="18" />
+                <text id="2:2810" name="(130문제)" x="118" y="1" width="53" height="16" />
+              </frame>
+              <text id="2:2811" name="74%" x="1120" y="0" width="32" height="18" />
+            </frame>
+            <frame id="2:2812" name="prog-track" x="0" y="24" width="1152" height="16">
+              <rounded-rectangle id="2:2813" name="prog-fill" x="0" y="0" width="325" height="16" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:2814" name="recent-games-log-section" x="40" y="577" width="1200" height="353">
+        <text id="2:2815" name="🕒 최근 플레이한 퀴즈 게임 기록" x="24" y="24" width="248" height="23" />
+        <frame id="2:2816" name="records-table" x="24" y="63" width="1152" height="266">
+          <frame id="2:2817" name="table-header" x="0" y="0" width="1152" height="42">
+            <text id="2:2818" name="날짜" x="12" y="12" width="120" height="18" />
+            <text id="2:2819" name="테마" x="148" y="12" width="296" height="18" />
+            <text id="2:2820" name="유형" x="460" y="12" width="100" height="18" />
+            <text id="2:2821" name="시간" x="576" y="12" width="100" height="18" />
+            <text id="2:2822" name="문제수" x="692" y="12" width="100" height="18" />
+            <text id="2:2823" name="정답" x="808" y="12" width="100" height="18" />
+            <text id="2:2824" name="정확도" x="924" y="12" width="100" height="18" />
+            <text id="9:55" name="상세보기" x="1040" y="12" width="100" height="18" />
+          </frame>
+          <frame id="2:2825" name="row-0" x="0" y="50" width="1152" height="48">
+            <text id="2:2826" name="2026.03.24" x="12" y="15" width="120" height="18" />
+            <text id="2:2827" name="Python 기초 문법" x="148" y="15" width="296" height="18" />
+            <frame id="2:2828" name="type-pill" x="460" y="12" width="100" height="24">
+              <text id="2:2829" name="전체 랜덤" x="26.5" y="4" width="47" height="16" />
+            </frame>
+            <text id="2:2830" name="03:00" x="576" y="15" width="100" height="18" />
+            <text id="2:2831" name="15" x="692" y="15" width="100" height="18" />
+            <text id="9:57" name="12" x="808" y="15" width="100" height="18" />
+            <frame id="9:58" name="acc-badge" x="924" y="12" width="100" height="24">
+              <text id="9:59" name="95%" x="35.5" y="4" width="29" height="16" />
+            </frame>
+            <frame id="9:60" name="detail-action" x="1040" y="15.5" width="100" height="17">
+              <text id="9:61" name="상세보기 👉" x="18" y="0" width="64" height="17" />
+            </frame>
+          </frame>
+          <frame id="2:2836" name="row-1" x="0" y="106" width="1152" height="48">
+            <text id="2:2837" name="2026.03.23" x="12" y="15" width="120" height="18" />
+            <text id="2:2838" name="CS 전공지식 / IT" x="148" y="15" width="296" height="18" />
+            <frame id="2:2839" name="type-pill" x="460" y="12" width="100" height="24">
+              <text id="2:2840" name="객관식" x="33" y="4" width="34" height="16" />
+            </frame>
+            <text id="2:2841" name="05:00" x="576" y="15" width="100" height="18" />
+            <text id="2:2842" name="20" x="692" y="15" width="100" height="18" />
+            <text id="9:62" name="18" x="808" y="15" width="100" height="18" />
+            <frame id="9:63" name="acc-badge" x="924" y="12" width="100" height="24">
+              <text id="9:64" name="88%" x="35" y="4" width="30" height="16" />
+            </frame>
+            <frame id="9:65" name="detail-action" x="1040" y="15.5" width="100" height="17">
+              <text id="9:66" name="상세보기 👉" x="18" y="0" width="64" height="17" />
+            </frame>
+          </frame>
+          <frame id="2:2847" name="row-2" x="0" y="162" width="1152" height="48">
+            <text id="2:2848" name="2026.03.22" x="12" y="15" width="120" height="18" />
+            <text id="2:2849" name="금융/핀테크 실무 용어" x="148" y="15" width="296" height="18" />
+            <frame id="2:2850" name="type-pill" x="460" y="12" width="100" height="24">
+              <text id="2:2851" name="정답 입력" x="26.5" y="4" width="47" height="16" />
+            </frame>
+            <text id="2:2852" name="03:00" x="576" y="15" width="100" height="18" />
+            <text id="2:2853" name="10" x="692" y="15" width="100" height="18" />
+            <text id="9:67" name="10" x="808" y="15" width="100" height="18" />
+            <frame id="9:68" name="acc-badge" x="924" y="12" width="100" height="24">
+              <text id="9:69" name="100%" x="30" y="4" width="40" height="16" />
+            </frame>
+            <frame id="9:70" name="detail-action" x="1040" y="15.5" width="100" height="17">
+              <text id="9:71" name="상세보기 👉" x="18" y="0" width="64" height="17" />
+            </frame>
+          </frame>
+          <frame id="2:2858" name="row-3" x="0" y="218" width="1152" height="48">
+            <text id="2:2859" name="2026.03.20" x="12" y="15" width="120" height="18" />
+            <text id="2:2860" name="이커머스 운영 핵심" x="148" y="15" width="296" height="18" />
+            <frame id="2:2861" name="type-pill" x="460" y="12" width="100" height="24">
+              <text id="2:2862" name="서술형 테스트" x="15.5" y="4" width="69" height="16" />
+            </frame>
+            <text id="2:2863" name="10:00" x="576" y="15" width="100" height="18" />
+            <text id="2:2864" name="12" x="692" y="15" width="100" height="18" />
+            <text id="9:72" name="8" x="808" y="15" width="100" height="18" />
+            <frame id="9:73" name="acc-badge" x="924" y="12" width="100" height="24">
+              <text id="9:74" name="72%" x="36" y="4" width="28" height="16" />
+            </frame>
+            <frame id="9:75" name="detail-action" x="1040" y="15.5" width="100" height="17">
+              <text id="9:76" name="상세보기 👉" x="18" y="0" width="64" height="17" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="9:225" name="game-typing-default" x="0" y="3270" width="1280" height="800">
+    <frame id="9:226" name="typing-test-top-bar" x="0" y="0" width="1280" height="88">
+      <frame id="9:227" name="game-theme-badge" x="40" y="29.5" width="215" height="29">
+        <frame id="9:228" name="icon-circle" x="16" y="6.5" width="16" height="16">
+          <text id="9:229" name="A" x="4.5" y="1.5" width="7" height="13" />
+        </frame>
+        <text id="9:230" name="테마: 운영체제 및 시스템 기초" x="40" y="6" width="159" height="17" />
+      </frame>
+      <frame id="9:231" name="countdown-timer" x="596.5" y="16.5" width="149" height="55">
+        <frame id="9:387" name="alarm-clock" x="24" y="19.5" width="16" height="16" />
+        <text id="9:233" name="02:47" x="48" y="10" width="77" height="35" />
+      </frame>
+      <frame id="9:234" name="compact-stats" x="1087" y="27.5" width="153" height="33">
+        <frame id="9:235" name="Frame" x="0" y="0" width="153" height="33">
+          <text id="9:236" name="12문제 · 9정답 · 3오답" x="16" y="8" width="121" height="17" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="9:237" name="workspace" x="0" y="88" width="1280" height="712">
+      <frame id="9:238" name="question-container" x="180" y="64" width="920" height="132">
+        <text id="9:239" name="Q. 다음 질문에 알맞은 올바른 단어를 정답 입력창에 타이핑하세요." x="32" y="32" width="856" height="16" />
+        <text id="9:240" name="&quot;운영체제에서 프로세스 간 자원을 공유하지 않고 독립적으로 실행되는 최소 단위는?&quot;" x="32" y="64" width="856" height="36" />
+      </frame>
+      <frame id="9:241" name="input-row" x="180" y="228" width="920" height="64">
+        <frame id="9:242" name="input-field" x="0" y="0" width="806" height="64">
+          <text id="9:243" name="정답을 여기에 입력하세요..." x="24" y="20.5" width="758" height="23" />
+        </frame>
+        <frame id="9:244" name="submit-btn" x="822" y="0" width="98" height="64">
+          <text id="9:245" name="제출" x="32" y="20.5" width="34" height="23" />
+        </frame>
+      </frame>
+      <frame id="9:246" name="feedback-ready-placeholder" x="180" y="324" width="920" height="48">
+        <text id="9:247" name="정답을 입력하고 [Enter]를 누르거나 [제출] 버튼을 클릭해 진행하세요" x="260" y="15" width="400" height="18" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="9:249" name="game-blank-block" x="1360" y="3270" width="1280" height="800">
+    <frame id="9:250" name="typing-test-top-bar" x="0" y="0" width="1280" height="88">
+      <frame id="9:251" name="game-theme-badge" x="40" y="29.5" width="186" height="29">
+        <frame id="9:252" name="icon-circle" x="16" y="6.5" width="16" height="16">
+          <text id="9:253" name="A" x="4.5" y="1.5" width="7" height="13" />
+        </frame>
+        <text id="9:254" name="테마: SQL 데이터베이스" x="40" y="6" width="130" height="17" />
+      </frame>
+      <frame id="9:255" name="countdown-timer" x="586" y="16.5" width="149" height="55">
+        <frame id="9:390" name="alarm-clock" x="24" y="19.5" width="16" height="16" />
+        <text id="9:257" name="01:52" x="48" y="10" width="77" height="35" />
+      </frame>
+      <frame id="9:258" name="compact-stats" x="1095" y="27.5" width="145" height="33">
+        <frame id="9:259" name="Frame" x="0" y="0" width="145" height="33">
+          <text id="9:260" name="5문제 · 4정답 · 1오답" x="16" y="8" width="113" height="17" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="9:261" name="workspace" x="0" y="88" width="1280" height="712">
+      <frame id="9:262" name="header-meta" x="180" y="48" width="920" height="28">
+        <text id="9:263" name="CODE FILL-IN-THE-BLANK ⚡️" x="0" y="4" width="249" height="20" />
+        <frame id="9:264" name="Frame" x="791" y="0" width="129" height="28">
+          <text id="9:265" name="빈칸 1/3 진행 중" x="16" y="6" width="97" height="16" />
+        </frame>
+      </frame>
+      <frame id="9:266" name="code-block-card" x="180" y="100" width="920" height="244">
+        <text id="9:267" name="SELECT customer_id, [① COUNT(transaction_id) ]" x="32" y="32" width="856" height="36" />
+        <text id="9:268" name="FROM transactions" x="32" y="80" width="856" height="36" />
+        <text id="9:269" name="[② GROUP BY ] customer_id" x="32" y="128" width="856" height="36" />
+        <text id="9:270" name="[③ HAVING ] COUNT(*) &gt;= 3;" x="32" y="176" width="856" height="36" />
+      </frame>
+      <frame id="9:271" name="input-row" x="180" y="368" width="920" height="64">
+        <frame id="9:272" name="input-field" x="0" y="0" width="743" height="64">
+          <text id="9:273" name="COUNT(transaction_id)" x="24" y="20.5" width="695" height="23" />
+        </frame>
+        <frame id="9:274" name="submit-btn" x="759" y="0" width="161" height="64">
+          <text id="9:275" name="빈칸 ① 입력" x="32" y="20.5" width="97" height="23" />
+        </frame>
+      </frame>
+      <text id="9:276" name="활성화된 빈칸 ①번 블록의 알맞은 예약어 또는 함수를 채우세요." x="468.5" y="456" width="343" height="17" />
+    </frame>
+  </frame>
+  <frame id="9:278" name="game-multiple-choice" x="2720" y="3270" width="1280" height="800">
+    <frame id="9:279" name="typing-test-top-bar" x="0" y="0" width="1280" height="88">
+      <frame id="9:280" name="game-theme-badge" x="40" y="29.5" width="185" height="29">
+        <frame id="9:281" name="icon-circle" x="16" y="6.5" width="16" height="16">
+          <text id="9:282" name="A" x="4.5" y="1.5" width="7" height="13" />
+        </frame>
+        <text id="9:283" name="테마: 하드웨어 전공이해" x="40" y="6" width="129" height="17" />
+      </frame>
+      <frame id="9:284" name="countdown-timer" x="578.5" y="16.5" width="148" height="55">
+        <frame id="9:393" name="alarm-clock" x="24" y="19.5" width="16" height="16" />
+        <text id="9:286" name="02:11" x="48" y="10" width="76" height="35" />
+      </frame>
+      <frame id="9:287" name="compact-stats" x="1080" y="27.5" width="160" height="33">
+        <frame id="9:288" name="Frame" x="0" y="0" width="160" height="33">
+          <text id="9:289" name="18문제 · 15정답 · 3오답" x="16" y="8" width="128" height="17" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="9:290" name="workspace" x="0" y="88" width="1280" height="712">
+      <frame id="9:291" name="question-container" x="180" y="48" width="920" height="132">
+        <text id="9:292" name="Q. 다음 중 컴퓨터 시스템의 연산을 직접 처리하는 중앙처리장치를 고르세요." x="32" y="32" width="856" height="16" />
+        <text id="9:293" name="컴퓨터의 뇌에 해당하며, 모든 기기 통제 및 연산을 담당하는 부품은?" x="32" y="64" width="856" height="36" />
+      </frame>
+      <frame id="9:294" name="options-stack" x="180" y="204" width="920" height="256">
+        <frame id="9:295" name="option-0" x="0" y="0" width="920" height="55">
+          <text id="9:296" name="①" x="24" y="16" width="18" height="23" />
+          <text id="9:297" name="CPU (Central Processing Unit)" x="54" y="17" width="842" height="21" />
+        </frame>
+        <frame id="9:298" name="option-1" x="0" y="67" width="920" height="55">
+          <text id="9:299" name="②" x="24" y="16" width="18" height="23" />
+          <text id="9:300" name="GPU (Graphics Processing Unit)" x="54" y="17" width="842" height="21" />
+        </frame>
+        <frame id="9:301" name="option-2" x="0" y="134" width="920" height="55">
+          <text id="9:302" name="③" x="24" y="16" width="18" height="23" />
+          <text id="9:303" name="RAM (Random Access Memory)" x="54" y="17" width="842" height="21" />
+        </frame>
+        <frame id="9:304" name="option-3" x="0" y="201" width="920" height="55">
+          <text id="9:305" name="④" x="24" y="16" width="18" height="23" />
+          <text id="9:306" name="SSD (Solid State Drive)" x="54" y="17" width="842" height="21" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="9:308" name="game-essay" x="4080" y="3270" width="1280" height="800">
+    <frame id="9:309" name="typing-test-top-bar" x="0" y="0" width="1280" height="88">
+      <frame id="9:310" name="game-theme-badge" x="40" y="29.5" width="191" height="29">
+        <frame id="9:311" name="icon-circle" x="16" y="6.5" width="16" height="16">
+          <text id="9:312" name="A" x="4.5" y="1.5" width="7" height="13" />
+        </frame>
+        <text id="9:313" name="테마: 웹 기술 및 네트워킹" x="40" y="6" width="135" height="17" />
+      </frame>
+      <frame id="9:314" name="countdown-timer" x="585" y="16.5" width="156" height="55">
+        <frame id="9:396" name="alarm-clock" x="24" y="19.5" width="16" height="16" />
+        <text id="9:316" name="04:30" x="48" y="10" width="84" height="35" />
+      </frame>
+      <frame id="9:317" name="compact-stats" x="1095" y="27.5" width="145" height="33">
+        <frame id="9:318" name="Frame" x="0" y="0" width="145" height="33">
+          <text id="9:319" name="8문제 · 6정답 · 2오답" x="16" y="8" width="113" height="17" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="9:320" name="workspace" x="0" y="88" width="1280" height="712">
+      <frame id="9:321" name="question-container" x="180" y="40" width="920" height="132">
+        <text id="9:322" name="Q. 다음 기술 정의에 대하여 서술형 의견을 자유롭게 서술하세요." x="32" y="32" width="856" height="16" />
+        <text id="9:323" name="HTTP와 비교하여 HTTPS 프로토콜이 가지는 기술적 이점 및 차이점을 설명하시오." x="32" y="64" width="856" height="36" />
+      </frame>
+      <frame id="9:324" name="textarea-container" x="180" y="192" width="920" height="180">
+        <text id="9:325" name="HTTPS는 SSL/TLS 프로토콜을 사용해 데이터를 암호화하여 전송함으로써 중간자 공격을 방지하고 보안을 대폭 강화합니다. 또한, 브라우저가 신뢰할 수 있는 CA 인증서를 바탕으로 도메인의 신뢰성을 증명할 수 있어 사기 사이트를 방지하며, HTTP/2 지원 및 검색 엔진 최적화(SEO)에도 혜택을 제공합니다.|" x="24" y="24" width="872" height="78" />
+      </frame>
+      <frame id="9:326" name="bottom-actions-container" x="180" y="392" width="920" height="83">
+        <frame id="9:327" name="submit-btn" x="315" y="0" width="290" height="55">
+          <text id="9:328" name="서술형 정답 제출하기" x="64" y="16" width="162" height="23" />
+        </frame>
+        <text id="9:329" name="Enter와 Space는 일반 텍스트 줄바꿈 및 입력에 사용됩니다. 완료 후 제출 버튼을 직접 클릭하세요." x="217" y="67" width="486" height="16" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="9:331" name="feedback-correct" x="0" y="4150" width="1280" height="800">
+    <frame id="9:332" name="typing-test-top-bar" x="0" y="0" width="1280" height="88">
+      <frame id="9:333" name="game-theme-badge" x="40" y="29.5" width="215" height="29">
+        <frame id="9:334" name="icon-circle" x="16" y="6.5" width="16" height="16">
+          <text id="9:335" name="A" x="4.5" y="1.5" width="7" height="13" />
+        </frame>
+        <text id="9:336" name="테마: 운영체제 및 시스템 기초" x="40" y="6" width="159" height="17" />
+      </frame>
+      <frame id="9:337" name="countdown-timer" x="592" y="16.5" width="151" height="55">
+        <frame id="9:399" name="alarm-clock" x="24" y="19.5" width="16" height="16" />
+        <text id="9:339" name="02:45" x="48" y="10" width="79" height="35" />
+      </frame>
+      <frame id="9:340" name="compact-stats" x="1080" y="27.5" width="160" height="33">
+        <frame id="9:341" name="Frame" x="0" y="0" width="160" height="33">
+          <text id="9:342" name="13문제 · 10정답 · 3오답" x="16" y="8" width="128" height="17" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="9:343" name="workspace" x="0" y="88" width="1280" height="712">
+      <frame id="9:344" name="question-container" x="180" y="64" width="920" height="132">
+        <text id="9:345" name="Q. 다음 질문에 알맞은 올바른 단어를 정답 입력창에 타이핑하세요." x="32" y="32" width="856" height="16" />
+        <text id="9:346" name="&quot;운영체제에서 프로세스 간 자원을 공유하지 않고 독립적으로 실행되는 최소 단위는?&quot;" x="32" y="64" width="856" height="36" />
+      </frame>
+      <frame id="9:347" name="input-row" x="180" y="228" width="920" height="64">
+        <frame id="9:348" name="input-field" x="0" y="0" width="806" height="64">
+          <text id="9:349" name="Thread" x="24" y="20.5" width="758" height="23" />
+        </frame>
+        <frame id="9:350" name="submit-btn" x="822" y="0" width="98" height="64">
+          <text id="9:351" name="제출" x="32" y="20.5" width="34" height="23" />
+        </frame>
+      </frame>
+      <frame id="9:352" name="feedback-correct-banner" x="180" y="324" width="920" height="60">
+        <frame id="9:353" name="check-circle" x="24" y="16" width="28" height="28">
+          <text id="9:354" name="✓" x="7" y="4" width="14" height="20" />
+        </frame>
+        <text id="9:355" name="정답입니다! 다음 문제로 자동으로 전환하고 있습니다..." x="64" y="20" width="832" height="20" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="9:357" name="feedback-wrong" x="1360" y="4150" width="1280" height="800">
+    <frame id="9:358" name="typing-test-top-bar" x="0" y="0" width="1280" height="88">
+      <frame id="9:359" name="game-theme-badge" x="40" y="29.5" width="215" height="29">
+        <frame id="9:360" name="icon-circle" x="16" y="6.5" width="16" height="16">
+          <text id="9:361" name="A" x="4.5" y="1.5" width="7" height="13" />
+        </frame>
+        <text id="9:362" name="테마: 운영체제 및 시스템 기초" x="40" y="6" width="159" height="17" />
+      </frame>
+      <frame id="9:363" name="countdown-timer" x="592" y="16.5" width="151" height="55">
+        <frame id="9:402" name="alarm-clock" x="24" y="19.5" width="16" height="16" />
+        <text id="9:365" name="02:41" x="48" y="10" width="79" height="35" />
+      </frame>
+      <frame id="9:366" name="compact-stats" x="1080" y="27.5" width="160" height="33">
+        <frame id="9:367" name="Frame" x="0" y="0" width="160" height="33">
+          <text id="9:368" name="13문제 · 10정답 · 4오답" x="16" y="8" width="128" height="17" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="9:369" name="workspace" x="0" y="88" width="1280" height="712">
+      <frame id="9:370" name="question-container" x="180" y="64" width="920" height="132">
+        <text id="9:371" name="Q. 다음 질문에 알맞은 올바른 단어를 정답 입력창에 타이핑하세요." x="32" y="32" width="856" height="16" />
+        <text id="9:372" name="&quot;운영체제에서 프로세스 간 자원을 공유하지 않고 독립적으로 실행되는 최소 단위는?&quot;" x="32" y="64" width="856" height="36" />
+      </frame>
+      <frame id="9:373" name="input-row" x="180" y="228" width="920" height="64">
+        <frame id="9:374" name="input-field" x="0" y="0" width="806" height="64">
+          <text id="9:375" name="CPU" x="24" y="20.5" width="758" height="23" />
+        </frame>
+        <frame id="9:376" name="submit-btn" x="822" y="0" width="98" height="64">
+          <text id="9:377" name="제출" x="32" y="20.5" width="34" height="23" />
+        </frame>
+      </frame>
+      <frame id="9:378" name="feedback-wrong-card" x="180" y="324" width="920" height="90">
+        <frame id="9:379" name="badge-row" x="20" y="20" width="315" height="24">
+          <frame id="9:380" name="x-circle" x="0" y="0" width="24" height="24">
+            <text id="9:381" name="✗" x="7" y="3" width="10" height="18" />
+          </frame>
+          <text id="9:382" name="오답입니다! 정답 내용을 확인하고 숙지하세요." x="32" y="2" width="283" height="20" />
+        </frame>
+        <frame id="9:383" name="details" x="20" y="52" width="263" height="18">
+          <text id="9:384" name="내 입력: CPU" x="32" y="0" width="77" height="18" />
+          <text id="9:385" name="정답: Thread (쓰레드)" x="133" y="0" width="130" height="18" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="10:7" name="question-form-blank" x="0" y="5140" width="1280" height="937">
+    <frame id="10:8" name="top-nav" x="0" y="0" width="1280" height="72">
+      <frame id="10:9" name="logo" x="40" y="18" width="175" height="36">
+        <frame id="10:10" name="logo-icon" x="0" y="0" width="36" height="36">
+          <text id="10:11" name="A" x="11" y="5.5" width="14" height="25" />
+        </frame>
+        <text id="10:12" name="AnkiTyping" x="44" y="4" width="131" height="28" />
+      </frame>
+      <frame id="10:13" name="nav-right" x="705" y="17" width="535" height="38">
+        <frame id="10:14" name="nav-links" x="0" y="1.5" width="376" height="35">
+          <frame id="10:15" name="nav-tab-Home" x="0" y="0" width="76" height="35">
+            <text id="10:16" name="Home" x="16" y="8" width="44" height="19" />
+          </frame>
+          <frame id="10:17" name="nav-tab-Play" x="88" y="0" width="64" height="35">
+            <text id="10:18" name="Play" x="16" y="8" width="32" height="19" />
+          </frame>
+          <frame id="10:19" name="nav-tab-Questions" x="164" y="0" width="108" height="35">
+            <text id="10:20" name="Questions" x="16" y="8" width="76" height="19" />
+          </frame>
+          <frame id="10:21" name="nav-tab-Records" x="284" y="0" width="92" height="35">
+            <text id="10:22" name="Records" x="16" y="8" width="60" height="19" />
+          </frame>
+        </frame>
+        <frame id="10:23" name="quick-add-btn" x="408" y="0" width="127" height="38">
+          <frame id="10:507" name="plus" x="20" y="12" width="14" height="14" />
+          <text id="10:25" name="+ 문제 추가" x="40" y="10" width="67" height="18" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="10:26" name="body" x="0" y="72" width="1280" height="865">
+      <frame id="10:27" name="left-column" x="40" y="40" width="708" height="728">
+        <frame id="10:28" name="filter-box" x="0" y="0" width="708" height="127">
+          <text id="10:29" name="🔍 문제 필터링 및 검색" x="20" y="20" width="175" height="23" />
+          <frame id="10:30" name="search-row" x="20" y="59" width="668" height="48">
+            <frame id="10:31" name="search-input" x="0" y="0" width="551" height="48">
+              <text id="10:32" name="문제 키워드 또는 본문 내용을 입력하세요..." x="16" y="15" width="519" height="18" />
+            </frame>
+            <frame id="10:33" name="filter-theme" x="563" y="0" width="105" height="48">
+              <text id="10:34" name="전체 테마" x="16" y="15" width="55" height="18" />
+              <frame id="10:513" name="chevron-down" x="79" y="19" width="10" height="10" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="10:36" name="list-header-row" x="0" y="151" width="708" height="20">
+          <text id="10:37" name="📂 총 142개의 문제가 등록되어 있습니다" x="0" y="0" width="278" height="20" />
+        </frame>
+        <frame id="10:38" name="question-list" x="0" y="195" width="708" height="464">
+          <frame id="10:39" name="q-item-1" x="0" y="0" width="708" height="107">
+            <frame id="10:40" name="item-info" x="16" y="16" width="580" height="75">
+              <frame id="10:41" name="badges-row" x="0" y="0" width="156" height="22">
+                <frame id="10:42" name="Frame" x="0" y="0" width="83" height="22">
+                  <text id="10:43" name="CS 전공지식" x="10" y="3" width="63" height="16" />
+                </frame>
+                <frame id="10:44" name="Frame" x="89" y="0" width="67" height="22">
+                  <text id="10:45" name="정답 입력" x="10" y="3" width="47" height="16" />
+                </frame>
+              </frame>
+              <text id="10:46" name="컴퓨터 시스템의 자원을 효율적으로 관리하는 프로그램 인터페이스 세트는?" x="0" y="30" width="580" height="20" />
+              <text id="10:47" name="정답: Operating System" x="0" y="58" width="580" height="17" />
+            </frame>
+            <frame id="10:48" name="actions" x="612" y="35.5" width="80" height="36">
+              <frame id="10:49" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="10:516" name="pencil" x="10" y="10" width="16" height="16" />
+              </frame>
+              <frame id="10:51" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="10:510" name="trash" x="10" y="10" width="16" height="16" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="10:53" name="q-item-2" x="0" y="119" width="708" height="107">
+            <frame id="10:54" name="item-info" x="16" y="16" width="580" height="75">
+              <frame id="10:55" name="badges-row" x="0" y="0" width="173" height="22">
+                <frame id="10:56" name="Frame" x="0" y="0" width="113" height="22">
+                  <text id="10:57" name="SQL 데이터베이스" x="10" y="3" width="93" height="16" />
+                </frame>
+                <frame id="10:58" name="Frame" x="119" y="0" width="54" height="22">
+                  <text id="10:59" name="객관식" x="10" y="3" width="34" height="16" />
+                </frame>
+              </frame>
+              <text id="10:60" name="SQL 명령어 중 테이블의 스키마 구조를 변경하기 위해 사용되는 DDL 문은 무엇인가?" x="0" y="30" width="580" height="20" />
+              <text id="10:61" name="정답: ALTER TABLE" x="0" y="58" width="580" height="17" />
+            </frame>
+            <frame id="10:62" name="actions" x="612" y="35.5" width="80" height="36">
+              <frame id="10:63" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="10:519" name="pencil" x="10" y="10" width="16" height="16" />
+              </frame>
+              <frame id="10:65" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="10:522" name="trash" x="10" y="10" width="16" height="16" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="10:67" name="q-item-3" x="0" y="238" width="708" height="107">
+            <frame id="10:68" name="item-info" x="16" y="16" width="580" height="75">
+              <frame id="10:69" name="badges-row" x="0" y="0" width="157" height="22">
+                <frame id="10:70" name="Frame" x="0" y="0" width="84" height="22">
+                  <text id="10:71" name="Python 기초" x="10" y="3" width="64" height="16" />
+                </frame>
+                <frame id="10:72" name="Frame" x="90" y="0" width="67" height="22">
+                  <text id="10:73" name="빈칸 블록" x="10" y="3" width="47" height="16" />
+                </frame>
+              </frame>
+              <text id="10:74" name="리스트에 요소를 맨 마지막 인덱스 뒤에 추가할 때 사용하는 내장 메소드는 ( ) 이다." x="0" y="30" width="580" height="20" />
+              <text id="10:75" name="정답: append" x="0" y="58" width="580" height="17" />
+            </frame>
+            <frame id="10:76" name="actions" x="612" y="35.5" width="80" height="36">
+              <frame id="10:77" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="10:525" name="pencil" x="10" y="10" width="16" height="16" />
+              </frame>
+              <frame id="10:79" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="10:528" name="trash" x="10" y="10" width="16" height="16" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="10:81" name="q-item-4" x="0" y="357" width="708" height="107">
+            <frame id="10:82" name="item-info" x="16" y="16" width="580" height="75">
+              <frame id="10:83" name="badges-row" x="0" y="0" width="143" height="22">
+                <frame id="10:84" name="Frame" x="0" y="0" width="83" height="22">
+                  <text id="10:85" name="CS 전공지식" x="10" y="3" width="63" height="16" />
+                </frame>
+                <frame id="10:86" name="Frame" x="89" y="0" width="54" height="22">
+                  <text id="10:87" name="서술형" x="10" y="3" width="34" height="16" />
+                </frame>
+              </frame>
+              <text id="10:88" name="프로세스와 스레드의 결정적인 자원 관리 측면에서의 차이점을 서술하시오." x="0" y="30" width="580" height="20" />
+              <text id="10:89" name="정답: 메모리 공유 구조" x="0" y="58" width="580" height="17" />
+            </frame>
+            <frame id="10:90" name="actions" x="612" y="35.5" width="80" height="36">
+              <frame id="10:91" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="10:531" name="pencil" x="10" y="10" width="16" height="16" />
+              </frame>
+              <frame id="10:93" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="10:534" name="trash" x="10" y="10" width="16" height="16" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+        <frame id="10:95" name="pagination" x="0" y="683" width="708" height="45">
+          <frame id="10:96" name="page-prev" x="242" y="12" width="48" height="33">
+            <text id="10:97" name="이전" x="12" y="8" width="24" height="17" />
+          </frame>
+          <frame id="10:98" name="page-1" x="298" y="12" width="32" height="33">
+            <text id="10:99" name="1" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="10:100" name="page-2" x="338" y="12" width="32" height="33">
+            <text id="10:101" name="2" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="10:102" name="page-3" x="378" y="12" width="32" height="33">
+            <text id="10:103" name="3" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="10:104" name="page-next" x="418" y="12" width="48" height="33">
+            <text id="10:105" name="다음" x="12" y="8" width="24" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="10:106" name="right-column-form" x="780" y="40" width="460" height="785">
+        <frame id="10:107" name="form-header" x="32" y="32" width="396" height="48">
+          <text id="10:108" name="📝 문제 추가 폼" x="0" y="0" width="133" height="25" />
+          <text id="10:109" name="학습 데이터를 간편하게 추가하고 커스텀 퀴즈에 반영하세요." x="0" y="31" width="396" height="17" />
+        </frame>
+        <frame id="10:110" name="Frame" x="32" y="104" width="396" height="68">
+          <text id="10:111" name="선택 테마 *" x="0" y="0" width="63" height="16" />
+          <frame id="10:112" name="form-dropdown" x="0" y="24" width="396" height="44">
+            <text id="10:113" name="SQL 데이터베이스" x="16" y="13" width="108" height="18" />
+            <frame id="10:537" name="chevron-down" x="368" y="16" width="12" height="12" />
+          </frame>
+        </frame>
+        <frame id="10:115" name="Frame" x="32" y="196" width="396" height="68">
+          <text id="10:116" name="문제유형 *" x="0" y="0" width="59" height="16" />
+          <frame id="10:117" name="form-dropdown" x="0" y="24" width="396" height="44">
+            <text id="10:118" name="빈칸 블록" x="16" y="13" width="55" height="18" />
+            <frame id="10:540" name="chevron-down" x="368" y="16" width="12" height="12" />
+          </frame>
+        </frame>
+        <frame id="10:120" name="Frame" x="32" y="288" width="396" height="168">
+          <text id="10:121" name="질문 / 코드 내용 *" x="0" y="0" width="104" height="16" />
+          <frame id="10:122" name="form-textarea-code" x="0" y="24" width="396" height="120">
+            <text id="10:123" name="SELECT customer_id, [①] FROM transactions [②] customer_id [③] COUNT(*) &gt;= 3;" x="16" y="16" width="364" height="80" />
+          </frame>
+          <text id="10:124" name="빈칸은 [①], [②] 기호 형식으로 표시하세요." x="0" y="152" width="396" height="16" />
+        </frame>
+        <frame id="10:125" name="Frame" x="32" y="480" width="396" height="205">
+          <text id="10:126" name="빈칸 정답 설정 *" x="0" y="0" width="91" height="16" />
+          <frame id="10:127" name="Frame" x="0" y="28" width="396" height="36">
+            <frame id="10:128" name="Frame" x="0" y="2.5" width="36" height="31">
+              <text id="10:129" name="①" x="12" y="8" width="12" height="15" />
+            </frame>
+            <frame id="10:130" name="Frame" x="44" y="0" width="352" height="36">
+              <text id="10:131" name="COUNT(*)" x="12" y="9.5" width="61" height="17" />
+            </frame>
+          </frame>
+          <frame id="10:132" name="Frame" x="0" y="76" width="396" height="36">
+            <frame id="10:133" name="Frame" x="0" y="2.5" width="36" height="31">
+              <text id="10:134" name="②" x="12" y="8" width="12" height="15" />
+            </frame>
+            <frame id="10:135" name="Frame" x="44" y="0" width="352" height="36">
+              <text id="10:136" name="GROUP BY" x="12" y="9.5" width="62" height="17" />
+            </frame>
+          </frame>
+          <frame id="10:137" name="Frame" x="0" y="124" width="396" height="36">
+            <frame id="10:138" name="Frame" x="0" y="2.5" width="36" height="31">
+              <text id="10:139" name="③" x="12" y="8" width="12" height="15" />
+            </frame>
+            <frame id="10:140" name="Frame" x="44" y="0" width="352" height="36">
+              <text id="10:141" name="HAVING" x="12" y="9.5" width="47" height="17" />
+            </frame>
+          </frame>
+          <frame id="10:142" name="Frame" x="0" y="172" width="396" height="33">
+            <text id="10:143" name="+ 빈칸 추가" x="167" y="8" width="62" height="17" />
+          </frame>
+        </frame>
+        <frame id="10:144" name="Frame" x="32" y="709" width="396" height="44">
+          <frame id="10:145" name="btn-cancel" x="0" y="0" width="192" height="44">
+            <text id="10:146" name="취소" x="83" y="13" width="26" height="18" />
+          </frame>
+          <frame id="10:147" name="btn-save" x="204" y="0" width="192" height="44">
+            <text id="10:148" name="문제 저장" x="67.5" y="13" width="57" height="18" />
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="10:150" name="question-form-multiple-choice" x="1360" y="5140" width="1280" height="956">
+    <frame id="10:151" name="top-nav" x="0" y="0" width="1280" height="72">
+      <frame id="10:152" name="logo" x="40" y="18" width="175" height="36">
+        <frame id="10:153" name="logo-icon" x="0" y="0" width="36" height="36">
+          <text id="10:154" name="A" x="11" y="5.5" width="14" height="25" />
+        </frame>
+        <text id="10:155" name="AnkiTyping" x="44" y="4" width="131" height="28" />
+      </frame>
+      <frame id="10:156" name="nav-right" x="705" y="17" width="535" height="38">
+        <frame id="10:157" name="nav-links" x="0" y="1.5" width="376" height="35">
+          <frame id="10:158" name="nav-tab-Home" x="0" y="0" width="76" height="35">
+            <text id="10:159" name="Home" x="16" y="8" width="44" height="19" />
+          </frame>
+          <frame id="10:160" name="nav-tab-Play" x="88" y="0" width="64" height="35">
+            <text id="10:161" name="Play" x="16" y="8" width="32" height="19" />
+          </frame>
+          <frame id="10:162" name="nav-tab-Questions" x="164" y="0" width="108" height="35">
+            <text id="10:163" name="Questions" x="16" y="8" width="76" height="19" />
+          </frame>
+          <frame id="10:164" name="nav-tab-Records" x="284" y="0" width="92" height="35">
+            <text id="10:165" name="Records" x="16" y="8" width="60" height="19" />
+          </frame>
+        </frame>
+        <frame id="10:166" name="quick-add-btn" x="408" y="0" width="127" height="38">
+          <frame id="10:543" name="plus" x="20" y="12" width="14" height="14" />
+          <text id="10:168" name="+ 문제 추가" x="40" y="10" width="67" height="18" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="10:169" name="body" x="0" y="72" width="1280" height="884">
+      <frame id="10:170" name="left-column" x="40" y="40" width="708" height="728">
+        <frame id="10:171" name="filter-box" x="0" y="0" width="708" height="127">
+          <text id="10:172" name="🔍 문제 필터링 및 검색" x="20" y="20" width="175" height="23" />
+          <frame id="10:173" name="search-row" x="20" y="59" width="668" height="48">
+            <frame id="10:174" name="search-input" x="0" y="0" width="551" height="48">
+              <text id="10:175" name="문제 키워드 또는 본문 내용을 입력하세요..." x="16" y="15" width="519" height="18" />
+            </frame>
+            <frame id="10:176" name="filter-theme" x="563" y="0" width="105" height="48">
+              <text id="10:177" name="전체 테마" x="16" y="15" width="55" height="18" />
+              <frame id="10:546" name="chevron-down" x="79" y="19" width="10" height="10" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="10:179" name="list-header-row" x="0" y="151" width="708" height="20">
+          <text id="10:180" name="📂 총 142개의 문제가 등록되어 있습니다" x="0" y="0" width="278" height="20" />
+        </frame>
+        <frame id="10:181" name="question-list" x="0" y="195" width="708" height="464">
+          <frame id="10:182" name="q-item-1" x="0" y="0" width="708" height="107">
+            <frame id="10:183" name="item-info" x="16" y="16" width="580" height="75">
+              <frame id="10:184" name="badges-row" x="0" y="0" width="156" height="22">
+                <frame id="10:185" name="Frame" x="0" y="0" width="83" height="22">
+                  <text id="10:186" name="CS 전공지식" x="10" y="3" width="63" height="16" />
+                </frame>
+                <frame id="10:187" name="Frame" x="89" y="0" width="67" height="22">
+                  <text id="10:188" name="정답 입력" x="10" y="3" width="47" height="16" />
+                </frame>
+              </frame>
+              <text id="10:189" name="컴퓨터 시스템의 자원을 효율적으로 관리하는 프로그램 인터페이스 세트는?" x="0" y="30" width="580" height="20" />
+              <text id="10:190" name="정답: Operating System" x="0" y="58" width="580" height="17" />
+            </frame>
+            <frame id="10:191" name="actions" x="612" y="35.5" width="80" height="36">
+              <frame id="10:192" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="10:549" name="pencil" x="10" y="10" width="16" height="16" />
+              </frame>
+              <frame id="10:194" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="10:552" name="trash" x="10" y="10" width="16" height="16" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="10:196" name="q-item-2" x="0" y="119" width="708" height="107">
+            <frame id="10:197" name="item-info" x="16" y="16" width="580" height="75">
+              <frame id="10:198" name="badges-row" x="0" y="0" width="173" height="22">
+                <frame id="10:199" name="Frame" x="0" y="0" width="113" height="22">
+                  <text id="10:200" name="SQL 데이터베이스" x="10" y="3" width="93" height="16" />
+                </frame>
+                <frame id="10:201" name="Frame" x="119" y="0" width="54" height="22">
+                  <text id="10:202" name="객관식" x="10" y="3" width="34" height="16" />
+                </frame>
+              </frame>
+              <text id="10:203" name="SQL 명령어 중 테이블의 스키마 구조를 변경하기 위해 사용되는 DDL 문은 무엇인가?" x="0" y="30" width="580" height="20" />
+              <text id="10:204" name="정답: ALTER TABLE" x="0" y="58" width="580" height="17" />
+            </frame>
+            <frame id="10:205" name="actions" x="612" y="35.5" width="80" height="36">
+              <frame id="10:206" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="10:555" name="pencil" x="10" y="10" width="16" height="16" />
+              </frame>
+              <frame id="10:208" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="10:558" name="trash" x="10" y="10" width="16" height="16" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="10:210" name="q-item-3" x="0" y="238" width="708" height="107">
+            <frame id="10:211" name="item-info" x="16" y="16" width="580" height="75">
+              <frame id="10:212" name="badges-row" x="0" y="0" width="157" height="22">
+                <frame id="10:213" name="Frame" x="0" y="0" width="84" height="22">
+                  <text id="10:214" name="Python 기초" x="10" y="3" width="64" height="16" />
+                </frame>
+                <frame id="10:215" name="Frame" x="90" y="0" width="67" height="22">
+                  <text id="10:216" name="빈칸 블록" x="10" y="3" width="47" height="16" />
+                </frame>
+              </frame>
+              <text id="10:217" name="리스트에 요소를 맨 마지막 인덱스 뒤에 추가할 때 사용하는 내장 메소드는 ( ) 이다." x="0" y="30" width="580" height="20" />
+              <text id="10:218" name="정답: append" x="0" y="58" width="580" height="17" />
+            </frame>
+            <frame id="10:219" name="actions" x="612" y="35.5" width="80" height="36">
+              <frame id="10:220" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="10:561" name="pencil" x="10" y="10" width="16" height="16" />
+              </frame>
+              <frame id="10:222" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="10:564" name="trash" x="10" y="10" width="16" height="16" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="10:224" name="q-item-4" x="0" y="357" width="708" height="107">
+            <frame id="10:225" name="item-info" x="16" y="16" width="580" height="75">
+              <frame id="10:226" name="badges-row" x="0" y="0" width="143" height="22">
+                <frame id="10:227" name="Frame" x="0" y="0" width="83" height="22">
+                  <text id="10:228" name="CS 전공지식" x="10" y="3" width="63" height="16" />
+                </frame>
+                <frame id="10:229" name="Frame" x="89" y="0" width="54" height="22">
+                  <text id="10:230" name="서술형" x="10" y="3" width="34" height="16" />
+                </frame>
+              </frame>
+              <text id="10:231" name="프로세스와 스레드의 결정적인 자원 관리 측면에서의 차이점을 서술하시오." x="0" y="30" width="580" height="20" />
+              <text id="10:232" name="정답: 메모리 공유 구조" x="0" y="58" width="580" height="17" />
+            </frame>
+            <frame id="10:233" name="actions" x="612" y="35.5" width="80" height="36">
+              <frame id="10:234" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="10:567" name="pencil" x="10" y="10" width="16" height="16" />
+              </frame>
+              <frame id="10:236" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="10:570" name="trash" x="10" y="10" width="16" height="16" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+        <frame id="10:238" name="pagination" x="0" y="683" width="708" height="45">
+          <frame id="10:239" name="page-prev" x="242" y="12" width="48" height="33">
+            <text id="10:240" name="이전" x="12" y="8" width="24" height="17" />
+          </frame>
+          <frame id="10:241" name="page-1" x="298" y="12" width="32" height="33">
+            <text id="10:242" name="1" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="10:243" name="page-2" x="338" y="12" width="32" height="33">
+            <text id="10:244" name="2" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="10:245" name="page-3" x="378" y="12" width="32" height="33">
+            <text id="10:246" name="3" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="10:247" name="page-next" x="418" y="12" width="48" height="33">
+            <text id="10:248" name="다음" x="12" y="8" width="24" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="10:249" name="right-column-form" x="780" y="40" width="460" height="804">
+        <frame id="10:250" name="form-header" x="32" y="32" width="396" height="48">
+          <text id="10:251" name="📝 문제 추가 폼" x="0" y="0" width="133" height="25" />
+          <text id="10:252" name="학습 데이터를 간편하게 추가하고 커스텀 퀴즈에 반영하세요." x="0" y="31" width="396" height="17" />
+        </frame>
+        <frame id="10:253" name="Frame" x="32" y="100" width="396" height="66">
+          <text id="10:254" name="선택 테마 *" x="0" y="0" width="63" height="16" />
+          <frame id="10:255" name="form-dropdown" x="0" y="22" width="396" height="44">
+            <text id="10:256" name="CS 전공지식" x="16" y="13" width="74" height="18" />
+            <frame id="10:573" name="chevron-down" x="368" y="16" width="12" height="12" />
+          </frame>
+        </frame>
+        <frame id="10:258" name="Frame" x="32" y="186" width="396" height="66">
+          <text id="10:259" name="문제유형 *" x="0" y="0" width="59" height="16" />
+          <frame id="10:260" name="form-dropdown" x="0" y="22" width="396" height="44">
+            <text id="10:261" name="객관식" x="16" y="13" width="39" height="18" />
+            <frame id="10:576" name="chevron-down" x="368" y="16" width="12" height="12" />
+          </frame>
+        </frame>
+        <frame id="10:263" name="Frame" x="32" y="272" width="396" height="102">
+          <text id="10:264" name="질문 / 암기 내용 *" x="0" y="0" width="104" height="16" />
+          <frame id="10:265" name="form-textarea" x="0" y="22" width="396" height="80">
+            <text id="10:266" name="IP 주소를 맥 주소(Physical MAC Address)로 변환해주는 프로토콜의 약어는 무엇인가?" x="12" y="12" width="372" height="36" />
+          </frame>
+        </frame>
+        <frame id="10:267" name="Frame" x="32" y="394" width="396" height="226">
+          <text id="10:268" name="보기 설정 *" x="0" y="0" width="63" height="16" />
+          <frame id="10:269" name="Frame" x="0" y="26" width="396" height="36">
+            <frame id="10:270" name="Frame" x="0" y="4" width="28" height="28">
+              <text id="10:271" name="1" x="10" y="6.5" width="8" height="15" />
+            </frame>
+            <frame id="10:272" name="Frame" x="36" y="0" width="360" height="36">
+              <text id="10:273" name="ARP (Address Resolution Protocol)" x="12" y="9.5" width="207" height="17" />
+            </frame>
+          </frame>
+          <frame id="10:274" name="Frame" x="0" y="72" width="396" height="36">
+            <frame id="10:275" name="Frame" x="0" y="4" width="28" height="28">
+              <text id="10:276" name="2" x="10.5" y="6.5" width="7" height="15" />
+            </frame>
+            <frame id="10:277" name="Frame" x="36" y="0" width="360" height="36">
+              <text id="10:278" name="RARP" x="12" y="9.5" width="32" height="17" />
+            </frame>
+          </frame>
+          <frame id="10:279" name="Frame" x="0" y="118" width="396" height="36">
+            <frame id="10:280" name="Frame" x="0" y="4" width="28" height="28">
+              <text id="10:281" name="3" x="10" y="6.5" width="8" height="15" />
+            </frame>
+            <frame id="10:282" name="Frame" x="36" y="0" width="360" height="36">
+              <text id="10:283" name="DNS" x="12" y="9.5" width="26" height="17" />
+            </frame>
+          </frame>
+          <frame id="10:284" name="Frame" x="0" y="164" width="396" height="36">
+            <frame id="10:285" name="Frame" x="0" y="4" width="28" height="28">
+              <text id="10:286" name="4" x="9.5" y="6.5" width="9" height="15" />
+            </frame>
+            <frame id="10:287" name="Frame" x="36" y="0" width="360" height="36">
+              <text id="10:288" name="DHCP" x="12" y="9.5" width="35" height="17" />
+            </frame>
+          </frame>
+          <frame id="10:289" name="Frame" x="0" y="210" width="396" height="16">
+            <text id="10:290" name="+ 보기 추가" x="36" y="0" width="57" height="16" />
+          </frame>
+        </frame>
+        <frame id="10:291" name="Frame" x="32" y="640" width="396" height="62">
+          <text id="10:292" name="정답 번호 선택 *" x="0" y="0" width="91" height="16" />
+          <frame id="10:293" name="form-dropdown" x="0" y="22" width="396" height="40">
+            <text id="10:294" name="1번 보기 (ARP)" x="16" y="11" width="91" height="18" />
+            <frame id="10:579" name="chevron-down" x="368" y="14" width="12" height="12" />
+          </frame>
+        </frame>
+        <frame id="10:296" name="Frame" x="32" y="722" width="396" height="50">
+          <frame id="10:297" name="btn-cancel" x="0" y="6" width="192" height="44">
+            <text id="10:298" name="취소" x="83" y="13" width="26" height="18" />
+          </frame>
+          <frame id="10:299" name="btn-save" x="204" y="6" width="192" height="44">
+            <text id="10:300" name="문제 저장" x="67.5" y="13" width="57" height="18" />
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="10:302" name="question-form-essay" x="2720" y="5140" width="1280" height="900">
+    <frame id="10:303" name="top-nav" x="0" y="0" width="1280" height="72">
+      <frame id="10:304" name="logo" x="40" y="18" width="175" height="36">
+        <frame id="10:305" name="logo-icon" x="0" y="0" width="36" height="36">
+          <text id="10:306" name="A" x="11" y="5.5" width="14" height="25" />
+        </frame>
+        <text id="10:307" name="AnkiTyping" x="44" y="4" width="131" height="28" />
+      </frame>
+      <frame id="10:308" name="nav-right" x="705" y="17" width="535" height="38">
+        <frame id="10:309" name="nav-links" x="0" y="1.5" width="376" height="35">
+          <frame id="10:310" name="nav-tab-Home" x="0" y="0" width="76" height="35">
+            <text id="10:311" name="Home" x="16" y="8" width="44" height="19" />
+          </frame>
+          <frame id="10:312" name="nav-tab-Play" x="88" y="0" width="64" height="35">
+            <text id="10:313" name="Play" x="16" y="8" width="32" height="19" />
+          </frame>
+          <frame id="10:314" name="nav-tab-Questions" x="164" y="0" width="108" height="35">
+            <text id="10:315" name="Questions" x="16" y="8" width="76" height="19" />
+          </frame>
+          <frame id="10:316" name="nav-tab-Records" x="284" y="0" width="92" height="35">
+            <text id="10:317" name="Records" x="16" y="8" width="60" height="19" />
+          </frame>
+        </frame>
+        <frame id="10:318" name="quick-add-btn" x="408" y="0" width="127" height="38">
+          <frame id="10:582" name="plus" x="20" y="12" width="14" height="14" />
+          <text id="10:320" name="+ 문제 추가" x="40" y="10" width="67" height="18" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="10:321" name="body" x="0" y="72" width="1280" height="808">
+      <frame id="10:322" name="left-column" x="40" y="40" width="708" height="728">
+        <frame id="10:323" name="filter-box" x="0" y="0" width="708" height="127">
+          <text id="10:324" name="🔍 문제 필터링 및 검색" x="20" y="20" width="175" height="23" />
+          <frame id="10:325" name="search-row" x="20" y="59" width="668" height="48">
+            <frame id="10:326" name="search-input" x="0" y="0" width="551" height="48">
+              <text id="10:327" name="문제 키워드 또는 본문 내용을 입력하세요..." x="16" y="15" width="519" height="18" />
+            </frame>
+            <frame id="10:328" name="filter-theme" x="563" y="0" width="105" height="48">
+              <text id="10:329" name="전체 테마" x="16" y="15" width="55" height="18" />
+              <frame id="10:585" name="chevron-down" x="79" y="19" width="10" height="10" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="10:331" name="list-header-row" x="0" y="151" width="708" height="20">
+          <text id="10:332" name="📂 총 142개의 문제가 등록되어 있습니다" x="0" y="0" width="278" height="20" />
+        </frame>
+        <frame id="10:333" name="question-list" x="0" y="195" width="708" height="464">
+          <frame id="10:334" name="q-item-1" x="0" y="0" width="708" height="107">
+            <frame id="10:335" name="item-info" x="16" y="16" width="580" height="75">
+              <frame id="10:336" name="badges-row" x="0" y="0" width="156" height="22">
+                <frame id="10:337" name="Frame" x="0" y="0" width="83" height="22">
+                  <text id="10:338" name="CS 전공지식" x="10" y="3" width="63" height="16" />
+                </frame>
+                <frame id="10:339" name="Frame" x="89" y="0" width="67" height="22">
+                  <text id="10:340" name="정답 입력" x="10" y="3" width="47" height="16" />
+                </frame>
+              </frame>
+              <text id="10:341" name="컴퓨터 시스템의 자원을 효율적으로 관리하는 프로그램 인터페이스 세트는?" x="0" y="30" width="580" height="20" />
+              <text id="10:342" name="정답: Operating System" x="0" y="58" width="580" height="17" />
+            </frame>
+            <frame id="10:343" name="actions" x="612" y="35.5" width="80" height="36">
+              <frame id="10:344" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="10:588" name="pencil" x="10" y="10" width="16" height="16" />
+              </frame>
+              <frame id="10:346" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="10:591" name="trash" x="10" y="10" width="16" height="16" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="10:348" name="q-item-2" x="0" y="119" width="708" height="107">
+            <frame id="10:349" name="item-info" x="16" y="16" width="580" height="75">
+              <frame id="10:350" name="badges-row" x="0" y="0" width="173" height="22">
+                <frame id="10:351" name="Frame" x="0" y="0" width="113" height="22">
+                  <text id="10:352" name="SQL 데이터베이스" x="10" y="3" width="93" height="16" />
+                </frame>
+                <frame id="10:353" name="Frame" x="119" y="0" width="54" height="22">
+                  <text id="10:354" name="객관식" x="10" y="3" width="34" height="16" />
+                </frame>
+              </frame>
+              <text id="10:355" name="SQL 명령어 중 테이블의 스키마 구조를 변경하기 위해 사용되는 DDL 문은 무엇인가?" x="0" y="30" width="580" height="20" />
+              <text id="10:356" name="정답: ALTER TABLE" x="0" y="58" width="580" height="17" />
+            </frame>
+            <frame id="10:357" name="actions" x="612" y="35.5" width="80" height="36">
+              <frame id="10:358" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="10:594" name="pencil" x="10" y="10" width="16" height="16" />
+              </frame>
+              <frame id="10:360" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="10:597" name="trash" x="10" y="10" width="16" height="16" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="10:362" name="q-item-3" x="0" y="238" width="708" height="107">
+            <frame id="10:363" name="item-info" x="16" y="16" width="580" height="75">
+              <frame id="10:364" name="badges-row" x="0" y="0" width="157" height="22">
+                <frame id="10:365" name="Frame" x="0" y="0" width="84" height="22">
+                  <text id="10:366" name="Python 기초" x="10" y="3" width="64" height="16" />
+                </frame>
+                <frame id="10:367" name="Frame" x="90" y="0" width="67" height="22">
+                  <text id="10:368" name="빈칸 블록" x="10" y="3" width="47" height="16" />
+                </frame>
+              </frame>
+              <text id="10:369" name="리스트에 요소를 맨 마지막 인덱스 뒤에 추가할 때 사용하는 내장 메소드는 ( ) 이다." x="0" y="30" width="580" height="20" />
+              <text id="10:370" name="정답: append" x="0" y="58" width="580" height="17" />
+            </frame>
+            <frame id="10:371" name="actions" x="612" y="35.5" width="80" height="36">
+              <frame id="10:372" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="10:600" name="pencil" x="10" y="10" width="16" height="16" />
+              </frame>
+              <frame id="10:374" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="10:603" name="trash" x="10" y="10" width="16" height="16" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="10:376" name="q-item-4" x="0" y="357" width="708" height="107">
+            <frame id="10:377" name="item-info" x="16" y="16" width="580" height="75">
+              <frame id="10:378" name="badges-row" x="0" y="0" width="143" height="22">
+                <frame id="10:379" name="Frame" x="0" y="0" width="83" height="22">
+                  <text id="10:380" name="CS 전공지식" x="10" y="3" width="63" height="16" />
+                </frame>
+                <frame id="10:381" name="Frame" x="89" y="0" width="54" height="22">
+                  <text id="10:382" name="서술형" x="10" y="3" width="34" height="16" />
+                </frame>
+              </frame>
+              <text id="10:383" name="프로세스와 스레드의 결정적인 자원 관리 측면에서의 차이점을 서술하시오." x="0" y="30" width="580" height="20" />
+              <text id="10:384" name="정답: 메모리 공유 구조" x="0" y="58" width="580" height="17" />
+            </frame>
+            <frame id="10:385" name="actions" x="612" y="35.5" width="80" height="36">
+              <frame id="10:386" name="btn-edit" x="0" y="0" width="36" height="36">
+                <frame id="10:606" name="pencil" x="10" y="10" width="16" height="16" />
+              </frame>
+              <frame id="10:388" name="btn-delete" x="44" y="0" width="36" height="36">
+                <frame id="10:609" name="trash" x="10" y="10" width="16" height="16" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+        <frame id="10:390" name="pagination" x="0" y="683" width="708" height="45">
+          <frame id="10:391" name="page-prev" x="242" y="12" width="48" height="33">
+            <text id="10:392" name="이전" x="12" y="8" width="24" height="17" />
+          </frame>
+          <frame id="10:393" name="page-1" x="298" y="12" width="32" height="33">
+            <text id="10:394" name="1" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="10:395" name="page-2" x="338" y="12" width="32" height="33">
+            <text id="10:396" name="2" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="10:397" name="page-3" x="378" y="12" width="32" height="33">
+            <text id="10:398" name="3" x="12" y="8" width="8" height="17" />
+          </frame>
+          <frame id="10:399" name="page-next" x="418" y="12" width="48" height="33">
+            <text id="10:400" name="다음" x="12" y="8" width="24" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="10:401" name="right-column-form" x="780" y="40" width="460" height="720">
+        <frame id="10:402" name="form-header" x="32" y="32" width="396" height="48">
+          <text id="10:403" name="📝 문제 추가 폼" x="0" y="0" width="133" height="25" />
+          <text id="10:404" name="학습 데이터를 간편하게 추가하고 커스텀 퀴즈에 반영하세요." x="0" y="31" width="396" height="17" />
+        </frame>
+        <frame id="10:405" name="Frame" x="32" y="104" width="396" height="68">
+          <text id="10:406" name="선택 테마 *" x="0" y="0" width="63" height="16" />
+          <frame id="10:407" name="form-dropdown" x="0" y="24" width="396" height="44">
+            <text id="10:408" name="CS 전공지식" x="16" y="13" width="74" height="18" />
+            <frame id="10:612" name="chevron-down" x="368" y="16" width="12" height="12" />
+          </frame>
+        </frame>
+        <frame id="10:410" name="Frame" x="32" y="196" width="396" height="68">
+          <text id="10:411" name="문제유형 *" x="0" y="0" width="59" height="16" />
+          <frame id="10:412" name="form-dropdown" x="0" y="24" width="396" height="44">
+            <text id="10:413" name="서술형" x="16" y="13" width="39" height="18" />
+            <frame id="10:615" name="chevron-down" x="368" y="16" width="12" height="12" />
+          </frame>
+        </frame>
+        <frame id="10:415" name="Frame" x="32" y="288" width="396" height="144">
+          <text id="10:416" name="질문 / 암기할 내용 *" x="0" y="0" width="116" height="16" />
+          <frame id="10:417" name="form-textarea-large" x="0" y="24" width="396" height="120">
+            <text id="10:418" name="데이터베이스의 트랜잭션 성질인 ACID 특성 4가지(원자성, 일관성, 고립성, 지속성)의 핵심 개념과 동작 방식에 대해 간략히 설명하세요." x="14" y="14" width="368" height="63" />
+          </frame>
+        </frame>
+        <frame id="10:419" name="Frame" x="32" y="456" width="396" height="164">
+          <text id="10:420" name="모범 답안 *" x="0" y="0" width="63" height="16" />
+          <frame id="10:421" name="form-textarea-answer" x="0" y="24" width="396" height="140">
+            <text id="10:422" name="원자성(Atomicity): 트랜잭션의 작업이 부분적으로 성공하지 않고 전부 수행되거나 전부 취소되어야 함. 일관성(Consistency): 트랜잭션 완료 후 DB 상태가 무결성을 유지함. 고립성(Isolation): 트랜잭션 상호 간 독립적 보장. 지속성(Durability): 성공 완료 후 변경 사항은 영구 보존됨." x="14" y="14" width="368" height="120" />
+          </frame>
+        </frame>
+        <frame id="10:423" name="Frame" x="32" y="644" width="396" height="44">
+          <frame id="10:424" name="btn-cancel" x="0" y="0" width="192" height="44">
+            <text id="10:425" name="취소" x="83" y="13" width="26" height="18" />
+          </frame>
+          <frame id="10:426" name="btn-save" x="204" y="0" width="192" height="44">
+            <text id="10:427" name="문제 저장" x="67.5" y="13" width="57" height="18" />
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="10:429" name="theme-add-modal" x="4080" y="5140" width="1280" height="900">
+    <frame id="10:430" name="grid-layout-underlay" x="0" y="0" width="1280" height="900">
+      <frame id="10:431" name="top-nav" x="0" y="0" width="1280" height="72">
+        <frame id="10:432" name="logo" x="40" y="18" width="175" height="36">
+          <frame id="10:433" name="logo-icon" x="0" y="0" width="36" height="36">
+            <text id="10:434" name="A" x="11" y="5.5" width="14" height="25" />
+          </frame>
+          <text id="10:435" name="AnkiTyping" x="44" y="4" width="131" height="28" />
+        </frame>
+        <frame id="10:436" name="nav-right" x="705" y="17" width="535" height="38">
+          <frame id="10:437" name="nav-links" x="0" y="1.5" width="376" height="35">
+            <frame id="10:438" name="nav-tab-Home" x="0" y="0" width="76" height="35">
+              <text id="10:439" name="Home" x="16" y="8" width="44" height="19" />
+            </frame>
+            <frame id="10:440" name="nav-tab-Play" x="88" y="0" width="66" height="35">
+              <text id="10:441" name="Play" x="16" y="8" width="34" height="19" />
+            </frame>
+            <frame id="10:442" name="nav-tab-Questions" x="166" y="0" width="106" height="35">
+              <text id="10:443" name="Questions" x="16" y="8" width="74" height="19" />
+            </frame>
+            <frame id="10:444" name="nav-tab-Records" x="284" y="0" width="92" height="35">
+              <text id="10:445" name="Records" x="16" y="8" width="60" height="19" />
+            </frame>
+          </frame>
+          <frame id="10:446" name="quick-add-btn" x="408" y="0" width="127" height="38">
+            <frame id="10:618" name="plus" x="20" y="12" width="14" height="14" />
+            <text id="10:448" name="+ 문제 추가" x="40" y="10" width="67" height="18" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="10:449" name="theme-body" x="0" y="72" width="1280" height="608">
+        <frame id="10:450" name="theme-title-bar" x="40" y="40" width="1200" height="54">
+          <frame id="10:451" name="title-group" x="0" y="0" width="326" height="54">
+            <text id="10:452" name="📚 학습 테마 선택" x="0" y="0" width="181" height="30" />
+            <text id="10:453" name="학습할 카드 덱 테마를 골라 게임 대기실로 이동해보세요!" x="0" y="36" width="326" height="18" />
+          </frame>
+          <frame id="10:454" name="theme-manage-link" x="1074" y="18" width="126" height="18">
+            <text id="10:455" name="테마 관리 바로가기" x="0" y="0" width="110" height="18" />
+            <frame id="10:621" name="chevron-right" x="114" y="3" width="12" height="12" />
+          </frame>
+        </frame>
+        <frame id="10:457" name="themes-grid" x="40" y="118" width="1200" height="450">
+          <frame id="10:458" name="theme-card-SQL" x="0" y="0" width="91" height="130">
+            <frame id="10:459" name="card-actions" x="25" y="12" width="54" height="24">
+              <frame id="10:460" name="Frame" x="0" y="0" width="24" height="24">
+                <frame id="10:624" name="pencil" x="6" y="6" width="12" height="12" />
+              </frame>
+              <frame id="10:462" name="Frame" x="30" y="0" width="24" height="24">
+                <frame id="10:627" name="trash" x="6" y="6" width="12" height="12" />
+              </frame>
+            </frame>
+            <frame id="10:464" name="icon-plate" x="27.5" y="20" width="36" height="36">
+              <frame id="10:630" name="file-text" x="10" y="10" width="16" height="16" />
+            </frame>
+            <text id="10:466" name="SQL" x="32" y="66" width="27" height="18" />
+            <text id="10:467" name="문제 42개" x="20" y="94" width="51" height="16" />
+          </frame>
+          <frame id="10:468" name="theme-card-Python" x="304" y="0" width="91" height="130">
+            <frame id="10:469" name="card-actions" x="25" y="12" width="54" height="24">
+              <frame id="10:470" name="Frame" x="0" y="0" width="24" height="24">
+                <frame id="10:633" name="pencil" x="6" y="6" width="12" height="12" />
+              </frame>
+              <frame id="10:472" name="Frame" x="30" y="0" width="24" height="24">
+                <frame id="10:636" name="trash" x="6" y="6" width="12" height="12" />
+              </frame>
+            </frame>
+            <frame id="10:474" name="icon-plate" x="27.5" y="20" width="36" height="36">
+              <frame id="10:639" name="file-text" x="10" y="10" width="16" height="16" />
+            </frame>
+            <text id="10:476" name="Python" x="23" y="66" width="45" height="18" />
+            <text id="10:477" name="문제 68개" x="20" y="94" width="51" height="16" />
+          </frame>
+          <frame id="10:478" name="theme-card-CS" x="608" y="0" width="106" height="130">
+            <frame id="10:479" name="card-actions" x="40" y="12" width="54" height="24">
+              <frame id="10:480" name="Frame" x="0" y="0" width="24" height="24">
+                <frame id="10:642" name="pencil" x="6" y="6" width="12" height="12" />
+              </frame>
+              <frame id="10:482" name="Frame" x="30" y="0" width="24" height="24">
+                <frame id="10:645" name="trash" x="6" y="6" width="12" height="12" />
+              </frame>
+            </frame>
+            <frame id="10:484" name="icon-plate" x="35" y="20" width="36" height="36">
+              <frame id="10:648" name="file-text" x="10" y="10" width="16" height="16" />
+            </frame>
+            <text id="10:486" name="CS/IT 전공" x="20" y="66" width="66" height="18" />
+            <text id="10:487" name="문제 124개" x="24" y="94" width="58" height="16" />
+          </frame>
+          <frame id="10:488" name="add-theme-card" x="912" y="0" width="77" height="53">
+            <frame id="10:489" name="Frame" x="20.5" y="0" width="36" height="36">
+              <frame id="10:651" name="plus" x="10" y="10" width="16" height="16" />
+            </frame>
+            <text id="10:491" name="+ 새 테마 추가" x="0" y="36" width="77" height="17" />
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+    <rounded-rectangle id="10:492" name="theme-management-overlay" x="0" y="0" width="1280" height="900" />
+    <frame id="10:493" name="theme-management-modal" x="430" y="319.5" width="420" height="261">
+      <frame id="10:494" name="modal-header" x="24" y="24" width="372" height="52">
+        <text id="10:495" name="새 테마 추가" x="0" y="0" width="117" height="28" />
+        <text id="10:496" name="새로운 학습 테마를 추가하고 게임 대기실에 바로 반영해보세요." x="0" y="34" width="372" height="18" />
+      </frame>
+      <frame id="10:497" name="theme-name-field" x="24" y="96" width="372" height="73">
+        <text id="10:498" name="테마 이름" x="0" y="0" width="51" height="17" />
+        <frame id="10:499" name="theme-name-input" x="0" y="25" width="372" height="48">
+          <text id="10:500" name="예: 신용분석사" x="16" y="15" width="340" height="18" />
+        </frame>
+      </frame>
+      <frame id="10:501" name="modal-actions" x="24" y="189" width="372" height="48">
+        <frame id="10:502" name="cancel-button" x="0" y="0" width="180" height="48">
+          <text id="10:503" name="취소" x="77" y="15" width="26" height="18" />
+        </frame>
+        <frame id="10:504" name="add-button" x="192" y="0" width="180" height="48">
+          <text id="10:505" name="추가" x="77" y="15" width="26" height="18" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <text id="10:653" name="📋 Base Screens — 기본 화면" x="0" y="1040" width="371" height="34" />
+  <text id="10:654" name="🎮 Game Variants — 유형별 게임 화면 + Feedback 상태" x="0" y="3220" width="693" height="34" />
+  <text id="10:655" name="📝 Question Form Variants + Theme Modal" x="0" y="5090" width="575" height="34" />
+</canvas>
