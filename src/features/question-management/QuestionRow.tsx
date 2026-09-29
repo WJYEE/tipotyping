@@ -20,6 +20,9 @@ export function QuestionRow({ question, theme, tags, onEdit, onDelete }: Questio
     <div className="flex items-center justify-between gap-4 border-b border-border px-4 py-3 last:border-b-0">
       <div className="flex min-w-0 flex-1 flex-col gap-1">
         <div className="flex flex-wrap items-center gap-2">
+          <span className="rounded-badge border border-border px-1.5 py-0.5 font-mono text-[11px] font-semibold text-text-secondary">
+            {question.displayCode}
+          </span>
           <Badge tone="accent">{QUESTION_TYPE_LABELS[question.type]}</Badge>
           <span className="font-body text-xs text-text-secondary">{theme?.name ?? "삭제된 테마"}</span>
           {question.favorite && <StarIcon filled className="h-3.5 w-3.5 text-warning" />}

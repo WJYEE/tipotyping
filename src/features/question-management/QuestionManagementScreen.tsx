@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { PlusIcon } from "@/components/ui/icons";
 import { categoryRepo, questionRepo, tagRepo, themeRepo } from "@/db/repositories";
-import { getQuestionSummary } from "@/lib/questionSummary";
+import { matchesQuestionSearch } from "@/lib/questionSummary";
 import type { Question } from "@/types/domain";
 import { ImportPanel } from "@/features/question-management/ImportPanel";
 import { EMPTY_FILTERS, QuestionFilters, type QuestionFilterState } from "@/features/question-management/QuestionFilters";
@@ -28,7 +28,7 @@ export function QuestionManagementScreen() {
     if (filters.difficulty && q.difficulty !== filters.difficulty) return false;
     if (filters.onlyFlagged && !q.flagged) return false;
     if (filters.onlyFavorite && !q.favorite) return false;
-    if (filters.search && !getQuestionSummary(q).toLowerCase().includes(filters.search.toLowerCase())) {
+    if (filters.search && !matchesQuestionSearch(q, filters.search)) {
       return false;
     }
     return true;

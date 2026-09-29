@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { UploadIcon } from "@/components/ui/icons";
+import { DownloadIcon, UploadIcon } from "@/components/ui/icons";
+import { exportQuestionsAsJson } from "@/lib/exportQuestions";
 import { importQuestions, parseImportCsv, parseImportJson, type ImportResult } from "@/lib/importQuestions";
 
 export function ImportPanel() {
@@ -29,6 +30,17 @@ export function ImportPanel() {
     }
   }
 
+  async function handleExport() {
+    const json = await exportQuestionsAsJson();
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `tipotyping-questions-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
   return (
     <div className="flex flex-col gap-2">
       <input
@@ -42,16 +54,22 @@ export function ImportPanel() {
           e.target.value = "";
         }}
       />
-      <Button
-        type="button"
-        variant="secondary"
-        className="!px-4 !py-2 text-sm"
-        disabled={busy}
-        onClick={() => fileInputRef.current?.click()}
-      >
-        <UploadIcon className="h-4 w-4" />
-        {busy ? "가져오는 중..." : "JSON/CSV 가져오기"}
-      </Button>
+      <div className="flex gap-2">
+        <Button
+          type="button"
+          variant="secondary"
+          className="!px-4 !py-2 text-sm"
+          disabled={busy}
+          onClick={() => fileInputRef.current?.click()}
+        >
+          <UploadIcon className="h-4 w-4" />
+          {busy ? "가져오는 중..." : "JSON/CSV 가져오기"}
+        </Button>
+        <Button type="button" variant="secondary" className="!px-4 !py-2 text-sm" onClick={handleExport}>
+          <DownloadIcon className="h-4 w-4" />
+          JSON 내보내기
+        </Button>
+      </div>
 
       {result && (
         <p className="font-body text-xs text-text-secondary">

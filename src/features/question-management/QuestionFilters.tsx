@@ -47,7 +47,7 @@ export function QuestionFilters({ value, onChange, categories, themes, tags }: Q
         <input
           value={value.search}
           onChange={(e) => onChange({ ...value, search: e.target.value })}
-          placeholder="문제 내용 검색"
+          placeholder="문제 내용 또는 코드(예: SQL-0001) 검색"
           className="flex-1 bg-transparent font-body text-sm text-text-primary outline-none"
         />
       </div>

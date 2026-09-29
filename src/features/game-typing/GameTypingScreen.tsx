@@ -261,17 +261,22 @@ export function GameTypingScreen() {
 
       <Card className="flex flex-col gap-6">
         <div className="flex items-center justify-between">
-          <button type="button" onClick={toggleFavorite} aria-label="favorite">
-            <StarIcon
-              filled={currentQuestion.favorite}
-              className={`h-5 w-5 ${currentQuestion.favorite ? "text-warning" : "text-text-muted"}`}
-            />
-          </button>
-          <button type="button" onClick={toggleFlag} aria-label="flag">
-            <FlagIcon
-              className={`h-5 w-5 ${currentQuestion.flagged ? "text-danger" : "text-text-muted"}`}
-            />
-          </button>
+          <span className="rounded-badge border border-border px-1.5 py-0.5 font-mono text-[11px] font-semibold text-text-secondary">
+            {currentQuestion.displayCode}
+          </span>
+          <div className="flex items-center gap-3">
+            <button type="button" onClick={toggleFavorite} aria-label="favorite">
+              <StarIcon
+                filled={currentQuestion.favorite}
+                className={`h-5 w-5 ${currentQuestion.favorite ? "text-warning" : "text-text-muted"}`}
+              />
+            </button>
+            <button type="button" onClick={toggleFlag} aria-label="flag">
+              <FlagIcon
+                className={`h-5 w-5 ${currentQuestion.flagged ? "text-danger" : "text-text-muted"}`}
+              />
+            </button>
+          </div>
         </div>
 
         {running ? (

@@ -28,6 +28,17 @@ export function getQuestionSummary(question: Question): string {
   }
 }
 
+/**
+ * Question Management 검색창의 매칭 로직.
+ * displayCode(정확/부분 일치)와 기존 문제 내용 검색을 모두 지원한다. 대소문자 무시.
+ */
+export function matchesQuestionSearch(question: Question, query: string): boolean {
+  const q = query.trim().toLowerCase();
+  if (!q) return true;
+  if (question.displayCode.toLowerCase().includes(q)) return true;
+  return getQuestionSummary(question).toLowerCase().includes(q);
+}
+
 /** Feedback 화면에 보여줄 "실제 정답" 텍스트 */
 export function getCorrectAnswerText(question: Question): string {
   switch (question.type) {

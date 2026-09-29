@@ -7,6 +7,8 @@ import type { Difficulty, Question, QuestionType } from "@/types/domain";
 
 export interface ImportRow {
   id?: string;
+  /** 이전 export의 displayCode를 그대로 넘기면 가능한 한 유지한다(같은 Theme에서 충돌 시 자동 재발급). */
+  displayCode?: string;
   categoryName: string;
   themeName: string;
   type: QuestionType;
@@ -62,6 +64,7 @@ export function parseImportCsv(text: string): ImportRow[] {
 
     return {
       id: rec.id || undefined,
+      displayCode: rec.displayCode || undefined,
       categoryName: rec.categoryName,
       themeName: rec.themeName,
       type: rec.type as QuestionType,
@@ -179,8 +182,8 @@ export async function importQuestions(rows: ImportRow[]): Promise<ImportResult> 
         favorite: row.favorite ?? false,
         memo: row.memo,
         payload: row.payload,
-      } as Omit<Question, "id" | "createdAt" | "updatedAt">,
-      row.id ? { id: row.id } : undefined,
+      } as Omit<Question, "id" | "createdAt" | "updatedAt" | "displayCode">,
+      { id: row.id, displayCode: row.displayCode },
     );
 
     existingSignatures.add(signature);

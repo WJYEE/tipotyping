@@ -1,0 +1,184 @@
+// 언어: 영어 / OPIc / 일본어 / 스페인어
+// Exact Match 특성상 자유 작문/번역형 문제는 복수 정답 위험이 있어 배제하고,
+// 정답이 하나로 고정되는 어휘·용어 회상 중심으로 구성했다.
+import type { SeedQuestion } from "@/db/seed/seedTypes";
+
+export const languageQuestions: SeedQuestion[] = [
+  // ───────────── 영어 ─────────────
+  {
+    themeName: "영어",
+    type: "term-to-def",
+    tagNames: ["영어단어"],
+    payload: { term: "accomplish", definition: "성취하다, 해내다" },
+  },
+  {
+    themeName: "영어",
+    type: "def-to-term",
+    tagNames: ["영어단어"],
+    payload: { term: "negotiate", definition: "협상하다" },
+  },
+  {
+    themeName: "영어",
+    type: "term-to-def",
+    tagNames: ["영어단어"],
+    payload: { term: "postpone", definition: "미루다, 연기하다" },
+  },
+  {
+    themeName: "영어",
+    type: "def-to-term",
+    tagNames: ["영어단어"],
+    payload: { term: "efficient", definition: "효율적인" },
+  },
+  {
+    themeName: "영어",
+    type: "term-to-def",
+    difficulty: "intermediate",
+    tagNames: ["영어단어"],
+    payload: { term: "reimburse", definition: "(비용 등을) 환급하다, 상환하다" },
+  },
+  {
+    themeName: "영어",
+    type: "def-to-term",
+    difficulty: "intermediate",
+    tagNames: ["영어단어"],
+    payload: { term: "collaborate", definition: "협업하다" },
+  },
+  {
+    themeName: "영어",
+    type: "term-to-def",
+    difficulty: "intermediate",
+    tagNames: ["영어단어"],
+    payload: { term: "prioritize", definition: "우선순위를 매기다" },
+  },
+  {
+    themeName: "영어",
+    type: "def-to-term",
+    difficulty: "advanced",
+    tagNames: ["영어단어"],
+    payload: { term: "ambiguous", definition: "애매모호한" },
+  },
+  {
+    themeName: "영어",
+    type: "term-to-def",
+    difficulty: "advanced",
+    tagNames: ["영어단어"],
+    payload: { term: "leverage", definition: "(자원 등을) 활용하다, 지렛대로 삼다" },
+  },
+  {
+    themeName: "영어",
+    type: "def-to-term",
+    difficulty: "advanced",
+    tagNames: ["영어단어"],
+    payload: { term: "delegate", definition: "위임하다" },
+  },
+
+  // ───────────── OPIc ─────────────
+  {
+    themeName: "OPIc",
+    type: "def-to-term",
+    tagNames: ["OPIc"],
+    payload: { term: "롤플레이", definition: "실제 상황을 가정해 질문하고 답하는 OPIc 시험의 문제 유형" },
+  },
+  {
+    themeName: "OPIc",
+    type: "term-to-def",
+    tagNames: ["OPIc"],
+    payload: { term: "IH", definition: "OPIc 등급 중 Intermediate High, 중급 상 수준을 뜻하는 등급명" },
+  },
+  {
+    themeName: "OPIc",
+    type: "def-to-term",
+    difficulty: "intermediate",
+    tagNames: ["OPIc"],
+    payload: { term: "Background Survey", definition: "응시자의 관심사와 경험에 맞춰 문제를 출제하기 위해 시험 전 작성하는 설문" },
+  },
+  {
+    themeName: "OPIc",
+    type: "term-to-def",
+    difficulty: "intermediate",
+    tagNames: ["OPIc"],
+    payload: { term: "AL", definition: "OPIc 등급 중 Advanced Low, 유창하게 의견을 전달할 수 있는 수준의 등급명" },
+  },
+  {
+    themeName: "OPIc",
+    type: "def-to-term",
+    difficulty: "intermediate",
+    tagNames: ["OPIc"],
+    payload: { term: "돌발 질문", definition: "미리 예상하기 어려운 주제로 즉흥적인 답변 능력을 평가하는 OPIc 문제 유형" },
+  },
+
+  // ───────────── 일본어 ─────────────
+  {
+    themeName: "일본어",
+    type: "term-to-def",
+    tagNames: ["일본어단어"],
+    payload: { term: "会議", definition: "회의 (かいぎ, 카이기)" },
+  },
+  {
+    themeName: "일본어",
+    type: "def-to-term",
+    tagNames: ["일본어단어"],
+    payload: { term: "ありがとうございます", definition: "감사합니다 (정중한 표현)" },
+  },
+  {
+    themeName: "일본어",
+    type: "term-to-def",
+    tagNames: ["일본어단어"],
+    payload: { term: "会社", definition: "회사 (かいしゃ, 카이샤)" },
+  },
+  {
+    themeName: "일본어",
+    type: "def-to-term",
+    difficulty: "intermediate",
+    tagNames: ["일본어단어"],
+    payload: { term: "申し訳ございません", definition: "대단히 죄송합니다 (매우 정중한 사과 표현)" },
+  },
+  {
+    themeName: "일본어",
+    type: "term-to-def",
+    difficulty: "intermediate",
+    tagNames: ["일본어단어"],
+    payload: { term: "面接", definition: "면접 (めんせつ, 멘세츠)" },
+  },
+  {
+    themeName: "일본어",
+    type: "def-to-term",
+    difficulty: "advanced",
+    tagNames: ["일본어단어"],
+    payload: { term: "契約", definition: "계약 (けいやく, 케이야쿠)" },
+  },
+
+  // ───────────── 스페인어 ─────────────
+  {
+    themeName: "스페인어",
+    type: "term-to-def",
+    tagNames: ["스페인어단어"],
+    payload: { term: "reunión", definition: "회의, 모임" },
+  },
+  {
+    themeName: "스페인어",
+    type: "def-to-term",
+    tagNames: ["스페인어단어"],
+    payload: { term: "gracias", definition: "감사합니다" },
+  },
+  {
+    themeName: "스페인어",
+    type: "term-to-def",
+    tagNames: ["스페인어단어"],
+    payload: { term: "empresa", definition: "회사, 기업" },
+  },
+  {
+    themeName: "스페인어",
+    type: "def-to-term",
+    difficulty: "intermediate",
+    tagNames: ["스페인어단어"],
+    payload: { term: "entrevista", definition: "면접, 인터뷰" },
+  },
+  {
+    themeName: "스페인어",
+    type: "term-to-def",
+    difficulty: "advanced",
+    tagNames: ["스페인어단어"],
+    payload: { term: "contrato", definition: "계약, 계약서" },
+  },
+];

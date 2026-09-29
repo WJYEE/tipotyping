@@ -11,7 +11,7 @@ import {
   themeRepo,
 } from "@/db/repositories";
 import { seedIfEmpty } from "@/db/seed/seed";
-import { sampleQuestions } from "@/db/seed/sampleQuestions";
+import { defaultQuestions } from "@/db/seed/defaultQuestions";
 
 async function clearAllTables() {
   await db.transaction(
@@ -37,18 +37,21 @@ beforeEach(async () => {
 });
 
 describe("seedIfEmpty", () => {
-  it("기본 Category/Theme과 샘플 문제를 생성한다", async () => {
+  it("기본 Category/Theme과 기본 문제은행을 생성한다", async () => {
     await seedIfEmpty();
 
     const categories = await categoryRepo.list();
     expect(categories.length).toBe(8); // PRODUCT_SPEC 2장 대분류 8개
 
     const questions = await questionRepo.list();
-    expect(questions.length).toBe(sampleQuestions.length);
+    expect(questions.length).toBe(defaultQuestions.length);
 
-    // 모든 샘플 문제 유형이 1개씩 존재하는지 확인
+    // 6개 문제 유형이 모두 등장하는지 확인
     const types = new Set(questions.map((q) => q.type));
     expect(types.size).toBe(6);
+
+    // 모든 문제가 displayCode를 부여받았는지 확인
+    expect(questions.every((q) => !!q.displayCode)).toBe(true);
   });
 
   it("두 번째 호출은 아무 것도 하지 않는다 (idempotent)", async () => {
@@ -462,5 +465,155 @@ describe("sessionRepo.discard", () => {
 
     expect(await sessionRepo.get(session.id)).toBeUndefined();
     expect(await attemptRepo.listBySession(session.id)).toHaveLength(0);
+  });
+});
+
+describe("Question.displayCode", () => {
+  it("같은 Theme 안에서 생성 순서대로 순번이 매겨진다", async () => {
+    const category = await categoryRepo.create({ name: "코딩", order: 0, isCustom: true });
+    const theme = await themeRepo.create({
+      categoryId: category.id,
+      name: "SQL",
+      order: 0,
+      isCustom: true,
+      useDifficulty: false,
+    });
+
+    const q1 = await questionRepo.create({
+      categoryId: category.id,
+      themeId: theme.id,
+      type: "answer-input",
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+      payload: { prompt: "1", answer: "1" },
+    });
+    const q2 = await questionRepo.create({
+      categoryId: category.id,
+      themeId: theme.id,
+      type: "answer-input",
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+      payload: { prompt: "2", answer: "2" },
+    });
+
+    expect(q1.displayCode).toBe("SQL-0001");
+    expect(q2.displayCode).toBe("SQL-0002");
+  });
+
+  it("다른 Theme는 독립적으로 0001부터 시작한다", async () => {
+    const category = await categoryRepo.create({ name: "코딩", order: 0, isCustom: true });
+    const sql = await themeRepo.create({
+      categoryId: category.id,
+      name: "SQL",
+      order: 0,
+      isCustom: true,
+      useDifficulty: false,
+    });
+    const python = await themeRepo.create({
+      categoryId: category.id,
+      name: "Python",
+      order: 1,
+      isCustom: true,
+      useDifficulty: false,
+    });
+
+    const q1 = await questionRepo.create({
+      categoryId: category.id,
+      themeId: sql.id,
+      type: "answer-input",
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+      payload: { prompt: "1", answer: "1" },
+    });
+    const q2 = await questionRepo.create({
+      categoryId: category.id,
+      themeId: python.id,
+      type: "answer-input",
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+      payload: { prompt: "1", answer: "1" },
+    });
+
+    expect(q1.displayCode).toBe("SQL-0001");
+    expect(q2.displayCode).toBe("PY-0001");
+  });
+
+  it("options.displayCode가 같은 Theme에서 이미 사용 중이면 자동으로 새 코드를 발급한다", async () => {
+    const category = await categoryRepo.create({ name: "코딩", order: 0, isCustom: true });
+    const theme = await themeRepo.create({
+      categoryId: category.id,
+      name: "SQL",
+      order: 0,
+      isCustom: true,
+      useDifficulty: false,
+    });
+    const base = {
+      categoryId: category.id,
+      themeId: theme.id,
+      type: "answer-input" as const,
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+    };
+
+    await questionRepo.create({ ...base, payload: { prompt: "1", answer: "1" } }, { displayCode: "SQL-0001" });
+    const dup = await questionRepo.create(
+      { ...base, payload: { prompt: "2", answer: "2" } },
+      { displayCode: "SQL-0001" },
+    );
+
+    expect(dup.displayCode).not.toBe("SQL-0001");
+    expect(dup.displayCode).toBe("SQL-0002");
+  });
+
+  it("update는 displayCode를 변경하지 않는다 (patch 타입에서 제외됨)", async () => {
+    const category = await categoryRepo.create({ name: "코딩", order: 0, isCustom: true });
+    const theme = await themeRepo.create({
+      categoryId: category.id,
+      name: "SQL",
+      order: 0,
+      isCustom: true,
+      useDifficulty: false,
+    });
+    const question = await questionRepo.create({
+      categoryId: category.id,
+      themeId: theme.id,
+      type: "answer-input",
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+      payload: { prompt: "1", answer: "1" },
+    });
+
+    await questionRepo.update(question.id, { payload: { prompt: "수정", answer: "1" } });
+    const updated = await questionRepo.get(question.id);
+    expect(updated?.displayCode).toBe(question.displayCode);
+  });
+
+  it("findByDisplayCode로 문제를 찾을 수 있다", async () => {
+    const category = await categoryRepo.create({ name: "코딩", order: 0, isCustom: true });
+    const theme = await themeRepo.create({
+      categoryId: category.id,
+      name: "SQL",
+      order: 0,
+      isCustom: true,
+      useDifficulty: false,
+    });
+    const question = await questionRepo.create({
+      categoryId: category.id,
+      themeId: theme.id,
+      type: "answer-input",
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+      payload: { prompt: "1", answer: "1" },
+    });
+
+    const found = await questionRepo.findByDisplayCode(question.displayCode);
+    expect(found?.id).toBe(question.id);
   });
 });

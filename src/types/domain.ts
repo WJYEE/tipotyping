@@ -67,6 +67,8 @@ export interface EssayPayload {
 
 interface QuestionBase {
   id: string;
+  /** 사용자에게 노출되는 고유 식별자 (예: SQL-0001). 동일 Theme 내에서만 유일하면 된다. */
+  displayCode: string;
   categoryId: string;
   themeId: string;
   tagIds: string[];

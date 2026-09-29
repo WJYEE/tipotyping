@@ -123,6 +123,51 @@ describe("importQuestions", () => {
     expect(second.skipped).toBe(1);
   });
 
+  it("displayCode를 지정하면 그대로 유지한다", async () => {
+    await seedCategoryTheme();
+    const result = await importQuestions([
+      {
+        categoryName: "코딩",
+        themeName: "SQL",
+        type: "answer-input",
+        displayCode: "SQL-0099",
+        payload: { prompt: "p", answer: "a" },
+      },
+    ]);
+    expect(result.imported).toBe(1);
+    const [question] = await questionRepo.list();
+    expect(question.displayCode).toBe("SQL-0099");
+  });
+
+  it("displayCode가 같은 Theme에서 이미 사용 중이면 새 코드를 자동 발급한다", async () => {
+    const { theme } = await seedCategoryTheme();
+    await questionRepo.create(
+      {
+        categoryId: theme.categoryId,
+        themeId: theme.id,
+        type: "answer-input",
+        tagIds: [],
+        flagged: false,
+        favorite: false,
+        payload: { prompt: "existing", answer: "x" },
+      },
+      { displayCode: "SQL-0001" },
+    );
+
+    const result = await importQuestions([
+      {
+        categoryName: "코딩",
+        themeName: "SQL",
+        type: "answer-input",
+        displayCode: "SQL-0001",
+        payload: { prompt: "new", answer: "y" },
+      },
+    ]);
+    expect(result.imported).toBe(1);
+    const imported = (await questionRepo.list()).find((q) => q.payload && "prompt" in q.payload && q.payload.prompt === "new");
+    expect(imported?.displayCode).not.toBe("SQL-0001");
+  });
+
   it("존재하지 않는 카테고리/테마는 errors에 기록하고 저장하지 않는다", async () => {
     await seedCategoryTheme();
     const result = await importQuestions([

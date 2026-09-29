@@ -4,11 +4,11 @@ import { themeRepo } from "@/db/repositories/themeRepo";
 import { tagRepo } from "@/db/repositories/tagRepo";
 import { questionRepo } from "@/db/repositories/questionRepo";
 import { defaultCategories } from "@/db/seed/defaultCategories";
-import { sampleQuestions } from "@/db/seed/sampleQuestions";
+import { defaultQuestions } from "@/db/seed/defaultQuestions";
 import type { Question } from "@/types/domain";
 
 /**
- * 첫 실행 시 기본 Category/Theme + 검증용 샘플 문제를 채운다.
+ * 첫 실행 시 기본 Category/Theme + 8개 대분류 전체를 아우르는 기본 문제은행을 채운다 (14장).
  * 이미 Category가 하나라도 있으면(=이전에 시드했거나 사용자가 데이터를 만든 상태) 아무것도 하지 않는다.
  */
 export async function seedIfEmpty(): Promise<void> {
@@ -36,7 +36,7 @@ export async function seedIfEmpty(): Promise<void> {
     }
   }
 
-  for (const seedQuestion of sampleQuestions) {
+  for (const seedQuestion of defaultQuestions) {
     const theme = themeByName.get(seedQuestion.themeName);
     if (!theme) {
       throw new Error(`샘플 문제가 참조하는 테마를 찾을 수 없습니다: ${seedQuestion.themeName}`);
@@ -54,6 +54,6 @@ export async function seedIfEmpty(): Promise<void> {
       flagged: false,
       favorite: false,
       payload: seedQuestion.payload,
-    } as Omit<Question, "id" | "createdAt" | "updatedAt">);
+    } as Omit<Question, "id" | "createdAt" | "updatedAt" | "displayCode">);
   }
 }

@@ -140,9 +140,16 @@ export function QuestionForm({ categories, themes, tags, initial, onClose }: Que
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-text-primary/40 p-6">
       <Card className="max-h-[90vh] w-full max-w-xl overflow-y-auto">
-        <h2 className="font-display text-lg font-extrabold text-text-primary">
-          {isEdit ? "문제 수정" : "문제 추가"}
-        </h2>
+        <div className="flex items-center gap-2">
+          <h2 className="font-display text-lg font-extrabold text-text-primary">
+            {isEdit ? "문제 수정" : "문제 추가"}
+          </h2>
+          {isEdit && initial && (
+            <span className="rounded-badge border border-border px-1.5 py-0.5 font-mono text-[11px] font-semibold text-text-secondary">
+              {initial.displayCode}
+            </span>
+          )}
+        </div>
 
         <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-4">
           <label className="flex flex-col gap-1.5">

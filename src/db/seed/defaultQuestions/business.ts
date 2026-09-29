@@ -1,0 +1,302 @@
+// 비즈니스: 이커머스 / 플랫폼 / 비즈니스모델 / KPI·지표 / 마케팅
+import type { SeedQuestion } from "@/db/seed/seedTypes";
+
+export const businessQuestions: SeedQuestion[] = [
+  // ───────────── 이커머스 ─────────────
+  {
+    themeName: "이커머스",
+    type: "term-to-def",
+    tagNames: ["이커머스"],
+    payload: { term: "전환율", definition: "방문자 중 실제 구매로 이어진 비율" },
+  },
+  {
+    themeName: "이커머스",
+    type: "def-to-term",
+    tagNames: ["이커머스"],
+    payload: { term: "객단가", definition: "고객 한 명이 한 번 구매할 때 지불하는 평균 금액" },
+  },
+  {
+    themeName: "이커머스",
+    type: "term-to-def",
+    tagNames: ["이커머스"],
+    payload: { term: "장바구니 이탈", definition: "상품을 장바구니에 담았지만 결제를 완료하지 않고 떠나는 행동" },
+  },
+  {
+    themeName: "이커머스",
+    type: "def-to-term",
+    difficulty: "intermediate",
+    tagNames: ["이커머스"],
+    payload: { term: "재구매율", definition: "한 번 구매한 고객이 다시 구매하는 비율" },
+  },
+  {
+    themeName: "이커머스",
+    type: "multiple-choice",
+    difficulty: "intermediate",
+    tagNames: ["이커머스"],
+    explanation: "풀필먼트는 주문 이후 물류(보관·포장·배송)를 대행해주는 서비스를 뜻한다.",
+    payload: {
+      prompt: "판매자를 대신해 상품 보관, 포장, 배송까지 처리해주는 물류 서비스는?",
+      options: ["드롭쉬핑", "풀필먼트", "옴니채널", "리마케팅"],
+      correctIndex: 1,
+    },
+  },
+  {
+    themeName: "이커머스",
+    type: "def-to-term",
+    difficulty: "advanced",
+    tagNames: ["이커머스"],
+    payload: { term: "옴니채널", definition: "온라인과 오프라인 등 여러 채널을 하나로 연결해 끊김 없는 쇼핑 경험을 제공하는 전략" },
+  },
+  {
+    themeName: "이커머스",
+    type: "essay",
+    difficulty: "intermediate",
+    tagNames: ["이커머스"],
+    payload: {
+      prompt: "장바구니 이탈률이 높을 때 점검해야 할 대표적인 원인을 한 문장으로 설명하시오.",
+      answer: "예상보다 높은 배송비나 복잡한 결제 절차 등 구매 직전 단계의 마찰 요소가 없는지 점검해야 한다.",
+    },
+  },
+  {
+    themeName: "이커머스",
+    type: "def-to-term",
+    difficulty: "intermediate",
+    tagNames: ["이커머스"],
+    payload: { term: "크로스셀링", definition: "고객이 구매하려는 상품과 관련된 다른 상품을 함께 제안해 추가 구매를 유도하는 전략" },
+  },
+  {
+    themeName: "이커머스",
+    type: "term-to-def",
+    difficulty: "intermediate",
+    tagNames: ["이커머스"],
+    payload: { term: "업셀링", definition: "고객이 고려 중인 상품보다 더 비싸거나 상위 등급의 상품을 제안하는 전략" },
+  },
+  {
+    themeName: "이커머스",
+    type: "multiple-choice",
+    difficulty: "intermediate",
+    tagNames: ["이커머스"],
+    explanation: "재구매 고객의 유지 비용은 신규 고객 획득 비용보다 낮은 것이 일반적이다.",
+    payload: {
+      prompt: "일반적으로 신규 고객 획득 비용과 기존 고객 유지 비용을 비교하면?",
+      options: ["신규 고객 획득이 더 저렴하다", "기존 고객 유지가 더 저렴하다", "항상 동일하다", "비교할 수 없다"],
+      correctIndex: 1,
+    },
+  },
+
+  // ───────────── 플랫폼 ─────────────
+  {
+    themeName: "플랫폼",
+    type: "term-to-def",
+    tagNames: ["플랫폼"],
+    payload: { term: "네트워크 효과", definition: "사용자가 늘어날수록 서비스의 가치가 함께 커지는 현상" },
+  },
+  {
+    themeName: "플랫폼",
+    type: "def-to-term",
+    tagNames: ["플랫폼"],
+    payload: { term: "양면시장", definition: "공급자와 수요자 두 집단을 동시에 연결해 가치를 만드는 시장 구조" },
+  },
+  {
+    themeName: "플랫폼",
+    type: "term-to-def",
+    tagNames: ["플랫폼"],
+    payload: { term: "락인 효과", definition: "전환 비용이 높아 사용자가 다른 서비스로 옮기기 어려워지는 현상" },
+  },
+  {
+    themeName: "플랫폼",
+    type: "essay",
+    difficulty: "intermediate",
+    tagNames: ["플랫폼"],
+    payload: {
+      prompt: "양면시장 플랫폼이 초기에 어느 한쪽 사용자만 모으기 어려운 이유를 한 문장으로 설명하시오.",
+      answer: "공급자는 수요자가 있어야 참여하고 수요자는 공급자가 있어야 참여하려 해 어느 쪽도 먼저 나서기 어렵기 때문이다.",
+    },
+  },
+  {
+    themeName: "플랫폼",
+    type: "def-to-term",
+    difficulty: "advanced",
+    tagNames: ["플랫폼"],
+    payload: { term: "멀티호밍", definition: "사용자가 동시에 여러 경쟁 플랫폼을 함께 이용하는 행동" },
+  },
+  {
+    themeName: "플랫폼",
+    type: "term-to-def",
+    difficulty: "advanced",
+    tagNames: ["플랫폼"],
+    payload: { term: "치킨 앤 에그 문제", definition: "양면시장에서 공급자와 수요자 중 누가 먼저 모여야 하는지가 순환적으로 얽혀 있는 초기 성장의 딜레마" },
+  },
+  {
+    themeName: "플랫폼",
+    type: "multiple-choice",
+    difficulty: "advanced",
+    tagNames: ["플랫폼"],
+    explanation: "직접 네트워크 효과는 같은 집단의 사용자가 늘수록 가치가 커지는 것이고, 간접 네트워크 효과는 다른 집단(공급자 등)이 늘 때 가치가 커지는 것이다.",
+    payload: {
+      prompt: "배달앱에서 입점 식당이 늘어날수록 이용자에게도 서비스 가치가 커지는 효과를 부르는 이름은?",
+      options: ["직접 네트워크 효과", "간접 네트워크 효과", "락인 효과", "규모의 경제"],
+      correctIndex: 1,
+    },
+  },
+
+  // ───────────── 비즈니스모델 ─────────────
+  {
+    themeName: "비즈니스모델",
+    type: "term-to-def",
+    tagNames: ["비즈니스모델"],
+    payload: { term: "프리미엄", definition: "기본 기능은 무료로 제공하고 고급 기능은 유료로 판매하는 수익 모델" },
+  },
+  {
+    themeName: "비즈니스모델",
+    type: "def-to-term",
+    tagNames: ["비즈니스모델"],
+    payload: { term: "구독 모델", definition: "정기적으로 일정 금액을 지불하고 서비스를 지속 이용하는 수익 구조" },
+  },
+  {
+    themeName: "비즈니스모델",
+    type: "essay",
+    tagNames: ["비즈니스모델"],
+    payload: {
+      prompt: "B2B와 B2C 비즈니스모델의 차이를 한 문장으로 설명하시오.",
+      answer: "B2B는 기업을 대상으로, B2C는 일반 소비자를 대상으로 상품이나 서비스를 판매하는 모델이다.",
+    },
+  },
+  {
+    themeName: "비즈니스모델",
+    type: "def-to-term",
+    difficulty: "intermediate",
+    tagNames: ["비즈니스모델"],
+    payload: { term: "수수료 모델", definition: "거래가 성사될 때마다 중개자가 일정 비율을 수수료로 가져가는 수익 구조" },
+  },
+  {
+    themeName: "비즈니스모델",
+    type: "multiple-choice",
+    difficulty: "intermediate",
+    tagNames: ["비즈니스모델"],
+    explanation: "프리미엄(Freemium)은 무료 사용자 저변을 넓힌 뒤 일부를 유료로 전환시키는 전략이다.",
+    payload: {
+      prompt: "무료 사용자를 대규모로 확보한 뒤 일부를 유료 고객으로 전환시키는 전략은?",
+      options: ["프리미엄(Freemium)", "구독 모델", "수수료 모델", "라이선스 모델"],
+      correctIndex: 0,
+    },
+  },
+  {
+    themeName: "비즈니스모델",
+    type: "def-to-term",
+    difficulty: "advanced",
+    tagNames: ["비즈니스모델"],
+    payload: { term: "린 스타트업", definition: "최소기능제품(MVP)을 빠르게 출시하고 검증하며 반복적으로 개선해가는 창업 방법론" },
+  },
+  {
+    themeName: "비즈니스모델",
+    type: "term-to-def",
+    difficulty: "advanced",
+    tagNames: ["비즈니스모델"],
+    payload: { term: "MVP", definition: "핵심 가설을 검증할 수 있는 최소한의 기능만 담은 제품" },
+  },
+
+  // ───────────── KPI·지표 ─────────────
+  {
+    themeName: "KPI·지표",
+    type: "def-to-term",
+    tagNames: ["KPI"],
+    payload: { term: "MAU", definition: "한 달 동안 서비스를 이용한 순수 이용자 수" },
+  },
+  {
+    themeName: "KPI·지표",
+    type: "term-to-def",
+    tagNames: ["KPI"],
+    payload: { term: "DAU", definition: "하루 동안 서비스를 이용한 순수 이용자 수" },
+  },
+  {
+    themeName: "KPI·지표",
+    type: "answer-input",
+    tagNames: ["KPI"],
+    payload: { prompt: "DAU를 MAU로 나눈 값으로 서비스의 고착도를 보는 지표는? (약어로 답)", answer: "DAU/MAU" },
+  },
+  {
+    themeName: "KPI·지표",
+    type: "def-to-term",
+    difficulty: "intermediate",
+    tagNames: ["KPI"],
+    payload: { term: "OKR", definition: "목표(Objective)와 그 달성 여부를 측정하는 핵심결과(Key Result)로 구성된 목표 관리 방법론" },
+  },
+  {
+    themeName: "KPI·지표",
+    type: "essay",
+    difficulty: "advanced",
+    tagNames: ["KPI"],
+    payload: {
+      prompt: "허무 지표(Vanity Metric)가 위험한 이유를 한 문장으로 설명하시오.",
+      answer: "숫자는 커 보이지만 실제 사업 성과나 의사결정에 도움이 되지 않아 잘못된 판단으로 이어질 수 있기 때문이다.",
+    },
+  },
+  {
+    themeName: "KPI·지표",
+    type: "def-to-term",
+    difficulty: "advanced",
+    tagNames: ["KPI"],
+    payload: { term: "NPS", definition: "타인에게 서비스를 추천할 의향을 0~10점으로 물어 고객 충성도를 측정하는 지표" },
+  },
+
+  // ───────────── 마케팅 ─────────────
+  {
+    themeName: "마케팅",
+    type: "term-to-def",
+    tagNames: ["마케팅"],
+    payload: { term: "퍼포먼스 마케팅", definition: "광고 집행 결과를 데이터로 측정하고 최적화하는 마케팅 방식" },
+  },
+  {
+    themeName: "마케팅",
+    type: "def-to-term",
+    tagNames: ["마케팅"],
+    payload: { term: "ROAS", definition: "광고비 대비 발생한 매출의 비율" },
+  },
+  {
+    themeName: "마케팅",
+    type: "term-to-def",
+    tagNames: ["마케팅"],
+    payload: { term: "CTR", definition: "노출된 광고 대비 실제 클릭이 발생한 비율" },
+  },
+  {
+    themeName: "마케팅",
+    type: "def-to-term",
+    difficulty: "intermediate",
+    tagNames: ["마케팅"],
+    payload: { term: "CPA", definition: "전환(가입, 구매 등) 1건을 얻는 데 든 평균 광고 비용" },
+  },
+  {
+    themeName: "마케팅",
+    type: "multiple-choice",
+    difficulty: "intermediate",
+    tagNames: ["마케팅"],
+    explanation: "리타겟팅은 이미 방문했던 사용자에게 다시 광고를 노출해 전환을 유도하는 기법이다.",
+    payload: {
+      prompt: "웹사이트를 방문했지만 구매하지 않은 사용자에게 다시 광고를 노출하는 기법은?",
+      options: ["SEO", "리타겟팅", "PR", "CRM"],
+      correctIndex: 1,
+    },
+  },
+  {
+    themeName: "마케팅",
+    type: "def-to-term",
+    difficulty: "advanced",
+    tagNames: ["마케팅"],
+    payload: { term: "브랜드 인지도", definition: "소비자가 특정 브랜드를 얼마나 알고 있고 떠올릴 수 있는지의 정도" },
+  },
+  {
+    themeName: "마케팅",
+    type: "term-to-def",
+    difficulty: "advanced",
+    tagNames: ["마케팅"],
+    payload: { term: "SEO", definition: "검색엔진 결과에서 자연 노출 순위를 높이기 위한 웹사이트 최적화 작업" },
+  },
+  {
+    themeName: "마케팅",
+    type: "def-to-term",
+    difficulty: "advanced",
+    tagNames: ["마케팅"],
+    payload: { term: "그로스해킹", definition: "데이터 기반 실험을 빠르게 반복해 제품 성장 지표를 개선하는 마케팅 접근법" },
+  },
+];
