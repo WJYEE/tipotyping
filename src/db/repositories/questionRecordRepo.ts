@@ -17,6 +17,11 @@ export const questionRecordRepo = {
     return db.questionRecords.get(questionId);
   },
 
+  /** 출제 알고리즘의 "새 문제 우선/오답 우선" 정렬에 사용 */
+  list(): Promise<QuestionRecord[]> {
+    return db.questionRecords.toArray();
+  },
+
   async ensure(questionId: string): Promise<QuestionRecord> {
     const existing = await db.questionRecords.get(questionId);
     if (existing) return existing;

@@ -1,0 +1,107 @@
+// 6장 Question Selection: 복수 테마/유형/태그/난이도 필터 + 4개 출제모드 + 테마·유형 균등 출제.
+import type { Difficulty, Question, QuestionRecord, QuestionType } from "@/types/domain";
+import type { OrderMode } from "@/types/domain";
+
+export interface SelectionFilters {
+  themeIds: string[];
+  questionTypes: QuestionType[];
+  tagIds: string[];
+  difficulties: Difficulty[];
+}
+
+export interface GameConfig extends SelectionFilters {
+  orderMode: OrderMode;
+}
+
+export function filterQuestions(questions: Question[], filters: SelectionFilters): Question[] {
+  return questions.filter((q) => {
+    if (!filters.themeIds.includes(q.themeId)) return false;
+    if (!filters.questionTypes.includes(q.type)) return false;
+    if (filters.tagIds.length > 0 && !q.tagIds.some((id) => filters.tagIds.includes(id))) {
+      return false;
+    }
+    if (filters.difficulties.length > 0) {
+      if (!q.difficulty || !filters.difficulties.includes(q.difficulty)) return false;
+    }
+    return true;
+  });
+}
+
+function shuffle<T>(arr: T[]): T[] {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+/**
+ * 한 사이클 분량의 출제 순서를 만든다.
+ * themeId × questionType 버킷으로 나눈 뒤 라운드로빈으로 뽑아 테마/유형이 균등하게 섞이게 하고,
+ * 각 버킷 내부는 orderMode에 따라 정렬(순서대로/새 문제 우선/오답 우선) 또는 셔플(랜덤)한다.
+ */
+export function buildCycleQueue(
+  eligible: Question[],
+  themeIds: string[],
+  questionTypes: QuestionType[],
+  orderMode: OrderMode,
+  records: Map<string, QuestionRecord>,
+): Question[] {
+  const buckets = new Map<string, Map<QuestionType, Question[]>>();
+  for (const themeId of themeIds) buckets.set(themeId, new Map());
+
+  for (const q of eligible) {
+    const themeBucket = buckets.get(q.themeId);
+    if (!themeBucket) continue;
+    const arr = themeBucket.get(q.type) ?? [];
+    arr.push(q);
+    themeBucket.set(q.type, arr);
+  }
+
+  function byRecency(a: Question, b: Question): number {
+    return a.createdAt - b.createdAt;
+  }
+
+  for (const themeBucket of buckets.values()) {
+    for (const [type, arr] of themeBucket) {
+      if (orderMode === "random") {
+        themeBucket.set(type, shuffle(arr));
+      } else if (orderMode === "new-first") {
+        arr.sort((a, b) => {
+          const aNew = (records.get(a.id)?.totalAttempts ?? 0) === 0;
+          const bNew = (records.get(b.id)?.totalAttempts ?? 0) === 0;
+          if (aNew !== bNew) return aNew ? -1 : 1;
+          return byRecency(a, b);
+        });
+      } else if (orderMode === "wrong-first") {
+        arr.sort((a, b) => {
+          const aWrong = records.get(a.id)?.lastResult === "wrong";
+          const bWrong = records.get(b.id)?.lastResult === "wrong";
+          if (aWrong !== bWrong) return aWrong ? -1 : 1;
+          return byRecency(a, b);
+        });
+      } else {
+        arr.sort(byRecency);
+      }
+    }
+  }
+
+  const queue: Question[] = [];
+  let remaining = eligible.length;
+  while (remaining > 0) {
+    for (const themeId of themeIds) {
+      const themeBucket = buckets.get(themeId);
+      if (!themeBucket) continue;
+      for (const type of questionTypes) {
+        const arr = themeBucket.get(type);
+        if (arr && arr.length > 0) {
+          queue.push(arr.shift()!);
+          remaining--;
+        }
+      }
+    }
+  }
+
+  return queue;
+}

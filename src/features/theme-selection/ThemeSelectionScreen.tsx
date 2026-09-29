@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useLiveQuery } from "dexie-react-hooks";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/Button";
 import { ChevronRightIcon, PlusIcon } from "@/components/ui/icons";
 import { categoryRepo, questionRepo, themeRepo } from "@/db/repositories";
 import type { Category, Theme } from "@/types/domain";
@@ -17,6 +19,7 @@ interface ModalState {
 }
 
 export function ThemeSelectionScreen() {
+  const navigate = useNavigate();
   const categories = useLiveQuery(() => categoryRepo.list(), []) ?? [];
   const themes = useLiveQuery(() => themeRepo.list(), []) ?? [];
   const questions = useLiveQuery(() => questionRepo.list(), []) ?? [];
@@ -75,8 +78,12 @@ export function ThemeSelectionScreen() {
     }
   }
 
+  function handleStart() {
+    navigate("/play/setup", { state: { themeIds: [...selectedThemeIds] } });
+  }
+
   return (
-    <div className="mx-auto flex max-w-[1280px] flex-col gap-8 px-6 py-10 md:px-10">
+    <div className="mx-auto flex max-w-[1280px] flex-col gap-8 px-6 py-10 pb-28 md:px-10">
       <div className="flex items-center justify-between gap-4">
         <div className="flex flex-col gap-1.5">
           <h1 className="font-display text-2xl font-extrabold text-text-primary">
@@ -171,6 +178,14 @@ export function ThemeSelectionScreen() {
           defaultCategoryId={modal.defaultCategoryId}
           onClose={() => setModal(null)}
         />
+      )}
+
+      {selectedThemeIds.size > 0 && (
+        <div className="fixed inset-x-0 bottom-0 z-40 flex justify-center border-t-2 border-border-strong bg-surface py-4">
+          <Button variant="success" className="!px-8 !py-3 font-display text-base font-extrabold" onClick={handleStart}>
+            선택한 테마로 시작하기 ({selectedThemeIds.size})
+          </Button>
+        </div>
       )}
     </div>
   );

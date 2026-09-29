@@ -415,3 +415,52 @@ describe("Settings", () => {
     expect(await settingsRepo.get("dashboardRange")).toBe("30d");
   });
 });
+
+describe("sessionRepo.discard", () => {
+  it("5장: 10초 미만 Session은 discard로 Session과 Attempt를 함께 제거한다", async () => {
+    const category = await categoryRepo.create({ name: "카테고리", order: 0, isCustom: true });
+    const theme = await themeRepo.create({
+      categoryId: category.id,
+      name: "테마",
+      order: 0,
+      isCustom: true,
+      useDifficulty: false,
+    });
+    const question = await questionRepo.create({
+      categoryId: category.id,
+      themeId: theme.id,
+      type: "answer-input",
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+      payload: { prompt: "p", answer: "a" },
+    });
+    const session = await sessionRepo.create({
+      startedAt: Date.now(),
+      endedAt: null,
+      totalDurationMs: 3000,
+      themeIds: [theme.id],
+      tagIds: [],
+      questionTypes: ["answer-input"],
+      difficulties: [],
+      orderMode: "sequential",
+      totalAttempts: 0,
+      correctCount: 0,
+      wrongCount: 0,
+      accuracy: 0,
+    });
+    await attemptRepo.record({
+      sessionId: session.id,
+      questionId: question.id,
+      questionType: "answer-input",
+      isCorrect: true,
+      userAnswer: "a",
+      attemptedAt: Date.now(),
+    });
+
+    await sessionRepo.discard(session.id);
+
+    expect(await sessionRepo.get(session.id)).toBeUndefined();
+    expect(await attemptRepo.listBySession(session.id)).toHaveLength(0);
+  });
+});

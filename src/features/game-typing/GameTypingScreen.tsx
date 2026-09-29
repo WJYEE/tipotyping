@@ -1,0 +1,315 @@
+import { useEffect, useRef, useState } from "react";
+import { useLiveQuery } from "dexie-react-hooks";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Card } from "@/components/ui/Card";
+import { StarIcon, FlagIcon } from "@/components/ui/icons";
+import { attemptRepo, questionRecordRepo, questionRepo, sessionRepo } from "@/db/repositories";
+import { evaluateAnswer } from "@/lib/evaluateAnswer";
+import { shouldAdvanceOnEnter } from "@/lib/keyboard";
+import { buildCycleQueue, filterQuestions, type GameConfig } from "@/lib/questionSelection";
+import { getCorrectAnswerText } from "@/lib/questionSummary";
+import type { Question, QuestionRecord } from "@/types/domain";
+import { FeedbackPanel } from "@/features/game-typing/FeedbackPanel";
+import { QuestionView } from "@/features/game-typing/QuestionView";
+
+const MIN_SESSION_MS = 10_000;
+
+function formatClock(ms: number): string {
+  const totalSeconds = Math.floor(ms / 1000);
+  const m = Math.floor(totalSeconds / 60);
+  const s = totalSeconds % 60;
+  return `${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+}
+
+export function GameTypingScreen() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const config = (location.state as { config?: GameConfig } | null)?.config ?? null;
+
+  const questions = useLiveQuery(() => questionRepo.list(), []) ?? [];
+  const records = useLiveQuery(() => questionRecordRepo.list(), []) ?? [];
+  const recordMap = new Map<string, QuestionRecord>(records.map((r) => [r.questionId, r]));
+
+  const sessionIdRef = useRef<string | null>(null);
+  const [sessionReady, setSessionReady] = useState(false);
+  const [cycleQueue, setCycleQueue] = useState<Question[]>([]);
+  const [cursor, setCursor] = useState(0);
+  const [phase, setPhase] = useState<"answering" | "feedback">("answering");
+  const [feedback, setFeedback] = useState<{ isCorrect: boolean; correctAnswerText: string } | null>(
+    null,
+  );
+  const [running, setRunning] = useState(true);
+  const [elapsedMs, setElapsedMs] = useState(0);
+  const elapsedMsRef = useRef(0);
+  const endedRef = useRef(false);
+  const [memoDraft, setMemoDraft] = useState("");
+
+  useEffect(() => {
+    elapsedMsRef.current = elapsedMs;
+  }, [elapsedMs]);
+
+  // 타이머: Pause 중에는 interval을 세우지 않아 자연스럽게 시간이 제외된다.
+  useEffect(() => {
+    if (!running) return;
+    const id = setInterval(() => setElapsedMs((v) => v + 1000), 1000);
+    return () => clearInterval(id);
+  }, [running]);
+
+  // Session row는 화면 진입(START) 시 1회 생성한다.
+  useEffect(() => {
+    if (!config || sessionIdRef.current) return;
+    sessionRepo
+      .create({
+        startedAt: Date.now(),
+        endedAt: null,
+        totalDurationMs: 0,
+        themeIds: config.themeIds,
+        tagIds: config.tagIds,
+        questionTypes: config.questionTypes,
+        difficulties: config.difficulties,
+        orderMode: config.orderMode,
+        totalAttempts: 0,
+        correctCount: 0,
+        wrongCount: 0,
+        accuracy: 0,
+      })
+      .then((session) => {
+        sessionIdRef.current = session.id;
+        setSessionReady(true);
+      });
+  }, [config]);
+
+  function startNewCycle() {
+    if (!config) return;
+    const eligible = filterQuestions(questions, config);
+    const queue = buildCycleQueue(
+      eligible,
+      config.themeIds,
+      config.questionTypes,
+      config.orderMode,
+      recordMap,
+    );
+    setCycleQueue(queue);
+    setCursor(0);
+  }
+
+  // 최초 1회, 문제 데이터가 로드되면 첫 사이클을 만든다.
+  useEffect(() => {
+    if (config && questions.length > 0 && cycleQueue.length === 0 && cursor === 0 && phase === "answering") {
+      startNewCycle();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [config, questions.length]);
+
+  const currentQueued = cycleQueue[cursor];
+  const currentQuestion = currentQueued
+    ? (questions.find((q) => q.id === currentQueued.id) ?? currentQueued)
+    : null;
+
+  useEffect(() => {
+    setMemoDraft(currentQuestion?.memo ?? "");
+  }, [currentQuestion?.id]);
+
+  async function finishSession(navigateAway: boolean) {
+    if (endedRef.current) return;
+    endedRef.current = true;
+    setRunning(false);
+    const sessionId = sessionIdRef.current;
+    if (!sessionId) {
+      if (navigateAway) navigate("/");
+      return;
+    }
+    const qualifies = elapsedMsRef.current >= MIN_SESSION_MS;
+    if (qualifies) {
+      await sessionRepo.update(sessionId, {
+        endedAt: Date.now(),
+        totalDurationMs: elapsedMsRef.current,
+      });
+    } else {
+      await sessionRepo.discard(sessionId);
+    }
+    if (navigateAway) {
+      navigate("/play/result", { state: { sessionId: qualifies ? sessionId : null } });
+    }
+  }
+
+  function handleEnd() {
+    if (!confirm("학습을 종료할까요?")) return;
+    finishSession(true);
+  }
+
+  // ESC로 종료
+  useEffect(() => {
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === "Escape") handleEnd();
+    }
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Feedback 화면에서 Enter → 다음 문제.
+  // 전역 리스너이지만 실제 진행 여부는 shouldAdvanceOnEnter가 판단한다:
+  // IME 조합 중 / answering 단계 / Pause 중 / 메모 등 입력창에 포커스가 있으면 무시한다.
+  useEffect(() => {
+    function handleKey(e: KeyboardEvent) {
+      const advance = shouldAdvanceOnEnter({
+        key: e.key,
+        isComposing: e.isComposing || e.keyCode === 229,
+        phase,
+        running,
+        focusedTag: document.activeElement?.tagName ?? null,
+      });
+      if (advance) advanceToNext();
+    }
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, running]);
+
+  function advanceToNext() {
+    setFeedback(null);
+    setPhase("answering");
+    if (cursor + 1 >= cycleQueue.length) {
+      startNewCycle();
+    } else {
+      setCursor((c) => c + 1);
+    }
+  }
+
+  async function handleAnswer(userAnswer: string | Record<string, string>) {
+    if (!currentQuestion || !sessionIdRef.current) return;
+    const evaluation = evaluateAnswer(currentQuestion, userAnswer);
+    await attemptRepo.record({
+      sessionId: sessionIdRef.current,
+      questionId: currentQuestion.id,
+      questionType: currentQuestion.type,
+      isCorrect: evaluation.isCorrect,
+      userAnswer: typeof userAnswer === "string" ? userAnswer : JSON.stringify(userAnswer),
+      blankResults: evaluation.blankResults,
+      attemptedAt: Date.now(),
+    });
+    setFeedback({
+      isCorrect: evaluation.isCorrect,
+      correctAnswerText: getCorrectAnswerText(currentQuestion),
+    });
+    setPhase("feedback");
+  }
+
+  function handleSkip() {
+    advanceToNext();
+  }
+
+  async function toggleFavorite() {
+    if (!currentQuestion) return;
+    await questionRepo.update(currentQuestion.id, { favorite: !currentQuestion.favorite });
+  }
+
+  async function toggleFlag() {
+    if (!currentQuestion) return;
+    await questionRepo.update(currentQuestion.id, { flagged: !currentQuestion.flagged });
+  }
+
+  async function saveMemo() {
+    if (!currentQuestion) return;
+    if (memoDraft === (currentQuestion.memo ?? "")) return;
+    await questionRepo.update(currentQuestion.id, { memo: memoDraft || undefined });
+  }
+
+  if (!config) {
+    return (
+      <div className="mx-auto flex max-w-[640px] flex-col items-center gap-4 px-6 py-20 text-center">
+        <p className="font-body text-sm text-text-secondary">게임 설정 정보가 없습니다.</p>
+        <Link to="/play" className="font-body text-sm font-semibold text-accent">
+          테마 선택으로 이동
+        </Link>
+      </div>
+    );
+  }
+
+  if (!sessionReady || !currentQuestion) {
+    return (
+      <div className="mx-auto flex max-w-[640px] flex-col items-center gap-4 px-6 py-20 text-center">
+        <p className="font-body text-sm text-text-secondary">문제를 준비하는 중...</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-auto flex max-w-[720px] flex-col gap-6 px-6 py-10 md:px-10">
+      <div className="flex items-center justify-between">
+        <span className="font-display text-2xl font-extrabold text-text-primary">
+          {formatClock(elapsedMs)}
+        </span>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setRunning((r) => !r)}
+            className="rounded-pill border-2 border-border-strong px-4 py-1.5 font-body text-sm font-semibold text-text-primary"
+          >
+            {running ? "Pause" : "Resume"}
+          </button>
+          <button
+            type="button"
+            onClick={handleEnd}
+            className="rounded-pill border-2 border-border-strong px-4 py-1.5 font-body text-sm font-semibold text-text-primary"
+          >
+            학습 종료
+          </button>
+        </div>
+      </div>
+
+      <Card className="flex flex-col gap-6">
+        <div className="flex items-center justify-between">
+          <button type="button" onClick={toggleFavorite} aria-label="favorite">
+            <StarIcon
+              filled={currentQuestion.favorite}
+              className={`h-5 w-5 ${currentQuestion.favorite ? "text-warning" : "text-text-muted"}`}
+            />
+          </button>
+          <button type="button" onClick={toggleFlag} aria-label="flag">
+            <FlagIcon
+              className={`h-5 w-5 ${currentQuestion.flagged ? "text-danger" : "text-text-muted"}`}
+            />
+          </button>
+        </div>
+
+        {running ? (
+          phase === "answering" ? (
+            <QuestionView key={currentQuestion.id} question={currentQuestion} onSubmit={handleAnswer} />
+          ) : (
+            feedback && (
+              <FeedbackPanel
+                isCorrect={feedback.isCorrect}
+                correctAnswerText={feedback.correctAnswerText}
+                explanation={currentQuestion.explanation}
+              />
+            )
+          )
+        ) : (
+          <p className="py-10 text-center font-body text-sm text-text-secondary">일시정지됨</p>
+        )}
+
+        {phase === "answering" && running && (
+          <button
+            type="button"
+            onClick={handleSkip}
+            className="self-start font-body text-xs font-semibold text-text-secondary hover:text-text-primary"
+          >
+            Skip
+          </button>
+        )}
+
+        <label className="flex flex-col gap-1.5 border-t border-border pt-4">
+          <span className="font-body text-[13px] font-semibold text-text-secondary">개인 메모</span>
+          <textarea
+            value={memoDraft}
+            onChange={(e) => setMemoDraft(e.target.value)}
+            onBlur={saveMemo}
+            className="min-h-12 rounded-badge border border-border bg-surface px-3 py-2 font-body text-sm text-text-primary outline-none focus:border-accent"
+          />
+        </label>
+      </Card>
+    </div>
+  );
+}

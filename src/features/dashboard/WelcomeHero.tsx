@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 
 export function WelcomeHero() {
+  const navigate = useNavigate();
+
   return (
     <Card emphasized className="flex items-center justify-between gap-8">
       <div className="flex flex-col gap-2">
@@ -12,7 +15,11 @@ export function WelcomeHero() {
           Anki 암기 카드와 영타/한타 타이핑 테스트가 결합된 효율적인 학습을 시작해보세요.
         </p>
       </div>
-      <Button variant="success" className="shrink-0 !px-8 !py-4 font-display text-xl font-extrabold">
+      <Button
+        variant="success"
+        className="shrink-0 !px-8 !py-4 font-display text-xl font-extrabold"
+        onClick={() => navigate("/play")}
+      >
         게임 시작 👉
       </Button>
     </Card>

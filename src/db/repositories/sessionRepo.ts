@@ -32,4 +32,12 @@ export const sessionRepo = {
     const accuracy = totalAttempts === 0 ? 0 : correctCount / totalAttempts;
     await db.sessions.update(sessionId, { totalAttempts, correctCount, wrongCount, accuracy });
   },
+
+  /** 5장: "10초 이상 학습한 Session만 기록" — 기준 미달 시 Session과 그 Attempt를 함께 버린다. */
+  async discard(sessionId: string): Promise<void> {
+    await db.transaction("rw", db.sessions, db.attempts, async () => {
+      await db.attempts.where("sessionId").equals(sessionId).delete();
+      await db.sessions.delete(sessionId);
+    });
+  },
 };
