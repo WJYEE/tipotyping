@@ -1,0 +1,45 @@
+/*
+  Figma 분석(get_design_context/get_variable_defs) 기반 Design Token.
+  Figma 파일에 Variables가 없어 레이어별 하드코딩 값을 관찰해 정리했으며,
+  화면마다 미묘하게 달랐던 배경색(#fafaf9 / #faf9f6)과 보더색(#292524 / #1c1917)은
+  하나의 값으로 통일했다.
+*/
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Lexend Deca", sans-serif;
+  --font-body: "Rethink Sans", sans-serif;
+
+  --color-bg: #fafaf9;
+  --color-surface: #ffffff;
+  --color-surface-muted: #fafaf9;
+
+  --color-text-primary: #1c1917;
+  --color-text-secondary: #78716c;
+  --color-text-muted: #a8a29e;
+
+  --color-border: #e7e5e4;
+  --color-border-strong: #1c1917;
+
+  --color-accent: #c084fc;
+  --color-accent-soft: #f3e8ff;
+
+  --color-success: #34d399;
+  --color-success-soft: #dcfce7;
+
+  --color-danger: #f87171;
+  --color-danger-soft: #fef2f2;
+
+  --color-warning: #fbbf24;
+  --color-warning-soft: #fef3c7;
+
+  --color-info-soft: #eff6ff;
+
+  --radius-badge: 8px;
+  --radius-icon: 10px;
+  --radius-card: 20px;
+  --radius-pill: 999px;
+
+  --shadow-hard: 4px 4px 0px var(--color-border-strong);
+  --shadow-hard-sm: 2px 2px 0px var(--color-border-strong);
+}
