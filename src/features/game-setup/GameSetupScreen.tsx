@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { questionRepo, tagRepo, themeRepo } from "@/db/repositories";
-import { filterQuestions, type GameConfig } from "@/lib/questionSelection";
+import { filterQuestions, getDifficultyThemeIds, type GameConfig } from "@/lib/questionSelection";
 import { QUESTION_TYPE_LABELS } from "@/lib/questionSummary";
 import type { Difficulty, OrderMode, QuestionType } from "@/types/domain";
 
@@ -76,6 +76,7 @@ export function GameSetupScreen() {
     questionTypes: [...types],
     tagIds: [...tagIds],
     difficulties: showDifficulty ? [...difficulties] : [],
+    difficultyThemeIds: getDifficultyThemeIds(themes, themeIds),
     orderMode,
   };
   const matchingCount = filterQuestions(questions, config).length;

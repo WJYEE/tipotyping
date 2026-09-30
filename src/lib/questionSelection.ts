@@ -1,5 +1,5 @@
 // 6장 Question Selection: 복수 테마/유형/태그/난이도 필터 + 4개 출제모드 + 테마·유형 균등 출제.
-import type { Difficulty, Question, QuestionRecord, QuestionType } from "@/types/domain";
+import type { Difficulty, Question, QuestionRecord, QuestionType, Theme } from "@/types/domain";
 import type { OrderMode } from "@/types/domain";
 
 export interface SelectionFilters {
@@ -7,20 +7,35 @@ export interface SelectionFilters {
   questionTypes: QuestionType[];
   tagIds: string[];
   difficulties: Difficulty[];
+  /**
+   * 선택한 Theme 중 난이도를 사용하는(useDifficulty=true) Theme id.
+   * 난이도 필터는 이 Theme의 문제에만 적용하고, 나머지 Theme 문제는 난이도와 무관하게 포함한다.
+   */
+  difficultyThemeIds: string[];
 }
 
 export interface GameConfig extends SelectionFilters {
   orderMode: OrderMode;
 }
 
+/** 선택한 Theme 중 난이도 필터를 적용할 Theme id 목록. Game Setup에서 GameConfig를 만들 때 사용한다. */
+export function getDifficultyThemeIds(
+  themes: Pick<Theme, "id" | "useDifficulty">[],
+  themeIds: string[],
+): string[] {
+  return themes.filter((t) => t.useDifficulty && themeIds.includes(t.id)).map((t) => t.id);
+}
+
 export function filterQuestions(questions: Question[], filters: SelectionFilters): Question[] {
+  // 이전 버전에서 만들어진 config에는 difficultyThemeIds가 없을 수 있다.
+  const difficultyThemeIds = filters.difficultyThemeIds ?? [];
   return questions.filter((q) => {
     if (!filters.themeIds.includes(q.themeId)) return false;
     if (!filters.questionTypes.includes(q.type)) return false;
     if (filters.tagIds.length > 0 && !q.tagIds.some((id) => filters.tagIds.includes(id))) {
       return false;
     }
-    if (filters.difficulties.length > 0) {
+    if (filters.difficulties.length > 0 && difficultyThemeIds.includes(q.themeId)) {
       if (!q.difficulty || !filters.difficulties.includes(q.difficulty)) return false;
     }
     return true;

@@ -4,12 +4,14 @@ import type { SeedQuestion } from "@/db/seed/seedTypes";
 export const csitQuestions: SeedQuestion[] = [
   // ───────────── 데이터베이스 ─────────────
   {
+    seedId: "db-0001",
     themeName: "데이터베이스",
     type: "def-to-term",
     tagNames: ["DB"],
-    payload: { term: "PRIMARY KEY", definition: "테이블에서 각 행을 고유하게 식별하는 제약조건" },
+    payload: { term: "후보키", definition: "행을 유일하게 식별할 수 있는 최소한의 속성 집합으로, 이 중 하나가 기본키로 선택된다" },
   },
   {
+    seedId: "db-0002",
     themeName: "데이터베이스",
     type: "multiple-choice",
     tagNames: ["DB"],
@@ -21,12 +23,14 @@ export const csitQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "db-0003",
     themeName: "데이터베이스",
     type: "term-to-def",
     tagNames: ["DB"],
-    payload: { term: "정규화", definition: "데이터 중복을 줄이고 무결성을 높이기 위해 테이블을 구조화하는 과정" },
+    payload: { term: "제2정규형(2NF)", definition: "1NF를 만족하면서 기본키의 일부에만 종속되는 부분 함수 종속을 제거한 상태" },
   },
   {
+    seedId: "db-0004",
     themeName: "데이터베이스",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -34,6 +38,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "NoSQL", definition: "고정된 테이블 스키마 없이 문서, 키-값 등 다양한 형태로 데이터를 저장하는 데이터베이스" },
   },
   {
+    seedId: "db-0005",
     themeName: "데이터베이스",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -46,13 +51,15 @@ export const csitQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "db-0006",
     themeName: "데이터베이스",
-    type: "def-to-term",
+    type: "term-to-def",
     difficulty: "advanced",
     tagNames: ["DB"],
     payload: { term: "복제(Replication)", definition: "동일한 데이터를 여러 서버에 복사해 가용성과 읽기 성능을 높이는 기법" },
   },
   {
+    seedId: "db-0007",
     themeName: "데이터베이스",
     type: "term-to-def",
     difficulty: "advanced",
@@ -60,6 +67,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "트리거", definition: "특정 테이블에 삽입·수정·삭제가 일어날 때 자동으로 실행되도록 정의한 절차" },
   },
   {
+    seedId: "db-0008",
     themeName: "데이터베이스",
     type: "essay",
     difficulty: "advanced",
@@ -70,40 +78,46 @@ export const csitQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "db-0009",
     themeName: "데이터베이스",
     type: "def-to-term",
     difficulty: "advanced",
     tagNames: ["DB"],
-    payload: { term: "낙관적 동시성 제어", definition: "충돌이 드물다고 가정하고 커밋 시점에만 검증하는 동시성 제어 방식" },
+    payload: { term: "MVCC", definition: "데이터의 여러 버전을 유지해 읽기 작업이 쓰기 작업을 잠금으로 기다리지 않게 하는 동시성 제어 방식" },
   },
   {
+    seedId: "db-0010",
     themeName: "데이터베이스",
     type: "term-to-def",
     difficulty: "intermediate",
     tagNames: ["DB"],
-    payload: { term: "외래키", definition: "다른 테이블의 기본키를 참조해 두 테이블 간 관계를 표현하는 컬럼" },
+    payload: { term: "참조 무결성", definition: "외래키 값은 참조하는 테이블의 기본키에 실제로 존재하는 값이거나 NULL이어야 한다는 제약" },
   },
 
   // ───────────── 네트워크 ─────────────
   {
+    seedId: "net-0001",
     themeName: "네트워크",
     type: "def-to-term",
     tagNames: ["네트워크"],
     payload: { term: "TCP", definition: "데이터를 순서대로 신뢰성 있게 전달하는 연결 지향형 전송 프로토콜" },
   },
   {
+    seedId: "net-0002",
     themeName: "네트워크",
     type: "term-to-def",
     tagNames: ["네트워크"],
     payload: { term: "DNS", definition: "도메인 이름을 IP 주소로 변환해주는 시스템" },
   },
   {
+    seedId: "net-0003",
     themeName: "네트워크",
     type: "answer-input",
     tagNames: ["네트워크"],
     payload: { prompt: "HTTPS가 사용하는 기본 포트 번호는?", answer: "443" },
   },
   {
+    seedId: "net-0004",
     themeName: "네트워크",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -111,6 +125,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "UDP", definition: "연결 설정 없이 순서 보장이나 재전송 없이 빠르게 데이터를 전송하는 프로토콜" },
   },
   {
+    seedId: "net-0005",
     themeName: "네트워크",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -123,6 +138,7 @@ export const csitQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "net-0006",
     themeName: "네트워크",
     type: "def-to-term",
     difficulty: "advanced",
@@ -130,6 +146,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "3-way handshake", definition: "TCP 연결을 맺기 위해 SYN, SYN-ACK, ACK를 주고받는 과정" },
   },
   {
+    seedId: "net-0007",
     themeName: "네트워크",
     type: "term-to-def",
     difficulty: "advanced",
@@ -137,6 +154,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "NAT", definition: "사설 IP 주소를 공인 IP 주소로 변환해 여러 기기가 하나의 공인 IP를 공유하게 하는 기술" },
   },
   {
+    seedId: "net-0008",
     themeName: "네트워크",
     type: "answer-input",
     difficulty: "beginner",
@@ -144,6 +162,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { prompt: "일반 HTTP가 사용하는 기본 포트 번호는?", answer: "80" },
   },
   {
+    seedId: "net-0009",
     themeName: "네트워크",
     type: "def-to-term",
     difficulty: "advanced",
@@ -151,6 +170,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "방화벽", definition: "미리 정한 규칙에 따라 네트워크로 들어오고 나가는 트래픽을 감시·차단하는 보안 장치" },
   },
   {
+    seedId: "net-0010",
     themeName: "네트워크",
     type: "term-to-def",
     difficulty: "advanced",
@@ -160,24 +180,28 @@ export const csitQuestions: SeedQuestion[] = [
 
   // ───────────── 운영체제 ─────────────
   {
+    seedId: "os-0001",
     themeName: "운영체제",
     type: "term-to-def",
     tagNames: ["OS"],
     payload: { term: "데드락", definition: "두 개 이상의 프로세스가 서로 자원을 기다리며 무한히 대기하는 상태" },
   },
   {
+    seedId: "os-0002",
     themeName: "운영체제",
     type: "def-to-term",
     tagNames: ["OS"],
     payload: { term: "컨텍스트 스위칭", definition: "CPU가 한 프로세스에서 다른 프로세스로 실행을 전환하는 과정" },
   },
   {
+    seedId: "os-0003",
     themeName: "운영체제",
     type: "term-to-def",
     tagNames: ["OS"],
     payload: { term: "가상 메모리", definition: "물리 메모리보다 큰 주소 공간을 사용할 수 있게 하는 메모리 관리 기법" },
   },
   {
+    seedId: "os-0004",
     themeName: "운영체제",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -185,6 +209,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "프로세스", definition: "운영체제로부터 독립된 메모리 공간을 할당받아 실행 중인 프로그램" },
   },
   {
+    seedId: "os-0005",
     themeName: "운영체제",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -192,6 +217,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "스레드", definition: "프로세스 내에서 메모리 공간을 공유하며 독립적으로 실행되는 작업 단위" },
   },
   {
+    seedId: "os-0006",
     themeName: "운영체제",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -204,6 +230,7 @@ export const csitQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "os-0007",
     themeName: "운영체제",
     type: "def-to-term",
     difficulty: "advanced",
@@ -211,6 +238,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "세마포어", definition: "여러 프로세스가 공유 자원에 접근하는 순서를 제어하는 동기화 도구" },
   },
   {
+    seedId: "os-0008",
     themeName: "운영체제",
     type: "term-to-def",
     difficulty: "advanced",
@@ -218,6 +246,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "페이지 폴트", definition: "프로세스가 참조한 페이지가 물리 메모리에 없어 디스크에서 불러와야 하는 상황" },
   },
   {
+    seedId: "os-0009",
     themeName: "운영체제",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -225,6 +254,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "스케줄링", definition: "CPU를 어떤 프로세스에 얼마 동안 할당할지 결정하는 운영체제의 작업" },
   },
   {
+    seedId: "os-0010",
     themeName: "운영체제",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -239,24 +269,28 @@ export const csitQuestions: SeedQuestion[] = [
 
   // ───────────── API·Web ─────────────
   {
+    seedId: "api-0001",
     themeName: "API·Web",
     type: "def-to-term",
     tagNames: ["API"],
     payload: { term: "REST API", definition: "자원을 URI로 표현하고 HTTP 메서드로 행위를 정의하는 API 설계 방식" },
   },
   {
+    seedId: "api-0002",
     themeName: "API·Web",
     type: "answer-input",
     tagNames: ["API"],
     payload: { prompt: "리소스를 새로 생성할 때 주로 사용하는 HTTP 메서드는?", answer: "POST" },
   },
   {
+    seedId: "api-0003",
     themeName: "API·Web",
     type: "term-to-def",
     tagNames: ["API"],
     payload: { term: "CORS", definition: "다른 출처의 웹 페이지에서 리소스를 요청할 수 있도록 허용하는 브라우저 보안 정책" },
   },
   {
+    seedId: "api-0004",
     themeName: "API·Web",
     type: "answer-input",
     difficulty: "intermediate",
@@ -264,6 +298,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { prompt: "리소스 전체를 완전히 교체할 때 쓰는 HTTP 메서드는? (PATCH와 구분)", answer: "PUT" },
   },
   {
+    seedId: "api-0005",
     themeName: "API·Web",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -271,6 +306,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "상태 코드 404", definition: "요청한 리소스를 서버에서 찾을 수 없을 때 반환되는 HTTP 상태 코드" },
   },
   {
+    seedId: "api-0006",
     themeName: "API·Web",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -278,6 +314,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "상태 코드 401", definition: "인증되지 않은 요청임을 나타내는 HTTP 상태 코드" },
   },
   {
+    seedId: "api-0007",
     themeName: "API·Web",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -290,6 +327,7 @@ export const csitQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "api-0008",
     themeName: "API·Web",
     type: "def-to-term",
     difficulty: "advanced",
@@ -297,6 +335,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "JWT", definition: "사용자 인증 정보를 서명된 토큰 형태로 담아 서버 간 주고받는 방식" },
   },
   {
+    seedId: "api-0009",
     themeName: "API·Web",
     type: "term-to-def",
     difficulty: "advanced",
@@ -304,6 +343,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "웹소켓", definition: "클라이언트와 서버가 연결을 유지한 채 양방향으로 실시간 데이터를 주고받는 통신 프로토콜" },
   },
   {
+    seedId: "api-0010",
     themeName: "API·Web",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -313,24 +353,28 @@ export const csitQuestions: SeedQuestion[] = [
 
   // ───────────── Cloud ─────────────
   {
+    seedId: "cloud-0001",
     themeName: "Cloud",
     type: "term-to-def",
     tagNames: ["Cloud"],
     payload: { term: "오토스케일링", definition: "트래픽 변화에 따라 서버 인스턴스 수를 자동으로 늘리거나 줄이는 기능" },
   },
   {
+    seedId: "cloud-0002",
     themeName: "Cloud",
     type: "def-to-term",
     tagNames: ["Cloud"],
     payload: { term: "IaaS", definition: "서버, 스토리지 등 인프라 자원을 가상화해 제공하는 클라우드 서비스 모델" },
   },
   {
+    seedId: "cloud-0003",
     themeName: "Cloud",
     type: "term-to-def",
     tagNames: ["Cloud"],
     payload: { term: "로드밸런서", definition: "여러 서버에 트래픽을 분산시켜 부하를 고르게 나누는 장치" },
   },
   {
+    seedId: "cloud-0004",
     themeName: "Cloud",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -338,6 +382,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "PaaS", definition: "애플리케이션 실행에 필요한 운영체제와 미들웨어까지 관리해주는 클라우드 서비스 모델" },
   },
   {
+    seedId: "cloud-0005",
     themeName: "Cloud",
     type: "term-to-def",
     difficulty: "advanced",
@@ -345,6 +390,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "컨테이너", definition: "애플리케이션과 실행에 필요한 라이브러리를 함께 패키징해 격리 실행하는 경량 가상화 기술" },
   },
   {
+    seedId: "cloud-0006",
     themeName: "Cloud",
     type: "def-to-term",
     difficulty: "advanced",
@@ -352,6 +398,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "서버리스", definition: "서버 인프라 관리를 클라우드 제공자에게 맡기고 코드 실행 단위로만 비용을 지불하는 방식" },
   },
   {
+    seedId: "cloud-0007",
     themeName: "Cloud",
     type: "term-to-def",
     difficulty: "advanced",
@@ -359,6 +406,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "SaaS", definition: "설치 없이 인터넷을 통해 완성된 소프트웨어를 그대로 사용하는 클라우드 서비스 모델" },
   },
   {
+    seedId: "cloud-0008",
     themeName: "Cloud",
     type: "def-to-term",
     difficulty: "advanced",
@@ -368,6 +416,7 @@ export const csitQuestions: SeedQuestion[] = [
 
   // ───────────── Git ─────────────
   {
+    seedId: "git-0001",
     themeName: "Git",
     type: "blank",
     difficulty: "beginner",
@@ -376,18 +425,21 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { template: "git {{b1}} -m \"fix bug\"", blanks: [{ id: "b1", answer: "commit" }] },
   },
   {
+    seedId: "git-0002",
     themeName: "Git",
     type: "def-to-term",
     tagNames: ["Git"],
     payload: { term: "브랜치", definition: "메인 코드에 영향을 주지 않고 독립적으로 작업할 수 있게 분기한 작업 흐름" },
   },
   {
+    seedId: "git-0003",
     themeName: "Git",
     type: "term-to-def",
     tagNames: ["Git"],
     payload: { term: "머지 컨플릭트", definition: "두 브랜치에서 같은 부분을 다르게 수정해 자동 병합이 불가능한 상태" },
   },
   {
+    seedId: "git-0004",
     themeName: "Git",
     type: "blank",
     difficulty: "beginner",
@@ -396,6 +448,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { template: "git {{b1}} https://github.com/user/repo.git", blanks: [{ id: "b1", answer: "clone" }] },
   },
   {
+    seedId: "git-0005",
     themeName: "Git",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -403,6 +456,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "git pull", definition: "원격 저장소의 최신 변경 사항을 가져와 로컬 브랜치에 병합하는 명령" },
   },
   {
+    seedId: "git-0006",
     themeName: "Git",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -410,6 +464,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "git rebase", definition: "커밋들을 다른 기준 커밋 위로 옮겨 히스토리를 직선으로 재구성하는 명령" },
   },
   {
+    seedId: "git-0007",
     themeName: "Git",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -422,6 +477,7 @@ export const csitQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "git-0008",
     themeName: "Git",
     type: "def-to-term",
     difficulty: "advanced",
@@ -429,6 +485,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: ".gitignore", definition: "버전 관리에서 제외할 파일이나 폴더 패턴을 지정하는 설정 파일" },
   },
   {
+    seedId: "git-0009",
     themeName: "Git",
     type: "term-to-def",
     difficulty: "advanced",
@@ -436,6 +493,7 @@ export const csitQuestions: SeedQuestion[] = [
     payload: { term: "git stash", definition: "작업 중인 변경 사항을 커밋하지 않고 임시로 저장해두는 명령" },
   },
   {
+    seedId: "git-0010",
     themeName: "Git",
     type: "def-to-term",
     difficulty: "intermediate",

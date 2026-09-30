@@ -1,7 +1,8 @@
 import { db } from "@/db/db";
 import { questionRecordRepo } from "@/db/repositories/questionRecordRepo";
 import { sessionRepo } from "@/db/repositories/sessionRepo";
-import { generateDisplayCode } from "@/lib/displayCode";
+import { markSeedQuestionDeleted } from "@/db/seed/defaultContentState";
+import { extractPrefix, generateDisplayCode, getFixedThemePrefix } from "@/lib/displayCode";
 import type { Question } from "@/types/domain";
 
 export const questionRepo = {
@@ -45,9 +46,18 @@ export const questionRepo = {
       displayCode = undefined; // 충돌 시 아래에서 새로 생성
     }
     if (!displayCode) {
-      displayCode = theme
-        ? generateDisplayCode(theme, existingInTheme)
-        : generateDisplayCode({ id: data.themeId, name: "MISC" }, existingInTheme);
+      const themeLike = theme ?? { id: data.themeId, name: "MISC", isCustom: true };
+      // 사용자 Theme만 다른 Theme이 쓰는 접두어를 피해야 하므로 displayCode 인덱스 키만 읽는다.
+      let takenByOthers: string[] = [];
+      if (!getFixedThemePrefix(themeLike)) {
+        const ownCodes = new Set(existingInTheme.map((q) => q.displayCode));
+        const allCodes = (await db.questions.orderBy("displayCode").uniqueKeys()) as string[];
+        takenByOthers = allCodes
+          .filter((code) => !ownCodes.has(code))
+          .map(extractPrefix)
+          .filter((p): p is string => p !== null);
+      }
+      displayCode = generateDisplayCode(themeLike, existingInTheme, takenByOthers);
     }
 
     const question = {
@@ -96,7 +106,11 @@ export const questionRepo = {
   async remove(id: string): Promise<void> {
     let affectedSessionIds: string[] = [];
 
-    await db.transaction("rw", db.questions, db.questionRecords, db.attempts, async () => {
+    await db.transaction("rw", [db.questions, db.questionRecords, db.attempts, db.settings], async () => {
+      // 번들 기본 문제를 지우면 이후 기본 문제은행 동기화에서 다시 만들지 않도록 기록한다.
+      const question = await db.questions.get(id);
+      if (question?.seedId) await markSeedQuestionDeleted(question.seedId);
+
       const attempts = await db.attempts.where("questionId").equals(id).toArray();
       affectedSessionIds = [...new Set(attempts.map((a) => a.sessionId))];
 

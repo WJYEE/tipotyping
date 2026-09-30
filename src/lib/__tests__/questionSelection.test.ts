@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { buildCycleQueue, filterQuestions } from "@/lib/questionSelection";
+import {
+  buildCycleQueue,
+  filterQuestions,
+  getDifficultyThemeIds,
+  type GameConfig,
+} from "@/lib/questionSelection";
 import type { Question, QuestionRecord } from "@/types/domain";
 
 function makeQuestion(
@@ -37,6 +42,7 @@ describe("filterQuestions", () => {
       questionTypes: ["answer-input"],
       tagIds: ["JOIN"],
       difficulties: ["beginner"],
+      difficultyThemeIds: ["t1"],
     });
 
     expect(result.map((q) => q.id)).toEqual(["q1"]);
@@ -49,8 +55,67 @@ describe("filterQuestions", () => {
       questionTypes: ["answer-input", "essay"],
       tagIds: [],
       difficulties: [],
+      difficultyThemeIds: ["t1"],
     });
     expect(result).toHaveLength(2);
+  });
+
+  describe("난이도 사용/미사용 Theme 혼합 선택", () => {
+    // sql: useDifficulty=true, fin: useDifficulty=false (예: SQL + 금융기초)
+    const themes = [
+      { id: "sql", useDifficulty: true },
+      { id: "fin", useDifficulty: false },
+      { id: "py", useDifficulty: true },
+    ];
+    const questions = [
+      makeQuestion("q1", "sql", "answer-input", { difficulty: "intermediate" }),
+      makeQuestion("q2", "sql", "answer-input", { difficulty: "beginner" }),
+      makeQuestion("q3", "sql", "answer-input", { difficulty: "advanced" }),
+      makeQuestion("q4", "sql", "answer-input"), // 난이도 미지정
+      makeQuestion("q5", "fin", "answer-input"),
+      makeQuestion("q6", "fin", "multiple-choice"),
+      makeQuestion("q7", "fin", "answer-input", { difficulty: "beginner" }), // 비코딩인데 값이 남아 있는 경우
+    ];
+    const selected = ["sql", "fin"];
+    const filters = {
+      themeIds: selected,
+      questionTypes: ["answer-input", "multiple-choice"] as Question["type"][],
+      tagIds: [],
+      difficulties: ["intermediate"] as const,
+      difficultyThemeIds: getDifficultyThemeIds(themes, selected),
+    };
+
+    it("선택한 Theme 중 useDifficulty=true인 Theme만 난이도 적용 대상이다", () => {
+      expect(getDifficultyThemeIds(themes, selected)).toEqual(["sql"]);
+    });
+
+    it("난이도 사용 Theme은 선택한 난이도만, 미사용 Theme은 난이도와 무관하게 전부 포함한다", () => {
+      const result = filterQuestions(questions, { ...filters, difficulties: ["intermediate"] });
+      expect(result.map((q) => q.id)).toEqual(["q1", "q5", "q6", "q7"]);
+    });
+
+    it("미사용 Theme에도 유형/태그 필터는 그대로 적용된다", () => {
+      const result = filterQuestions(questions, {
+        ...filters,
+        difficulties: ["intermediate"],
+        questionTypes: ["multiple-choice"],
+      });
+      expect(result.map((q) => q.id)).toEqual(["q6"]);
+    });
+
+    it("Game Setup 출제 가능 수와 Game Typing 첫 사이클 문제 수가 같다 (같은 config 사용)", () => {
+      const config: GameConfig = { ...filters, difficulties: ["intermediate"], orderMode: "random" };
+      const setupCount = filterQuestions(questions, config).length;
+      const queue = buildCycleQueue(
+        filterQuestions(questions, config),
+        config.themeIds,
+        config.questionTypes,
+        config.orderMode,
+        new Map(),
+      );
+      expect(queue).toHaveLength(setupCount);
+      expect(new Set(queue.map((q) => q.id))).toEqual(new Set(["q1", "q5", "q6", "q7"]));
+    });
   });
 });
 

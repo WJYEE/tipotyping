@@ -1,5 +1,6 @@
 import Dexie from "dexie";
 import { afterEach, describe, expect, it } from "vitest";
+import { upgradeCustomThemeDisplayCodes } from "@/db/schema";
 import { generateDisplayCode } from "@/lib/displayCode";
 
 // v1(=displayCode 없음) → v2(=displayCode 채움) 업그레이드가 실제로 동작하는지
@@ -183,6 +184,54 @@ describe("v2 → v3 migration (기본 Theme displayCode 접두어 통일)", () =
     const [question] = await upgraded.table("questions").orderBy("createdAt").toArray();
 
     expect(question.displayCode).toBe("DS-0001");
+    upgraded.close();
+  });
+});
+
+const V2_QUESTIONS_INDEX =
+  "id, categoryId, themeId, type, difficulty, *tagIds, flagged, favorite, createdAt, displayCode";
+
+class V4DB extends LegacyV2DB {
+  constructor() {
+    super();
+    this.version(3).stores({});
+    this.version(4).stores({ questions: V2_QUESTIONS_INDEX }).upgrade(upgradeCustomThemeDisplayCodes);
+  }
+}
+
+describe("v3 → v4 migration (사용자 Theme fallback 접두어 정리)", () => {
+  it("순한글 사용자 Theme의 id 기반 접두어를 CUSTOM으로 바꾸고 번호는 유지한다", async () => {
+    const legacy = new LegacyV2DB();
+    legacy.version(3).stores({});
+    await legacy.open();
+    await legacy.table("categories").add({ id: "c1", name: "나만의", order: 0, isCustom: true });
+    await legacy.table("themes").add({
+      id: "abcdef12-3456-7890",
+      categoryId: "c1",
+      name: "고급 중국어",
+      order: 0,
+      isCustom: true,
+      useDifficulty: false,
+    });
+    await legacy.table("questions").add({
+      id: "q1",
+      categoryId: "c1",
+      themeId: "abcdef12-3456-7890",
+      type: "answer-input",
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+      payload: { prompt: "1", answer: "1" },
+      displayCode: "ABCDEF-0007",
+      createdAt: 1,
+      updatedAt: 1,
+    });
+    legacy.close();
+
+    const upgraded = new V4DB();
+    await upgraded.open();
+    const [question] = await upgraded.table("questions").toArray();
+    expect(question.displayCode).toBe("CUSTOM-0007");
     upgraded.close();
   });
 });

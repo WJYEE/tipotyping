@@ -10,7 +10,7 @@ import {
   tagRepo,
   themeRepo,
 } from "@/db/repositories";
-import { seedIfEmpty } from "@/db/seed/seed";
+import { syncDefaultContent } from "@/db/seed/seed";
 import { defaultQuestions } from "@/db/seed/defaultQuestions";
 
 async function clearAllTables() {
@@ -36,9 +36,9 @@ beforeEach(async () => {
   await clearAllTables();
 });
 
-describe("seedIfEmpty", () => {
+describe("syncDefaultContent (최초 설치)", () => {
   it("기본 Category/Theme과 기본 문제은행을 생성한다", async () => {
-    await seedIfEmpty();
+    await syncDefaultContent();
 
     const categories = await categoryRepo.list();
     expect(categories.length).toBe(8); // PRODUCT_SPEC 2장 대분류 8개
@@ -55,14 +55,14 @@ describe("seedIfEmpty", () => {
   });
 
   it("두 번째 호출은 아무 것도 하지 않는다 (idempotent)", async () => {
-    await seedIfEmpty();
-    await seedIfEmpty();
+    await syncDefaultContent();
+    await syncDefaultContent();
     const categories = await categoryRepo.list();
     expect(categories.length).toBe(8);
   });
 
   it("Question 생성 시 QuestionRecord가 1:1로 자동 생성된다", async () => {
-    await seedIfEmpty();
+    await syncDefaultContent();
     const questions = await questionRepo.list();
     for (const q of questions) {
       const record = await questionRecordRepo.get(q.id);
@@ -475,7 +475,7 @@ describe("Question.displayCode", () => {
       categoryId: category.id,
       name: "SQL",
       order: 0,
-      isCustom: true,
+      isCustom: false,
       useDifficulty: false,
     });
 
@@ -508,14 +508,14 @@ describe("Question.displayCode", () => {
       categoryId: category.id,
       name: "SQL",
       order: 0,
-      isCustom: true,
+      isCustom: false,
       useDifficulty: false,
     });
     const python = await themeRepo.create({
       categoryId: category.id,
       name: "Python",
       order: 1,
-      isCustom: true,
+      isCustom: false,
       useDifficulty: false,
     });
 
@@ -548,7 +548,7 @@ describe("Question.displayCode", () => {
       categoryId: category.id,
       name: "SQL",
       order: 0,
-      isCustom: true,
+      isCustom: false,
       useDifficulty: false,
     });
     const base = {
@@ -576,7 +576,7 @@ describe("Question.displayCode", () => {
       categoryId: category.id,
       name: "SQL",
       order: 0,
-      isCustom: true,
+      isCustom: false,
       useDifficulty: false,
     });
     const question = await questionRepo.create({
@@ -600,7 +600,7 @@ describe("Question.displayCode", () => {
       categoryId: category.id,
       name: "SQL",
       order: 0,
-      isCustom: true,
+      isCustom: false,
       useDifficulty: false,
     });
     const question = await questionRepo.create({

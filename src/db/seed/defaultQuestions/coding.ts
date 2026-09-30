@@ -4,6 +4,7 @@ import type { SeedQuestion } from "@/db/seed/seedTypes";
 export const codingQuestions: SeedQuestion[] = [
   // ───────────── SQL ─────────────
   {
+    seedId: "sql-0001",
     themeName: "SQL",
     type: "blank",
     difficulty: "beginner",
@@ -12,6 +13,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { template: "SELECT * FROM users {{b1}} id = 1;", blanks: [{ id: "b1", answer: "WHERE" }] },
   },
   {
+    seedId: "sql-0002",
     themeName: "SQL",
     type: "blank",
     difficulty: "intermediate",
@@ -20,6 +22,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { template: "SELECT dept, COUNT(*) FROM employees {{b1}} dept;", blanks: [{ id: "b1", answer: "GROUP BY" }] },
   },
   {
+    seedId: "sql-0003",
     themeName: "SQL",
     type: "blank",
     difficulty: "intermediate",
@@ -31,6 +34,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "sql-0004",
     themeName: "SQL",
     type: "blank",
     difficulty: "beginner",
@@ -39,6 +43,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { template: "SELECT name FROM users ORDER BY age {{b1}};", blanks: [{ id: "b1", answer: "DESC" }] },
   },
   {
+    seedId: "sql-0005",
     themeName: "SQL",
     type: "blank",
     difficulty: "intermediate",
@@ -47,12 +52,15 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { template: "SELECT * FROM logs ORDER BY id DESC {{b1}} 10;", blanks: [{ id: "b1", answer: "LIMIT" }] },
   },
   {
+    seedId: "sql-0006",
     themeName: "SQL",
     type: "term-to-def",
+    difficulty: "beginner",
     tagNames: ["SQL", "JOIN"],
     payload: { term: "INNER JOIN", definition: "두 테이블에서 조인 조건이 일치하는 행만 반환하는 결합 방식" },
   },
   {
+    seedId: "sql-0007",
     themeName: "SQL",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -60,6 +68,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "LEFT JOIN", definition: "왼쪽 테이블의 모든 행을 유지하고 오른쪽에 일치하는 값이 없으면 NULL로 채우는 조인" },
   },
   {
+    seedId: "sql-0008",
     themeName: "SQL",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -72,12 +81,15 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "sql-0009",
     themeName: "SQL",
     type: "term-to-def",
-    tagNames: ["SQL", "INDEX"],
+    difficulty: "beginner",
+    tagNames: ["SQL", "인덱스"],
     payload: { term: "INDEX", definition: "테이블 조회 속도를 높이기 위해 사용하는 자료구조" },
   },
   {
+    seedId: "sql-0010",
     themeName: "SQL",
     type: "answer-input",
     difficulty: "beginner",
@@ -85,6 +97,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "테이블에서 각 행을 고유하게 식별하는 제약조건의 이름은?", answer: "PRIMARY KEY" },
   },
   {
+    seedId: "sql-0011",
     themeName: "SQL",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -92,6 +105,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "FOREIGN KEY", definition: "다른 테이블의 PRIMARY KEY를 참조해 두 테이블 간 관계를 맺는 제약조건" },
   },
   {
+    seedId: "sql-0012",
     themeName: "SQL",
     type: "multiple-choice",
     difficulty: "beginner",
@@ -104,6 +118,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "sql-0013",
     themeName: "SQL",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -111,6 +126,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "서브쿼리", definition: "다른 SQL문 안에 중첩되어 하나의 값이나 결과 집합을 제공하는 쿼리" },
   },
   {
+    seedId: "sql-0014",
     themeName: "SQL",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -123,6 +139,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "sql-0015",
     themeName: "SQL",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -130,6 +147,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "UNION", definition: "두 SELECT 결과를 합치되 중복된 행은 제거하는 집합 연산자" },
   },
   {
+    seedId: "sql-0016",
     themeName: "SQL",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -137,6 +155,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "UNION ALL", definition: "두 SELECT 결과를 중복 제거 없이 그대로 합치는 집합 연산자" },
   },
   {
+    seedId: "sql-0017",
     themeName: "SQL",
     type: "answer-input",
     difficulty: "beginner",
@@ -144,20 +163,23 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "특정 컬럼 값이 NULL인지 확인할 때 사용하는 연산자는? (= 대신 사용하는 키워드)", answer: "IS NULL" },
   },
   {
+    seedId: "sql-0018",
     themeName: "SQL",
     type: "term-to-def",
     difficulty: "advanced",
     tagNames: ["SQL", "윈도우함수"],
-    payload: { term: "윈도우 함수", definition: "행을 그룹으로 묶어 집계하되 그룹화 없이 각 행을 그대로 유지하며 값을 계산하는 함수" },
+    payload: { term: "윈도우 함수", definition: "OVER 절로 정한 행 집합에 대해 값을 계산하되 GROUP BY와 달리 각 행을 그대로 유지하는 함수" },
   },
   {
+    seedId: "sql-0019",
     themeName: "SQL",
-    type: "def-to-term",
+    type: "term-to-def",
     difficulty: "advanced",
     tagNames: ["SQL", "윈도우함수"],
     payload: { term: "ROW_NUMBER()", definition: "윈도우 함수 중 파티션 내 각 행에 고유한 순번을 매기는 함수" },
   },
   {
+    seedId: "sql-0020",
     themeName: "SQL",
     type: "term-to-def",
     difficulty: "advanced",
@@ -165,12 +187,15 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "CTE", definition: "WITH 절로 정의해 쿼리 안에서 임시로 참조할 수 있는 이름 붙은 결과 집합" },
   },
   {
+    seedId: "sql-0021",
     themeName: "SQL",
     type: "term-to-def",
+    difficulty: "intermediate",
     tagNames: ["SQL", "정규화"],
     payload: { term: "정규화", definition: "데이터 중복을 줄이고 무결성을 높이기 위해 테이블을 구조화하는 과정" },
   },
   {
+    seedId: "sql-0022",
     themeName: "SQL",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -183,6 +208,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "sql-0023",
     themeName: "SQL",
     type: "term-to-def",
     difficulty: "advanced",
@@ -190,20 +216,23 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "트랜잭션", definition: "하나의 논리적 작업 단위로 묶여 모두 성공하거나 모두 취소되는 연산 집합" },
   },
   {
+    seedId: "sql-0024",
     themeName: "SQL",
-    type: "def-to-term",
+    type: "term-to-def",
     difficulty: "advanced",
     tagNames: ["SQL", "ACID"],
     payload: { term: "원자성(Atomicity)", definition: "트랜잭션 내 모든 연산이 전부 반영되거나 전혀 반영되지 않아야 한다는 ACID 속성" },
   },
   {
+    seedId: "sql-0025",
     themeName: "SQL",
-    type: "def-to-term",
+    type: "term-to-def",
     difficulty: "advanced",
     tagNames: ["SQL", "ACID"],
     payload: { term: "격리성(Isolation)", definition: "동시에 실행되는 트랜잭션들이 서로 영향을 주지 않아야 한다는 ACID 속성" },
   },
   {
+    seedId: "sql-0026",
     themeName: "SQL",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -216,18 +245,23 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "sql-0027",
     themeName: "SQL",
     type: "term-to-def",
+    difficulty: "beginner",
     tagNames: ["SQL", "DDL"],
     payload: { term: "DDL", definition: "테이블 등 데이터베이스 구조 자체를 정의·변경하는 SQL 명령어 집합(CREATE, ALTER 등)" },
   },
   {
+    seedId: "sql-0028",
     themeName: "SQL",
     type: "def-to-term",
+    difficulty: "beginner",
     tagNames: ["SQL", "DML"],
     payload: { term: "DML", definition: "테이블 안의 데이터를 조회·삽입·수정·삭제하는 SQL 명령어 집합(SELECT, INSERT 등)" },
   },
   {
+    seedId: "sql-0029",
     themeName: "SQL",
     type: "blank",
     difficulty: "beginner",
@@ -239,6 +273,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "sql-0030",
     themeName: "SQL",
     type: "blank",
     difficulty: "beginner",
@@ -250,13 +285,20 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "sql-0031",
     themeName: "SQL",
-    type: "answer-input",
+    type: "multiple-choice",
     difficulty: "advanced",
     tagNames: ["SQL", "인덱스"],
-    payload: { prompt: "테이블에 인덱스를 과도하게 생성하면 어떤 작업의 성능이 느려지는가? (한 단어: INSERT/UPDATE/DELETE 공통 특성)", answer: "쓰기" },
+    explanation: "LIKE '%kim'처럼 앞에 와일드카드가 오면 B-Tree 인덱스의 정렬 순서를 활용할 수 없어 전체 스캔이 된다.",
+    payload: {
+      prompt: "name 컬럼에 B-Tree 인덱스가 있을 때 인덱스를 활용하기 가장 어려운 조건은?",
+      options: ["name = 'kim'", "name LIKE 'kim%'", "name LIKE '%kim'", "name > 'k'"],
+      correctIndex: 2,
+    },
   },
   {
+    seedId: "sql-0032",
     themeName: "SQL",
     type: "term-to-def",
     difficulty: "advanced",
@@ -264,6 +306,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "뷰(VIEW)", definition: "하나 이상의 테이블을 조회하는 쿼리를 저장해 마치 테이블처럼 사용할 수 있게 만든 가상 테이블" },
   },
   {
+    seedId: "sql-0033",
     themeName: "SQL",
     type: "def-to-term",
     difficulty: "advanced",
@@ -271,6 +314,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "CASCADE", definition: "부모 행이 삭제되거나 수정될 때 참조하는 자식 행도 함께 삭제·수정되도록 하는 외래키 옵션" },
   },
   {
+    seedId: "sql-0034",
     themeName: "SQL",
     type: "multiple-choice",
     difficulty: "beginner",
@@ -288,6 +332,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "sql-0035",
     themeName: "SQL",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -295,6 +340,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "UNIQUE", definition: "해당 컬럼에 중복된 값이 들어올 수 없도록 강제하는 제약조건" },
   },
   {
+    seedId: "sql-0036",
     themeName: "SQL",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -302,6 +348,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "CHECK 제약조건", definition: "컬럼에 들어올 수 있는 값의 조건을 직접 정의해 그 범위를 벗어난 값을 막는 제약조건" },
   },
   {
+    seedId: "sql-0037",
     themeName: "SQL",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -314,6 +361,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "sql-0038",
     themeName: "SQL",
     type: "def-to-term",
     difficulty: "advanced",
@@ -321,13 +369,15 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "DELETE", definition: "WHERE 조건에 맞는 행만 골라 삭제할 수 있고 롤백이 가능한 DML 삭제 명령" },
   },
   {
+    seedId: "sql-0039",
     themeName: "SQL",
     type: "term-to-def",
     difficulty: "advanced",
-    tagNames: ["SQL", "조인"],
+    tagNames: ["SQL", "JOIN"],
     payload: { term: "셀프 조인", definition: "같은 테이블을 자기 자신과 조인해 행끼리의 관계를 비교하는 조인 방식" },
   },
   {
+    seedId: "sql-0040",
     themeName: "SQL",
     type: "def-to-term",
     difficulty: "advanced",
@@ -335,6 +385,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "상관 서브쿼리", definition: "바깥 쿼리의 각 행 값을 참조해 행마다 다시 실행되는 서브쿼리" },
   },
   {
+    seedId: "sql-0041",
     themeName: "SQL",
     type: "term-to-def",
     difficulty: "advanced",
@@ -342,6 +393,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "복합키", definition: "두 개 이상의 컬럼을 조합해야 각 행을 고유하게 식별할 수 있는 기본키" },
   },
   {
+    seedId: "sql-0042",
     themeName: "SQL",
     type: "answer-input",
     difficulty: "beginner",
@@ -349,6 +401,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "문자열 패턴 검색 시 임의의 여러 문자를 의미하는 LIKE 와일드카드 기호는?", answer: "%" },
   },
   {
+    seedId: "sql-0043",
     themeName: "SQL",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -356,6 +409,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "BETWEEN", definition: "지정한 두 값 사이의 범위(양 끝 값 포함)를 조건으로 걸 때 사용하는 연산자" },
   },
   {
+    seedId: "sql-0044",
     themeName: "SQL",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -363,6 +417,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "COALESCE", definition: "여러 인자 중 NULL이 아닌 첫 번째 값을 반환하는 함수" },
   },
   {
+    seedId: "sql-0045",
     themeName: "SQL",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -375,6 +430,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "sql-0046",
     themeName: "SQL",
     type: "def-to-term",
     difficulty: "advanced",
@@ -382,6 +438,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "낙관적 잠금", definition: "충돌이 드물다고 가정하고 커밋 시점에만 충돌 여부를 확인하는 동시성 제어 방식" },
   },
   {
+    seedId: "sql-0047",
     themeName: "SQL",
     type: "term-to-def",
     difficulty: "advanced",
@@ -389,6 +446,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "비관적 잠금", definition: "충돌 가능성을 가정해 데이터를 읽는 시점부터 다른 트랜잭션의 접근을 막는 동시성 제어 방식" },
   },
   {
+    seedId: "sql-0048",
     themeName: "SQL",
     type: "def-to-term",
     difficulty: "advanced",
@@ -396,6 +454,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "저장 프로시저", definition: "자주 쓰는 SQL 로직을 하나의 이름으로 저장해두고 호출해서 재사용하는 기능" },
   },
   {
+    seedId: "sql-0049",
     themeName: "SQL",
     type: "answer-input",
     difficulty: "intermediate",
@@ -403,6 +462,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "새 행 삽입 시 기본키 값을 자동으로 1씩 증가시켜 채워주는 속성을 영어로 뭐라 하는가? (한 단어)", answer: "AUTO_INCREMENT" },
   },
   {
+    seedId: "sql-0050",
     themeName: "SQL",
     type: "term-to-def",
     difficulty: "advanced",
@@ -410,6 +470,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "쿼리 실행 계획", definition: "옵티마이저가 쿼리를 어떤 순서와 방법으로 실행할지 보여주는 정보(EXPLAIN 등으로 확인)" },
   },
   {
+    seedId: "sql-0051",
     themeName: "SQL",
     type: "def-to-term",
     difficulty: "advanced",
@@ -419,6 +480,7 @@ export const codingQuestions: SeedQuestion[] = [
 
   // ───────────── Python ─────────────
   {
+    seedId: "py-0001",
     themeName: "Python",
     type: "answer-input",
     difficulty: "beginner",
@@ -426,6 +488,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "print(3 ** 2) 의 출력 결과는?", answer: "9" },
   },
   {
+    seedId: "py-0002",
     themeName: "Python",
     type: "answer-input",
     difficulty: "beginner",
@@ -433,6 +496,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "len([1, 2, [3, 4]]) 의 출력 결과는?", answer: "3" },
   },
   {
+    seedId: "py-0003",
     themeName: "Python",
     type: "answer-input",
     difficulty: "beginner",
@@ -440,6 +504,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "10 // 3 의 출력 결과는?", answer: "3" },
   },
   {
+    seedId: "py-0004",
     themeName: "Python",
     type: "answer-input",
     difficulty: "beginner",
@@ -447,6 +512,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "10 % 3 의 출력 결과는?", answer: "1" },
   },
   {
+    seedId: "py-0005",
     themeName: "Python",
     type: "blank",
     difficulty: "intermediate",
@@ -455,6 +521,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { template: "squares = [x**2 {{b1}} x in range(5)]", blanks: [{ id: "b1", answer: "for" }] },
   },
   {
+    seedId: "py-0006",
     themeName: "Python",
     type: "answer-input",
     difficulty: "intermediate",
@@ -462,12 +529,15 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "[x for x in range(10) if x % 2 == 0] 의 원소 개수는?", answer: "5" },
   },
   {
+    seedId: "py-0007",
     themeName: "Python",
     type: "term-to-def",
+    difficulty: "advanced",
     tagNames: ["Python", "GIL"],
     payload: { term: "GIL", definition: "한 번에 하나의 스레드만 파이썬 바이트코드를 실행하도록 제한하는 전역 인터프리터 락" },
   },
   {
+    seedId: "py-0008",
     themeName: "Python",
     type: "answer-input",
     difficulty: "intermediate",
@@ -475,12 +545,15 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "{1, 2, 2, 3}를 리스트로 변환했을 때 원소 개수는?", answer: "3" },
   },
   {
+    seedId: "py-0009",
     themeName: "Python",
     type: "def-to-term",
+    difficulty: "intermediate",
     tagNames: ["Python"],
     payload: { term: "데코레이터", definition: "함수를 감싸서 원본 코드를 수정하지 않고 기능을 추가하는 파이썬 문법" },
   },
   {
+    seedId: "py-0010",
     themeName: "Python",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -488,6 +561,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "제너레이터", definition: "yield를 사용해 값을 한 번에 하나씩 지연 생성하는, 메모리 효율적인 이터레이터" },
   },
   {
+    seedId: "py-0011",
     themeName: "Python",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -500,6 +574,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "py-0012",
     themeName: "Python",
     type: "answer-input",
     difficulty: "intermediate",
@@ -507,6 +582,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "함수 정의부에서 가변 인자를 받을 때 쓰는 기호는? (하나만, 예: *args의 기호)", answer: "*" },
   },
   {
+    seedId: "py-0013",
     themeName: "Python",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -514,6 +590,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "람다 함수", definition: "이름 없이 한 줄로 정의하는 익명 함수" },
   },
   {
+    seedId: "py-0014",
     themeName: "Python",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -521,18 +598,21 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "finally", definition: "예외 발생 여부와 관계없이 try 블록 종료 후 항상 실행되는 구문" },
   },
   {
+    seedId: "py-0015",
     themeName: "Python",
     type: "multiple-choice",
     difficulty: "intermediate",
     tagNames: ["Python", "예외처리"],
-    explanation: "except 뒤에 예외 클래스를 명시하지 않으면 모든 예외를 포괄적으로 잡는다.",
+    explanation:
+      "except Exception은 일반적인 예외를 모두 잡되 KeyboardInterrupt·SystemExit처럼 BaseException만 상속한 종료 신호는 통과시킨다. catch는 파이썬 문법이 아니다.",
     payload: {
-      prompt: "try/except 구문에서 발생 가능한 모든 예외를 포괄적으로 잡으려면?",
-      options: ["except Exception", "except all", "catch(Exception)", "except *"],
+      prompt: "프로그램 종료 신호(KeyboardInterrupt 등)는 막지 않으면서 일반적인 예외를 모두 잡는 관용적인 except 구문은?",
+      options: ["except Exception:", "except all:", "catch(Exception):", "except Error:"],
       correctIndex: 0,
     },
   },
   {
+    seedId: "py-0016",
     themeName: "Python",
     type: "def-to-term",
     difficulty: "advanced",
@@ -540,6 +620,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "__init__", definition: "클래스의 인스턴스가 생성될 때 자동으로 호출되는 초기화 메서드" },
   },
   {
+    seedId: "py-0017",
     themeName: "Python",
     type: "term-to-def",
     difficulty: "advanced",
@@ -547,6 +628,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "상속", definition: "기존 클래스의 속성과 메서드를 새 클래스가 물려받아 재사용하는 객체지향 개념" },
   },
   {
+    seedId: "py-0018",
     themeName: "Python",
     type: "answer-input",
     difficulty: "beginner",
@@ -554,6 +636,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "\"hello\".upper() 의 출력 결과는?", answer: "HELLO" },
   },
   {
+    seedId: "py-0019",
     themeName: "Python",
     type: "answer-input",
     difficulty: "beginner",
@@ -561,6 +644,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "\"a,b,c\".split(\",\") 의 결과 리스트 원소 개수는?", answer: "3" },
   },
   {
+    seedId: "py-0020",
     themeName: "Python",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -568,6 +652,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "with 문", definition: "파일 등 리소스를 열고 블록 종료 시 자동으로 닫아주는 컨텍스트 매니저 구문" },
   },
   {
+    seedId: "py-0021",
     themeName: "Python",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -586,6 +671,7 @@ export const codingQuestions: SeedQuestion[] = [
   },
   // Pandas
   {
+    seedId: "py-0022",
     themeName: "Python",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -593,6 +679,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "DataFrame", definition: "pandas에서 행과 열로 구성된 2차원 테이블 형태의 자료구조" },
   },
   {
+    seedId: "py-0023",
     themeName: "Python",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -600,6 +687,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "Series", definition: "pandas에서 하나의 열(1차원 배열)을 나타내는 자료구조" },
   },
   {
+    seedId: "py-0024",
     themeName: "Python",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -612,6 +700,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "py-0025",
     themeName: "Python",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -619,6 +708,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "groupby", definition: "특정 컬럼 값을 기준으로 행을 묶어 집계 연산을 수행하는 pandas 메서드" },
   },
   {
+    seedId: "py-0026",
     themeName: "Python",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -626,13 +716,15 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "merge", definition: "공통 키를 기준으로 두 DataFrame을 SQL JOIN처럼 결합하는 pandas 메서드" },
   },
   {
+    seedId: "py-0027",
     themeName: "Python",
-    type: "def-to-term",
+    type: "term-to-def",
     difficulty: "intermediate",
     tagNames: ["Python", "Pandas"],
     payload: { term: "isnull()", definition: "DataFrame/Series에서 결측치(NaN) 위치를 True/False로 표시해주는 pandas 메서드" },
   },
   {
+    seedId: "py-0028",
     themeName: "Python",
     type: "term-to-def",
     difficulty: "advanced",
@@ -640,6 +732,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "pivot_table", definition: "행/열 기준을 지정해 데이터를 요약 집계한 교차표를 만드는 pandas 메서드" },
   },
   {
+    seedId: "py-0029",
     themeName: "Python",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -647,6 +740,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "read_csv", definition: "CSV 파일을 읽어 DataFrame으로 불러오는 pandas 함수" },
   },
   {
+    seedId: "py-0030",
     themeName: "Python",
     type: "term-to-def",
     difficulty: "advanced",
@@ -654,6 +748,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "apply()", definition: "DataFrame/Series의 각 행이나 열에 사용자 정의 함수를 적용하는 pandas 메서드" },
   },
   {
+    seedId: "py-0031",
     themeName: "Python",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -666,6 +761,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "py-0032",
     themeName: "Python",
     type: "def-to-term",
     difficulty: "advanced",
@@ -673,6 +769,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "concat", definition: "여러 DataFrame을 행 또는 열 방향으로 이어붙이는 pandas 함수" },
   },
   {
+    seedId: "py-0033",
     themeName: "Python",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -680,6 +777,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "dtype", definition: "pandas Series/컬럼이 저장하는 데이터의 자료형(int64, object 등)" },
   },
   {
+    seedId: "py-0034",
     themeName: "Python",
     type: "answer-input",
     difficulty: "intermediate",
@@ -687,6 +785,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "DataFrame의 행과 열 개수를 (행, 열) 튜플로 반환하는 속성 이름은?", answer: "shape" },
   },
   {
+    seedId: "py-0035",
     themeName: "Python",
     type: "answer-input",
     difficulty: "beginner",
@@ -694,6 +793,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "list(range(2, 10, 2)) 의 결과 리스트 원소 개수는?", answer: "4" },
   },
   {
+    seedId: "py-0036",
     themeName: "Python",
     type: "answer-input",
     difficulty: "beginner",
@@ -701,6 +801,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "\"Hello\"[1:4] 의 출력 결과는?", answer: "ell" },
   },
   {
+    seedId: "py-0037",
     themeName: "Python",
     type: "multiple-choice",
     difficulty: "beginner",
@@ -713,6 +814,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "py-0038",
     themeName: "Python",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -720,6 +822,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "슬라이싱", definition: "시퀀스 자료형에서 [start:stop:step] 형태로 일부 구간을 잘라내는 문법" },
   },
   {
+    seedId: "py-0039",
     themeName: "Python",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -727,6 +830,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "언패킹", definition: "리스트나 튜플의 값을 여러 변수에 한 번에 나눠 담는 문법" },
   },
   {
+    seedId: "py-0040",
     themeName: "Python",
     type: "def-to-term",
     difficulty: "advanced",
@@ -734,6 +838,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "덕 타이핑", definition: "객체의 실제 타입보다 어떤 메서드나 속성을 갖고 있는지로 동작을 결정하는 파이썬의 특징" },
   },
   {
+    seedId: "py-0041",
     themeName: "Python",
     type: "term-to-def",
     difficulty: "advanced",
@@ -741,6 +846,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "매직 메서드", definition: "__init__, __str__처럼 앞뒤에 이중 밑줄이 붙어 특정 상황에 자동 호출되는 특수 메서드" },
   },
   {
+    seedId: "py-0042",
     themeName: "Python",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -753,6 +859,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "py-0043",
     themeName: "Python",
     type: "def-to-term",
     difficulty: "advanced",
@@ -760,6 +867,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "컨텍스트 매니저", definition: "__enter__/__exit__를 구현해 with 문에서 자원을 열고 닫는 절차를 자동화하는 객체" },
   },
   {
+    seedId: "py-0044",
     themeName: "Python",
     type: "answer-input",
     difficulty: "intermediate",
@@ -767,13 +875,15 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "딕셔너리에서 존재하지 않는 키를 조회했을 때 KeyError 없이 기본값을 받을 수 있게 해주는 메서드 이름은?", answer: "get" },
   },
   {
+    seedId: "py-0045",
     themeName: "Python",
-    type: "def-to-term",
+    type: "term-to-def",
     difficulty: "intermediate",
     tagNames: ["Python"],
     payload: { term: "sorted()", definition: "원본 리스트를 변경하지 않고 정렬된 새 리스트를 반환하는 내장 함수" },
   },
   {
+    seedId: "py-0046",
     themeName: "Python",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -781,6 +891,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "list.sort()", definition: "원본 리스트 자체를 제자리에서 정렬하고 None을 반환하는 리스트 메서드" },
   },
   {
+    seedId: "py-0047",
     themeName: "Python",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -793,13 +904,15 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "py-0048",
     themeName: "Python",
-    type: "def-to-term",
+    type: "term-to-def",
     difficulty: "advanced",
     tagNames: ["Python", "Pandas"],
     payload: { term: "describe()", definition: "수치형 컬럼의 개수, 평균, 표준편차, 사분위수 등을 한 번에 요약해주는 pandas 메서드" },
   },
   {
+    seedId: "py-0049",
     themeName: "Python",
     type: "term-to-def",
     difficulty: "advanced",
@@ -809,6 +922,7 @@ export const codingQuestions: SeedQuestion[] = [
 
   // ───────────── 자료구조 ─────────────
   {
+    seedId: "ds-0001",
     themeName: "자료구조",
     type: "term-to-def",
     difficulty: "beginner",
@@ -816,6 +930,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "스택", definition: "마지막에 넣은 데이터가 먼저 나오는 후입선출(LIFO) 자료구조" },
   },
   {
+    seedId: "ds-0002",
     themeName: "자료구조",
     type: "def-to-term",
     difficulty: "beginner",
@@ -823,6 +938,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "큐", definition: "먼저 넣은 데이터가 먼저 나오는 선입선출(FIFO) 자료구조" },
   },
   {
+    seedId: "ds-0003",
     themeName: "자료구조",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -830,6 +946,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "덱(Deque)", definition: "양쪽 끝에서 모두 삽입과 삭제가 가능한 자료구조" },
   },
   {
+    seedId: "ds-0004",
     themeName: "자료구조",
     type: "multiple-choice",
     difficulty: "beginner",
@@ -842,20 +959,23 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ds-0005",
     themeName: "자료구조",
     type: "answer-input",
     difficulty: "beginner",
     tagNames: ["자료구조"],
-    payload: { prompt: "배열에서 인덱스로 특정 원소에 접근할 때 시간복잡도는? (Big-O 표기)", answer: "O(1)" },
+    payload: { prompt: "배열에서 인덱스로 특정 원소에 접근할 때 시간복잡도는? (Big-O 표기, 곱은 공백·제곱은 ^ 사용 예: O(m log k), O(k^2))", answer: "O(1)" },
   },
   {
+    seedId: "ds-0006",
     themeName: "자료구조",
     type: "answer-input",
     difficulty: "intermediate",
     tagNames: ["자료구조", "해시"],
-    payload: { prompt: "이상적인 해시테이블에서 평균 탐색 시간복잡도는? (Big-O 표기)", answer: "O(1)" },
+    payload: { prompt: "이상적인 해시테이블에서 평균 탐색 시간복잡도는? (Big-O 표기, 곱은 공백·제곱은 ^ 사용 예: O(m log k), O(k^2))", answer: "O(1)" },
   },
   {
+    seedId: "ds-0007",
     themeName: "자료구조",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -863,6 +983,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "해시 충돌", definition: "서로 다른 키가 같은 해시값으로 계산되어 저장 위치가 겹치는 현상" },
   },
   {
+    seedId: "ds-0008",
     themeName: "자료구조",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -870,6 +991,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "이진 탐색 트리", definition: "왼쪽 자식은 부모보다 작고 오른쪽 자식은 부모보다 큰 값을 갖는 트리" },
   },
   {
+    seedId: "ds-0009",
     themeName: "자료구조",
     type: "def-to-term",
     difficulty: "advanced",
@@ -877,6 +999,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "균형 이진 트리", definition: "좌우 서브트리의 높이 차이를 일정하게 유지해 탐색 성능을 보장하는 트리" },
   },
   {
+    seedId: "ds-0010",
     themeName: "자료구조",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -884,13 +1007,15 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "힙", definition: "부모 노드가 자식 노드보다 항상 크거나(최대 힙) 작은(최소 힙) 완전 이진 트리" },
   },
   {
+    seedId: "ds-0011",
     themeName: "자료구조",
     type: "answer-input",
     difficulty: "advanced",
     tagNames: ["자료구조", "힙"],
-    payload: { prompt: "힙에서 최댓값(또는 최솟값)을 꺼낼 때 시간복잡도는? (Big-O 표기)", answer: "O(log n)" },
+    payload: { prompt: "힙에서 최댓값(또는 최솟값)을 꺼낼 때 시간복잡도는? (Big-O 표기, 곱은 공백·제곱은 ^ 사용 예: O(m log k), O(k^2))", answer: "O(log n)" },
   },
   {
+    seedId: "ds-0012",
     themeName: "자료구조",
     type: "def-to-term",
     difficulty: "advanced",
@@ -898,6 +1023,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "인접 리스트", definition: "각 정점이 연결된 정점들의 목록을 저장하는 그래프 표현 방식" },
   },
   {
+    seedId: "ds-0013",
     themeName: "자료구조",
     type: "term-to-def",
     difficulty: "advanced",
@@ -905,6 +1031,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "인접 행렬", definition: "정점 간 연결 여부를 2차원 배열로 표현하는 그래프 표현 방식" },
   },
   {
+    seedId: "ds-0014",
     themeName: "자료구조",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -917,20 +1044,23 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ds-0015",
     themeName: "자료구조",
-    type: "def-to-term",
+    type: "term-to-def",
     difficulty: "advanced",
     tagNames: ["자료구조", "트라이"],
     payload: { term: "트라이(Trie)", definition: "문자열의 공통 접두사를 공유하는 노드로 구성해 빠른 문자열 검색을 지원하는 트리" },
   },
   {
+    seedId: "ds-0016",
     themeName: "자료구조",
     type: "answer-input",
     difficulty: "beginner",
     tagNames: ["자료구조"],
-    payload: { prompt: "연결 리스트에서 특정 인덱스의 원소에 접근할 때 시간복잡도는? (Big-O 표기)", answer: "O(n)" },
+    payload: { prompt: "연결 리스트에서 특정 인덱스의 원소에 접근할 때 시간복잡도는? (Big-O 표기, 곱은 공백·제곱은 ^ 사용 예: O(m log k), O(k^2))", answer: "O(n)" },
   },
   {
+    seedId: "ds-0017",
     themeName: "자료구조",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -938,6 +1068,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "원형 큐", definition: "배열의 끝과 처음을 연결해 공간을 재활용하는 큐 구현 방식" },
   },
   {
+    seedId: "ds-0018",
     themeName: "자료구조",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -950,6 +1081,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ds-0019",
     themeName: "자료구조",
     type: "answer-input",
     difficulty: "intermediate",
@@ -957,6 +1089,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { prompt: "배열의 맨 앞에 원소를 삽입할 때 시간복잡도는? (Big-O 표기, 뒤 원소들을 밀어야 함)", answer: "O(n)" },
   },
   {
+    seedId: "ds-0020",
     themeName: "자료구조",
     type: "def-to-term",
     difficulty: "advanced",
@@ -964,6 +1097,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "사이클", definition: "그래프에서 한 정점에서 출발해 같은 정점으로 다시 돌아오는 경로" },
   },
   {
+    seedId: "ds-0021",
     themeName: "자료구조",
     type: "term-to-def",
     difficulty: "advanced",
@@ -971,6 +1105,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "가중치 그래프", definition: "각 간선에 비용이나 거리를 나타내는 값이 부여된 그래프" },
   },
   {
+    seedId: "ds-0022",
     themeName: "자료구조",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -983,6 +1118,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ds-0023",
     themeName: "자료구조",
     type: "def-to-term",
     difficulty: "advanced",
@@ -990,6 +1126,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "이중 연결 리스트", definition: "각 노드가 다음 노드뿐 아니라 이전 노드도 가리키는 연결 리스트" },
   },
   {
+    seedId: "ds-0024",
     themeName: "자료구조",
     type: "term-to-def",
     difficulty: "beginner",
@@ -997,6 +1134,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "루트 노드", definition: "트리 구조에서 부모가 없는 최상위 노드" },
   },
   {
+    seedId: "ds-0025",
     themeName: "자료구조",
     type: "def-to-term",
     difficulty: "beginner",
@@ -1004,15 +1142,17 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "리프 노드", definition: "트리 구조에서 자식이 없는 최하위 노드" },
   },
   {
+    seedId: "ds-0026",
     themeName: "자료구조",
     type: "answer-input",
     difficulty: "advanced",
     tagNames: ["자료구조", "트리"],
-    payload: { prompt: "노드가 n개인 완전 이진 트리의 높이는 대략 얼마인가? (Big-O 표기)", answer: "O(log n)" },
+    payload: { prompt: "노드가 n개인 완전 이진 트리의 높이는 대략 얼마인가? (Big-O 표기, 곱은 공백·제곱은 ^ 사용 예: O(m log k), O(k^2))", answer: "O(log n)" },
   },
 
   // ───────────── 알고리즘 ─────────────
   {
+    seedId: "algo-0001",
     themeName: "알고리즘",
     type: "def-to-term",
     difficulty: "beginner",
@@ -1020,20 +1160,23 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "이진 탐색", definition: "정렬된 배열에서 중간값과 비교하며 탐색 범위를 절반씩 줄여나가는 탐색 알고리즘" },
   },
   {
+    seedId: "algo-0002",
     themeName: "알고리즘",
     type: "answer-input",
     difficulty: "beginner",
     tagNames: ["알고리즘", "탐색"],
-    payload: { prompt: "정렬된 배열에서 이진 탐색의 시간복잡도는? (Big-O 표기)", answer: "O(log n)" },
+    payload: { prompt: "정렬된 배열에서 이진 탐색의 시간복잡도는? (Big-O 표기, 곱은 공백·제곱은 ^ 사용 예: O(m log k), O(k^2))", answer: "O(log n)" },
   },
   {
+    seedId: "algo-0003",
     themeName: "알고리즘",
     type: "answer-input",
     difficulty: "beginner",
     tagNames: ["알고리즘", "탐색"],
-    payload: { prompt: "정렬되지 않은 배열에서 순차 탐색의 최악 시간복잡도는? (Big-O 표기)", answer: "O(n)" },
+    payload: { prompt: "정렬되지 않은 배열에서 순차 탐색의 최악 시간복잡도는? (Big-O 표기, 곱은 공백·제곱은 ^ 사용 예: O(m log k), O(k^2))", answer: "O(n)" },
   },
   {
+    seedId: "algo-0004",
     themeName: "알고리즘",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -1041,6 +1184,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "동적 계획법", definition: "문제를 작은 하위 문제로 나누고 그 결과를 저장해 재사용하는 최적화 기법" },
   },
   {
+    seedId: "algo-0005",
     themeName: "알고리즘",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -1048,6 +1192,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "메모이제이션", definition: "이미 계산한 결과를 저장해두고 동일한 계산이 필요할 때 재사용하는 기법" },
   },
   {
+    seedId: "algo-0006",
     themeName: "알고리즘",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -1060,6 +1205,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "algo-0007",
     themeName: "알고리즘",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -1067,6 +1213,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "병합 정렬", definition: "배열을 반으로 계속 나눈 뒤 정렬된 부분을 다시 합치는 분할 정복 정렬 알고리즘" },
   },
   {
+    seedId: "algo-0008",
     themeName: "알고리즘",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -1074,6 +1221,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "퀵 정렬", definition: "기준값(피벗)보다 작은 값과 큰 값으로 분할하며 재귀적으로 정렬하는 알고리즘" },
   },
   {
+    seedId: "algo-0009",
     themeName: "알고리즘",
     type: "term-to-def",
     difficulty: "advanced",
@@ -1081,6 +1229,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "BFS", definition: "시작 정점에서 가까운 노드부터 차례로 탐색하는 너비 우선 탐색 방법" },
   },
   {
+    seedId: "algo-0010",
     themeName: "알고리즘",
     type: "def-to-term",
     difficulty: "advanced",
@@ -1088,6 +1237,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "DFS", definition: "한 경로를 끝까지 탐색한 뒤 다시 돌아와 다른 경로를 탐색하는 깊이 우선 탐색 방법" },
   },
   {
+    seedId: "algo-0011",
     themeName: "알고리즘",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -1100,6 +1250,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "algo-0012",
     themeName: "알고리즘",
     type: "term-to-def",
     difficulty: "advanced",
@@ -1107,6 +1258,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "다익스트라 알고리즘", definition: "음이 아닌 가중치를 가진 그래프에서 한 정점으로부터 최단 경로를 구하는 알고리즘" },
   },
   {
+    seedId: "algo-0013",
     themeName: "알고리즘",
     type: "def-to-term",
     difficulty: "advanced",
@@ -1114,6 +1266,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "그리디 알고리즘", definition: "매 단계에서 지금 당장 가장 좋아 보이는 선택을 하는 방식의 알고리즘" },
   },
   {
+    seedId: "algo-0014",
     themeName: "알고리즘",
     type: "term-to-def",
     difficulty: "advanced",
@@ -1121,6 +1274,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "백트래킹", definition: "해를 찾다가 조건에 맞지 않으면 되돌아가 다른 선택지를 시도하는 탐색 기법" },
   },
   {
+    seedId: "algo-0015",
     themeName: "알고리즘",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -1128,6 +1282,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "분할 정복", definition: "문제를 독립적인 작은 부분 문제로 나눠 각각 해결한 뒤 결과를 합치는 방식" },
   },
   {
+    seedId: "algo-0016",
     themeName: "알고리즘",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -1135,13 +1290,15 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "투 포인터", definition: "정렬된 배열 등에서 두 개의 인덱스를 이동시키며 조건을 만족하는 구간을 찾는 기법" },
   },
   {
+    seedId: "algo-0017",
     themeName: "알고리즘",
     type: "answer-input",
     difficulty: "intermediate",
     tagNames: ["알고리즘"],
-    payload: { prompt: "n개의 원소를 완전히 정렬하는 데 필요한 이론적 최소 비교 시간복잡도는? (Big-O 표기)", answer: "O(n log n)" },
+    payload: { prompt: "비교 기반 정렬 알고리즘이 최악의 경우 가질 수 있는 시간복잡도의 이론적 하한은? (Big-O 표기, 곱은 공백·제곱은 ^ 사용 예: O(m log k), O(k^2))", answer: "O(n log n)" },
   },
   {
+    seedId: "algo-0018",
     themeName: "알고리즘",
     type: "multiple-choice",
     difficulty: "beginner",
@@ -1154,6 +1311,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "algo-0019",
     themeName: "알고리즘",
     type: "def-to-term",
     difficulty: "advanced",
@@ -1161,6 +1319,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "위상 정렬", definition: "방향 그래프에서 간선의 방향을 거스르지 않도록 정점을 일렬로 나열하는 정렬 방법" },
   },
   {
+    seedId: "algo-0020",
     themeName: "알고리즘",
     type: "term-to-def",
     difficulty: "advanced",
@@ -1168,6 +1327,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "유니온 파인드", definition: "여러 원소를 그룹으로 묶고 같은 그룹인지 빠르게 판별하는 자료구조 겸 알고리즘" },
   },
   {
+    seedId: "algo-0021",
     themeName: "알고리즘",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -1180,6 +1340,7 @@ export const codingQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "algo-0022",
     themeName: "알고리즘",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -1187,13 +1348,15 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "안정 정렬", definition: "값이 같은 원소들의 상대적인 순서가 정렬 후에도 그대로 유지되는 정렬 방식" },
   },
   {
+    seedId: "algo-0023",
     themeName: "알고리즘",
     type: "answer-input",
     difficulty: "beginner",
     tagNames: ["알고리즘"],
-    payload: { prompt: "n개 원소에 대해 가능한 모든 쌍을 비교하는 이중 반복문의 시간복잡도는? (Big-O 표기)", answer: "O(n^2)" },
+    payload: { prompt: "n개 원소에 대해 가능한 모든 쌍을 비교하는 이중 반복문의 시간복잡도는? (Big-O 표기, 곱은 공백·제곱은 ^ 사용 예: O(m log k), O(k^2))", answer: "O(n^2)" },
   },
   {
+    seedId: "algo-0024",
     themeName: "알고리즘",
     type: "term-to-def",
     difficulty: "advanced",
@@ -1201,6 +1364,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "최장 공통 부분수열", definition: "두 수열에서 순서를 유지하며 공통으로 나타나는 가장 긴 부분수열을 찾는 대표적인 DP 문제 유형" },
   },
   {
+    seedId: "algo-0025",
     themeName: "알고리즘",
     type: "def-to-term",
     difficulty: "advanced",
@@ -1208,6 +1372,7 @@ export const codingQuestions: SeedQuestion[] = [
     payload: { term: "슬라이딩 윈도우", definition: "일정 크기의 구간(윈도우)을 이동시키며 구간 내 값을 효율적으로 갱신하는 탐색 기법" },
   },
   {
+    seedId: "algo-0026",
     themeName: "알고리즘",
     type: "essay",
     difficulty: "advanced",

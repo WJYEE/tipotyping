@@ -4,18 +4,21 @@ import type { SeedQuestion } from "@/db/seed/seedTypes";
 export const aiQuestions: SeedQuestion[] = [
   // ───────────── ML ─────────────
   {
+    seedId: "ml-0001",
     themeName: "ML",
     type: "term-to-def",
     tagNames: ["ML"],
     payload: { term: "오버피팅", definition: "모델이 학습 데이터에 지나치게 맞춰져 새로운 데이터에 일반화하지 못하는 현상" },
   },
   {
+    seedId: "ml-0002",
     themeName: "ML",
     type: "def-to-term",
     tagNames: ["ML"],
     payload: { term: "교차검증", definition: "데이터를 여러 폴드로 나눠 반복 학습·평가해 모델 성능을 검증하는 기법" },
   },
   {
+    seedId: "ml-0003",
     themeName: "ML",
     type: "multiple-choice",
     tagNames: ["ML"],
@@ -27,6 +30,7 @@ export const aiQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ml-0004",
     themeName: "ML",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -34,6 +38,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "언더피팅", definition: "모델이 너무 단순해 학습 데이터의 패턴조차 제대로 학습하지 못하는 현상" },
   },
   {
+    seedId: "ml-0005",
     themeName: "ML",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -41,13 +46,15 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "정밀도(Precision)", definition: "양성으로 예측한 것 중 실제로 양성인 비율" },
   },
   {
+    seedId: "ml-0006",
     themeName: "ML",
-    type: "def-to-term",
+    type: "term-to-def",
     difficulty: "intermediate",
     tagNames: ["ML"],
     payload: { term: "재현율(Recall)", definition: "실제 양성 중 모델이 양성으로 맞게 예측한 비율" },
   },
   {
+    seedId: "ml-0007",
     themeName: "ML",
     type: "essay",
     difficulty: "advanced",
@@ -58,6 +65,7 @@ export const aiQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ml-0008",
     themeName: "ML",
     type: "def-to-term",
     difficulty: "advanced",
@@ -65,6 +73,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "특성 스케일링", definition: "변수 간 값의 범위 차이가 모델 학습에 미치는 영향을 줄이기 위해 크기를 맞추는 전처리" },
   },
   {
+    seedId: "ml-0009",
     themeName: "ML",
     type: "term-to-def",
     difficulty: "advanced",
@@ -72,6 +81,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "앙상블", definition: "여러 개의 모델을 결합해 단일 모델보다 더 안정적이고 정확한 예측을 만드는 기법" },
   },
   {
+    seedId: "ml-0010",
     themeName: "ML",
     type: "def-to-term",
     difficulty: "advanced",
@@ -79,6 +89,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "랜덤 포레스트", definition: "여러 개의 의사결정나무를 무작위로 만들어 결과를 종합하는 대표적인 앙상블 기법" },
   },
   {
+    seedId: "ml-0011",
     themeName: "ML",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -88,24 +99,28 @@ export const aiQuestions: SeedQuestion[] = [
 
   // ───────────── DL ─────────────
   {
+    seedId: "dl-0001",
     themeName: "DL",
     type: "term-to-def",
     tagNames: ["DL"],
     payload: { term: "역전파", definition: "출력의 오차를 신경망 전체로 거꾸로 전달해 가중치를 갱신하는 학습 알고리즘" },
   },
   {
+    seedId: "dl-0002",
     themeName: "DL",
     type: "def-to-term",
     tagNames: ["DL"],
     payload: { term: "드롭아웃", definition: "학습 시 일부 뉴런을 무작위로 비활성화해 과적합을 줄이는 정규화 기법" },
   },
   {
+    seedId: "dl-0003",
     themeName: "DL",
     type: "term-to-def",
     tagNames: ["DL"],
     payload: { term: "활성화 함수", definition: "신경망에 비선형성을 부여해 복잡한 패턴을 학습할 수 있게 하는 함수" },
   },
   {
+    seedId: "dl-0004",
     themeName: "DL",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -113,6 +128,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "CNN", definition: "이미지의 지역적 패턴을 필터로 추출하는 데 특화된 합성곱 신경망" },
   },
   {
+    seedId: "dl-0005",
     themeName: "DL",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -120,6 +136,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "RNN", definition: "이전 시점의 출력을 다음 시점 입력에 함께 사용해 순차 데이터를 처리하는 신경망" },
   },
   {
+    seedId: "dl-0006",
     themeName: "DL",
     type: "def-to-term",
     difficulty: "advanced",
@@ -127,6 +144,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "기울기 소실", definition: "신경망 층이 깊어질수록 역전파되는 기울기가 점점 작아져 학습이 잘 되지 않는 문제" },
   },
   {
+    seedId: "dl-0007",
     themeName: "DL",
     type: "term-to-def",
     difficulty: "advanced",
@@ -134,6 +152,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "배치 정규화", definition: "각 층의 입력 분포를 정규화해 학습을 안정시키고 속도를 높이는 기법" },
   },
   {
+    seedId: "dl-0008",
     themeName: "DL",
     type: "def-to-term",
     difficulty: "advanced",
@@ -141,6 +160,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "옵티마이저", definition: "손실을 줄이는 방향으로 가중치를 어떻게 갱신할지 결정하는 학습 알고리즘(예: Adam)" },
   },
   {
+    seedId: "dl-0009",
     themeName: "DL",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -150,24 +170,28 @@ export const aiQuestions: SeedQuestion[] = [
 
   // ───────────── LLM ─────────────
   {
+    seedId: "llm-0001",
     themeName: "LLM",
     type: "term-to-def",
     tagNames: ["LLM"],
     payload: { term: "토큰", definition: "언어 모델이 텍스트를 처리하는 최소 단위 조각" },
   },
   {
+    seedId: "llm-0002",
     themeName: "LLM",
     type: "def-to-term",
     tagNames: ["LLM"],
     payload: { term: "프롬프트", definition: "언어 모델에게 원하는 응답을 얻기 위해 입력하는 지시문이나 질문" },
   },
   {
+    seedId: "llm-0003",
     themeName: "LLM",
     type: "term-to-def",
     tagNames: ["LLM"],
     payload: { term: "환각", definition: "모델이 사실이 아닌 내용을 그럴듯하게 생성해내는 현상" },
   },
   {
+    seedId: "llm-0004",
     themeName: "LLM",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -175,6 +199,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "트랜스포머", definition: "어텐션 메커니즘을 기반으로 순차 처리 없이 문맥을 병렬로 학습하는 신경망 구조" },
   },
   {
+    seedId: "llm-0005",
     themeName: "LLM",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -182,6 +207,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "어텐션", definition: "입력의 각 부분이 출력에 얼마나 중요한지 가중치를 계산해 반영하는 메커니즘" },
   },
   {
+    seedId: "llm-0006",
     themeName: "LLM",
     type: "def-to-term",
     difficulty: "advanced",
@@ -189,6 +215,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "파인튜닝", definition: "사전 학습된 모델을 특정 작업이나 도메인 데이터로 추가 학습시키는 과정" },
   },
   {
+    seedId: "llm-0007",
     themeName: "LLM",
     type: "essay",
     difficulty: "advanced",
@@ -199,6 +226,7 @@ export const aiQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "llm-0008",
     themeName: "LLM",
     type: "def-to-term",
     difficulty: "advanced",
@@ -206,6 +234,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "컨텍스트 윈도우", definition: "모델이 한 번에 참고할 수 있는 입력 토큰의 최대 길이" },
   },
   {
+    seedId: "llm-0009",
     themeName: "LLM",
     type: "term-to-def",
     difficulty: "advanced",
@@ -215,24 +244,28 @@ export const aiQuestions: SeedQuestion[] = [
 
   // ───────────── RAG ─────────────
   {
+    seedId: "rag-0001",
     themeName: "RAG",
     type: "term-to-def",
     tagNames: ["RAG"],
     payload: { term: "RAG", definition: "외부 지식을 검색해 프롬프트에 포함시킨 뒤 답변을 생성하는 방식" },
   },
   {
+    seedId: "rag-0002",
     themeName: "RAG",
     type: "def-to-term",
     tagNames: ["RAG"],
     payload: { term: "임베딩", definition: "텍스트를 의미가 반영된 고차원 벡터로 변환한 표현" },
   },
   {
+    seedId: "rag-0003",
     themeName: "RAG",
     type: "term-to-def",
     tagNames: ["RAG"],
     payload: { term: "벡터 데이터베이스", definition: "임베딩 벡터를 저장하고 유사도 기반 검색을 지원하는 데이터베이스" },
   },
   {
+    seedId: "rag-0004",
     themeName: "RAG",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -240,6 +273,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "청킹", definition: "긴 문서를 검색과 처리에 적합한 크기의 작은 조각으로 나누는 작업" },
   },
   {
+    seedId: "rag-0005",
     themeName: "RAG",
     type: "essay",
     difficulty: "advanced",
@@ -250,6 +284,7 @@ export const aiQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "rag-0006",
     themeName: "RAG",
     type: "def-to-term",
     difficulty: "advanced",
@@ -259,18 +294,21 @@ export const aiQuestions: SeedQuestion[] = [
 
   // ───────────── AI Agent ─────────────
   {
+    seedId: "agent-0001",
     themeName: "AI Agent",
     type: "term-to-def",
     tagNames: ["Agent"],
     payload: { term: "AI 에이전트", definition: "목표 달성을 위해 스스로 계획을 세우고 도구를 호출해 행동하는 AI 시스템" },
   },
   {
+    seedId: "agent-0002",
     themeName: "AI Agent",
     type: "def-to-term",
     tagNames: ["Agent"],
     payload: { term: "툴 콜링", definition: "언어 모델이 외부 함수나 API를 호출해 작업을 수행하는 기능" },
   },
   {
+    seedId: "agent-0003",
     themeName: "AI Agent",
     type: "essay",
     tagNames: ["Agent"],
@@ -280,6 +318,7 @@ export const aiQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "agent-0004",
     themeName: "AI Agent",
     type: "def-to-term",
     difficulty: "advanced",
@@ -287,6 +326,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "멀티 에이전트", definition: "여러 개의 AI 에이전트가 역할을 나눠 협업하며 하나의 목표를 수행하는 구조" },
   },
   {
+    seedId: "agent-0005",
     themeName: "AI Agent",
     type: "term-to-def",
     difficulty: "advanced",
@@ -296,6 +336,7 @@ export const aiQuestions: SeedQuestion[] = [
 
   // ───────────── AI 기초 ─────────────
   {
+    seedId: "aibasic-0001",
     themeName: "AI 기초",
     type: "essay",
     tagNames: ["ML"],
@@ -305,18 +346,21 @@ export const aiQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "aibasic-0002",
     themeName: "AI 기초",
     type: "def-to-term",
     tagNames: ["AI기초"],
     payload: { term: "인공지능", definition: "인간의 학습, 추론, 인식 능력을 컴퓨터로 구현하려는 기술 분야" },
   },
   {
+    seedId: "aibasic-0003",
     themeName: "AI 기초",
     type: "term-to-def",
     tagNames: ["AI기초"],
     payload: { term: "강화학습", definition: "행동에 대한 보상을 통해 최적의 정책을 스스로 학습하는 방식" },
   },
   {
+    seedId: "aibasic-0004",
     themeName: "AI 기초",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -324,6 +368,7 @@ export const aiQuestions: SeedQuestion[] = [
     payload: { term: "머신러닝", definition: "규칙을 직접 프로그래밍하지 않고 데이터로부터 패턴을 학습하는 인공지능의 한 분야" },
   },
   {
+    seedId: "aibasic-0005",
     themeName: "AI 기초",
     type: "def-to-term",
     difficulty: "intermediate",

@@ -4,24 +4,28 @@ import type { SeedQuestion } from "@/db/seed/seedTypes";
 export const businessQuestions: SeedQuestion[] = [
   // ───────────── 이커머스 ─────────────
   {
+    seedId: "ecom-0001",
     themeName: "이커머스",
     type: "term-to-def",
     tagNames: ["이커머스"],
     payload: { term: "전환율", definition: "방문자 중 실제 구매로 이어진 비율" },
   },
   {
+    seedId: "ecom-0002",
     themeName: "이커머스",
     type: "def-to-term",
     tagNames: ["이커머스"],
     payload: { term: "객단가", definition: "고객 한 명이 한 번 구매할 때 지불하는 평균 금액" },
   },
   {
+    seedId: "ecom-0003",
     themeName: "이커머스",
     type: "term-to-def",
     tagNames: ["이커머스"],
     payload: { term: "장바구니 이탈", definition: "상품을 장바구니에 담았지만 결제를 완료하지 않고 떠나는 행동" },
   },
   {
+    seedId: "ecom-0004",
     themeName: "이커머스",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -29,6 +33,7 @@ export const businessQuestions: SeedQuestion[] = [
     payload: { term: "재구매율", definition: "한 번 구매한 고객이 다시 구매하는 비율" },
   },
   {
+    seedId: "ecom-0005",
     themeName: "이커머스",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -41,6 +46,7 @@ export const businessQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ecom-0006",
     themeName: "이커머스",
     type: "def-to-term",
     difficulty: "advanced",
@@ -48,6 +54,7 @@ export const businessQuestions: SeedQuestion[] = [
     payload: { term: "옴니채널", definition: "온라인과 오프라인 등 여러 채널을 하나로 연결해 끊김 없는 쇼핑 경험을 제공하는 전략" },
   },
   {
+    seedId: "ecom-0007",
     themeName: "이커머스",
     type: "essay",
     difficulty: "intermediate",
@@ -58,6 +65,7 @@ export const businessQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ecom-0008",
     themeName: "이커머스",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -65,6 +73,7 @@ export const businessQuestions: SeedQuestion[] = [
     payload: { term: "크로스셀링", definition: "고객이 구매하려는 상품과 관련된 다른 상품을 함께 제안해 추가 구매를 유도하는 전략" },
   },
   {
+    seedId: "ecom-0009",
     themeName: "이커머스",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -72,6 +81,7 @@ export const businessQuestions: SeedQuestion[] = [
     payload: { term: "업셀링", definition: "고객이 고려 중인 상품보다 더 비싸거나 상위 등급의 상품을 제안하는 전략" },
   },
   {
+    seedId: "ecom-0010",
     themeName: "이커머스",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -86,24 +96,28 @@ export const businessQuestions: SeedQuestion[] = [
 
   // ───────────── 플랫폼 ─────────────
   {
+    seedId: "plat-0001",
     themeName: "플랫폼",
     type: "term-to-def",
     tagNames: ["플랫폼"],
     payload: { term: "네트워크 효과", definition: "사용자가 늘어날수록 서비스의 가치가 함께 커지는 현상" },
   },
   {
+    seedId: "plat-0002",
     themeName: "플랫폼",
     type: "def-to-term",
     tagNames: ["플랫폼"],
     payload: { term: "양면시장", definition: "공급자와 수요자 두 집단을 동시에 연결해 가치를 만드는 시장 구조" },
   },
   {
+    seedId: "plat-0003",
     themeName: "플랫폼",
     type: "term-to-def",
     tagNames: ["플랫폼"],
     payload: { term: "락인 효과", definition: "전환 비용이 높아 사용자가 다른 서비스로 옮기기 어려워지는 현상" },
   },
   {
+    seedId: "plat-0004",
     themeName: "플랫폼",
     type: "essay",
     difficulty: "intermediate",
@@ -114,6 +128,7 @@ export const businessQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "plat-0005",
     themeName: "플랫폼",
     type: "def-to-term",
     difficulty: "advanced",
@@ -121,6 +136,7 @@ export const businessQuestions: SeedQuestion[] = [
     payload: { term: "멀티호밍", definition: "사용자가 동시에 여러 경쟁 플랫폼을 함께 이용하는 행동" },
   },
   {
+    seedId: "plat-0006",
     themeName: "플랫폼",
     type: "term-to-def",
     difficulty: "advanced",
@@ -128,6 +144,7 @@ export const businessQuestions: SeedQuestion[] = [
     payload: { term: "치킨 앤 에그 문제", definition: "양면시장에서 공급자와 수요자 중 누가 먼저 모여야 하는지가 순환적으로 얽혀 있는 초기 성장의 딜레마" },
   },
   {
+    seedId: "plat-0007",
     themeName: "플랫폼",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -142,18 +159,21 @@ export const businessQuestions: SeedQuestion[] = [
 
   // ───────────── 비즈니스모델 ─────────────
   {
+    seedId: "biz-0001",
     themeName: "비즈니스모델",
     type: "term-to-def",
     tagNames: ["비즈니스모델"],
     payload: { term: "프리미엄", definition: "기본 기능은 무료로 제공하고 고급 기능은 유료로 판매하는 수익 모델" },
   },
   {
+    seedId: "biz-0002",
     themeName: "비즈니스모델",
     type: "def-to-term",
     tagNames: ["비즈니스모델"],
     payload: { term: "구독 모델", definition: "정기적으로 일정 금액을 지불하고 서비스를 지속 이용하는 수익 구조" },
   },
   {
+    seedId: "biz-0003",
     themeName: "비즈니스모델",
     type: "essay",
     tagNames: ["비즈니스모델"],
@@ -163,6 +183,7 @@ export const businessQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "biz-0004",
     themeName: "비즈니스모델",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -170,6 +191,7 @@ export const businessQuestions: SeedQuestion[] = [
     payload: { term: "수수료 모델", definition: "거래가 성사될 때마다 중개자가 일정 비율을 수수료로 가져가는 수익 구조" },
   },
   {
+    seedId: "biz-0005",
     themeName: "비즈니스모델",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -182,6 +204,7 @@ export const businessQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "biz-0006",
     themeName: "비즈니스모델",
     type: "def-to-term",
     difficulty: "advanced",
@@ -189,6 +212,7 @@ export const businessQuestions: SeedQuestion[] = [
     payload: { term: "린 스타트업", definition: "최소기능제품(MVP)을 빠르게 출시하고 검증하며 반복적으로 개선해가는 창업 방법론" },
   },
   {
+    seedId: "biz-0007",
     themeName: "비즈니스모델",
     type: "term-to-def",
     difficulty: "advanced",
@@ -198,24 +222,29 @@ export const businessQuestions: SeedQuestion[] = [
 
   // ───────────── KPI·지표 ─────────────
   {
+    seedId: "kpi-0001",
     themeName: "KPI·지표",
     type: "def-to-term",
     tagNames: ["KPI"],
     payload: { term: "MAU", definition: "한 달 동안 서비스를 이용한 순수 이용자 수" },
   },
   {
+    seedId: "kpi-0002",
     themeName: "KPI·지표",
     type: "term-to-def",
     tagNames: ["KPI"],
     payload: { term: "DAU", definition: "하루 동안 서비스를 이용한 순수 이용자 수" },
   },
   {
+    seedId: "kpi-0003",
     themeName: "KPI·지표",
     type: "answer-input",
     tagNames: ["KPI"],
-    payload: { prompt: "DAU를 MAU로 나눈 값으로 서비스의 고착도를 보는 지표는? (약어로 답)", answer: "DAU/MAU" },
+    explanation: "고착도(Stickiness)는 DAU ÷ MAU로 계산한다. 30,000 ÷ 150,000 = 0.2 → 20%. 월 사용자가 한 달 중 평균 약 6일 방문한다는 뜻이다.",
+    payload: { prompt: "DAU가 3만 명, MAU가 15만 명일 때 DAU/MAU 고착도는 몇 %인가? (숫자만)", answer: "20" },
   },
   {
+    seedId: "kpi-0004",
     themeName: "KPI·지표",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -223,6 +252,7 @@ export const businessQuestions: SeedQuestion[] = [
     payload: { term: "OKR", definition: "목표(Objective)와 그 달성 여부를 측정하는 핵심결과(Key Result)로 구성된 목표 관리 방법론" },
   },
   {
+    seedId: "kpi-0005",
     themeName: "KPI·지표",
     type: "essay",
     difficulty: "advanced",
@@ -233,6 +263,7 @@ export const businessQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "kpi-0006",
     themeName: "KPI·지표",
     type: "def-to-term",
     difficulty: "advanced",
@@ -242,24 +273,28 @@ export const businessQuestions: SeedQuestion[] = [
 
   // ───────────── 마케팅 ─────────────
   {
+    seedId: "mkt-0001",
     themeName: "마케팅",
     type: "term-to-def",
     tagNames: ["마케팅"],
     payload: { term: "퍼포먼스 마케팅", definition: "광고 집행 결과를 데이터로 측정하고 최적화하는 마케팅 방식" },
   },
   {
+    seedId: "mkt-0002",
     themeName: "마케팅",
     type: "def-to-term",
     tagNames: ["마케팅"],
     payload: { term: "ROAS", definition: "광고비 대비 발생한 매출의 비율" },
   },
   {
+    seedId: "mkt-0003",
     themeName: "마케팅",
     type: "term-to-def",
     tagNames: ["마케팅"],
     payload: { term: "CTR", definition: "노출된 광고 대비 실제 클릭이 발생한 비율" },
   },
   {
+    seedId: "mkt-0004",
     themeName: "마케팅",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -267,6 +302,7 @@ export const businessQuestions: SeedQuestion[] = [
     payload: { term: "CPA", definition: "전환(가입, 구매 등) 1건을 얻는 데 든 평균 광고 비용" },
   },
   {
+    seedId: "mkt-0005",
     themeName: "마케팅",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -279,6 +315,7 @@ export const businessQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "mkt-0006",
     themeName: "마케팅",
     type: "def-to-term",
     difficulty: "advanced",
@@ -286,6 +323,7 @@ export const businessQuestions: SeedQuestion[] = [
     payload: { term: "브랜드 인지도", definition: "소비자가 특정 브랜드를 얼마나 알고 있고 떠올릴 수 있는지의 정도" },
   },
   {
+    seedId: "mkt-0007",
     themeName: "마케팅",
     type: "term-to-def",
     difficulty: "advanced",
@@ -293,6 +331,7 @@ export const businessQuestions: SeedQuestion[] = [
     payload: { term: "SEO", definition: "검색엔진 결과에서 자연 노출 순위를 높이기 위한 웹사이트 최적화 작업" },
   },
   {
+    seedId: "mkt-0008",
     themeName: "마케팅",
     type: "def-to-term",
     difficulty: "advanced",

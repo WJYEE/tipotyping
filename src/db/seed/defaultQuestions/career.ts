@@ -4,6 +4,7 @@ import type { SeedQuestion } from "@/db/seed/seedTypes";
 export const careerQuestions: SeedQuestion[] = [
   // ───────────── NCS ─────────────
   {
+    seedId: "ncs-0001",
     themeName: "NCS",
     type: "multiple-choice",
     tagNames: ["NCS", "수리"],
@@ -14,6 +15,7 @@ export const careerQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ncs-0002",
     themeName: "NCS",
     type: "multiple-choice",
     tagNames: ["NCS", "언어"],
@@ -24,12 +26,14 @@ export const careerQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ncs-0003",
     themeName: "NCS",
     type: "answer-input",
     tagNames: ["NCS", "수리"],
     payload: { prompt: "시속 60km로 90km를 이동하면 걸리는 시간은 몇 분인가? (숫자만 답)", answer: "90" },
   },
   {
+    seedId: "ncs-0004",
     themeName: "NCS",
     type: "answer-input",
     difficulty: "intermediate",
@@ -37,6 +41,7 @@ export const careerQuestions: SeedQuestion[] = [
     payload: { prompt: "원가 8,000원인 상품에 25%의 이익을 붙여 정가를 매기면 정가는 얼마인가? (원 단위 숫자만)", answer: "10000" },
   },
   {
+    seedId: "ncs-0005",
     themeName: "NCS",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -44,6 +49,7 @@ export const careerQuestions: SeedQuestion[] = [
     payload: { term: "의사소통능력", definition: "문서와 언어로 정보를 정확히 이해하고 전달하는 NCS 직업기초능력 영역" },
   },
   {
+    seedId: "ncs-0006",
     themeName: "NCS",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -51,6 +57,7 @@ export const careerQuestions: SeedQuestion[] = [
     payload: { term: "문제해결능력", definition: "업무 중 발생한 문제의 원인을 파악하고 합리적으로 해결하는 NCS 직업기초능력 영역" },
   },
   {
+    seedId: "ncs-0007",
     themeName: "NCS",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -62,6 +69,7 @@ export const careerQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ncs-0008",
     themeName: "NCS",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -69,6 +77,7 @@ export const careerQuestions: SeedQuestion[] = [
     payload: { term: "자원관리능력", definition: "시간, 예산, 인력 등 업무에 필요한 자원을 효율적으로 배분하고 활용하는 NCS 직업기초능력 영역" },
   },
   {
+    seedId: "ncs-0009",
     themeName: "NCS",
     type: "answer-input",
     difficulty: "intermediate",
@@ -78,6 +87,7 @@ export const careerQuestions: SeedQuestion[] = [
 
   // ───────────── 인적성 ─────────────
   {
+    seedId: "apti-0001",
     themeName: "인적성",
     type: "multiple-choice",
     tagNames: ["인적성"],
@@ -88,12 +98,14 @@ export const careerQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "apti-0002",
     themeName: "인적성",
     type: "def-to-term",
     tagNames: ["인적성"],
     payload: { term: "상황판단능력", definition: "주어진 상황에서 가장 합리적인 대응을 판단하는 능력을 평가하는 영역" },
   },
   {
+    seedId: "apti-0003",
     themeName: "인적성",
     type: "multiple-choice",
     tagNames: ["인적성"],
@@ -104,6 +116,7 @@ export const careerQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "apti-0004",
     themeName: "인적성",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -115,6 +128,7 @@ export const careerQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "apti-0005",
     themeName: "인적성",
     type: "def-to-term",
     difficulty: "advanced",
@@ -122,6 +136,7 @@ export const careerQuestions: SeedQuestion[] = [
     payload: { term: "조직적합성", definition: "지원자의 가치관과 행동 양식이 조직 문화와 얼마나 부합하는지 평가하는 항목" },
   },
   {
+    seedId: "apti-0006",
     themeName: "인적성",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -135,40 +150,49 @@ export const careerQuestions: SeedQuestion[] = [
 
   // ───────────── 면접 ─────────────
   {
+    seedId: "intv-0001",
     themeName: "면접",
-    type: "essay",
+    type: "def-to-term",
     tagNames: ["면접"],
+    payload: { term: "두괄식 답변", definition: "질문에 대한 결론을 먼저 말하고 근거와 사례를 뒤에 덧붙이는 답변 구조" },
+  },
+  {
+    seedId: "intv-0002",
+    themeName: "면접",
+    type: "multiple-choice",
+    tagNames: ["면접"],
+    explanation: "구조화 면접은 모든 지원자에게 같은 질문과 평가 기준을 적용해 면접관 간 편차를 줄이는 것이 핵심이다.",
     payload: {
-      prompt: "본인의 강점을 한 문장으로 소개하시오.",
-      answer: "저는 문제 상황에서 원인을 끝까지 파고들어 해결하는 꼼꼼함이 강점입니다.",
+      prompt: "구조화 면접(Structured Interview)의 가장 핵심적인 특징은?",
+      options: [
+        "면접관이 대화 흐름에 따라 자유롭게 질문한다",
+        "모든 지원자에게 같은 질문과 평가 기준을 적용한다",
+        "지원자가 질문을 직접 고른다",
+        "서류 점수만으로 합격을 결정한다",
+      ],
+      correctIndex: 1,
     },
   },
   {
-    themeName: "면접",
-    type: "essay",
-    tagNames: ["면접"],
-    payload: {
-      prompt: "지원 동기를 한 문장으로 답하시오.",
-      answer: "이 회사의 서비스가 제가 직접 사용하며 느낀 문제를 가장 잘 해결할 수 있는 곳이라 생각해 지원했습니다.",
-    },
-  },
-  {
+    seedId: "intv-0003",
     themeName: "면접",
     type: "def-to-term",
     tagNames: ["면접"],
     payload: { term: "STAR 기법", definition: "상황-과제-행동-결과 순서로 경험을 구조화해 답변하는 면접 기법" },
   },
   {
+    seedId: "intv-0004",
     themeName: "면접",
     type: "essay",
     difficulty: "intermediate",
     tagNames: ["면접"],
     payload: {
-      prompt: "실패 경험과 그로부터 배운 점을 한 문장으로 답하시오.",
-      answer: "일정을 너무 낙관적으로 잡아 프로젝트가 지연된 적이 있어, 이후로는 버퍼 시간을 반드시 확보하게 되었습니다.",
+      prompt: "실패 경험 질문에서 면접관이 실제로 확인하려는 것을 한 문장으로 설명하시오.",
+      answer: "실패 자체보다 원인을 스스로 분석하고 이후 행동을 어떻게 바꿨는지, 즉 학습과 회복 능력을 확인하려는 것이다.",
     },
   },
   {
+    seedId: "intv-0005",
     themeName: "면접",
     type: "def-to-term",
     difficulty: "advanced",
@@ -176,6 +200,7 @@ export const careerQuestions: SeedQuestion[] = [
     payload: { term: "압박 면접", definition: "지원자의 순발력과 스트레스 대응력을 보기 위해 의도적으로 날카로운 질문을 던지는 면접 방식" },
   },
   {
+    seedId: "intv-0006",
     themeName: "면접",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -185,18 +210,21 @@ export const careerQuestions: SeedQuestion[] = [
 
   // ───────────── 직무지식 ─────────────
   {
+    seedId: "job-0001",
     themeName: "직무지식",
     type: "term-to-def",
     tagNames: ["직무지식"],
     payload: { term: "OJT", definition: "현장에서 실무를 수행하며 배우는 사내 교육 방식" },
   },
   {
+    seedId: "job-0002",
     themeName: "직무지식",
     type: "def-to-term",
     tagNames: ["직무지식"],
     payload: { term: "KPI", definition: "목표 달성 여부를 수치로 측정하기 위한 핵심 성과 지표" },
   },
   {
+    seedId: "job-0003",
     themeName: "직무지식",
     type: "essay",
     tagNames: ["직무지식"],
@@ -206,6 +234,7 @@ export const careerQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "job-0004",
     themeName: "직무지식",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -213,6 +242,7 @@ export const careerQuestions: SeedQuestion[] = [
     payload: { term: "R&R", definition: "팀이나 프로젝트에서 각 구성원이 맡는 역할과 책임을 정리한 것" },
   },
   {
+    seedId: "job-0005",
     themeName: "직무지식",
     type: "term-to-def",
     difficulty: "advanced",

@@ -1,5 +1,5 @@
-import Dexie, { type EntityTable } from "dexie";
-import { generateDisplayCode } from "@/lib/displayCode";
+import Dexie, { type EntityTable, type Transaction } from "dexie";
+import { generateDisplayCode, planCustomThemeRecode } from "@/lib/displayCode";
 import type {
   Attempt,
   Category,
@@ -88,6 +88,28 @@ export class TipoTypingDB extends Dexie {
         await tx.table("questions").update(q.id, { displayCode });
       }
     });
+
+    // v4: 사용자 추가 Theme의 fallback 접두어에서 내부 theme id를 제거하고(순한글 → CUSTOM),
+    // 기본 Theme 접두어나 다른 사용자 Theme과 겹치지 않게 정리한다. 번호는 유지하고 접두어만 바꾼다.
+    this.version(4).stores({}).upgrade(upgradeCustomThemeDisplayCodes);
+
+    // v5: 번들 기본 문제은행 동기화용 seedId 인덱스. 기존 데이터는 변경하지 않으며,
+    // 기존 문제·Theme과 번들의 연결은 앱 시작 시 syncDefaultContent가 처리한다.
+    this.version(5).stores({
+      questions:
+        "id, categoryId, themeId, type, difficulty, *tagIds, flagged, favorite, createdAt, displayCode, seedId",
+    });
+  }
+}
+
+export async function upgradeCustomThemeDisplayCodes(tx: Transaction): Promise<void> {
+  // 기본 Theme 먼저, 그 다음 사용자 Theme을 order 순으로 처리해 접두어 배정 결과를 결정적으로 만든다.
+  const themes = ((await tx.table("themes").toArray()) as Theme[]).sort(
+    (a, b) => Number(a.isCustom) - Number(b.isCustom) || a.order - b.order || a.id.localeCompare(b.id),
+  );
+  const questions = (await tx.table("questions").toArray()) as Question[];
+  for (const { id, displayCode } of planCustomThemeRecode(themes, questions)) {
+    await tx.table("questions").update(id, { displayCode });
   }
 }
 

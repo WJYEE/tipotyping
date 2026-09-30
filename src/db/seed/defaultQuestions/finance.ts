@@ -4,24 +4,28 @@ import type { SeedQuestion } from "@/db/seed/seedTypes";
 export const financeQuestions: SeedQuestion[] = [
   // ───────────── 금융기초 ─────────────
   {
+    seedId: "fin-0001",
     themeName: "금융기초",
     type: "term-to-def",
     tagNames: ["금융기초"],
     payload: { term: "복리", definition: "원금뿐 아니라 이전에 발생한 이자에도 다시 이자가 붙는 방식" },
   },
   {
+    seedId: "fin-0002",
     themeName: "금융기초",
     type: "def-to-term",
     tagNames: ["금융기초"],
     payload: { term: "유동성", definition: "자산을 큰 가치 손실 없이 얼마나 빠르게 현금화할 수 있는지의 정도" },
   },
   {
+    seedId: "fin-0003",
     themeName: "금융기초",
     type: "term-to-def",
     tagNames: ["금융기초"],
     payload: { term: "인플레이션", definition: "물가가 지속적으로 상승해 화폐 가치가 하락하는 현상" },
   },
   {
+    seedId: "fin-0004",
     themeName: "금융기초",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -29,6 +33,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "디플레이션", definition: "물가가 지속적으로 하락하는 현상" },
   },
   {
+    seedId: "fin-0005",
     themeName: "금융기초",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -36,6 +41,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "명목금리", definition: "물가상승률을 반영하지 않은 표면적인 금리" },
   },
   {
+    seedId: "fin-0006",
     themeName: "금융기초",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -43,6 +49,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "실질금리", definition: "명목금리에서 물가상승률을 뺀, 실제 구매력 기준의 금리" },
   },
   {
+    seedId: "fin-0007",
     themeName: "금융기초",
     type: "multiple-choice",
     tagNames: ["금융기초"],
@@ -54,12 +61,14 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "fin-0008",
     themeName: "금융기초",
     type: "def-to-term",
     tagNames: ["금융기초"],
     payload: { term: "환율", definition: "자국 통화와 외국 통화 간 교환 비율" },
   },
   {
+    seedId: "fin-0009",
     themeName: "금융기초",
     type: "term-to-def",
     difficulty: "advanced",
@@ -67,6 +76,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "기회비용", definition: "하나를 선택함으로써 포기하게 되는 다른 대안의 가치" },
   },
   {
+    seedId: "fin-0010",
     themeName: "금융기초",
     type: "answer-input",
     difficulty: "beginner",
@@ -74,6 +84,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { prompt: "연이율 5%로 원금 100만원을 1년간 단리로 예치하면 이자는 얼마인가? (원 단위 숫자만)", answer: "50000" },
   },
   {
+    seedId: "fin-0011",
     themeName: "금융기초",
     type: "term-to-def",
     difficulty: "advanced",
@@ -81,6 +92,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "분산투자", definition: "여러 자산에 나누어 투자해 한 자산의 손실이 전체에 미치는 영향을 줄이는 전략" },
   },
   {
+    seedId: "fin-0012",
     themeName: "금융기초",
     type: "def-to-term",
     difficulty: "advanced",
@@ -88,6 +100,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "신용화폐", definition: "정부나 중앙은행의 신뢰를 바탕으로 가치를 인정받는, 금 등 실물 담보가 없는 화폐" },
   },
   {
+    seedId: "fin-0013",
     themeName: "금융기초",
     type: "essay",
     difficulty: "intermediate",
@@ -98,6 +111,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "fin-0014",
     themeName: "금융기초",
     type: "term-to-def",
     difficulty: "advanced",
@@ -105,6 +119,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "본원통화", definition: "중앙은행이 시중에 직접 공급하는, 통화 창출의 기초가 되는 현금 총량" },
   },
   {
+    seedId: "fin-0015",
     themeName: "금융기초",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -117,6 +132,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "fin-0016",
     themeName: "금융기초",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -124,6 +140,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "GDP", definition: "일정 기간 한 나라 안에서 새로 생산된 재화와 서비스의 가치를 합한 지표" },
   },
   {
+    seedId: "fin-0017",
     themeName: "금융기초",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -131,6 +148,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "경상수지", definition: "상품과 서비스 거래 등으로 발생한 외국과의 수입과 지출의 차액" },
   },
   {
+    seedId: "fin-0018",
     themeName: "금융기초",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -148,6 +166,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "fin-0019",
     themeName: "금융기초",
     type: "def-to-term",
     difficulty: "advanced",
@@ -155,6 +174,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "레버리지", definition: "차입한 자금을 활용해 자기자본 대비 투자 규모나 수익률을 확대하는 전략" },
   },
   {
+    seedId: "fin-0020",
     themeName: "금융기초",
     type: "term-to-def",
     difficulty: "advanced",
@@ -162,13 +182,16 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "환헤지", definition: "환율 변동으로 인한 손실 위험을 줄이기 위해 취하는 금융 조치" },
   },
   {
+    seedId: "fin-0021",
     themeName: "금융기초",
     type: "answer-input",
     difficulty: "intermediate",
     tagNames: ["금융기초"],
-    payload: { prompt: "72를 연이율(%)로 나누면 원금이 두 배가 되는 대략적인 기간(년)을 구할 수 있다. 이 계산법의 이름은? (숫자 포함, 한글로)", answer: "72법칙" },
+    explanation: "72법칙은 72를 연 복리 이율(%)로 나눠 원금이 두 배가 되는 기간을 어림한다. 72 ÷ 6 = 12년.",
+    payload: { prompt: "72법칙으로 계산할 때 연 6% 복리로 원금이 약 두 배가 되는 기간은 몇 년인가? (숫자만)", answer: "12" },
   },
   {
+    seedId: "fin-0022",
     themeName: "금융기초",
     type: "def-to-term",
     difficulty: "advanced",
@@ -178,29 +201,34 @@ export const financeQuestions: SeedQuestion[] = [
 
   // ───────────── 은행 ─────────────
   {
+    seedId: "bank-0001",
     themeName: "은행",
     type: "term-to-def",
     tagNames: ["은행"],
     payload: { term: "예대마진", definition: "대출 금리와 예금 금리의 차이에서 발생하는 은행의 수익" },
   },
   {
+    seedId: "bank-0002",
     themeName: "은행",
     type: "def-to-term",
     tagNames: ["은행"],
     payload: { term: "지급준비율", definition: "은행이 예금 중 중앙은행에 의무적으로 예치해야 하는 비율" },
   },
   {
+    seedId: "bank-0003",
     themeName: "은행",
     type: "multiple-choice",
     tagNames: ["은행"],
-    explanation: "예금자보호법상 원금과 이자를 합쳐 1인당 5천만원까지 보호된다.",
+    explanation:
+      "2025년 9월 1일부터 예금보호한도가 5천만원에서 1억원으로 상향됐다. 원금과 이자를 합쳐 금융회사별 1인당 적용된다.",
     payload: {
-      prompt: "예금자보호법상 1인당 보호되는 예금 한도는?",
+      prompt: "현재 예금자보호법상 금융회사별 1인당 보호되는 예금 한도(원금+이자)는?",
       options: ["3천만원", "5천만원", "1억원", "무제한"],
-      correctIndex: 1,
+      correctIndex: 2,
     },
   },
   {
+    seedId: "bank-0004",
     themeName: "은행",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -208,6 +236,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "요구불예금", definition: "예금주가 원할 때 언제든 인출할 수 있는, 이자가 낮거나 없는 예금" },
   },
   {
+    seedId: "bank-0005",
     themeName: "은행",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -215,6 +244,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "정기예금", definition: "정해진 기간 동안 돈을 맡기고 만기에 약정된 이자를 받는 예금" },
   },
   {
+    seedId: "bank-0006",
     themeName: "은행",
     type: "def-to-term",
     difficulty: "advanced",
@@ -222,6 +252,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "신용창조", definition: "은행이 예금의 일부만 지급준비금으로 남기고 나머지를 대출해 통화량이 늘어나는 과정" },
   },
   {
+    seedId: "bank-0007",
     themeName: "은행",
     type: "term-to-def",
     difficulty: "advanced",
@@ -229,13 +260,16 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "콜금리", definition: "은행 간 초단기로 자금을 빌리고 빌려줄 때 적용되는 금리" },
   },
   {
+    seedId: "bank-0008",
     themeName: "은행",
     type: "answer-input",
     difficulty: "beginner",
     tagNames: ["은행"],
-    payload: { prompt: "은행이 예금자에게 지급하는 금리와 대출자에게 받는 금리 중 일반적으로 더 높은 쪽은?", answer: "대출금리" },
+    explanation: "예대금리차는 대출금리에서 예금금리를 뺀 값이다. 5.0 - 3.2 = 1.8(%p).",
+    payload: { prompt: "평균 대출금리가 연 5.0%, 평균 예금금리가 연 3.2%일 때 예대금리차는 몇 %p인가? (숫자만)", answer: "1.8" },
   },
   {
+    seedId: "bank-0009",
     themeName: "은행",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -243,6 +277,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "주택담보대출", definition: "부동산을 담보로 제공하고 받는, 상대적으로 금리가 낮은 대출" },
   },
   {
+    seedId: "bank-0010",
     themeName: "은행",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -255,6 +290,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "bank-0011",
     themeName: "은행",
     type: "term-to-def",
     difficulty: "advanced",
@@ -262,6 +298,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "코픽스(COFIX)", definition: "국내 주요 은행의 자금 조달 비용을 반영해 산출하는 대출 기준금리 지표" },
   },
   {
+    seedId: "bank-0012",
     themeName: "은행",
     type: "essay",
     difficulty: "intermediate",
@@ -272,6 +309,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "bank-0013",
     themeName: "은행",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -279,6 +317,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "적금", definition: "정해진 기간 동안 매달 일정 금액을 납입하고 만기에 원금과 이자를 받는 예금 상품" },
   },
   {
+    seedId: "bank-0014",
     themeName: "은행",
     type: "term-to-def",
     difficulty: "advanced",
@@ -286,6 +325,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "제1금융권", definition: "은행법의 적용을 받는 일반은행과 특수은행을 통칭하는 표현" },
   },
   {
+    seedId: "bank-0015",
     themeName: "은행",
     type: "def-to-term",
     difficulty: "advanced",
@@ -293,6 +333,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "제2금융권", definition: "은행을 제외한 저축은행, 보험사, 증권사 등 비은행 금융기관을 통칭하는 표현" },
   },
   {
+    seedId: "bank-0016",
     themeName: "은행",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -305,6 +346,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "bank-0017",
     themeName: "은행",
     type: "def-to-term",
     difficulty: "advanced",
@@ -312,33 +354,39 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "예대율", definition: "은행의 예수금 대비 대출금 비율" },
   },
   {
+    seedId: "bank-0018",
     themeName: "은행",
     type: "answer-input",
     difficulty: "beginner",
     tagNames: ["은행"],
-    payload: { prompt: "은행에 돈을 맡기는 사람을 예금 '무엇'이라고 부르는가? (한 단어)", answer: "예금주" },
+    explanation: "지급준비율이 10%면 예금 1,000억원 중 100억원을 지급준비금으로 쌓고 나머지를 대출 등에 운용할 수 있다.",
+    payload: { prompt: "지급준비율이 10%일 때 예금 1,000억원을 받은 은행이 쌓아야 하는 지급준비금은 몇 억원인가? (숫자만)", answer: "100" },
   },
 
   // ───────────── 카드 ─────────────
   {
+    seedId: "card-0001",
     themeName: "카드",
     type: "term-to-def",
     tagNames: ["카드"],
     payload: { term: "리볼빙", definition: "카드 대금 중 일부만 결제하고 나머지를 다음 달로 이월하는 결제 방식" },
   },
   {
+    seedId: "card-0002",
     themeName: "카드",
     type: "def-to-term",
     tagNames: ["카드"],
     payload: { term: "가맹점 수수료", definition: "카드 결제 시 가맹점이 카드사에 지불하는 수수료" },
   },
   {
+    seedId: "card-0003",
     themeName: "카드",
     type: "term-to-def",
     tagNames: ["카드"],
     payload: { term: "캐시백", definition: "카드 사용 금액의 일정 비율을 현금성으로 되돌려주는 혜택" },
   },
   {
+    seedId: "card-0004",
     themeName: "카드",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -346,6 +394,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "체크카드", definition: "결제 즉시 연결된 계좌 잔액에서 금액이 빠져나가는, 신용 대출 기능이 없는 카드" },
   },
   {
+    seedId: "card-0005",
     themeName: "카드",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -353,6 +402,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "신용카드 한도", definition: "카드사가 이용자의 신용도를 평가해 부여하는 월 사용 가능 최대 금액" },
   },
   {
+    seedId: "card-0006",
     themeName: "카드",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -365,6 +415,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "card-0007",
     themeName: "카드",
     type: "def-to-term",
     difficulty: "advanced",
@@ -372,6 +423,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "선결제", definition: "카드 대금 결제일 이전에 미리 일부 금액을 상환해 이자 부담을 줄이는 방법" },
   },
   {
+    seedId: "card-0008",
     themeName: "카드",
     type: "term-to-def",
     difficulty: "advanced",
@@ -379,13 +431,17 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "카드깡", definition: "물품 거래 없이 카드로 현금을 융통하는 불법 행위" },
   },
   {
+    seedId: "card-0009",
     themeName: "카드",
     type: "answer-input",
     difficulty: "beginner",
     tagNames: ["카드"],
-    payload: { prompt: "카드 대금을 결제일에 전액 갚지 않고 최소금액만 내는 서비스를 무엇이라 하는가?", answer: "리볼빙" },
+    explanation:
+      "신용카드는 이용일부터 결제일까지 대금을 이자 없이 미뤄준다. 이 기간이 신용공여기간이며, 결제일에 전액을 갚지 못하면 그때부터 리볼빙·연체 이자가 붙는다.",
+    payload: { prompt: "카드 이용일부터 결제일까지 카드사가 이자 없이 대금 납부를 미뤄주는 기간을 무엇이라 하는가? (6글자)", answer: "신용공여기간" },
   },
   {
+    seedId: "card-0010",
     themeName: "카드",
     type: "def-to-term",
     difficulty: "advanced",
@@ -393,6 +449,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "할부수수료", definition: "카드 대금을 여러 달에 나눠 낼 때 추가로 부과되는 이자 성격의 수수료" },
   },
   {
+    seedId: "card-0011",
     themeName: "카드",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -400,6 +457,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "법인카드", definition: "회사 명의로 발급되어 업무상 비용 결제에 사용하는 카드" },
   },
   {
+    seedId: "card-0012",
     themeName: "카드",
     type: "def-to-term",
     difficulty: "advanced",
@@ -407,6 +465,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "카드론", definition: "신용카드사가 카드 회원에게 신용도를 바탕으로 제공하는 대출 상품" },
   },
   {
+    seedId: "card-0013",
     themeName: "카드",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -419,6 +478,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "card-0014",
     themeName: "카드",
     type: "def-to-term",
     difficulty: "advanced",
@@ -426,33 +486,39 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "연회비", definition: "카드 발급 및 유지에 대한 대가로 매년 정기적으로 부과되는 비용" },
   },
   {
+    seedId: "card-0015",
     themeName: "카드",
     type: "answer-input",
     difficulty: "beginner",
     tagNames: ["카드"],
-    payload: { prompt: "카드 결제 시 물품 대금을 여러 달로 나눠 내는 방식을 무엇이라 하는가?", answer: "할부" },
+    explanation: "무이자할부는 원금만 나눠 내므로 120만 ÷ 6 = 20만원씩 청구된다. 일반 할부였다면 여기에 할부수수료가 더해진다.",
+    payload: { prompt: "120만원을 무이자 6개월 할부로 결제하면 매달 청구되는 할부원금은 몇 만원인가? (숫자만)", answer: "20" },
   },
 
   // ───────────── 핀테크·결제 ─────────────
   {
+    seedId: "pay-0001",
     themeName: "핀테크·결제",
     type: "term-to-def",
     tagNames: ["핀테크"],
     payload: { term: "PG사", definition: "온라인 가맹점과 카드사·은행 사이에서 결제를 중계해주는 전자결제대행업체" },
   },
   {
+    seedId: "pay-0002",
     themeName: "핀테크·결제",
     type: "def-to-term",
     tagNames: ["핀테크"],
     payload: { term: "간편결제", definition: "공인인증서 없이 비밀번호나 생체인증만으로 결제를 완료하는 방식" },
   },
   {
+    seedId: "pay-0003",
     themeName: "핀테크·결제",
     type: "term-to-def",
     tagNames: ["핀테크"],
     payload: { term: "오픈뱅킹", definition: "하나의 앱에서 여러 은행 계좌를 조회하고 이체할 수 있게 하는 금융 인프라" },
   },
   {
+    seedId: "pay-0004",
     themeName: "핀테크·결제",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -460,6 +526,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "API", definition: "서로 다른 금융 시스템이 데이터를 주고받을 수 있게 정의한 프로그램 간 연동 규격" },
   },
   {
+    seedId: "pay-0005",
     themeName: "핀테크·결제",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -467,6 +534,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "토큰화", definition: "실제 카드번호 대신 결제마다 다른 임시 번호(토큰)를 사용해 정보를 보호하는 기술" },
   },
   {
+    seedId: "pay-0006",
     themeName: "핀테크·결제",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -479,6 +547,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "pay-0007",
     themeName: "핀테크·결제",
     type: "def-to-term",
     difficulty: "advanced",
@@ -486,6 +555,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "마이데이터", definition: "개인이 본인의 금융 데이터를 통합 조회하고 활용에 동의할 수 있게 하는 제도" },
   },
   {
+    seedId: "pay-0008",
     themeName: "핀테크·결제",
     type: "term-to-def",
     difficulty: "advanced",
@@ -493,6 +563,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "QR결제", definition: "매장이나 상품에 부착된 QR코드를 스캔해 결제 정보를 주고받는 방식" },
   },
   {
+    seedId: "pay-0009",
     themeName: "핀테크·결제",
     type: "def-to-term",
     difficulty: "advanced",
@@ -500,6 +571,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "선불충전금", definition: "간편결제 앱 등에 미리 충전해두고 결제에 사용하는 예치금" },
   },
   {
+    seedId: "pay-0010",
     themeName: "핀테크·결제",
     type: "essay",
     difficulty: "advanced",
@@ -510,6 +582,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "pay-0011",
     themeName: "핀테크·결제",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -517,6 +590,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "PIN 결제", definition: "카드나 비밀번호 대신 지문·얼굴 등 신체 정보로 본인을 인증하는 결제 방식과 구분되는, 숫자 비밀번호 기반 인증 결제" },
   },
   {
+    seedId: "pay-0012",
     themeName: "핀테크·결제",
     type: "term-to-def",
     difficulty: "advanced",
@@ -524,6 +598,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "생체인증", definition: "지문, 얼굴, 홍채 등 신체적 특징으로 본인 여부를 확인하는 인증 방식" },
   },
   {
+    seedId: "pay-0013",
     themeName: "핀테크·결제",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -536,6 +611,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "pay-0014",
     themeName: "핀테크·결제",
     type: "def-to-term",
     difficulty: "advanced",
@@ -543,6 +619,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "가상계좌", definition: "실제 계좌 하나에 결제 건별로 부여해 입금자를 구분할 수 있게 만든 임시 계좌번호" },
   },
   {
+    seedId: "pay-0015",
     themeName: "핀테크·결제",
     type: "term-to-def",
     difficulty: "advanced",
@@ -552,24 +629,28 @@ export const financeQuestions: SeedQuestion[] = [
 
   // ───────────── 신용·여신 ─────────────
   {
+    seedId: "credit-0001",
     themeName: "신용·여신",
     type: "term-to-def",
     tagNames: ["신용"],
     payload: { term: "신용점수", definition: "개인의 상환 이력 등을 바탕으로 산출한 신용도 평가 점수" },
   },
   {
+    seedId: "credit-0002",
     themeName: "신용·여신",
     type: "def-to-term",
     tagNames: ["신용"],
     payload: { term: "DSR", definition: "연 소득 대비 전체 금융부채의 원리금 상환액 비율" },
   },
   {
+    seedId: "credit-0003",
     themeName: "신용·여신",
     type: "term-to-def",
     tagNames: ["신용"],
     payload: { term: "연체율", definition: "전체 대출 중 상환이 연체된 대출이 차지하는 비율" },
   },
   {
+    seedId: "credit-0004",
     themeName: "신용·여신",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -577,6 +658,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "DTI", definition: "연 소득 대비 주택담보대출 원리금 상환액이 차지하는 비율" },
   },
   {
+    seedId: "credit-0005",
     themeName: "신용·여신",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -589,6 +671,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "credit-0006",
     themeName: "신용·여신",
     type: "def-to-term",
     difficulty: "advanced",
@@ -596,6 +679,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "신용회복위원회", definition: "과도한 채무로 상환이 어려운 개인의 채무조정을 지원하는 기관" },
   },
   {
+    seedId: "credit-0007",
     themeName: "신용·여신",
     type: "term-to-def",
     difficulty: "advanced",
@@ -603,6 +687,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "개인워크아웃", definition: "금융기관과의 협의를 통해 상환 기간 연장이나 이자 감면 등으로 채무를 조정하는 제도" },
   },
   {
+    seedId: "credit-0008",
     themeName: "신용·여신",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -615,6 +700,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "credit-0009",
     themeName: "신용·여신",
     type: "def-to-term",
     difficulty: "advanced",
@@ -622,6 +708,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "담보대출", definition: "부동산 등 자산을 담보로 제공하고 받는 대출" },
   },
   {
+    seedId: "credit-0010",
     themeName: "신용·여신",
     type: "term-to-def",
     difficulty: "advanced",
@@ -631,18 +718,21 @@ export const financeQuestions: SeedQuestion[] = [
 
   // ───────────── 투자·증권 ─────────────
   {
+    seedId: "invest-0001",
     themeName: "투자·증권",
     type: "term-to-def",
     tagNames: ["투자"],
     payload: { term: "PER", definition: "주가를 주당순이익으로 나눈, 기업의 이익 대비 주가 수준을 보는 지표" },
   },
   {
+    seedId: "invest-0002",
     themeName: "투자·증권",
     type: "def-to-term",
     tagNames: ["투자"],
     payload: { term: "배당수익률", definition: "주가 대비 연간 배당금이 차지하는 비율" },
   },
   {
+    seedId: "invest-0003",
     themeName: "투자·증권",
     type: "multiple-choice",
     tagNames: ["투자"],
@@ -654,6 +744,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "invest-0004",
     themeName: "투자·증권",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -661,6 +752,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "PBR", definition: "주가를 주당순자산으로 나눈, 자산 가치 대비 주가 수준을 보는 지표" },
   },
   {
+    seedId: "invest-0005",
     themeName: "투자·증권",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -668,6 +760,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "시가총액", definition: "주가에 발행 주식 수를 곱해 산출한 기업의 시장 가치" },
   },
   {
+    seedId: "invest-0006",
     themeName: "투자·증권",
     type: "def-to-term",
     difficulty: "advanced",
@@ -675,6 +768,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "변동성", definition: "자산 가격이 일정 기간 동안 오르내리는 폭의 크기" },
   },
   {
+    seedId: "invest-0007",
     themeName: "투자·증권",
     type: "term-to-def",
     difficulty: "advanced",
@@ -682,6 +776,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "공매도", definition: "주식을 빌려서 먼저 팔고 나중에 되사서 갚는, 하락장에서 수익을 노리는 투자 기법" },
   },
   {
+    seedId: "invest-0008",
     themeName: "투자·증권",
     type: "essay",
     difficulty: "intermediate",
@@ -692,6 +787,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "invest-0009",
     themeName: "투자·증권",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -699,6 +795,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "ETF", definition: "여러 종목을 묶어 거래소에서 주식처럼 실시간 매매할 수 있게 만든 상장지수펀드" },
   },
   {
+    seedId: "invest-0010",
     themeName: "투자·증권",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -706,18 +803,26 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "코스피", definition: "한국거래소 유가증권시장에 상장된 주요 종목들의 주가를 종합한 지수" },
   },
   {
+    seedId: "invest-0011",
     themeName: "투자·증권",
     type: "multiple-choice",
     difficulty: "advanced",
     tagNames: ["투자"],
-    explanation: "분산투자는 서로 다른 자산에 나눠 투자해 하나의 자산 하락이 전체 포트폴리오에 미치는 영향을 줄이는 전략이다.",
+    explanation:
+      "분산 효과는 자산 간 상관관계가 낮을수록 커진다. 상관계수가 1에 가까운 자산끼리는 같이 오르내려 나눠 담아도 위험이 거의 줄지 않는다.",
     payload: {
-      prompt: "여러 자산에 나누어 투자해 특정 자산의 하락 위험을 줄이는 전략은?",
-      options: ["집중투자", "분산투자", "공매도", "레버리지투자"],
+      prompt: "분산투자로 포트폴리오 변동성을 가장 크게 줄일 수 있는 자산 조합은?",
+      options: [
+        "상관계수가 1에 가까운 자산들",
+        "상관계수가 낮거나 음수인 자산들",
+        "같은 업종의 대형주들",
+        "같은 지수를 추종하는 ETF 여러 개",
+      ],
       correctIndex: 1,
     },
   },
   {
+    seedId: "invest-0012",
     themeName: "투자·증권",
     type: "def-to-term",
     difficulty: "advanced",
@@ -727,24 +832,28 @@ export const financeQuestions: SeedQuestion[] = [
 
   // ───────────── 금융규제 ─────────────
   {
+    seedId: "finreg-0001",
     themeName: "금융규제",
     type: "term-to-def",
     tagNames: ["금융규제"],
     payload: { term: "BIS 비율", definition: "은행의 위험가중자산 대비 자기자본 비율을 나타내는 건전성 지표" },
   },
   {
+    seedId: "finreg-0002",
     themeName: "금융규제",
     type: "def-to-term",
     tagNames: ["금융규제"],
     payload: { term: "자금세탁방지", definition: "불법 자금의 출처를 숨기는 거래를 탐지·차단하기 위한 제도(약어 AML)" },
   },
   {
+    seedId: "finreg-0003",
     themeName: "금융규제",
     type: "term-to-def",
     tagNames: ["금융규제"],
-    payload: { term: "마이데이터", definition: "개인이 본인의 금융 데이터를 통합 조회하고 활용에 동의할 수 있게 하는 제도" },
+    payload: { term: "본인신용정보관리업", definition: "신용정보법상 마이데이터 사업의 법적 명칭으로, 흩어진 개인신용정보를 본인 요청에 따라 통합해 제공하는 업" },
   },
   {
+    seedId: "finreg-0004",
     themeName: "금융규제",
     type: "def-to-term",
     difficulty: "advanced",
@@ -752,6 +861,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "KYC", definition: "금융회사가 고객의 신원과 자금 출처를 확인하는 고객확인제도" },
   },
   {
+    seedId: "finreg-0005",
     themeName: "금융규제",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -764,6 +874,7 @@ export const financeQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "finreg-0006",
     themeName: "금융규제",
     type: "def-to-term",
     difficulty: "advanced",
@@ -771,6 +882,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "금융소비자보호법", definition: "금융상품 판매 과정에서 소비자의 권익을 보호하기 위한 절차와 의무를 규정한 법률" },
   },
   {
+    seedId: "finreg-0007",
     themeName: "금융규제",
     type: "term-to-def",
     difficulty: "advanced",
@@ -778,6 +890,7 @@ export const financeQuestions: SeedQuestion[] = [
     payload: { term: "설명의무", definition: "금융회사가 상품 판매 시 위험과 조건을 고객이 이해하도록 충분히 설명해야 하는 의무" },
   },
   {
+    seedId: "finreg-0008",
     themeName: "금융규제",
     type: "def-to-term",
     difficulty: "advanced",

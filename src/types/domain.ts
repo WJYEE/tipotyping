@@ -30,6 +30,8 @@ export interface Theme {
   isCustom: boolean;
   /** 난이도 속성을 사용하는 테마인지 (PRODUCT_SPEC 6장) */
   useDifficulty: boolean;
+  /** 기본 제공 Theme의 고정 식별자 (예: SQL). 이름을 바꿔도 기본 문제은행 동기화 대상으로 유지된다. */
+  seedKey?: string;
 }
 
 export interface Tag {
@@ -77,6 +79,10 @@ interface QuestionBase {
   flagged: boolean;
   favorite: boolean;
   memo?: string;
+  /** 번들 기본 문제에서 온 경우 그 seedId. 사용자 생성/Import 문제에는 없다. */
+  seedId?: string;
+  /** 마지막으로 번들 내용을 반영했을 때의 내용 해시. 현재 내용과 다르면 사용자가 수정한 것으로 본다. */
+  seedHash?: string;
   createdAt: number;
   updatedAt: number;
 }

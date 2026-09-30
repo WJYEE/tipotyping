@@ -4,18 +4,21 @@ import type { SeedQuestion } from "@/db/seed/seedTypes";
 export const dataQuestions: SeedQuestion[] = [
   // ───────────── 데이터분석 ─────────────
   {
+    seedId: "da-0001",
     themeName: "데이터분석",
     type: "term-to-def",
     tagNames: ["데이터분석"],
     payload: { term: "결측치", definition: "데이터셋에서 값이 누락되어 비어 있는 항목" },
   },
   {
+    seedId: "da-0002",
     themeName: "데이터분석",
     type: "def-to-term",
     tagNames: ["데이터분석"],
     payload: { term: "이상치", definition: "다른 관측값과 비교했을 때 비정상적으로 크거나 작은 값" },
   },
   {
+    seedId: "da-0003",
     themeName: "데이터분석",
     type: "multiple-choice",
     tagNames: ["데이터분석"],
@@ -27,13 +30,15 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "da-0004",
     themeName: "데이터분석",
-    type: "def-to-term",
+    type: "term-to-def",
     difficulty: "intermediate",
     tagNames: ["데이터분석"],
     payload: { term: "정규화(Normalization)", definition: "서로 다른 범위를 가진 변수를 0~1 등 동일한 척도로 맞추는 전처리 기법" },
   },
   {
+    seedId: "da-0005",
     themeName: "데이터분석",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -41,6 +46,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "표준화(Standardization)", definition: "변수의 평균을 0, 표준편차를 1로 맞추는 스케일 조정 기법" },
   },
   {
+    seedId: "da-0006",
     themeName: "데이터분석",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -53,6 +59,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "da-0007",
     themeName: "데이터분석",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -60,12 +67,14 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "라벨 인코딩", definition: "범주형 값을 0, 1, 2 같은 정수로 하나씩 매핑하는 인코딩 방식" },
   },
   {
+    seedId: "da-0008",
     themeName: "데이터분석",
     type: "term-to-def",
     tagNames: ["데이터분석"],
     payload: { term: "피처 엔지니어링", definition: "원본 데이터로부터 모델 성능에 도움이 되는 새로운 변수를 만들어내는 작업" },
   },
   {
+    seedId: "da-0009",
     themeName: "데이터분석",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -78,6 +87,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "da-0010",
     themeName: "데이터분석",
     type: "def-to-term",
     difficulty: "advanced",
@@ -85,6 +95,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "다중공선성", definition: "독립변수들 간 상관관계가 높아 회귀 분석 결과 해석이 불안정해지는 문제" },
   },
   {
+    seedId: "da-0011",
     themeName: "데이터분석",
     type: "term-to-def",
     difficulty: "advanced",
@@ -92,6 +103,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "EDA", definition: "본격적인 모델링 전에 데이터의 구조와 패턴을 파악하는 탐색적 데이터 분석" },
   },
   {
+    seedId: "da-0012",
     themeName: "데이터분석",
     type: "essay",
     difficulty: "intermediate",
@@ -102,6 +114,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "da-0013",
     themeName: "데이터분석",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -109,6 +122,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "데이터 클렌징", definition: "중복, 오류, 형식 불일치 등을 찾아 정제하는 데이터 전처리 작업" },
   },
   {
+    seedId: "da-0014",
     themeName: "데이터분석",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -116,6 +130,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "롱 포맷", definition: "각 관측값이 한 행에 하나씩 세로로 쌓인 데이터 형태" },
   },
   {
+    seedId: "da-0015",
     themeName: "데이터분석",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -123,6 +138,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "와이드 포맷", definition: "각 변수가 별도의 열로 펼쳐져 있는 데이터 형태" },
   },
   {
+    seedId: "da-0016",
     themeName: "데이터분석",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -135,6 +151,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "da-0017",
     themeName: "데이터분석",
     type: "def-to-term",
     difficulty: "advanced",
@@ -142,6 +159,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "차원의 저주", definition: "변수(차원) 수가 늘어날수록 데이터가 공간에 희박해져 분석이 어려워지는 현상" },
   },
   {
+    seedId: "da-0018",
     themeName: "데이터분석",
     type: "term-to-def",
     difficulty: "advanced",
@@ -149,6 +167,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "샘플링 편향", definition: "표본이 전체 모집단을 대표하지 못해 분석 결과가 한쪽으로 치우치는 문제" },
   },
   {
+    seedId: "da-0019",
     themeName: "데이터분석",
     type: "answer-input",
     difficulty: "beginner",
@@ -156,6 +175,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { prompt: "데이터 1, 2, 3, 4, 5의 분산을 구할 때 가장 먼저 계산해야 하는 값은? (한 단어)", answer: "평균" },
   },
   {
+    seedId: "da-0020",
     themeName: "데이터분석",
     type: "def-to-term",
     difficulty: "advanced",
@@ -165,24 +185,28 @@ export const dataQuestions: SeedQuestion[] = [
 
   // ───────────── 통계 ─────────────
   {
+    seedId: "stat-0001",
     themeName: "통계",
     type: "term-to-def",
     tagNames: ["통계"],
     payload: { term: "표준편차", definition: "데이터가 평균으로부터 흩어진 정도를 나타내는 값" },
   },
   {
+    seedId: "stat-0002",
     themeName: "통계",
     type: "def-to-term",
     tagNames: ["통계"],
     payload: { term: "p-값", definition: "귀무가설이 참일 때 관측된 결과 이상이 나올 확률" },
   },
   {
+    seedId: "stat-0003",
     themeName: "통계",
     type: "answer-input",
     tagNames: ["통계"],
     payload: { prompt: "유의수준을 흔히 알파(α)라고 부른다. 일반적으로 많이 쓰이는 값은? (소수로 답)", answer: "0.05" },
   },
   {
+    seedId: "stat-0004",
     themeName: "통계",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -190,6 +214,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "제1종 오류", definition: "실제로는 참인 귀무가설을 잘못 기각하는 오류" },
   },
   {
+    seedId: "stat-0005",
     themeName: "통계",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -197,6 +222,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "제2종 오류", definition: "실제로는 거짓인 귀무가설을 잘못 채택(기각하지 못함)하는 오류" },
   },
   {
+    seedId: "stat-0006",
     themeName: "통계",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -204,6 +230,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "중심극한정리", definition: "표본 크기가 커질수록 표본평균의 분포가 정규분포에 가까워진다는 정리" },
   },
   {
+    seedId: "stat-0007",
     themeName: "통계",
     type: "multiple-choice",
     difficulty: "beginner",
@@ -216,6 +243,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "stat-0008",
     themeName: "통계",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -223,6 +251,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "상관계수", definition: "두 변수 간 선형 관계의 강도와 방향을 -1~1 사이 값으로 나타낸 지표" },
   },
   {
+    seedId: "stat-0009",
     themeName: "통계",
     type: "essay",
     difficulty: "intermediate",
@@ -233,6 +262,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "stat-0010",
     themeName: "통계",
     type: "term-to-def",
     difficulty: "advanced",
@@ -240,6 +270,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "신뢰구간", definition: "모수가 특정 확률로 포함될 것으로 추정되는 값의 범위" },
   },
   {
+    seedId: "stat-0011",
     themeName: "통계",
     type: "def-to-term",
     difficulty: "advanced",
@@ -247,6 +278,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "t-검정", definition: "표본 크기가 작거나 모분산을 모를 때 두 집단의 평균 차이를 검정하는 방법" },
   },
   {
+    seedId: "stat-0012",
     themeName: "통계",
     type: "def-to-term",
     difficulty: "advanced",
@@ -254,6 +286,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "카이제곱 검정", definition: "범주형 변수 간 독립성 또는 적합도를 검정하는 통계 방법" },
   },
   {
+    seedId: "stat-0013",
     themeName: "통계",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -266,6 +299,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "stat-0014",
     themeName: "통계",
     type: "term-to-def",
     difficulty: "advanced",
@@ -273,6 +307,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "왜도", definition: "분포가 좌우 대칭에서 벗어나 한쪽으로 치우친 정도를 나타내는 값" },
   },
   {
+    seedId: "stat-0015",
     themeName: "통계",
     type: "answer-input",
     difficulty: "beginner",
@@ -280,6 +315,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { prompt: "1, 2, 3, 4, 100 다섯 개 값의 중앙값은?", answer: "3" },
   },
   {
+    seedId: "stat-0016",
     themeName: "통계",
     type: "def-to-term",
     difficulty: "beginner",
@@ -287,6 +323,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "최빈값", definition: "데이터에서 가장 자주 나타나는 값" },
   },
   {
+    seedId: "stat-0017",
     themeName: "통계",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -294,6 +331,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "분산", definition: "각 데이터가 평균으로부터 떨어진 정도를 제곱해 평균 낸 값" },
   },
   {
+    seedId: "stat-0018",
     themeName: "통계",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -306,6 +344,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "stat-0019",
     themeName: "통계",
     type: "def-to-term",
     difficulty: "advanced",
@@ -313,6 +352,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "모집단", definition: "연구자가 알고 싶어 하는 대상 전체 집합" },
   },
   {
+    seedId: "stat-0020",
     themeName: "통계",
     type: "term-to-def",
     difficulty: "advanced",
@@ -320,6 +360,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "표본", definition: "모집단 전체를 조사하기 어려울 때 그 일부를 뽑아낸 부분집합" },
   },
   {
+    seedId: "stat-0021",
     themeName: "통계",
     type: "def-to-term",
     difficulty: "advanced",
@@ -327,6 +368,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "대립가설", definition: "귀무가설이 기각될 경우 채택되는, 연구자가 실제로 입증하고자 하는 가설" },
   },
   {
+    seedId: "stat-0022",
     themeName: "통계",
     type: "essay",
     difficulty: "advanced",
@@ -337,6 +379,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "stat-0023",
     themeName: "통계",
     type: "def-to-term",
     difficulty: "advanced",
@@ -344,6 +387,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "ANOVA", definition: "세 개 이상 집단의 평균 차이를 동시에 검정하는 분산분석 방법" },
   },
   {
+    seedId: "stat-0024",
     themeName: "통계",
     type: "term-to-def",
     difficulty: "advanced",
@@ -351,6 +395,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "회귀분석", definition: "독립변수와 종속변수 사이의 관계를 하나의 함수식으로 모델링하는 통계 기법" },
   },
   {
+    seedId: "stat-0025",
     themeName: "통계",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -363,6 +408,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "stat-0026",
     themeName: "통계",
     type: "def-to-term",
     difficulty: "advanced",
@@ -370,6 +416,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "표본추출", definition: "모집단에서 표본을 선택하는 절차나 방법" },
   },
   {
+    seedId: "stat-0027",
     themeName: "통계",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -377,6 +424,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "범위", definition: "데이터의 최댓값에서 최솟값을 뺀, 데이터가 퍼진 폭을 나타내는 값" },
   },
   {
+    seedId: "stat-0028",
     themeName: "통계",
     type: "answer-input",
     difficulty: "beginner",
@@ -384,6 +432,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { prompt: "정규분포에서 데이터가 좌우 어느 쪽으로도 치우치지 않았을 때 왜도 값은 대략 얼마인가?", answer: "0" },
   },
   {
+    seedId: "stat-0029",
     themeName: "통계",
     type: "def-to-term",
     difficulty: "advanced",
@@ -393,31 +442,36 @@ export const dataQuestions: SeedQuestion[] = [
 
   // ───────────── Product Analytics ─────────────
   {
+    seedId: "pa-0001",
     themeName: "Product Analytics",
     type: "term-to-def",
     tagNames: ["PA"],
     payload: { term: "리텐션", definition: "일정 기간 후에도 서비스를 계속 이용하는 사용자의 비율" },
   },
   {
+    seedId: "pa-0002",
     themeName: "Product Analytics",
     type: "def-to-term",
     tagNames: ["PA"],
     payload: { term: "퍼널", definition: "사용자가 서비스 유입부터 전환까지 거치는 단계별 흐름" },
   },
   {
+    seedId: "pa-0003",
     themeName: "Product Analytics",
     type: "term-to-def",
     tagNames: ["PA"],
     payload: { term: "코호트 분석", definition: "공통 특성을 가진 사용자 집단을 시간 흐름에 따라 추적 비교하는 분석" },
   },
   {
+    seedId: "pa-0004",
     themeName: "Product Analytics",
-    type: "def-to-term",
+    type: "term-to-def",
     difficulty: "intermediate",
     tagNames: ["PA"],
     payload: { term: "이탈률(Churn Rate)", definition: "일정 기간 동안 서비스 이용을 중단한 고객의 비율" },
   },
   {
+    seedId: "pa-0005",
     themeName: "Product Analytics",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -430,6 +484,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "pa-0006",
     themeName: "Product Analytics",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -437,6 +492,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "액티베이션", definition: "신규 사용자가 제품의 핵심 가치를 처음 경험하는 시점의 행동 지표" },
   },
   {
+    seedId: "pa-0007",
     themeName: "Product Analytics",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -444,6 +500,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "AARRR", definition: "획득-활성화-리텐션-추천-매출 단계로 사용자 여정을 분석하는 프레임워크" },
   },
   {
+    seedId: "pa-0008",
     themeName: "Product Analytics",
     type: "term-to-def",
     difficulty: "advanced",
@@ -451,6 +508,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "PMF", definition: "제품이 시장의 수요를 충분히 만족시키는 상태(Product-Market Fit)" },
   },
   {
+    seedId: "pa-0009",
     themeName: "Product Analytics",
     type: "essay",
     difficulty: "intermediate",
@@ -461,6 +519,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "pa-0010",
     themeName: "Product Analytics",
     type: "def-to-term",
     difficulty: "advanced",
@@ -468,6 +527,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "세그먼트", definition: "공통된 특성이나 행동을 기준으로 사용자를 나눈 집단" },
   },
   {
+    seedId: "pa-0011",
     themeName: "Product Analytics",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -475,6 +535,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "WAU", definition: "일주일 동안 서비스를 이용한 순수 이용자 수" },
   },
   {
+    seedId: "pa-0012",
     themeName: "Product Analytics",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -482,6 +543,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "온보딩", definition: "신규 사용자가 제품 사용법을 익히고 핵심 가치를 경험하도록 안내하는 초기 경험 설계" },
   },
   {
+    seedId: "pa-0013",
     themeName: "Product Analytics",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -494,6 +556,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "pa-0014",
     themeName: "Product Analytics",
     type: "def-to-term",
     difficulty: "advanced",
@@ -501,6 +564,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "이벤트 트래킹", definition: "클릭, 조회 등 사용자의 개별 행동을 데이터로 기록하는 작업" },
   },
   {
+    seedId: "pa-0015",
     themeName: "Product Analytics",
     type: "term-to-def",
     difficulty: "advanced",
@@ -508,6 +572,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "A/A 테스트", definition: "동일한 두 그룹을 비교해 실험 도구 자체의 오류나 편향이 없는지 검증하는 테스트" },
   },
   {
+    seedId: "pa-0016",
     themeName: "Product Analytics",
     type: "def-to-term",
     difficulty: "advanced",
@@ -515,6 +580,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "스티키니스", definition: "사용자가 얼마나 자주, 습관적으로 서비스를 재방문하는지를 나타내는 정도" },
   },
   {
+    seedId: "pa-0017",
     themeName: "Product Analytics",
     type: "essay",
     difficulty: "advanced",
@@ -525,13 +591,15 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "pa-0018",
     themeName: "Product Analytics",
     type: "def-to-term",
     difficulty: "advanced",
     tagNames: ["PA"],
-    payload: { term: "동시 통계 오류", definition: "여러 지표를 동시에 반복 검정할 때 우연히 유의미해 보이는 결과가 늘어나는 문제" },
+    payload: { term: "다중 비교 문제", definition: "여러 지표를 동시에 반복 검정할 때 우연히 유의미해 보이는 결과가 늘어나는 문제" },
   },
   {
+    seedId: "pa-0019",
     themeName: "Product Analytics",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -541,24 +609,28 @@ export const dataQuestions: SeedQuestion[] = [
 
   // ───────────── Business Analytics ─────────────
   {
+    seedId: "ba-0001",
     themeName: "Business Analytics",
     type: "def-to-term",
     tagNames: ["BA"],
     payload: { term: "LTV", definition: "고객 한 명이 서비스 이용 기간 동안 창출하는 총 매출 가치" },
   },
   {
+    seedId: "ba-0002",
     themeName: "Business Analytics",
     type: "term-to-def",
     tagNames: ["BA"],
     payload: { term: "CAC", definition: "고객 한 명을 신규로 획득하는 데 드는 평균 비용" },
   },
   {
+    seedId: "ba-0003",
     themeName: "Business Analytics",
     type: "answer-input",
     tagNames: ["BA"],
     payload: { prompt: "LTV가 CAC보다 커야 사업이 지속 가능하다. 이 비율을 나타내는 지표명은? (약어로 답)", answer: "LTV/CAC" },
   },
   {
+    seedId: "ba-0004",
     themeName: "Business Analytics",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -566,6 +638,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "매출총이익률", definition: "매출에서 매출원가를 뺀 매출총이익이 매출에서 차지하는 비율" },
   },
   {
+    seedId: "ba-0005",
     themeName: "Business Analytics",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -578,6 +651,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ba-0006",
     themeName: "Business Analytics",
     type: "term-to-def",
     difficulty: "advanced",
@@ -585,6 +659,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "재고회전율", definition: "일정 기간 동안 재고가 판매되어 순환한 횟수를 나타내는 지표" },
   },
   {
+    seedId: "ba-0007",
     themeName: "Business Analytics",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -592,6 +667,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "영업이익률", definition: "매출에서 영업이익이 차지하는 비율" },
   },
   {
+    seedId: "ba-0008",
     themeName: "Business Analytics",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -604,6 +680,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ba-0009",
     themeName: "Business Analytics",
     type: "def-to-term",
     difficulty: "advanced",
@@ -611,6 +688,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "현금흐름", definition: "일정 기간 동안 기업에 들어오고 나간 현금의 흐름" },
   },
   {
+    seedId: "ba-0010",
     themeName: "Business Analytics",
     type: "essay",
     difficulty: "advanced",
@@ -623,18 +701,21 @@ export const dataQuestions: SeedQuestion[] = [
 
   // ───────────── A/B Test ─────────────
   {
+    seedId: "ab-0001",
     themeName: "A/B Test",
     type: "term-to-def",
     tagNames: ["AB테스트"],
     payload: { term: "귀무가설", definition: "두 그룹 간 차이가 없다고 가정하는 통계적 기본 가설" },
   },
   {
+    seedId: "ab-0002",
     themeName: "A/B Test",
     type: "def-to-term",
     tagNames: ["AB테스트"],
     payload: { term: "통계적 유의성", definition: "관측된 차이가 우연이 아니라 실제 효과일 가능성이 충분히 높다는 것" },
   },
   {
+    seedId: "ab-0003",
     themeName: "A/B Test",
     type: "multiple-choice",
     tagNames: ["AB테스트"],
@@ -646,6 +727,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ab-0004",
     themeName: "A/B Test",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -653,6 +735,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "샘플 사이즈", definition: "통계적으로 유의미한 결과를 얻기 위해 필요한 최소 표본 수" },
   },
   {
+    seedId: "ab-0005",
     themeName: "A/B Test",
     type: "def-to-term",
     difficulty: "advanced",
@@ -660,6 +743,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "신규성 효과", definition: "새로운 변화 자체에 대한 호기심으로 일시적으로 지표가 개선되어 보이는 현상" },
   },
   {
+    seedId: "ab-0006",
     themeName: "A/B Test",
     type: "essay",
     difficulty: "advanced",
@@ -670,6 +754,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ab-0007",
     themeName: "A/B Test",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -677,6 +762,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "실험군", definition: "A/B 테스트에서 새로운 변화를 적용받는 그룹" },
   },
   {
+    seedId: "ab-0008",
     themeName: "A/B Test",
     type: "term-to-def",
     difficulty: "intermediate",
@@ -684,6 +770,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "대조군", definition: "A/B 테스트에서 기존 상태를 그대로 유지하는 비교 기준 그룹" },
   },
   {
+    seedId: "ab-0009",
     themeName: "A/B Test",
     type: "multiple-choice",
     difficulty: "advanced",
@@ -701,6 +788,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "ab-0010",
     themeName: "A/B Test",
     type: "def-to-term",
     difficulty: "advanced",
@@ -710,18 +798,21 @@ export const dataQuestions: SeedQuestion[] = [
 
   // ───────────── 데이터 시각화 ─────────────
   {
+    seedId: "dv-0001",
     themeName: "데이터 시각화",
     type: "term-to-def",
     tagNames: ["시각화"],
     payload: { term: "히스토그램", definition: "연속형 데이터의 구간별 빈도를 막대로 나타낸 그래프" },
   },
   {
+    seedId: "dv-0002",
     themeName: "데이터 시각화",
     type: "def-to-term",
     tagNames: ["시각화"],
     payload: { term: "박스플롯", definition: "사분위수와 이상치를 함께 보여주는 데이터 분포 시각화 방법" },
   },
   {
+    seedId: "dv-0003",
     themeName: "데이터 시각화",
     type: "multiple-choice",
     tagNames: ["시각화"],
@@ -733,6 +824,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "dv-0004",
     themeName: "데이터 시각화",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -740,6 +832,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "히트맵", definition: "값의 크기를 색상 농도로 표현해 행렬 형태 데이터를 한눈에 보여주는 시각화" },
   },
   {
+    seedId: "dv-0005",
     themeName: "데이터 시각화",
     type: "essay",
     difficulty: "intermediate",
@@ -750,6 +843,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "dv-0006",
     themeName: "데이터 시각화",
     type: "def-to-term",
     difficulty: "intermediate",
@@ -757,6 +851,7 @@ export const dataQuestions: SeedQuestion[] = [
     payload: { term: "라인 차트", definition: "시간에 따른 값의 변화 추이를 선으로 이어 보여주는 그래프" },
   },
   {
+    seedId: "dv-0007",
     themeName: "데이터 시각화",
     type: "multiple-choice",
     difficulty: "intermediate",
@@ -769,6 +864,7 @@ export const dataQuestions: SeedQuestion[] = [
     },
   },
   {
+    seedId: "dv-0008",
     themeName: "데이터 시각화",
     type: "def-to-term",
     difficulty: "advanced",
