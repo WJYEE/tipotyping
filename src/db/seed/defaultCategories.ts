@@ -75,6 +75,8 @@ export const defaultCategories: SeedCategory[] = [
       { name: "RAG", useDifficulty: false },
       { name: "AI Agent", useDifficulty: false },
       { name: "AI 기초", useDifficulty: false },
+      { name: "프롬프트 엔지니어링", useDifficulty: false },
+      { name: "업무자동화", useDifficulty: false },
     ],
   },
   {

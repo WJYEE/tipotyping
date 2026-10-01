@@ -31,7 +31,7 @@ describe("getThemePrefix", () => {
     expect(getFixedThemePrefix({ id: "t1", name: "SQL", isCustom: false })).toBe("SQL");
   });
 
-  it("40개 기본 Theme 접두어는 서로 중복되지 않는다", () => {
+  it("42개 기본 Theme 접두어는 서로 중복되지 않는다", () => {
     const prefixes = Object.values(DEFAULT_THEME_PREFIXES);
     expect(new Set(prefixes).size).toBe(prefixes.length);
   });

@@ -20,7 +20,7 @@ beforeEach(clearAllTables);
 
 /**
  * 첫 커밋 시절 seedIfEmpty로 시드된 뒤 사용자가 쓰던 DB를 재현한다.
- * - 기본 Category 8개 / Theme 40개 (seedKey 없음), settings에 동기화 상태 없음
+ * - 기본 Category 8개 / Theme 42개 (seedKey 없음), settings에 동기화 상태 없음
  * - 당시 샘플 6문제 중 4문제만 남아 있음 (3개는 현재 번들과 내용이 완전히 같고, PRIMARY KEY는 현재 번들에 없음)
  * - 학습 기록·세션·즐겨찾기·플래그·메모, 사용자 Theme/문제, 기본 Theme에 직접 추가한 문제
  */
@@ -222,7 +222,7 @@ describe("syncDefaultContent: 기존 4문제 DB → 번들 기본 문제은행",
 
     // 기본 Theme에 seedKey가 붙고, Theme/Category가 새로 생기지 않는다
     const themes: Theme[] = await db.themes.toArray();
-    expect(themes.filter((t) => t.seedKey)).toHaveLength(40);
+    expect(themes.filter((t) => t.seedKey)).toHaveLength(42);
     expect((await db.themes.get("theme-user"))!.seedKey).toBeUndefined();
     expect(await db.categories.count()).toBe(9);
   });
@@ -320,6 +320,6 @@ describe("syncDefaultContent: 이후 번들 업데이트", () => {
 
     const result = await syncDefaultContent({ force: true });
     expect(result.createdThemes).toBe(0);
-    expect(await db.themes.count()).toBe(40);
+    expect(await db.themes.count()).toBe(42);
   });
 });

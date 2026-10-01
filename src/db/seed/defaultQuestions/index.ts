@@ -1,4 +1,4 @@
-// 14장 Default Content: 8개 대분류 40개 테마 전체에 걸친 기본 문제은행.
+// 14장 Default Content: 8개 대분류 42개 테마 전체에 걸친 기본 문제은행.
 // 공식 문서/공개 학습자료의 핵심 개념을 참고해 TipoTyping에 맞는 짧은 자체 문제로 새로 작성했다.
 // (외부 사이트 문제를 그대로 복제하지 않음). 카테고리별 파일 + extra/ 확장 파일로 나눠 관리한다.
 import { defaultCategories } from "@/db/seed/defaultCategories";
@@ -19,7 +19,7 @@ export type { SeedQuestion } from "@/db/seed/seedTypes";
  * 번들 기본 문제은행 버전. 문제를 추가·수정·삭제하면 1 올린다.
  * (올리지 않아도 번들 내용 해시로 변경이 감지되지만, 릴리스 이력 추적을 위해 함께 관리한다.)
  */
-export const DEFAULT_CONTENT_VERSION = 5;
+export const DEFAULT_CONTENT_VERSION = 6;
 
 const DIFFICULTY_THEMES = new Set(
   defaultCategories.flatMap((c) => c.themes.filter((t) => t.useDifficulty).map((t) => t.name)),
