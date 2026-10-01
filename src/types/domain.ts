@@ -52,7 +52,8 @@ export interface TermDefPayload {
 
 export interface AnswerInputPayload {
   prompt: string;
-  answer: string;
+  /** 복수 정답(동의어)을 지원한다. 단일 string은 하위 호환, string[]는 OR(하나만 맞아도 정답)로 채점한다. */
+  answer: string | string[];
 }
 
 export interface MultipleChoicePayload {

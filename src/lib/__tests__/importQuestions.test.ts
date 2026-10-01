@@ -50,6 +50,20 @@ describe("parseImportJson", () => {
   it("배열이 아니면 에러를 던진다", () => {
     expect(() => parseImportJson(JSON.stringify({}))).toThrow();
   });
+
+  it("answer-input의 answer는 string[](복수 정답)도 허용한다", () => {
+    const rows = parseImportJson(
+      JSON.stringify([
+        {
+          categoryName: "영어",
+          themeName: "어휘",
+          type: "answer-input",
+          payload: { prompt: "postpone", answer: ["미루다", "연기하다"] },
+        },
+      ]),
+    );
+    expect(rows[0].payload).toEqual({ prompt: "postpone", answer: ["미루다", "연기하다"] });
+  });
 });
 
 describe("parseImportCsv", () => {
@@ -86,6 +100,22 @@ describe("importQuestions", () => {
 
     const questions = await questionRepo.listByTheme(theme.id);
     expect(questions).toHaveLength(1);
+  });
+
+  it("answer-input의 복수 정답(string[])도 그대로 저장한다", async () => {
+    const { theme } = await seedCategoryTheme();
+    const result = await importQuestions([
+      {
+        categoryName: "코딩",
+        themeName: "SQL",
+        type: "answer-input",
+        payload: { prompt: "postpone", answer: ["미루다", "연기하다"] },
+      },
+    ]);
+    expect(result.imported).toBe(1);
+
+    const [question] = await questionRepo.listByTheme(theme.id);
+    expect(question.payload).toEqual({ prompt: "postpone", answer: ["미루다", "연기하다"] });
   });
 
   it("동일 ID는 Skip한다", async () => {

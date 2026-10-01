@@ -1,3 +1,4 @@
+import { formatAnswerAlternatives } from "@/lib/answerAlternatives";
 import type { Question, QuestionType } from "@/types/domain";
 
 export const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
@@ -49,7 +50,7 @@ export function getCorrectAnswerText(question: Question): string {
     case "def-to-term":
       return question.payload.term;
     case "answer-input":
-      return question.payload.answer;
+      return formatAnswerAlternatives(question.payload.answer);
     case "essay":
       return question.payload.answer;
     case "multiple-choice":

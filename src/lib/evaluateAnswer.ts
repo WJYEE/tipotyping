@@ -1,4 +1,6 @@
 // 4장: MVP는 모든 문제를 Exact Match로만 채점한다. 대소문자/공백/문장부호 포함 완전 일치.
+// 단, answer-input은 복수 정답(동의어)을 지원해 하나만 맞아도 정답으로 인정한다(OR).
+import { isAnswerInputCorrect } from "@/lib/answerAlternatives";
 import type { BlankAttemptResult, Question } from "@/types/domain";
 
 export interface EvaluationResult {
@@ -34,7 +36,7 @@ export function evaluateAnswer(
     case "def-to-term":
       return { isCorrect: exact(userAnswer as string, question.payload.term) };
     case "answer-input":
-      return { isCorrect: exact(userAnswer as string, question.payload.answer) };
+      return { isCorrect: isAnswerInputCorrect(userAnswer as string, question.payload.answer) };
     case "essay":
       return { isCorrect: exact(userAnswer as string, question.payload.answer) };
     case "multiple-choice":

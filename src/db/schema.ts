@@ -1,4 +1,5 @@
 import Dexie, { type EntityTable, type Transaction } from "dexie";
+import { splitIfAlternativeAnswers } from "@/lib/answerAlternatives";
 import { generateDisplayCode, planCustomThemeRecode } from "@/lib/displayCode";
 import type {
   Attempt,
@@ -99,6 +100,22 @@ export class TipoTypingDB extends Dexie {
       questions:
         "id, categoryId, themeId, type, difficulty, *tagIds, flagged, favorite, createdAt, displayCode, seedId",
     });
+
+    // v6: answer-input 중 "미루다, 연기하다"처럼 쉼표로 복수 정답을 한 문자열에 넣어뒀던 기존 데이터를
+    // 실제 배열(alternatives)로 마이그레이션한다. 쉼표가 있다는 이유만으로 무조건 나누지 않고,
+    // 모든 조각이 독립된 정답처럼 보일 때만 분리한다(숫자/Big-O 표기 등은 보존).
+    this.version(6).stores({}).upgrade(upgradeAnswerInputAlternatives);
+  }
+}
+
+export async function upgradeAnswerInputAlternatives(tx: Transaction): Promise<void> {
+  const questions = (await tx.table("questions").toArray()) as Question[];
+  for (const q of questions) {
+    if (q.type !== "answer-input" || typeof q.payload.answer !== "string") continue;
+    const next = splitIfAlternativeAnswers(q.payload.answer);
+    if (next !== q.payload.answer) {
+      await tx.table("questions").update(q.id, { payload: { ...q.payload, answer: next } });
+    }
   }
 }
 

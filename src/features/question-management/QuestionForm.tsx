@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { PlusIcon, TrashIcon } from "@/components/ui/icons";
 import { questionRepo, tagRepo } from "@/db/repositories";
+import { formatAnswerForEditing, parseAnswerFromEditing } from "@/lib/answerAlternatives";
 import { QUESTION_TYPE_LABELS } from "@/lib/questionSummary";
 import type {
   BlankPayload,
@@ -86,7 +87,15 @@ export function QuestionForm({ categories, themes, tags, initial, onClose }: Que
   const [error, setError] = useState<string | null>(null);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [payload, setPayload] = useState<any>(initial?.payload ?? defaultPayloadFor(type));
+  const [payload, setPayload] = useState<any>(() => {
+    const initialPayload = initial?.payload ?? defaultPayloadFor(type);
+    // answer-input: 배열 정답을 편집 중엔 줄 단위 텍스트로 다룬다 (저장 시점에 다시 분리).
+    if (type === "answer-input") {
+      const p = initialPayload as { prompt: string; answer: string | string[] };
+      return { ...p, answer: formatAnswerForEditing(p.answer) };
+    }
+    return initialPayload;
+  });
 
   useEffect(() => {
     function handleKey(e: KeyboardEvent) {
@@ -121,6 +130,12 @@ export function QuestionForm({ categories, themes, tags, initial, onClose }: Que
         .filter(Boolean);
       const resolvedTags = await Promise.all(names.map((n) => tagRepo.getOrCreate(n)));
 
+      // answer-input: 편집 중 줄 단위 텍스트였던 answer를 저장 시점에 string | string[]로 되돌린다.
+      const finalPayload =
+        type === "answer-input"
+          ? { ...payload, answer: parseAnswerFromEditing(payload.answer) }
+          : payload;
+
       const data = {
         categoryId,
         themeId,
@@ -131,7 +146,7 @@ export function QuestionForm({ categories, themes, tags, initial, onClose }: Que
         flagged,
         favorite,
         memo: memo || undefined,
-        payload,
+        payload: finalPayload,
       } as Omit<Question, "id" | "createdAt" | "updatedAt">;
 
       if (isEdit && initial) {
@@ -474,7 +489,35 @@ function PayloadFields({
     );
   }
 
-  // answer-input, essay
+  if (type === "answer-input") {
+    // 편집 중인 answer는 항상 줄 단위 텍스트(string)다. 저장 시점에 parseAnswerFromEditing으로 되돌린다.
+    const p = payload as { prompt: string; answer: string };
+    return (
+      <div className="flex flex-col gap-2">
+        <label className="flex flex-col gap-1.5">
+          <span className="font-body text-[13px] font-semibold text-text-secondary">문제</span>
+          <textarea
+            value={p.prompt}
+            onChange={(e) => onChange({ ...p, prompt: e.target.value })}
+            className={`${inputClass} min-h-16`}
+          />
+        </label>
+        <label className="flex flex-col gap-1.5">
+          <span className="font-body text-[13px] font-semibold text-text-secondary">
+            정답 (Exact Match 채점, 줄바꿈으로 복수 정답/동의어 입력 — 하나만 맞아도 정답)
+          </span>
+          <textarea
+            value={p.answer}
+            onChange={(e) => onChange({ ...p, answer: e.target.value })}
+            className={`${inputClass} min-h-12`}
+            placeholder={"예: 미루다\n연기하다"}
+          />
+        </label>
+      </div>
+    );
+  }
+
+  // essay
   const p = payload as { prompt: string; answer: string };
   return (
     <div className="flex flex-col gap-2">

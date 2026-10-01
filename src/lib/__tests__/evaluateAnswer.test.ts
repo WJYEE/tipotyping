@@ -59,10 +59,21 @@ describe("evaluateAnswer", () => {
     expect(evaluateAnswer(q, "PRIMARY KEY").isCorrect).toBe(true);
   });
 
-  it("answer-input: exact match", () => {
+  it("answer-input: 단일 정답(string)은 exact match", () => {
     const q = base({ type: "answer-input", payload: { prompt: "1+1=?", answer: "2" } });
     expect(evaluateAnswer(q, "2").isCorrect).toBe(true);
     expect(evaluateAnswer(q, "2.0").isCorrect).toBe(false);
+  });
+
+  it("answer-input: 복수 정답(string[])은 하나만 맞아도 정답 (OR)", () => {
+    const q = base({
+      type: "answer-input",
+      payload: { prompt: "postpone", answer: ["미루다", "연기하다"] },
+    });
+    expect(evaluateAnswer(q, "미루다").isCorrect).toBe(true);
+    expect(evaluateAnswer(q, "연기하다").isCorrect).toBe(true);
+    expect(evaluateAnswer(q, "미루다, 연기하다").isCorrect).toBe(true);
+    expect(evaluateAnswer(q, "다른말").isCorrect).toBe(false);
   });
 
   it("essay: referenceAnswer가 아닌 answer로 exact match 채점한다", () => {

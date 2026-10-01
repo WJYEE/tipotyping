@@ -1,6 +1,6 @@
 import Dexie from "dexie";
 import { afterEach, describe, expect, it } from "vitest";
-import { upgradeCustomThemeDisplayCodes } from "@/db/schema";
+import { upgradeAnswerInputAlternatives, upgradeCustomThemeDisplayCodes } from "@/db/schema";
 import { generateDisplayCode } from "@/lib/displayCode";
 
 // v1(=displayCode 없음) → v2(=displayCode 채움) 업그레이드가 실제로 동작하는지
@@ -232,6 +232,90 @@ describe("v3 → v4 migration (사용자 Theme fallback 접두어 정리)", () =
     await upgraded.open();
     const [question] = await upgraded.table("questions").toArray();
     expect(question.displayCode).toBe("CUSTOM-0007");
+    upgraded.close();
+  });
+});
+
+class V6DB extends V4DB {
+  constructor() {
+    super();
+    this.version(5).stores({ questions: V2_QUESTIONS_INDEX + ", seedId" });
+    this.version(6).stores({}).upgrade(upgradeAnswerInputAlternatives);
+  }
+}
+
+describe("v5 → v6 migration (answer-input 복수 정답 쉼표 문자열 → 배열)", () => {
+  it("쉼표로 이은 복수 정답은 배열로 분리한다", async () => {
+    const legacy = new LegacyV2DB();
+    legacy.version(3).stores({});
+    legacy.version(4).stores({});
+    legacy.version(5).stores({ questions: V2_QUESTIONS_INDEX + ", seedId" });
+    await legacy.open();
+    await legacy.table("categories").add({ id: "c1", name: "영어", order: 0, isCustom: false });
+    await legacy.table("themes").add({
+      id: "t1",
+      categoryId: "c1",
+      name: "어휘",
+      order: 0,
+      isCustom: false,
+      useDifficulty: false,
+    });
+    await legacy.table("questions").add({
+      id: "q1",
+      categoryId: "c1",
+      themeId: "t1",
+      type: "answer-input",
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+      payload: { prompt: "postpone", answer: "미루다, 연기하다" },
+      displayCode: "VOC-0001",
+      createdAt: 1,
+      updatedAt: 1,
+    });
+    legacy.close();
+
+    const upgraded = new V6DB();
+    await upgraded.open();
+    const [question] = await upgraded.table("questions").toArray();
+    expect(question.payload.answer).toEqual(["미루다", "연기하다"]);
+    upgraded.close();
+  });
+
+  it("숫자 천단위 구분 쉼표처럼 의미상 대체 정답이 아닌 경우는 그대로 둔다", async () => {
+    const legacy = new LegacyV2DB();
+    legacy.version(3).stores({});
+    legacy.version(4).stores({});
+    legacy.version(5).stores({ questions: V2_QUESTIONS_INDEX + ", seedId" });
+    await legacy.open();
+    await legacy.table("categories").add({ id: "c1", name: "코딩", order: 0, isCustom: false });
+    await legacy.table("themes").add({
+      id: "t1",
+      categoryId: "c1",
+      name: "SQL",
+      order: 0,
+      isCustom: false,
+      useDifficulty: false,
+    });
+    await legacy.table("questions").add({
+      id: "q1",
+      categoryId: "c1",
+      themeId: "t1",
+      type: "answer-input",
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+      payload: { prompt: "원가는?", answer: "10,000" },
+      displayCode: "SQL-0001",
+      createdAt: 1,
+      updatedAt: 1,
+    });
+    legacy.close();
+
+    const upgraded = new V6DB();
+    await upgraded.open();
+    const [question] = await upgraded.table("questions").toArray();
+    expect(question.payload.answer).toBe("10,000");
     upgraded.close();
   });
 });
