@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { PlusIcon, TrashIcon } from "@/components/ui/icons";
@@ -87,6 +87,14 @@ export function QuestionForm({ categories, themes, tags, initial, onClose }: Que
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [payload, setPayload] = useState<any>(initial?.payload ?? defaultPayloadFor(type));
+
+  useEffect(() => {
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === "Escape") onClose();
+    }
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [onClose]);
 
   function handleTypeChange(next: QuestionType) {
     setType(next);
