@@ -149,3 +149,58 @@ export function DownloadIcon(props: SVGProps<SVGSVGElement>) {
     </Icon>
   );
 }
+
+export function BookmarkIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z" />
+    </Icon>
+  );
+}
+
+export function BookmarkCheckIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z" />
+      <path d="m9 10 2 2 4-4" />
+    </Icon>
+  );
+}
+
+export function LinkIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M9 17H7a5 5 0 1 1 0-10h2" />
+      <path d="M15 7h2a5 5 0 1 1 0 10h-2" />
+      <path d="M8 12h8" />
+    </Icon>
+  );
+}
+
+export function AlertTriangleIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+      <path d="M12 9v4" />
+      <path d="M12 17h.01" />
+    </Icon>
+  );
+}
+
+export function ArrowRightIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </Icon>
+  );
+}
+
+export function ArrowUpRightIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <Icon {...props}>
+      <path d="M7 17 17 7" />
+      <path d="M7 7h10v10" />
+    </Icon>
+  );
+}

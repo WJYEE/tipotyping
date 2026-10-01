@@ -1,0 +1,32 @@
+/*
+  Career Dashboard Design Token. Figma REST API로 읽은 node 22:838("Career dashboard") 레이어의
+  실제 fills 값을 그대로 옮겼다. Learning(TipoTyping) 쪽 tokens.css와는 의도적으로 분리된 별도
+  팔레트/타입 스케일이다 — Career는 flat/보더 기반의 분석 도구 톤, Learning은 둥근 네오브루탈리즘
+  게임 톤으로 서로 다른 서비스 영역임을 시각적으로 구분한다. 폰트는 Learning과 공유(Lexend Deca /
+  Rethink Sans)하므로 별도 import 없음.
+*/
+@theme {
+  --color-career-bg: #f6f7f9;
+  --color-career-surface: #ffffff;
+  --color-career-table-header: #eef1f5;
+
+  --color-career-text-primary: #172033;
+  --color-career-text-secondary: #667085;
+  --color-career-text-tertiary: #344054;
+  --color-career-text-muted: #98a2b3;
+
+  --color-career-border: #d8dee8;
+  --color-career-border-strong: #aeb8c8;
+
+  --color-career-blue: #335ea8;
+  --color-career-blue-soft: #eaf1ff;
+  --color-career-purple: #7651c9;
+  --color-career-purple-soft: #f1ecff;
+  --color-career-amber: #9a5b13;
+  --color-career-amber-soft: #fff4de;
+  --color-career-green: #17745a;
+  --color-career-green-soft: #e9f8f2;
+  --color-career-navy: #243b67;
+  --color-career-red: #b5473c;
+  --color-career-red-soft: #fdedeb;
+}

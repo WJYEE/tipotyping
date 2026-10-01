@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@600;700;800;900&family=Rethink+Sans:wght@400;500;600;700;800&display=swap");
 @import "./design-tokens/tokens.css";
+@import "./design-tokens/career-tokens.css";
 
 body {
   background-color: var(--color-bg);

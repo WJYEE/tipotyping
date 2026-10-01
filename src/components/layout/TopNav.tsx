@@ -15,14 +15,28 @@ export function TopNav() {
 
   return (
     <header className="flex h-[72px] items-center justify-between border-b-2 border-border-strong bg-surface px-10">
-      <Link to="/" className="flex items-center gap-3">
-        <div className="flex h-9 w-9 items-center justify-center rounded-icon border-2 border-border-strong bg-accent">
-          <span className="font-display text-lg font-extrabold text-text-primary">T</span>
+      <div className="flex items-center gap-6">
+        <Link to="/" className="flex items-center gap-3">
+          <div className="flex h-9 w-9 items-center justify-center rounded-icon border-2 border-border-strong bg-accent">
+            <span className="font-display text-lg font-extrabold text-text-primary">T</span>
+          </div>
+          <span className="font-display text-[22px] font-extrabold text-text-primary">
+            TipoTyping
+          </span>
+        </Link>
+
+        <div className="flex items-center gap-2">
+          <span className="rounded-pill border-2 border-border-strong bg-accent-soft px-3.5 py-1.5 font-body text-[13px] font-bold text-text-primary">
+            Learning
+          </span>
+          <Link
+            to="/career"
+            className="rounded-pill px-3.5 py-1.5 font-body text-[13px] font-semibold text-text-secondary hover:text-text-primary"
+          >
+            Career
+          </Link>
         </div>
-        <span className="font-display text-[22px] font-extrabold text-text-primary">
-          TipoTyping
-        </span>
-      </Link>
+      </div>
 
       <div className="flex items-center gap-8">
         <nav className="flex items-center gap-4">
