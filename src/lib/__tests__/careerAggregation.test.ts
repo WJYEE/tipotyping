@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { countCompetencyDemand, countRoleMix, deriveJobPostingStatus } from "@/lib/careerAggregation";
+import {
+  competencyBubbleSize,
+  competencyDemandPercent,
+  countCompetencyDemand,
+  countRoleMix,
+  deriveJobPostingStatus,
+  filterAndLimitCompetencyBubbles,
+} from "@/lib/careerAggregation";
 
 describe("deriveJobPostingStatus", () => {
   it("Requirement가 0개면 입력 전", () => {
@@ -52,5 +59,57 @@ describe("countRoleMix", () => {
 
   it("비어있으면 빈 배열(0으로 나누지 않는다)", () => {
     expect(countRoleMix([])).toEqual([]);
+  });
+});
+
+describe("filterAndLimitCompetencyBubbles", () => {
+  const bubbles = [
+    { competency: { category: "data" as const }, demandCount: 5 },
+    { competency: { category: "business" as const }, demandCount: 4 },
+    { competency: { category: "data" as const }, demandCount: 3 },
+    { competency: { category: "soft-skill" as const }, demandCount: 2 },
+  ];
+
+  it("category가 all이면 거르지 않고 상위 N개만 남긴다(기존 순서 유지)", () => {
+    expect(filterAndLimitCompetencyBubbles(bubbles, "all", 2)).toEqual([bubbles[0], bubbles[1]]);
+  });
+
+  it("category를 지정하면 그 category 안에서만 상위 N개를 남긴다", () => {
+    expect(filterAndLimitCompetencyBubbles(bubbles, "data", 1)).toEqual([bubbles[0]]);
+    expect(filterAndLimitCompetencyBubbles(bubbles, "soft-skill", 10)).toEqual([bubbles[3]]);
+  });
+
+  it("limit이 전체 개수보다 크면 전부 반환한다(전체 보기)", () => {
+    expect(filterAndLimitCompetencyBubbles(bubbles, "all", Infinity)).toEqual(bubbles);
+  });
+});
+
+describe("competencyBubbleSize", () => {
+  it("demandCount가 maxDemand와 같으면(1위) maxSize를 반환한다", () => {
+    expect(competencyBubbleSize(5, 5, 56, 172)).toBe(172);
+  });
+
+  it("demandCount가 0이면 minSize를 반환한다", () => {
+    expect(competencyBubbleSize(0, 5, 56, 172)).toBe(56);
+  });
+
+  it("maxDemand가 0이어도 0으로 나누지 않고 minSize를 반환한다", () => {
+    expect(competencyBubbleSize(0, 0, 56, 172)).toBe(56);
+  });
+
+  it("빈도가 낮을수록 선형 비례보다 더 작게(차이가 더 뚜렷하게) 줄어든다", () => {
+    const linear = 56 + (172 - 56) * 0.2;
+    expect(competencyBubbleSize(1, 5, 56, 172)).toBeLessThan(linear);
+  });
+});
+
+describe("competencyDemandPercent", () => {
+  it("demandCount/totalJd를 반올림한 퍼센트로 계산한다", () => {
+    expect(competencyDemandPercent(2, 5)).toBe(40);
+    expect(competencyDemandPercent(1, 3)).toBe(33);
+  });
+
+  it("totalJd가 0이면 0으로 나누지 않고 0을 반환한다", () => {
+    expect(competencyDemandPercent(0, 0)).toBe(0);
   });
 });

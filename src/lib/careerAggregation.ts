@@ -1,5 +1,6 @@
 // Career Dashboard 집계 순수 함수. DB 조회와 분리해 테스트 가능하게 한다
 // (evaluateAnswer.ts/questionSelection.ts와 같은 패턴).
+import type { CompetencyCategory } from "@/types/career";
 
 export type JobPostingStatus = "not-started" | "in-progress" | "complete";
 
@@ -28,6 +29,39 @@ export function countCompetencyDemand(links: CompetencyDemandLink[]): Map<string
     byCompetency.set(link.competencyId, set);
   }
   return new Map([...byCompetency.entries()].map(([id, jdSet]) => [id, jdSet.size]));
+}
+
+export interface CompetencyBubbleLike {
+  competency: { category: CompetencyCategory };
+  demandCount: number;
+}
+
+/**
+ * Bubble Map 가독성을 위해 category로 거르고 상위 N개만 남긴다. 입력이 이미 demandCount
+ * 내림차순(동률은 기존 순서 유지하는 stable sort)이라고 가정하고 그 순서를 그대로 보존한다 —
+ * 여기서 다시 정렬하지 않는다.
+ */
+export function filterAndLimitCompetencyBubbles<T extends CompetencyBubbleLike>(
+  bubbles: T[],
+  category: CompetencyCategory | "all",
+  limit: number,
+): T[] {
+  const filtered = category === "all" ? bubbles : bubbles.filter((b) => b.competency.category === category);
+  return filtered.slice(0, limit);
+}
+
+/**
+ * demandCount → 버블 지름(px). ratio(0~1)에 지수를 줘서 빈도가 낮은 Competency는 min 쪽으로
+ * 더 바짝 붙고 1위에 가까운 것만 max에 가깝게 커지도록 — 선형보다 크기 차이를 더 뚜렷하게 만든다.
+ */
+export function competencyBubbleSize(demandCount: number, maxDemand: number, minSize: number, maxSize: number): number {
+  const ratio = maxDemand <= 0 ? 0 : demandCount / maxDemand;
+  return Math.round(minSize + (maxSize - minSize) * ratio ** 1.5);
+}
+
+/** Competency가 등장한 JD 비율(%). 저장된 JD가 없으면(totalJd=0) 0으로 둔다(0으로 나누지 않는다). */
+export function competencyDemandPercent(demandCount: number, totalJd: number): number {
+  return totalJd > 0 ? Math.round((demandCount / totalJd) * 100) : 0;
 }
 
 export interface RoleMixCount {
