@@ -8,6 +8,7 @@ const CATEGORY_CLASSES: Record<CompetencyCategory, { dot: string; bubble: string
   business: { dot: "bg-career-green", bubble: "border-career-green bg-career-green-soft", text: "text-career-green" },
   product: { dot: "bg-career-purple", bubble: "border-career-purple bg-career-purple-soft", text: "text-career-purple" },
   tools: { dot: "bg-career-amber", bubble: "border-career-amber bg-career-amber-soft", text: "text-career-amber" },
+  "soft-skill": { dot: "bg-career-red", bubble: "border-career-red bg-career-red-soft", text: "text-career-red" },
 };
 
 // 버블 지름(px): demandCount/최댓값 비율을 이 범위로 매핑한다.

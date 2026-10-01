@@ -57,9 +57,15 @@ export interface Requirement {
   createdAt: number;
 }
 
-export type CompetencyCategory = "data" | "business" | "product" | "tools";
+export type CompetencyCategory = "data" | "business" | "product" | "tools" | "soft-skill";
 
-export const COMPETENCY_CATEGORIES: CompetencyCategory[] = ["data", "business", "product", "tools"];
+export const COMPETENCY_CATEGORIES: CompetencyCategory[] = [
+  "data",
+  "business",
+  "product",
+  "tools",
+  "soft-skill",
+];
 
 export interface Competency {
   id: string;

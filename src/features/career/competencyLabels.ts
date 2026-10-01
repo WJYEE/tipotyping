@@ -1,5 +1,5 @@
 // Competency.category(CompetencyCategory)의 표시용 라벨/색상. JD Detail 태깅 UI와
-// Dashboard의 Bubble Map이 공유한다. Figma Bubble Map 범례와 같은 고정 4분류다.
+// Dashboard의 Bubble Map이 공유한다. Figma Bubble Map 범례의 4분류에 soft-skill을 추가한 5분류다.
 import type { CareerPillTone } from "@/features/career/components/CareerPill";
 import { COMPETENCY_CATEGORIES, type CompetencyCategory } from "@/types/career";
 
@@ -10,6 +10,7 @@ export const competencyCategoryLabel: Record<CompetencyCategory, string> = {
   business: "Business",
   product: "Product",
   tools: "Tools",
+  "soft-skill": "Soft Skill",
 };
 
 export const competencyCategoryTone: Record<CompetencyCategory, CareerPillTone> = {
@@ -17,4 +18,5 @@ export const competencyCategoryTone: Record<CompetencyCategory, CareerPillTone> 
   business: "green",
   product: "purple",
   tools: "amber",
+  "soft-skill": "red",
 };

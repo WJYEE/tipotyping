@@ -247,6 +247,17 @@ describe("importJobPostings", () => {
       expect(result.errors[0].reason).toContain("category");
     });
 
+    it('competencies 항목의 category로 "soft-skill"을 받아 저장한다(도메인 지식이 아닌 범용 역량)', async () => {
+      const result = await importJobPostings([
+        validRow({
+          requirements: [{ rawText: "이해관계자와 우선순위를 조율", competencies: [{ name: "커뮤니케이션", category: "soft-skill" }] }],
+        }),
+      ]);
+      expect(result).toEqual({ imported: 1, duplicates: 0, errors: [] });
+      const [competency] = await competencyRepo.list();
+      expect(competency.category).toBe("soft-skill");
+    });
+
     it("roles 항목이 문자열이 아니면 JD 행 전체를 오류 처리한다", async () => {
       const result = await importJobPostings([validRow({ requirements: [{ rawText: "SQL", roles: [123] }] })]);
       expect(result.imported).toBe(0);

@@ -85,7 +85,7 @@ JSON은 **JD 객체 하나** 또는 **JD 객체의 배열**, 둘 다 허용한�
 {
   rawText: string;                           // 필수 — JD 원문 그대로, 한 글자도 고치지 않는다
   sourceSection?: "responsibility" | "qualification" | "preferred"; // 선택
-  competencies?: { name: string; category: "data" | "business" | "product" | "tools" }[]; // 선택
+  competencies?: { name: string; category: "data" | "business" | "product" | "tools" | "soft-skill" }[]; // 선택
   roles?: string[];                          // 선택 — Role 이름만. 자유 문자열 배열.
 }
 ```
@@ -94,7 +94,7 @@ JSON은 **JD 객체 하나** 또는 **JD 객체의 배열**, 둘 다 허용한�
 |---|---|---|
 | `rawText` | O | 비어있지 않은 문자열. **JD 원문 문장을 그대로** 옮긴다 — 자연어를 분석/요약/패러프레이즈하지 않는다. |
 | `sourceSection` | 선택 | canonical 값(`responsibility`/`qualification`/`preferred`) **또는** 영문 복수형/변형(`responsibilities`→`responsibility`, `qualifications`→`qualification`, `preferredQualification`/`preferredQualifications`→`preferred`)을 받는다. 대소문자·앞뒤 공백은 무시한다. DB에는 항상 canonical 값으로 저장된다. 어느 쪽에도 매칭되지 않으면 그 JD 행 전체가 오류 처리된다 — 임의로 추론하지 않는다. 이 Requirement가 담당업무/자격요건/우대사항 중 어디서 나왔는지 표시만 한다(그룹핑용, 채점/집계에 영향 없음). |
-| `competencies` | 선택 | **자연어 문장이 아니라 표준화된 키워드**다(예: `"SQL"`, `"A/B Testing"`, `"KPI 설계"`). `name`+`category` 둘 다 필수. `category`가 4종 중 하나가 아니면 오류. |
+| `competencies` | 선택 | **자연어 문장이 아니라 표준화된 키워드**다(예: `"SQL"`, `"A/B Testing"`, `"KPI 설계"`, `"커뮤니케이션"`). `name`+`category` 둘 다 필수. `category`가 5종(`data`/`business`/`product`/`tools`/`soft-skill`) 중 하나가 아니면 오류. `soft-skill`은 커뮤니케이션/문서화/협업/문제 해결/우선순위 관리 등 특정 도메인 지식이 아닌 범용 역량에 쓴다. |
 | `roles` | 선택 | 표준화된 Role 이름 문자열 배열(예: `"Business DA"`). `category` 없음 — Role은 분류 체계가 없는 단순 사전이다. |
 
 이 네 개 외의 필드(예: 예전에 있었던 `normalizedLabel`, Competency의 `learningThemeKey`)는 **조용히
