@@ -13,6 +13,12 @@ import { productExtraQuestions } from "@/db/seed/defaultQuestions/extra/product"
 import { pythonExtraQuestions } from "@/db/seed/defaultQuestions/extra/python";
 import { spanishExtraQuestions } from "@/db/seed/defaultQuestions/extra/spanish";
 import { promptEngineeringReviewQuestions, workflowAutomationReviewQuestions } from "@/db/seed/defaultQuestions/extra/studyReview";
+import {
+  automationCounselReviewQuestions,
+  consumerProtectionReviewQuestions,
+  financeBasicReviewQuestions,
+  ragReviewQuestions,
+} from "@/db/seed/defaultQuestions/extra/studyReviewRag";
 import { sqlExtraQuestions } from "@/db/seed/defaultQuestions/extra/sql";
 import type { SeedQuestion } from "@/db/seed/seedTypes";
 
@@ -33,4 +39,8 @@ export const extraQuestions: SeedQuestion[] = [
   ...japaneseExtraQuestions,
   ...promptEngineeringReviewQuestions,
   ...workflowAutomationReviewQuestions,
+  ...automationCounselReviewQuestions,
+  ...consumerProtectionReviewQuestions,
+  ...financeBasicReviewQuestions,
+  ...ragReviewQuestions,
 ];

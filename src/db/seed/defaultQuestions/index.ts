@@ -19,7 +19,7 @@ export type { SeedQuestion } from "@/db/seed/seedTypes";
  * 번들 기본 문제은행 버전. 문제를 추가·수정·삭제하면 1 올린다.
  * (올리지 않아도 번들 내용 해시로 변경이 감지되지만, 릴리스 이력 추적을 위해 함께 관리한다.)
  */
-export const DEFAULT_CONTENT_VERSION = 6;
+export const DEFAULT_CONTENT_VERSION = 7;
 
 const DIFFICULTY_THEMES = new Set(
   defaultCategories.flatMap((c) => c.themes.filter((t) => t.useDifficulty).map((t) => t.name)),

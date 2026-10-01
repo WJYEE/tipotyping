@@ -31,10 +31,12 @@ export function buildStudyQuestions(
   prefix: string,
   baseTag: string,
   items: StudyItem[],
+  /** 첫 항목의 번호. 같은 Theme에 이어서 추가할 때 이미 쓰인 번호 다음 값을 준다. */
+  firstNumber = 1,
 ): SeedQuestion[] {
   const t = themed(themeName, [baseTag]);
   return items.map((item, i) => {
-    const id = `${prefix}-${String(i + 1).padStart(4, "0")}`;
+    const id = `${prefix}-${String(firstNumber + i).padStart(4, "0")}`;
     const tags = [...item.meta];
     switch (item.k) {
       case "mc": {
