@@ -82,8 +82,6 @@ export const defaultCategories: SeedCategory[] = [
     themes: [
       { name: "NCS", useDifficulty: false },
       { name: "인적성", useDifficulty: false },
-      { name: "면접", useDifficulty: false },
-      { name: "직무지식", useDifficulty: false },
     ],
   },
   {
@@ -96,3 +94,13 @@ export const defaultCategories: SeedCategory[] = [
     ],
   },
 ];
+
+/**
+ * 기본 제공 목록에서 제외(폐기)된 Theme. 이미 앱을 쓰던 사용자 DB에서 번들이 만든 문제와 빈 Theme을 정리하는 데 쓴다.
+ * - seedKey: 예전 번들이 Theme에 붙인 고정 식별자
+ * - seedIdPrefix: 예전 번들 문제 seedId 접두어. 이 접두어의 문제만 번들 문제로 보고 삭제한다(사용자가 직접 만든 문제는 보존).
+ */
+export const retiredDefaultThemes = [
+  { name: "면접", seedKey: "INTV", seedIdPrefix: "intv-" },
+  { name: "직무지식", seedKey: "JOB", seedIdPrefix: "job-" },
+] as const;

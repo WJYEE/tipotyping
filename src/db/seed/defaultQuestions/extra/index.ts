@@ -5,10 +5,13 @@ import { careerLanguageExtraQuestions } from "@/db/seed/defaultQuestions/extra/c
 import { csitExtraQuestions } from "@/db/seed/defaultQuestions/extra/csit";
 import { dataStatsExtraQuestions } from "@/db/seed/defaultQuestions/extra/dataStats";
 import { dsAlgoExtraQuestions } from "@/db/seed/defaultQuestions/extra/dsAlgo";
+import { englishExtraQuestions } from "@/db/seed/defaultQuestions/extra/english";
 import { finance1ExtraQuestions } from "@/db/seed/defaultQuestions/extra/finance1";
 import { finance2ExtraQuestions } from "@/db/seed/defaultQuestions/extra/finance2";
+import { japaneseExtraQuestions } from "@/db/seed/defaultQuestions/extra/japanese";
 import { productExtraQuestions } from "@/db/seed/defaultQuestions/extra/product";
 import { pythonExtraQuestions } from "@/db/seed/defaultQuestions/extra/python";
+import { spanishExtraQuestions } from "@/db/seed/defaultQuestions/extra/spanish";
 import { sqlExtraQuestions } from "@/db/seed/defaultQuestions/extra/sql";
 import type { SeedQuestion } from "@/db/seed/seedTypes";
 
@@ -24,4 +27,7 @@ export const extraQuestions: SeedQuestion[] = [
   ...csitExtraQuestions,
   ...aiExtraQuestions,
   ...careerLanguageExtraQuestions,
+  ...englishExtraQuestions,
+  ...spanishExtraQuestions,
+  ...japaneseExtraQuestions,
 ];

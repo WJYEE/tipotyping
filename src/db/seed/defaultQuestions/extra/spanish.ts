@@ -1,0 +1,185 @@
+// 스페인어 확장: 초급~초중급 실제 회화 중심. 단어 하나보다 표현 덩어리(chunk)와 짧은 문장 단위로 익히게 구성했다.
+// 입력형(빈칸·정의→용어)은 악센트·ñ 없이 정답이 정해지는 것만 썼고, 악센트가 필요한 것은 객관식으로 냈다.
+// 항목은 끝에만 추가한다 (배열 순서 = seedId 번호, 시작 esp-0012).
+import { blank, buildLanguageQuestions, d2t, mc, type LangItem } from "@/db/seed/defaultQuestions/extra/languageBuilders";
+
+const items: LangItem[] = [
+  // ───────────── 표현 덩어리 (tener / ir / acabar / volver ...) ─────────────
+  mc(["Mañana ___ estudiar para el examen. (내일 시험 공부를 해야 해요)", "tengo que", ["tengo de", "tengo por", "tengo para"], "tener que + 동사원형은 ~해야 한다라는 의무 표현이다.", "표현덩어리"]),
+  mc(["Hoy no ___ ganas de cocinar. (오늘은 요리하고 싶지 않아요)", "tengo", ["soy", "estoy", "hago"], "tener ganas de + 동사원형은 ~하고 싶은 기분이다라는 뜻이다. 동사는 tener를 쓴다.", "표현덩어리"]),
+  blank(["Esta noche {{b1}} a cenar con mis amigos. (오늘 밤 친구들과 저녁을 먹을 거예요)", ["voy"], "ir a + 동사원형은 ~할 예정이다라는 가까운 미래 표현이다. 주어 yo에는 voy를 쓴다.", "표현덩어리"]),
+  blank(["Mañana voy {{b1}} llamarte. (내일 전화할게요)", ["a"], "ir a + 동사원형에서 전치사 a를 빠뜨리지 않는다.", "표현덩어리"]),
+  mc(["¿Cuándo ___ a venir tus padres? (부모님은 언제 오실 거예요?)", "van", ["vas", "voy", "vamos"], "주어 tus padres(3인칭 복수)에는 ir의 van이 맞다: van a venir.", "표현덩어리"]),
+  blank(["Acabo {{b1}} llegar a casa. (방금 집에 도착했어요)", ["de"], "acabar de + 동사원형은 방금 ~했다라는 뜻이다.", "표현덩어리"]),
+  mc(["Mi hermana ___ de salir. (언니는 방금 나갔어요)", "acaba", ["acabo", "acabas", "acaban"], "주어 mi hermana(3인칭 단수)에는 acaba가 맞다: acaba de salir.", "표현덩어리"]),
+  mc(["Ayer ___ a llamar a mi madre. (어제 엄마께 다시 전화했어요)", "volví", ["vuelvo", "volverá", "vuelve"], "volver a + 동사원형은 다시 ~하다라는 뜻이다. 어제 일이므로 1인칭 단순과거 volví를 쓴다.", "표현덩어리"]),
+  mc(["Quedamos ___ mis amigos a las siete. (친구들과 7시에 만나기로 했어요)", "con", ["de", "a", "por"], "quedar con + 사람은 ~와 만나기로 약속하다라는 뜻이다.", "표현덩어리"]),
+  mc(["Me di ___ de que había olvidado las llaves. (열쇠를 두고 온 걸 깨달았어요)", "cuenta", ["idea", "cuento", "mente"], "darse cuenta de는 ~을 깨닫다, 알아차리다라는 뜻이다: me di cuenta de que.", "표현덩어리"]),
+  mc(["A lo mejor ___ mañana. (어쩌면 내일 비가 올 거예요)", "llueve", ["llueva", "llover", "lloviendo"], "a lo mejor 뒤에는 접속법이 아니라 직설법 동사가 온다: a lo mejor llueve.", "표현덩어리"]),
+  mc(["Voy a tomar un taxi ___ llego tarde. (늦었으니까 택시를 탈 거예요)", "ya que", ["aunque", "para que", "a menos que"], "ya que는 ~이므로라는 이유를 나타낸다. aunque는 ~이지만, para que는 ~하도록이라는 뜻이다.", "표현덩어리"]),
+  mc(["___ llueva, iremos a la playa. (비가 와도 해변에 갈 거예요)", "Aunque", ["Ya que", "Porque", "Así que"], "aunque + 접속법은 ~하더라도라는 양보를 나타낸다.", "표현덩어리"]),
+  blank(["¿Vienes a la fiesta? — Depende {{b1}} la hora. (시간에 따라 달라요)", ["de"], "depender de는 ~에 달려 있다라는 뜻이다.", "표현덩어리"]),
+  mc(["___ que va a llover. (비가 올 것 같아요)", "Me parece", ["Me gusta", "Me hace", "Me quiero"], "me parece que는 ~인 것 같다라는 의견을 말할 때 쓴다.", "표현덩어리"]),
+  mc(["Tienes razón. 에서 tener razón의 뜻은?", "네 말이 맞다", ["네가 화났다", "네가 옳지 않다", "네가 이유를 모른다"], "tener razón은 (말이나 생각이) 옳다, 맞다라는 뜻이다.", "표현덩어리"]),
+  mc(["Estoy a punto ___ salir. (막 나가려던 참이에요)", "de", ["para", "por", "en"], "estar a punto de + 동사원형은 막 ~하려는 참이다라는 뜻이다.", "표현덩어리"]),
+  mc(["___ dos años que vivo aquí. (여기 산 지 2년 됐어요)", "Hace", ["Tiene", "Es", "Está"], "hace + 기간 + que + 현재형은 ~한 지 ~가 되었다라는 뜻이다.", "표현덩어리"]),
+  mc(["Llevo tres meses ___ español. (스페인어를 공부한 지 3개월 됐어요)", "estudiando", ["estudiar", "estudio", "estudié"], "llevar + 기간 + 현재분사(-ando/-iendo)는 ~한 지 ~가 되었다라는 뜻이다.", "표현덩어리"]),
+  d2t(["por supuesto", "물론이죠, 당연하죠 · p로 시작하는 두 단어", "표현덩어리"]),
+  d2t(["a lo mejor", "어쩌면, 아마도 (뒤에 직설법이 온다) · a로 시작하는 세 단어", "표현덩어리"]),
+  d2t(["tener ganas de", "~하고 싶은 기분이다 · t로 시작하는 세 단어", "표현덩어리"]),
+  d2t(["darse cuenta de", "~을 깨닫다, 알아차리다 · d로 시작하는 세 단어", "표현덩어리"]),
+  d2t(["echar de menos", "그리워하다 · e로 시작하는 세 단어", "표현덩어리"]),
+  d2t(["hay que", "(누구든) ~해야 한다는 비인칭 의무 표현 · h로 시작하는 두 단어", "표현덩어리"]),
+  d2t(["buen provecho", "(식사 전) 맛있게 드세요 · b로 시작하는 두 단어", "표현덩어리"]),
+
+  // ───────────── ser / estar ─────────────
+  mc(["Mi madre ___ profesora. (저희 어머니는 선생님이세요)", "es", ["está", "son", "soy"], "직업이나 정체성은 ser로 말한다: es profesora.", "ser/estar"]),
+  mc(["La sopa ___ fría. (수프가 지금 식어 있어요)", "está", ["es", "soy", "están"], "일시적인 상태는 estar로 말한다: la sopa está fría.", "ser/estar"]),
+  mc(["Hoy ___ muy cansado. (저는 오늘 너무 피곤해요)", "estoy", ["soy", "es", "estás"], "피곤함 같은 일시적 상태는 estar를 쓰고, 주어 yo에는 estoy가 맞다.", "ser/estar"]),
+  mc(["Ella ___ de Corea. (그녀는 한국 출신이에요)", "es", ["está", "hace", "tiene"], "출신은 ser de로 말한다: es de Corea.", "ser/estar"]),
+  mc(["El concierto ___ en el parque. (콘서트는 공원에서 열려요)", "es", ["está", "son", "estar"], "행사(event)가 열리는 장소를 말할 때는 ser를 쓴다: es en el parque.", "ser/estar"]),
+  mc(["¿Dónde ___ el baño? (화장실이 어디예요?)", "está", ["es", "hay", "tiene"], "사물의 위치를 물을 때는 estar를 쓴다: ¿Dónde está el baño?", "ser/estar"]),
+  mc(["Mis amigos ___ muy simpáticos. (제 친구들은 원래 성격이 좋아요)", "son", ["somos", "soy", "eres"], "성격 같은 특징은 ser로 말하고, 주어 mis amigos(3인칭 복수)에는 son이 맞다.", "ser/estar"]),
+  mc(["La clase ___ a las nueve. (수업은 9시에 있어요)", "es", ["está", "son", "hay"], "시간에 일어나는 일은 ser로 말한다: es a las nueve.", "ser/estar"]),
+  mc(["Ese chico ___ aburrido. (그 애는 원래 지루한 사람이에요)", "es", ["está", "soy", "estoy"], "ser aburrido는 지루한 성격이라는 뜻이다. estar aburrido는 지금 지루해하고 있다는 뜻이다.", "ser/estar"]),
+  mc(["Ese chico ___ aburrido porque no tiene nada que hacer. (그 애는 할 일이 없어서 지루해해요)", "está", ["es", "son", "están"], "está aburrido(estar aburrido)는 일시적으로 지루함을 느끼는 상태를 뜻한다.", "ser/estar"]),
+
+  // ───────────── 현재시제 동사 활용 ─────────────
+  blank(["Yo {{b1}} (hablar) español con mis amigos.", ["hablo"], "-ar 동사의 yo 활용은 -o로 끝난다: hablo.", "동사활용"]),
+  blank(["Nosotros {{b1}} (comer) a las dos.", ["comemos"], "-er 동사의 nosotros 활용은 -emos다: comemos.", "동사활용"]),
+  blank(["Ellos {{b1}} (vivir) en Madrid.", ["viven"], "-ir 동사의 ellos 활용은 -en이다: viven.", "동사활용"]),
+  blank(["Tú {{b1}} (hablar) muy rápido.", ["hablas"], "-ar 동사의 tú 활용은 -as다: hablas.", "동사활용"]),
+  blank(["Yo {{b1}} (hacer) la tarea ahora.", ["hago"], "hacer는 yo 활용이 불규칙해 hago가 된다.", "동사활용"]),
+  blank(["Ella {{b1}} (tener) dos hermanos.", ["tiene"], "tener는 e→ie 어간 변화가 있어 3인칭 단수는 tiene다.", "동사활용"]),
+  blank(["Nosotros {{b1}} (ir) al cine esta noche.", ["vamos"], "ir는 불규칙 동사로 nosotros 활용은 vamos다.", "동사활용"]),
+  blank(["Ellos {{b1}} (venir) mañana.", ["vienen"], "venir는 e→ie 어간 변화가 있어 3인칭 복수는 vienen이다.", "동사활용"]),
+  blank(["Yo {{b1}} (querer) un café con leche.", ["quiero"], "querer는 e→ie 어간 변화가 있어 yo 활용은 quiero다.", "동사활용"]),
+  blank(["Tú {{b1}} (poder) venir hoy, ¿verdad?", ["puedes"], "poder는 o→ue 어간 변화가 있어 tú 활용은 puedes다.", "동사활용"]),
+  blank(["Nosotros {{b1}} (querer) pedir la cuenta.", ["queremos"], "nosotros 활용에서는 어간 변화가 없어 queremos가 된다.", "동사활용"]),
+  blank(["Yo {{b1}} (conocer) a tu hermano.", ["conozco"], "conocer는 yo 활용에서 -zco가 되는 불규칙 동사다: conozco.", "동사활용"]),
+  blank(["Ella {{b1}} (dormir) ocho horas todos los días.", ["duerme"], "dormir는 o→ue 어간 변화가 있어 3인칭 단수는 duerme다.", "동사활용"]),
+  blank(["Yo {{b1}} (salir) de casa a las ocho.", ["salgo"], "salir는 yo 활용에서 -go가 붙는 불규칙 동사다: salgo.", "동사활용"]),
+  blank(["Tú siempre {{b1}} (decir) la verdad.", ["dices"], "decir는 e→i 어간 변화가 있어 tú 활용은 dices다.", "동사활용"]),
+  blank(["Nosotros {{b1}} (pedir) agua.", ["pedimos"], "nosotros 활용에서는 어간 변화가 없어 pedimos가 된다.", "동사활용"]),
+  blank(["Ellos {{b1}} (jugar) al fútbol los sábados.", ["juegan"], "jugar는 u→ue 어간 변화가 있어 3인칭 복수는 juegan이다.", "동사활용"]),
+
+  // ───────────── 기본 과거 표현 ─────────────
+  mc(["Ayer ___ al cine con mi hermana. (어제 언니와 영화관에 갔어요)", "fui", ["voy", "iré", "vaya"], "ir의 1인칭 단순과거는 fui다. 어제 일이므로 과거형을 쓴다.", "과거표현"]),
+  mc(["Anoche ___ muy tarde. (어젯밤에 아주 늦게 잤어요)", "me acosté", ["me acuesto", "me acostaré", "acostarme"], "어젯밤의 한 번뿐인 일이므로 단순과거 me acosté를 쓴다.", "과거표현"]),
+  mc(["¿Qué ___ ayer? (어제 뭐 했어요?)", "hiciste", ["haces", "harás", "hago"], "hacer의 tú 단순과거는 hiciste다.", "과거표현"]),
+  mc(["El año pasado ___ a México. (작년에 멕시코에 갔어요 — 저는)", "viajé", ["viajo", "viajaré", "viajando"], "viajar의 1인칭 단순과거는 viajé다.", "과거표현"]),
+  mc(["Mi madre ___ una paella el domingo. (엄마가 일요일에 빠에야를 만드셨어요)", "cocinó", ["cocina", "cocinará", "cocinar"], "cocinar의 3인칭 단수 단순과거는 cocinó다.", "과거표현"]),
+  mc(["Todavía no ___ la tarea. (아직 숙제를 안 했어요)", "he hecho", ["hago", "haré", "había hecho"], "현재완료는 haber의 현재형 + 과거분사다: he hecho.", "과거표현"]),
+
+  // ───────────── gustar 구조 ─────────────
+  mc(["A mí me ___ el café. (저는 커피를 좋아해요)", "gusta", ["gusto", "gustan", "gustas"], "gustar는 좋아하는 대상이 주어라서 el café(단수)에는 gusta를 쓴다.", "gustar"]),
+  mc(["A ella le ___ los gatos. (그녀는 고양이를 좋아해요)", "gustan", ["gusta", "gusto", "gustas"], "대상 los gatos가 복수라서 gustan을 쓴다.", "gustar"]),
+  mc(["¿Te ___ viajar? (여행하는 것을 좋아해요?)", "gusta", ["gustan", "gusto", "gustas"], "동사원형(viajar)이 대상일 때는 단수 gusta를 쓴다.", "gustar"]),
+  mc(["A nosotros ___ gusta la música. (저희는 음악을 좋아해요)", "nos", ["les", "me", "se"], "nosotros에 대응하는 간접목적격 대명사는 nos다: nos gusta.", "gustar"]),
+  mc(["A mis padres ___ gusta caminar. (부모님은 걷는 걸 좋아하세요)", "les", ["le", "los", "se"], "mis padres(3인칭 복수)에 대응하는 간접목적격 대명사는 les다.", "gustar"]),
+  mc(["No me ___ las películas de terror. (저는 공포 영화를 안 좋아해요)", "gustan", ["gusta", "gusto", "gustas"], "las películas가 복수라서 gustan을 쓴다.", "gustar"]),
+  mc(["¿Qué ___ hacer los domingos? (일요일에 뭐 하는 걸 좋아해?)", "te gusta", ["gustas", "te gustan", "me gusta"], "상대(tú)가 좋아하는 것을 물을 때는 te gusta + 동사원형을 쓴다.", "gustar"]),
+  mc(["Me ___ bailar. (춤추는 걸 아주 좋아해요)", "encanta", ["encantan", "encanto", "encantas"], "encantar는 gustar와 같은 구조이고 동사원형이 대상이라 encanta를 쓴다.", "gustar"]),
+  mc(["A: No me gusta el pescado. B: A mí ___. (저도 안 좋아해요)", "tampoco", ["también", "nunca", "siempre"], "부정문에 동의할 때는 tampoco(~도 아니다)를 쓴다. también은 긍정문에 쓴다.", "gustar"]),
+
+  // ───────────── 의문문 ─────────────
+  mc(["¿___ te llamas? (이름이 뭐예요?)", "Cómo", ["Qué", "Cuál", "Dónde"], "이름을 물을 때는 ¿Cómo te llamas?라고 한다.", "의문문"]),
+  mc(["¿___ vives? (어디에 살아요?)", "Dónde", ["Cuándo", "Quién", "Por qué"], "장소를 묻는 의문사는 dónde다.", "의문문"]),
+  mc(["¿___ cuesta esto? (이거 얼마예요?)", "Cuánto", ["Cuántos", "Cuál", "Qué"], "가격을 물을 때는 단수 cuánto를 쓴다: ¿Cuánto cuesta?", "의문문"]),
+  mc(["¿___ hora es? (몇 시예요?)", "Qué", ["Cuál", "Cuánto", "Cómo"], "시간을 물을 때는 ¿Qué hora es?라고 한다.", "의문문"]),
+  mc(["¿___ es tu número de teléfono? (전화번호가 뭐예요?)", "Cuál", ["Qué", "Quién", "Cuándo"], "여러 후보 중 특정 값을 물을 때는 cuál을 쓴다: ¿Cuál es tu número?", "의문문"]),
+  mc(["¿___ llegas a casa? (언제 집에 도착해요?)", "Cuándo", ["Cómo", "Quién", "Dónde"], "시점을 묻는 의문사는 cuándo다.", "의문문"]),
+  mc(["¿___ estudias español? (왜 스페인어를 공부해요?)", "Por qué", ["Porque", "Porqué", "Por que"], "이유를 묻는 의문문에서는 두 단어 por qué를 쓴다.", "의문문"]),
+  mc(["¿Por qué llegas tarde? — ___ había mucho tráfico. (차가 막혔거든요)", "Porque", ["Por qué", "Porqué", "Por que"], "이유를 답할 때는 한 단어 porque를 쓴다.", "의문문"]),
+  mc(["¿___ es ella? (그녀는 누구예요?)", "Quién", ["Qué", "Cuál", "Cómo"], "사람을 묻는 의문사는 quién이다.", "의문문"]),
+  mc(["¿Con ___ vienes a la fiesta? (누구와 파티에 와요?)", "quién", ["qué", "cuál", "cómo"], "전치사 con 뒤에서 사람을 물을 때는 quién을 쓴다.", "의문문"]),
+
+  // ───────────── 시간·날짜 ─────────────
+  mc(["¿Qué hora es? — Son ___ tres y media. (3시 반이에요)", "las", ["la", "los", "a las"], "2시 이후의 시각은 복수 Son las ~로 말한다.", "시간·날짜"]),
+  mc(["¿Qué hora es? — ___ la una. (1시예요)", "Es", ["Son", "Está", "Hay"], "1시는 단수 Es la una라고 한다.", "시간·날짜"]),
+  mc(["La reunión es ___ las diez. (회의는 10시에 있어요)", "a", ["en", "de", "por"], "특정 시각에는 전치사 a를 쓴다: a las diez.", "시간·날짜"]),
+  mc(["Mi cumpleaños es ___ marzo. (제 생일은 3월이에요)", "en", ["a", "de", "por"], "달 앞에는 전치사 en을 쓴다: en marzo.", "시간·날짜"]),
+  mc(["El examen es ___ lunes. (시험은 이번 월요일이에요)", "el", ["en", "a", "los"], "특정한 하루의 요일 앞에는 정관사 el을 쓴다: el lunes.", "시간·날짜"]),
+  mc(["Hoy ___ miércoles. (오늘은 수요일이에요)", "es", ["está", "son", "hace"], "요일을 말할 때는 ser를 쓴다: Hoy es miércoles.", "시간·날짜"]),
+  mc(["pasado mañana 의 뜻은?", "모레", ["어제", "내일", "그저께"], "pasado mañana는 내일의 다음 날, 즉 모레다.", "시간·날짜"]),
+  mc(["anteayer 의 뜻은?", "그저께", ["어제", "내일", "모레"], "anteayer는 어제의 전날, 즉 그저께다.", "시간·날짜"]),
+  mc(["Hago ejercicio ___ la mañana. (아침에 운동해요)", "por", ["a", "con", "sin"], "하루 중 때를 말할 때는 por la mañana처럼 쓴다.", "시간·날짜"]),
+  mc(["Son las cuatro ___ la tarde. (오후 4시예요)", "de", ["por", "en", "a"], "시각 뒤에 오전·오후를 붙일 때는 de la tarde처럼 쓴다.", "시간·날짜"]),
+
+  // ───────────── 위치·방향 ─────────────
+  mc(["El banco está ___ de la farmacia. (은행은 약국 옆에 있어요)", "al lado", ["en lado", "a lado", "por lado"], "al lado de는 ~옆에라는 뜻이다.", "위치·방향"]),
+  mc(["La estación está ___ de aquí. (역은 여기서 멀어요)", "lejos", ["lejano", "largo", "alto"], "lejos de는 ~에서 멀리라는 뜻의 부사구다.", "위치·방향"]),
+  mc(["Gire ___ la derecha. (오른쪽으로 도세요)", "a", ["en", "de", "con"], "방향을 나타낼 때는 전치사 a를 쓴다: a la derecha.", "위치·방향"]),
+  mc(["'직진하세요'를 뜻하는 표현은?", "Siga recto.", ["Siga debajo.", "Gire recto.", "Vaya detrás."], "seguir recto는 곧장 앞으로 가다라는 뜻이라 Siga recto가 직진하라는 표현이다. Gire는 방향을 돌리라는 뜻이다.", "위치·방향"]),
+  mc(["El gato está ___ de la silla. (고양이가 의자 아래에 있어요)", "debajo", ["encima", "delante", "entre"], "debajo de는 ~아래에, encima de는 ~위에라는 뜻이다.", "위치·방향"]),
+  mc(["Mi oficina está ___ la esquina. (사무실은 모퉁이에 있어요)", "en", ["a", "por", "sobre"], "모퉁이 같은 장소에는 전치사 en을 쓴다: en la esquina.", "위치·방향"]),
+  mc(["¿Hay un supermercado ___ de aquí? (여기 근처에 슈퍼마켓이 있나요?)", "cerca", ["cercano", "junto", "entre"], "cerca de는 ~근처에라는 뜻이다.", "위치·방향"]),
+  mc(["El café está ___ del parque. (카페는 공원 맞은편에 있어요)", "enfrente", ["dentro", "entre", "sobre"], "enfrente de는 ~맞은편에라는 뜻이다.", "위치·방향"]),
+
+  // ───────────── 음식·주문 ─────────────
+  mc(["Quisiera ___ café con leche, por favor. (카페라테 한 잔 주세요)", "un", ["una", "el", "unos"], "café는 남성 명사라 부정관사 un을 쓴다.", "음식·주문"]),
+  mc(["La ___, por favor. (계산서 주세요)", "cuenta", ["carta", "propina", "mesa"], "식당에서 계산서를 달라고 할 때는 la cuenta라고 한다.", "음식·주문"]),
+  mc(["¿Me trae la ___, por favor? (메뉴판 좀 가져다주시겠어요?)", "carta", ["cuenta", "propina", "reserva"], "식당 메뉴판은 la carta라고 한다.", "음식·주문"]),
+  mc(["¿Qué ___ de postre? (디저트로 뭐가 있어요?)", "hay", ["es", "está", "tiene"], "무엇이 있는지 물을 때는 hay를 쓴다: ¿Qué hay de postre?", "음식·주문"]),
+  mc(["Soy alérgico ___ los frutos secos. (견과류 알레르기가 있어요)", "a", ["de", "con", "por"], "alérgico a + 대상으로 쓴다.", "음식·주문"]),
+  mc(["Tengo mucha ___. ¿Comemos algo? (배가 많이 고파요)", "hambre", ["sed", "sueño", "frío"], "tener hambre는 배고프다라는 뜻이다. tener sed는 목마르다라는 뜻이다.", "음식·주문"]),
+  mc(["Tengo ___. ¿Me da un vaso de agua? (목이 말라요)", "sed", ["hambre", "sueño", "calor"], "tener sed는 목이 마르다라는 뜻이다.", "음식·주문"]),
+  mc(["La comida estaba ___ rica. (음식이 정말 맛있었어요)", "muy", ["mucho", "mucha", "más"], "형용사 앞에서는 부사 muy를 쓴다: muy rica.", "음식·주문"]),
+  mc(["Para ___, quiero pollo con arroz. (저는 닭고기 덮밥 주세요)", "mí", ["yo", "me", "mío"], "전치사 para 뒤에는 목적격 인칭대명사 mí를 쓴다.", "음식·주문"]),
+
+  // ───────────── 여행 ─────────────
+  mc(["Quisiera ___ una habitación doble. (더블룸을 예약하고 싶어요)", "reservar", ["reservo", "reservado", "reservas"], "quisiera 뒤에는 동사원형이 온다: quisiera reservar.", "여행"]),
+  mc(["¿A qué hora sale el ___ a Sevilla? (세비야행 기차는 몇 시에 출발해요?)", "tren", ["billete", "maleta", "puerto"], "출발하는 교통수단이므로 tren이 맞다. billete는 표, maleta는 가방이다.", "여행"]),
+  mc(["Necesito cambiar dinero. ¿Dónde hay una casa de ___? (환전소가 어디 있나요?)", "cambio", ["compras", "moneda", "viaje"], "환전소는 casa de cambio라고 한다.", "여행"]),
+  mc(["El vuelo está ___. (비행기가 지연됐어요)", "retrasado", ["perdido", "cerrado", "lleno"], "지연되다는 retrasado로 말한다.", "여행"]),
+  mc(["¿Cuánto tiempo se tarda ___ el aeropuerto? (공항까지 얼마나 걸려요?)", "hasta", ["desde", "sin", "sobre"], "~까지는 hasta로 말한다.", "여행"]),
+  mc(["Quiero un billete de ___ y vuelta. (왕복표 한 장 주세요)", "ida", ["salida", "viaje", "entrada"], "왕복표는 billete de ida y vuelta라고 한다.", "여행"]),
+  mc(["Disculpe, ¿cómo se ___ al museo? (실례합니다, 박물관에 어떻게 가나요?)", "va", ["voy", "ir", "vamos"], "길을 물을 때는 비인칭 se va를 쓴다: ¿Cómo se va al museo?", "여행"]),
+
+  // ───────────── 감정 표현 ─────────────
+  mc(["Estoy muy ___ porque aprobé el examen. (시험에 합격해서 아주 기뻐요)", "contento", ["triste", "enfadado", "cansado"], "합격해서 기쁜 상태이므로 contento가 맞다.", "감정표현"]),
+  mc(["Me da ___ hablar en público. (사람들 앞에서 말하는 게 부끄러워요)", "vergüenza", ["hambre", "sueño", "calor"], "me da vergüenza는 부끄럽다, 창피하다라는 뜻이다.", "감정표현"]),
+  mc(["Estoy harto ___ este ruido. (이 소음에 질렸어요)", "de", ["a", "con", "por"], "estar harto de는 ~에 질리다라는 뜻이다.", "감정표현"]),
+  mc(["Me alegro ___ verte. (널 만나서 기뻐)", "de", ["a", "por", "con"], "alegrarse de + 동사원형은 ~해서 기쁘다라는 뜻이다.", "감정표현"]),
+  mc(["Me ___ nervioso antes de las entrevistas. (면접 전에는 긴장돼요)", "pongo", ["hago", "tengo", "soy"], "ponerse + 형용사는 감정이나 상태가 변하다라는 뜻이다: me pongo nervioso.", "감정표현"]),
+  mc(["Lo siento mucho. ¿Me ___? (미안해요. 용서해 줄래요?)", "perdonas", ["perdono", "perdonar", "perdonado"], "상대(tú)에게 부탁하므로 tú 활용 perdonas를 쓴다.", "감정표현"]),
+  mc(["Echo de menos a mi familia. 의 뜻은?", "가족이 그리워요", ["가족에게 화가 나요", "가족을 잊었어요", "가족을 던졌어요"], "echar de menos는 그리워하다라는 뜻이다. echar의 '던지다'라는 뜻으로 해석하면 안 된다.", "감정표현"]),
+  mc(["Me da igual. 의 뜻은?", "난 상관없어요", ["똑같이 줄게요", "저를 주세요", "그건 평등해요"], "me da igual은 어느 쪽이든 상관없다라는 뜻이다.", "감정표현"]),
+
+  // ───────────── 연결 표현 ─────────────
+  mc(["Estoy cansado, ___ voy a salir. (피곤하지만 나갈 거예요)", "pero", ["porque", "así que", "entonces"], "pero는 ~지만이라는 대조를 나타낸다.", "연결표현"]),
+  mc(["Hace frío, ___ llevo abrigo. (추워서 코트를 입어요)", "por eso", ["pero", "aunque", "sin embargo"], "por eso는 그래서라는 결과를 나타낸다.", "연결표현"]),
+  mc(["No fui a clase ___ estaba enfermo. (아파서 수업에 안 갔어요)", "porque", ["por eso", "aunque", "entonces"], "porque는 ~때문에라는 이유를 나타낸다.", "연결표현"]),
+  mc(["No quiero té, ___ café. (차가 아니라 커피를 원해요)", "sino", ["pero", "porque", "aunque"], "앞 문장이 부정일 때 ~가 아니라 ~라고 바로잡는 말은 sino다.", "연결표현"]),
+  mc(["Primero desayuno; ___, voy al trabajo. (먼저 아침을 먹고, 그다음에 출근해요)", "luego", ["antes", "mientras", "porque"], "luego는 그다음에, 그러고 나서라는 순서를 나타낸다.", "연결표현"]),
+  mc(["Si ___ tiempo, voy contigo. (시간이 있으면 같이 갈게요)", "tengo", ["tendré", "tuviera", "tener"], "가능성이 있는 조건에서는 si + 현재형을 쓴다: si tengo tiempo.", "연결표현"]),
+
+  // ───────────── 자주 쓰는 일상 표현 ─────────────
+  mc(["No pasa nada. 의 뜻은?", "괜찮아요, 별일 아니에요", ["아무것도 지나가지 않아요", "아무도 없어요", "아무것도 필요 없어요"], "no pasa nada는 사과나 실수에 대해 괜찮다고 말하는 표현이다.", "일상표현"]),
+  mc(["¿Qué tal? 의 뜻은?", "잘 지내요?", ["몇 시예요?", "누구예요?", "어디에 가요?"], "¿Qué tal?은 가볍게 안부를 묻는 인사다.", "일상표현"]),
+  mc(["Muchas gracias. — ___", "De nada.", ["Lo siento.", "Buen provecho.", "Hasta luego."], "감사 인사에는 De nada(천만에요)로 답한다.", "일상표현"]),
+  mc(["¿Puede repetir, por favor? 의 뜻은?", "다시 말씀해 주시겠어요?", ["천천히 먹어도 돼요?", "지금 가도 돼요?", "도와드릴까요?"], "repetir는 반복하다라는 뜻이라 다시 말해 달라는 정중한 요청이다.", "일상표현"]),
+  mc(["Más o menos. 의 뜻은?", "그저 그래요, 대략이요", ["아주 좋아요", "절대 아니에요", "더 많이요"], "más o menos는 정도가 그저 그렇거나 대략이라는 뜻이다.", "일상표현"]),
+  mc(["¡Qué lástima! 의 뜻은?", "아쉽네요, 안타깝네요", ["정말 맛있네요", "정말 빠르네요", "정말 고마워요"], "qué lástima는 안타까움이나 아쉬움을 나타낸다.", "일상표현"]),
+  mc(["Ni idea. 의 뜻은?", "전혀 모르겠어요", ["좋은 생각이에요", "아이디어가 많아요", "생각해 볼게요"], "ni idea는 전혀 모른다는 뜻의 구어 표현이다.", "일상표현"]),
+  mc(["좁은 통로에서 지나가야 할 때 쓰는 말은?", "Con permiso.", ["Buen provecho.", "Hasta pronto.", "De nada."], "con permiso는 지나가거나 자리를 뜰 때 양해를 구하는 표현이다.", "일상표현"]),
+  mc(["'동의해요'를 뜻하는 표현은?", "Estoy de acuerdo.", ["Estoy en acuerdo.", "Soy de acuerdo.", "Tengo acuerdo."], "estar de acuerdo가 동의하다라는 고정 표현이다.", "일상표현"]),
+  mc(["Oye, ¿tienes un momento? 에서 Oye의 쓰임은?", "친구를 부르며 말을 걸 때", ["작별 인사를 할 때", "음식을 주문할 때", "사과할 때"], "oye는 친한 사이에서 저기, 있잖아처럼 주의를 끌 때 쓴다.", "일상표현"]),
+
+  // ───────────── 기초 문법 (관사·형용사·재귀·비교·por/para) ─────────────
+  mc(["___ agua está fría. (물이 차가워요)", "El", ["La", "Una", "Las"], "강세가 첫음절에 오는 a-로 시작하는 여성 단수 명사 앞에는 el을 쓴다: el agua.", "기초문법"]),
+  mc(["Tengo dos ___. (저는 고양이가 두 마리 있어요)", "gatos", ["gato", "gatoes", "el gato"], "모음으로 끝나는 명사의 복수형은 -s를 붙인다: gatos.", "기초문법"]),
+  mc(["Mis amigas son ___. (제 여자 친구들은 친절해요)", "simpáticas", ["simpático", "simpáticos", "simpática"], "형용사는 명사의 성과 수에 일치한다: amigas(여성 복수)에는 simpáticas.", "기초문법"]),
+  mc(["Me ___ a las siete todos los días. (매일 7시에 일어나요)", "levanto", ["levantas", "levanta", "levantamos"], "재귀동사 levantarse의 yo 활용은 me levanto다.", "기초문법"]),
+  mc(["Ella ___ ducha por la mañana. (아침에 샤워해요)", "se", ["me", "te", "le"], "재귀동사 ducharse는 주어 ella에 대응하는 se를 쓴다.", "기초문법"]),
+  mc(["Mi hermano y yo ___ llevamos bien. (형과 저는 사이가 좋아요)", "nos", ["se", "me", "os"], "llevarse bien은 재귀 대명사를 쓰고, nosotros에는 nos가 맞다.", "기초문법"]),
+  mc(["Madrid es más grande ___ Sevilla. (마드리드는 세비야보다 커요)", "que", ["de", "como", "a"], "비교급 más ~ 뒤에는 que를 쓴다.", "기초문법"]),
+  mc(["Soy tan alto ___ mi padre. (저는 아버지만큼 키가 커요)", "como", ["que", "de", "a"], "동등 비교는 tan ~ como로 쓴다.", "기초문법"]),
+  mc(["Tengo ___ trabajo. (할 일이 많아요)", "mucho", ["muy", "mucha", "más"], "명사 앞에서는 수량 형용사 mucho를 쓴다. muy는 형용사나 부사 앞에 쓴다.", "기초문법"]),
+  mc(["¿___ abrir la ventana? (창문 좀 열어도 될까요?)", "Puedo", ["Quiero", "Debo", "Hay"], "허락을 구할 때는 ¿Puedo + 동사원형?을 쓴다.", "기초문법"]),
+  mc(["Este regalo es ___ ti. (이 선물은 너를 위한 거야)", "para", ["por", "de", "con"], "받는 대상이나 목적을 나타낼 때는 para를 쓴다.", "기초문법"]),
+  mc(["Gracias ___ tu ayuda. (도와줘서 고마워)", "por", ["para", "de", "a"], "고마움의 이유를 말할 때는 gracias por를 쓴다.", "기초문법"]),
+  mc(["Estudio español ___ viajar a Perú. (페루에 여행 가려고 스페인어를 공부해요)", "para", ["por", "de", "con"], "para + 동사원형은 ~하기 위해서라는 목적을 나타낸다.", "기초문법"]),
+];
+
+export const spanishExtraQuestions = buildLanguageQuestions("스페인어", "esp", 12, "스페인어표현", items);

@@ -6,8 +6,9 @@ import {
   stableStringify,
   type DefaultContentState,
 } from "@/db/seed/defaultContentState";
-import { defaultCategories } from "@/db/seed/defaultCategories";
+import { defaultCategories, retiredDefaultThemes } from "@/db/seed/defaultCategories";
 import { DEFAULT_CONTENT_VERSION, defaultQuestions, type SeedQuestion } from "@/db/seed/defaultQuestions";
+import { sessionRepo } from "@/db/repositories/sessionRepo";
 import { DEFAULT_THEME_PREFIXES, generateDisplayCode } from "@/lib/displayCode";
 import type { Category, Question, QuestionRecord, Tag, Theme } from "@/types/domain";
 
@@ -44,6 +45,10 @@ export interface SyncResult {
   added: number;
   updated: number;
   keptUserModified: number;
+  /** 폐기된 기본 Theme에서 삭제한 번들 문제 수 */
+  retiredQuestions: number;
+  /** 폐기된 기본 Theme 중 삭제한 Theme 수 (사용자 문제가 남은 Theme은 유지) */
+  retiredThemes: number;
 }
 
 /**
@@ -56,6 +61,7 @@ export interface SyncResult {
  *   2) seedId가 없는 예전 시드 문제 중 같은 Theme·유형·본문(payload)이 완전히 같은 것만 번들 문제로 연결한다.
  *   3) DB에 없는 번들 문제를 추가한다(사용자가 삭제한 seedId, 삭제된 Theme의 문제는 제외).
  *   4) 사용자가 수정하지 않은 번들 문제(현재 내용 해시 == seedHash)만 새 번들 내용으로 갱신한다.
+ *   5) 기본 제공 목록에서 폐기된 Theme(retiredDefaultThemes)의 번들 문제를 지우고, 비게 된 Theme을 삭제한다.
  *   id·displayCode·QuestionRecord·Attempt·Session·즐겨찾기·플래그·메모는 건드리지 않는다.
  * - 저장된 버전·번들 해시가 현재와 같으면 아무것도 하지 않는다. 로직 자체도 idempotent하다.
  */
@@ -67,12 +73,14 @@ export async function syncDefaultContent(options: { force?: boolean } = {}): Pro
     added: 0,
     updated: 0,
     keptUserModified: 0,
+    retiredQuestions: 0,
+    retiredThemes: 0,
   };
   const bundleHash = computeBundleHash();
 
   await db.transaction(
     "rw",
-    [db.categories, db.themes, db.tags, db.questions, db.questionRecords, db.settings],
+    [db.categories, db.themes, db.tags, db.questions, db.questionRecords, db.attempts, db.sessions, db.settings],
     async () => {
       const state = await getDefaultContentState();
       if (!options.force && state?.version === DEFAULT_CONTENT_VERSION && state.bundleHash === bundleHash) {
@@ -90,6 +98,35 @@ export async function syncDefaultContent(options: { force?: boolean } = {}): Pro
           (isLegacyDb ? defaultCategories.flatMap((c) => c.themes.map((t) => themeSeedKey(t.name))) : []),
       );
       const deletedSeedIds = new Set(state?.deletedSeedIds ?? []);
+
+      // ── 0) 폐기된 기본 Theme 정리 ──
+      // 번들 문제(seedId 접두어가 일치)는 학습 기록(QuestionRecord·Attempt)과 함께 지우고, 영향받은 Session 통계를 다시 계산한다.
+      // 사용자가 직접 만든 문제(seedId 없음)가 남아 있는 Theme은 데이터 손실을 막기 위해 그대로 둔다.
+      const affectedSessionIds = new Set<string>();
+      for (const retired of retiredDefaultThemes) {
+        const retiredTheme =
+          themes.find((t) => t.seedKey === retired.seedKey) ??
+          themes.find((t) => !t.seedKey && !t.isCustom && t.name === retired.name);
+        if (!retiredTheme) continue;
+
+        const themeQuestions = await db.questions.where("themeId").equals(retiredTheme.id).toArray();
+        const bundled = themeQuestions.filter((q) => q.seedId?.startsWith(retired.seedIdPrefix));
+        const bundledIds = bundled.map((q) => q.id);
+        if (bundledIds.length > 0) {
+          const attempts = await db.attempts.where("questionId").anyOf(bundledIds).toArray();
+          for (const attempt of attempts) affectedSessionIds.add(attempt.sessionId);
+          await db.attempts.where("questionId").anyOf(bundledIds).delete();
+          await db.questionRecords.bulkDelete(bundledIds);
+          await db.questions.bulkDelete(bundledIds);
+          result.retiredQuestions += bundledIds.length;
+        }
+        if (themeQuestions.length === bundledIds.length) {
+          await db.themes.delete(retiredTheme.id);
+          themes.splice(themes.indexOf(retiredTheme), 1);
+          result.retiredThemes++;
+        }
+      }
+      for (const sessionId of affectedSessionIds) await sessionRepo.recomputeStats(sessionId);
 
       // ── 1) Category / Theme ──
       const themeByKey = new Map<string, Theme>();

@@ -10,7 +10,7 @@ const CUSTOM_ASCII_MAX = 8;
 /** ASCII가 전혀 없는(예: 순한글) 사용자 Theme의 기본 접두어. 충돌 시 CUSTOM2, CUSTOM3... */
 export const CUSTOM_FALLBACK_PREFIX = "CUSTOM";
 
-/** 기본 제공 42개 Theme의 고정 displayCode 접두어. docs/PRODUCT_SPEC.md 2장 목록과 1:1 대응. */
+/** 기본 제공 40개 Theme의 고정 displayCode 접두어. docs/PRODUCT_SPEC.md 2장 목록과 1:1 대응. */
 export const DEFAULT_THEME_PREFIXES: Record<string, string> = {
   // 코딩
   SQL: "SQL",
@@ -55,8 +55,6 @@ export const DEFAULT_THEME_PREFIXES: Record<string, string> = {
   // 취업
   NCS: "NCS",
   인적성: "APTI",
-  면접: "INTV",
-  직무지식: "JOB",
   // 언어
   영어: "ENG",
   OPIc: "OPIC",

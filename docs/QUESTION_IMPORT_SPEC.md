@@ -77,7 +77,7 @@ JSON 파일은 **문제(ImportRow) 객체의 배열**이다. 감싸는 객체(`{
 - 값을 채우면(예: 이전 export를 재-import) **같은 Theme 안에서 아직 안 쓰인 코드일 때만 그대로 유지**된다. 이미 같은 Theme의 다른 Question이 그 코드를 쓰고 있으면 조용히 무시되고 새 코드가 자동 발급된다 (에러 아님, `errors`/`skipped`에도 안 잡힘 — 그냥 다른 코드로 저장됨).
 - `displayCode`는 **Theme 내부에서만 유일**하면 되고, 생성 후에는 고정 식별자라 Question 수정으로는 바뀌지 않는다.
 - 접두어 규칙 (문제은행 제작자가 직접 코드를 지정하려는 경우에만 참고):
-  - 기본 제공 42개 Theme은 **고정 접두어**를 쓴다 (아래 표).
+  - 기본 제공 40개 Theme은 **고정 접두어**를 쓴다 (아래 표).
   - 사용자가 직접 만든 Theme(사용자 정의 Theme)은 Theme 이름의 ASCII 영숫자(최대 8자, 대문자화)를 접두어로 쓰고, ASCII가 전혀 없으면(순한글 이름 등) `CUSTOM`을 쓴다. 다른 Theme과 접두어가 겹치면 `CUSTOM2`, `CUSTOM3`...처럼 숫자를 붙여 피한다.
   - 포맷은 `PREFIX-0001`처럼 하이픈 + 4자리 0-padding 번호.
 
@@ -121,8 +121,6 @@ JSON 파일은 **문제(ImportRow) 객체의 배열**이다. 감싸는 객체(`{
 | AI | AI 기초 | `AIBASIC` | false |
 | 취업 | NCS | `NCS` | false |
 | 취업 | 인적성 | `APTI` | false |
-| 취업 | 면접 | `INTV` | false |
-| 취업 | 직무지식 | `JOB` | false |
 | 언어 | 영어 | `ENG` | false |
 | 언어 | OPIc | `OPIC` | false |
 | 언어 | 일본어 | `JPN` | false |
