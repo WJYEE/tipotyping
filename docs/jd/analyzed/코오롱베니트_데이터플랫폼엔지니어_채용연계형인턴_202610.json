@@ -1,0 +1,160 @@
+{
+  "companyName": "코오롱베니트",
+  "postingTitle": "2026년 하반기 채용연계형 인턴 모집",
+  "positionTitle": "데이터플랫폼 엔지니어",
+  "jdUrl": "https://inthiswork.com/archives/401761",
+  "responsibilities": "데이터 수집·적재 파이프라인의 설계, 개발 및 운영 실무를 경험합니다. (배치 및 CDC 기반 실시간 적재)\n활용 가능한 데이터셋을 만들기 위한 데이터 가공 및 전처리 업무를 수행합니다.",
+  "qualifications": "IT 관련 전공\n데이터 흐름 및 데이터 파이프라인 개발에 대한 기본적인 이해\n관계형 데이터베이스 및 SQL Query에 대한 기본적인 이해",
+  "preferredQualifications": "Python을 활용한 데이터 처리 및 파이프라인 개발 경험\nAirflow 기반 워크플로우(DAG) 개발 및 스케줄링 경험\n데이터 관련 자격증 소지자(SQLD, DAsP, 정보처리기사 등)",
+  "applicationStartDate": "2026-09-28",
+  "applicationEndDate": "2026-10-07",
+  "employmentType": "인턴",
+  "experienceLevel": "신입",
+  "workLocation": "과천",
+  "requirements": [
+    {
+      "rawText": "데이터 수집·적재 파이프라인의 설계, 개발 및 운영 실무를 경험합니다. (배치 및 CDC 기반 실시간 적재)",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "데이터 파이프라인",
+          "category": "data"
+        },
+        {
+          "name": "데이터 수집·적재",
+          "category": "data"
+        },
+        {
+          "name": "CDC",
+          "category": "data"
+        },
+        {
+          "name": "실시간 데이터 처리",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Engineer"
+      ]
+    },
+    {
+      "rawText": "활용 가능한 데이터셋을 만들기 위한 데이터 가공 및 전처리 업무를 수행합니다.",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "데이터 가공",
+          "category": "data"
+        },
+        {
+          "name": "데이터 전처리",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Engineer"
+      ]
+    },
+    {
+      "rawText": "IT 관련 전공",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "IT 관련 전공",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Engineer"
+      ]
+    },
+    {
+      "rawText": "데이터 흐름 및 데이터 파이프라인 개발에 대한 기본적인 이해",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "데이터 파이프라인",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Engineer"
+      ]
+    },
+    {
+      "rawText": "관계형 데이터베이스 및 SQL Query에 대한 기본적인 이해",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "RDBMS",
+          "category": "data"
+        },
+        {
+          "name": "SQL",
+          "category": "tools"
+        }
+      ],
+      "roles": [
+        "Data Engineer"
+      ]
+    },
+    {
+      "rawText": "Python을 활용한 데이터 처리 및 파이프라인 개발 경험",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "Python",
+          "category": "tools"
+        },
+        {
+          "name": "데이터 파이프라인",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Engineer"
+      ]
+    },
+    {
+      "rawText": "Airflow 기반 워크플로우(DAG) 개발 및 스케줄링 경험",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "Airflow",
+          "category": "tools"
+        },
+        {
+          "name": "DAG",
+          "category": "tools"
+        },
+        {
+          "name": "워크플로우 스케줄링",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Engineer"
+      ]
+    },
+    {
+      "rawText": "데이터 관련 자격증 소지자(SQLD, DAsP, 정보처리기사 등)",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "SQLD",
+          "category": "tools"
+        },
+        {
+          "name": "DAsP",
+          "category": "tools"
+        },
+        {
+          "name": "정보처리기사",
+          "category": "tools"
+        }
+      ],
+      "roles": [
+        "Data Engineer"
+      ]
+    }
+  ]
+}

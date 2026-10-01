@@ -1,0 +1,313 @@
+{
+  "companyName": "이노션",
+  "postingTitle": "데이터 분석 및 컨설팅 (Junior) (상시채용 인재풀)",
+  "positionTitle": "데이터 분석 및 컨설팅 (Junior)",
+  "responsibilities": "Web, App 플랫폼 별 글로벌 KPI 수립 및 모니터링\n권역, 국가별 월간 리포트 제작(성과 분석 및 개선 사항)\n데이터 기반 비즈니스 개선 제안\n고객사 및 협업사와의 프로젝트 진행을 위한 커뮤니케이션 및 관리",
+  "qualifications": "학사 이상\n총 경력 1년 이상\n데이터 솔루션 활용 경험이 있으신 분 (Google Analytics4, Adobe Analytics 등)\n디지털 플랫폼(앱,웹) 및 디지털 캠페인(퍼포먼스 광고 등)에 대한 이해도가 있으신 분\n분석 기획 및 결과 인사이트를 논리적으로 정리하고 전달할 수 있는 문서 작성 역량을 갖추신 분\n비즈니스 영어 역량을 보유하신 분\n최종합격 후, 지정 입사일에 입사 가능한 분\n해외 출장에 결격 사유가 없는 분 (남성의 경우, 회사가 지정한 입사일까지 병역을 마쳤거나 면제된분)",
+  "preferredQualifications": "디지털 플랫폼 기반의 데이터 프로젝트 경험(구축, 분석 등)이 있으신 분\n분석 에이전트 활용: 비즈니스 분석, 오디언스 분석 등 에이전트를 활용하여 생산성 향상 경험이 있으신 분\n데이터 솔루션과 다양한 데이터소스의 분석 경험이 있으신 분 (Google Analytics 4, Amplitude, Adobe Analytics, Salesforce Marketing Cloud, Mobile Attribution Solution 등)\n데이터 기반 비즈니스 가치 정의 및 성과 도출 경험이 있으신 분\n고객사 및 다양한 협업 부서와 커뮤니케이션 한 경험이 있으신 분\n데이터로 가설을 세우고 분석을 진행한 경험이 있으신 분",
+  "applicationStartDate": "2026-08-04",
+  "employmentType": "계약직",
+  "experienceLevel": "경력",
+  "workLocation": "본사",
+  "requirements": [
+    {
+      "rawText": "Web, App 플랫폼 별 글로벌 KPI 수립 및 모니터링",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "KPI 설계",
+          "category": "product"
+        },
+        {
+          "name": "지표 모니터링",
+          "category": "product"
+        },
+        {
+          "name": "디지털 플랫폼 분석",
+          "category": "product"
+        }
+      ],
+      "roles": [
+        "Product DA",
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "권역, 국가별 월간 리포트 제작(성과 분석 및 개선 사항)",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "리포팅",
+          "category": "business"
+        },
+        {
+          "name": "성과 분석",
+          "category": "business"
+        },
+        {
+          "name": "비즈니스 인사이트",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "데이터 기반 비즈니스 개선 제안",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "데이터 기반 의사결정",
+          "category": "business"
+        },
+        {
+          "name": "비즈니스 인사이트",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "IT Consultant"
+      ]
+    },
+    {
+      "rawText": "고객사 및 협업사와의 프로젝트 진행을 위한 커뮤니케이션 및 관리",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "커뮤니케이션",
+          "category": "soft-skill"
+        },
+        {
+          "name": "프로젝트 관리",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "IT Consultant",
+        "PM"
+      ]
+    },
+    {
+      "rawText": "학사 이상",
+      "sourceSection": "qualification",
+      "competencies": [],
+      "roles": []
+    },
+    {
+      "rawText": "총 경력 1년 이상",
+      "sourceSection": "qualification",
+      "competencies": [],
+      "roles": []
+    },
+    {
+      "rawText": "데이터 솔루션 활용 경험이 있으신 분 (Google Analytics4, Adobe Analytics 등)",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "GA4",
+          "category": "tools"
+        },
+        {
+          "name": "Adobe Analytics",
+          "category": "tools"
+        }
+      ],
+      "roles": [
+        "Product DA",
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "디지털 플랫폼(앱,웹) 및 디지털 캠페인(퍼포먼스 광고 등)에 대한 이해도가 있으신 분",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "디지털 플랫폼 분석",
+          "category": "product"
+        },
+        {
+          "name": "디지털 마케팅",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Product DA",
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "분석 기획 및 결과 인사이트를 논리적으로 정리하고 전달할 수 있는 문서 작성 역량을 갖추신 분",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "분석 기획",
+          "category": "business"
+        },
+        {
+          "name": "비즈니스 인사이트",
+          "category": "business"
+        },
+        {
+          "name": "문서화",
+          "category": "soft-skill"
+        },
+        {
+          "name": "커뮤니케이션",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "IT Consultant"
+      ]
+    },
+    {
+      "rawText": "비즈니스 영어 역량을 보유하신 분",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "영어",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "IT Consultant",
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "최종합격 후, 지정 입사일에 입사 가능한 분",
+      "sourceSection": "qualification",
+      "competencies": [],
+      "roles": []
+    },
+    {
+      "rawText": "해외 출장에 결격 사유가 없는 분 (남성의 경우, 회사가 지정한 입사일까지 병역을 마쳤거나 면제된분)",
+      "sourceSection": "qualification",
+      "competencies": [],
+      "roles": []
+    },
+    {
+      "rawText": "디지털 플랫폼 기반의 데이터 프로젝트 경험(구축, 분석 등)이 있으신 분",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "디지털 플랫폼 분석",
+          "category": "product"
+        },
+        {
+          "name": "데이터 프로젝트",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Product DA",
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "분석 에이전트 활용: 비즈니스 분석, 오디언스 분석 등 에이전트를 활용하여 생산성 향상 경험이 있으신 분",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "AI Agent",
+          "category": "tools"
+        },
+        {
+          "name": "업무 자동화",
+          "category": "tools"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "IT Consultant"
+      ]
+    },
+    {
+      "rawText": "데이터 솔루션과 다양한 데이터소스의 분석 경험이 있으신 분 (Google Analytics 4, Amplitude, Adobe Analytics, Salesforce Marketing Cloud, Mobile Attribution Solution 등)",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "GA4",
+          "category": "tools"
+        },
+        {
+          "name": "Amplitude",
+          "category": "tools"
+        },
+        {
+          "name": "Adobe Analytics",
+          "category": "tools"
+        },
+        {
+          "name": "Salesforce Marketing Cloud",
+          "category": "tools"
+        },
+        {
+          "name": "Mobile Attribution",
+          "category": "tools"
+        }
+      ],
+      "roles": [
+        "Product DA",
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "데이터 기반 비즈니스 가치 정의 및 성과 도출 경험이 있으신 분",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "데이터 기반 의사결정",
+          "category": "business"
+        },
+        {
+          "name": "성과 분석",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "IT Consultant"
+      ]
+    },
+    {
+      "rawText": "고객사 및 다양한 협업 부서와 커뮤니케이션 한 경험이 있으신 분",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "커뮤니케이션",
+          "category": "soft-skill"
+        },
+        {
+          "name": "협업",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "IT Consultant",
+        "PM"
+      ]
+    },
+    {
+      "rawText": "데이터로 가설을 세우고 분석을 진행한 경험이 있으신 분",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "가설 검증",
+          "category": "data"
+        },
+        {
+          "name": "데이터 분석",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "Product DA"
+      ]
+    }
+  ]
+}

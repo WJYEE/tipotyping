@@ -1,0 +1,270 @@
+{
+  "companyName": "kt alpha",
+  "postingTitle": "kt알파 쇼핑 Data Analyst(DA)/ Data Engineer(DE) 채용",
+  "positionTitle": "kt알파 쇼핑 Data Analyst (DA)",
+  "jdUrl": "https://recruit.kt.com/careers/265764",
+  "responsibilities": "고객 주문·상품·편성·채널·프로모션·손익 데이터 기반의 비즈니스 이슈를 분석 과제로 정의하고 핵심 KPI 및 인사이트 도출\n고객 세분화, 상품·채널 성과, 재구매·이탈, CRM·프로모션 효과 분석 및 대시보드·정기 리포트 구축\nSQL·Python 및 AI 기반 데이터 추출·가공·검증·시각화 및 반복 분석 업무 자동화, 예측·추천 등 AI/ML 분석 과제 지원",
+  "qualifications": "신입 또는 관련 경력 3년 이상\nSQL·Python 기반 데이터 추출·가공·분석 역량\nKPI·코호트·퍼널 등 데이터 분석 방법론에 대한 이해\nAI를 활용한 데이터 업무 수행 역량 및 생성 코드·분석 결과 검증·수정 역량",
+  "preferredQualifications": "커머스·홈쇼핑·이커머스·리테일 데이터 분석 경험\n고객·상품·CRM·프로모션·채널·손익 분석 경험\nGA4·BigQuery 등 웹·앱 행동 데이터 분석 경험\nLLM·AI Agent·Text-to-SQL·자동 리포트 등 AI 기반 데이터 활용 경험",
+  "applicationStartDate": "2026-09-07",
+  "applicationEndDate": "2026-10-06",
+  "employmentType": "정규직",
+  "workLocation": "kt alpha 본사 서울 동작구 | KT알파 쇼핑 미디어센터 서울 양천구",
+  "requirements": [
+    {
+      "rawText": "고객 주문·상품·편성·채널·프로모션·손익 데이터 기반의 비즈니스 이슈를 분석 과제로 정의하고 핵심 KPI 및 인사이트 도출",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "비즈니스 문제 정의",
+          "category": "business"
+        },
+        {
+          "name": "KPI 설계",
+          "category": "product"
+        },
+        {
+          "name": "데이터 분석",
+          "category": "data"
+        },
+        {
+          "name": "비즈니스 인사이트",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "Product DA"
+      ]
+    },
+    {
+      "rawText": "고객 세분화, 상품·채널 성과, 재구매·이탈, CRM·프로모션 효과 분석 및 대시보드·정기 리포트 구축",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "고객 세분화",
+          "category": "business"
+        },
+        {
+          "name": "고객 분석",
+          "category": "business"
+        },
+        {
+          "name": "CRM 분석",
+          "category": "business"
+        },
+        {
+          "name": "리텐션 분석",
+          "category": "product"
+        },
+        {
+          "name": "대시보드",
+          "category": "tools"
+        },
+        {
+          "name": "리포팅",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "Product DA",
+        "BI Analyst"
+      ]
+    },
+    {
+      "rawText": "SQL·Python 및 AI 기반 데이터 추출·가공·검증·시각화 및 반복 분석 업무 자동화, 예측·추천 등 AI/ML 분석 과제 지원",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "SQL",
+          "category": "tools"
+        },
+        {
+          "name": "Python",
+          "category": "tools"
+        },
+        {
+          "name": "데이터 검증",
+          "category": "data"
+        },
+        {
+          "name": "데이터 시각화",
+          "category": "data"
+        },
+        {
+          "name": "업무 자동화",
+          "category": "tools"
+        },
+        {
+          "name": "Machine Learning",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "Product DA",
+        "BI Analyst"
+      ]
+    },
+    {
+      "rawText": "신입 또는 관련 경력 3년 이상",
+      "sourceSection": "qualification",
+      "competencies": [],
+      "roles": [
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "SQL·Python 기반 데이터 추출·가공·분석 역량",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "SQL",
+          "category": "tools"
+        },
+        {
+          "name": "Python",
+          "category": "tools"
+        },
+        {
+          "name": "데이터 분석",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "Product DA"
+      ]
+    },
+    {
+      "rawText": "KPI·코호트·퍼널 등 데이터 분석 방법론에 대한 이해",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "KPI 설계",
+          "category": "product"
+        },
+        {
+          "name": "코호트 분석",
+          "category": "product"
+        },
+        {
+          "name": "퍼널 분석",
+          "category": "product"
+        }
+      ],
+      "roles": [
+        "Product DA",
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "AI를 활용한 데이터 업무 수행 역량 및 생성 코드·분석 결과 검증·수정 역량",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "AI 도구 활용",
+          "category": "tools"
+        },
+        {
+          "name": "데이터 검증",
+          "category": "data"
+        },
+        {
+          "name": "문제 해결",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "Product DA"
+      ]
+    },
+    {
+      "rawText": "커머스·홈쇼핑·이커머스·리테일 데이터 분석 경험",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "커머스 도메인",
+          "category": "business"
+        },
+        {
+          "name": "E-commerce",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "고객·상품·CRM·프로모션·채널·손익 분석 경험",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "고객 분석",
+          "category": "business"
+        },
+        {
+          "name": "CRM 분석",
+          "category": "business"
+        },
+        {
+          "name": "손익 분석",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "GA4·BigQuery 등 웹·앱 행동 데이터 분석 경험",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "GA4",
+          "category": "tools"
+        },
+        {
+          "name": "BigQuery",
+          "category": "tools"
+        },
+        {
+          "name": "행동 데이터 분석",
+          "category": "product"
+        }
+      ],
+      "roles": [
+        "Product DA"
+      ]
+    },
+    {
+      "rawText": "LLM·AI Agent·Text-to-SQL·자동 리포트 등 AI 기반 데이터 활용 경험",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "LLM",
+          "category": "tools"
+        },
+        {
+          "name": "AI Agent",
+          "category": "tools"
+        },
+        {
+          "name": "Text-to-SQL",
+          "category": "tools"
+        },
+        {
+          "name": "업무 자동화",
+          "category": "tools"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "Product DA"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "companyName": "틱톡(TikTok)",
+  "postingTitle": "Global Business Solutions - Business Analyst (Graduate)",
+  "positionTitle": "Business Analyst",
+  "jdUrl": "https://www.wanted.co.kr/wd/386413",
+  "responsibilities": "Business Analysis and Management: Global Business Solutions business data analysis, develop strategic planning, provide solutions and implementation plans; based on the understanding and analysis of the specific business domains, continuously optimize control rules, product tools and business operations, to provide strong support for the implementation of the strategy.\nRegular monitoring and data analysis on various business metrics of Outbound E-commerce, and provide corresponding solutions to assist the platform sales team to continuously improve consumer experience.\nBusiness puzzle breakdown: familiar with Outbound e-commerce rules, deeply support sales and client solution team leader to do project task break-down, prioritization, monitoring important business progress; able to measure project output and efficiency through quantitative and qualitative analysis.",
+  "qualifications": "Individuals who are completing or have recently completed a Bachelor's degree in math, statistics, computer or a related discipline.\nStrong capability of data analytics is required.\nOutstanding reasoning capability and logic, with good problem solving methodologies, being able to independently output quality strategic solutions, strong learning and adaptive ability, strategic framework thinking, sensitivity and insight into the business.\nStrategic thinking capacity, able to quickly understand the business and discover the connection between business and data performance.\nProfessional fluency in English.",
+  "preferredQualifications": "Proficiency in BI visualization tools such as Tableau/Power BI is preferred, SQL is a plus.\nFast learner, passionate about participating in business, and able to adapt to high intensity and fast growth work environment.",
+  "applicationStartDate": "2026-09-14",
+  "employmentType": "정규직",
+  "workLocation": "서울 강남구 영동대로 417 오토웨이타워",
+  "requirements": [
+    {
+      "rawText": "Business Analysis and Management: Global Business Solutions business data analysis, develop strategic planning, provide solutions and implementation plans; based on the understanding and analysis of the specific business domains, continuously optimize control rules, product tools and business operations, to provide strong support for the implementation of the strategy.",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "비즈니스 데이터 분석",
+          "category": "business"
+        },
+        {
+          "name": "전략 기획",
+          "category": "business"
+        },
+        {
+          "name": "비즈니스 도메인 이해",
+          "category": "business"
+        },
+        {
+          "name": "운영 최적화",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "기획"
+      ]
+    },
+    {
+      "rawText": "Regular monitoring and data analysis on various business metrics of Outbound E-commerce, and provide corresponding solutions to assist the platform sales team to continuously improve consumer experience.",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "지표 모니터링",
+          "category": "data"
+        },
+        {
+          "name": "데이터 분석",
+          "category": "data"
+        },
+        {
+          "name": "E-commerce",
+          "category": "business"
+        },
+        {
+          "name": "고객 경험",
+          "category": "product"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "Product DA"
+      ]
+    },
+    {
+      "rawText": "Business puzzle breakdown: familiar with Outbound e-commerce rules, deeply support sales and client solution team leader to do project task break-down, prioritization, monitoring important business progress; able to measure project output and efficiency through quantitative and qualitative analysis.",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "문제 구조화",
+          "category": "soft-skill"
+        },
+        {
+          "name": "우선순위 관리",
+          "category": "soft-skill"
+        },
+        {
+          "name": "프로젝트 모니터링",
+          "category": "business"
+        },
+        {
+          "name": "정량·정성 분석",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "PM",
+        "기획"
+      ]
+    },
+    {
+      "rawText": "Individuals who are completing or have recently completed a Bachelor's degree in math, statistics, computer or a related discipline.",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "수학·통계·컴퓨터 관련 전공",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "Strong capability of data analytics is required.",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "데이터 분석",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "Outstanding reasoning capability and logic, with good problem solving methodologies, being able to independently output quality strategic solutions, strong learning and adaptive ability, strategic framework thinking, sensitivity and insight into the business.",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "논리적 사고",
+          "category": "soft-skill"
+        },
+        {
+          "name": "문제 해결",
+          "category": "soft-skill"
+        },
+        {
+          "name": "전략적 사고",
+          "category": "business"
+        },
+        {
+          "name": "학습·적응력",
+          "category": "soft-skill"
+        },
+        {
+          "name": "비즈니스 인사이트",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "기획"
+      ]
+    },
+    {
+      "rawText": "Strategic thinking capacity, able to quickly understand the business and discover the connection between business and data performance.",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "전략적 사고",
+          "category": "business"
+        },
+        {
+          "name": "비즈니스 도메인 이해",
+          "category": "business"
+        },
+        {
+          "name": "데이터 기반 의사결정",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "기획"
+      ]
+    },
+    {
+      "rawText": "Professional fluency in English.",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "영어",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "Proficiency in BI visualization tools such as Tableau/Power BI is preferred, SQL is a plus.",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "Tableau",
+          "category": "tools"
+        },
+        {
+          "name": "Power BI",
+          "category": "tools"
+        },
+        {
+          "name": "SQL",
+          "category": "tools"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "BI Analyst"
+      ]
+    },
+    {
+      "rawText": "Fast learner, passionate about participating in business, and able to adapt to high intensity and fast growth work environment.",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "학습·적응력",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "Business DA"
+      ]
+    }
+  ]
+}

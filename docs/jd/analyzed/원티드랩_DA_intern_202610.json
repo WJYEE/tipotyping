@@ -3,113 +3,223 @@
   "postingTitle": "데이터 분석가 인턴 [AI기술팀]",
   "positionTitle": "데이터 분석가 인턴 [AI기술팀]",
   "jdUrl": "https://www.wanted.co.kr/wd/387428",
-  "employmentType": "인턴",
-  "workLocation": "서울 송파구 올림픽로 300, 35층",
   "responsibilities": "진행 중인 A/B 테스트의 지표 상태를 주기적으로 점검하고 이상 신호를 정리\n실험 결과 분석에 필요한 데이터와 차트를 준비하고 분석 문서 초안 작성\n지표 정의, 이벤트 스펙, 분석 결과를 최신 문서로 유지하고 화면-이벤트 매핑 및 지표 정의서 등 기준 문서 보강\nSQL 쿼리를 실행해 데이터 확인·추출을 지원하고 분석가가 작성한 쿼리 결과를 재현하며 수치가 어긋나는 지점을 찾아 공유\n신규 배포된 이벤트가 의도대로 수집되는지 데이터 품질을 확인하고 누락·중복·정의 불일치를 기록\n주간/월간 리포트와 대시보드 데이터를 갱신하고 반복 업무 중 자동화할 수 있는 부분을 찾아 개선 제안",
   "qualifications": "여러 테이블을 JOIN하고 서브쿼리·CTE로 단계를 나누어 원하는 집계 결과를 SQL로 직접 만들어낼 수 있는 분\n쿼리 결과가 예상과 다를 때 조건과 조인 키를 하나씩 검증하며 원인을 찾아본 경험이 있는 분\nClaude Code, Codex, Cursor 등 AI 도구를 활용해 SQL 작성, 문서 정리, 반복 업무 자동화를 직접 해본 경험이 있는 분\n본인이 한 작업을 다른 사람이 이해할 수 있게 글로 정리할 수 있는 분\n여러 건의 요청을 동시에 받아도 우선순위와 진행 상태를 스스로 관리할 수 있는 분",
-  "preferredQualifications": "",
+  "employmentType": "인턴",
+  "workLocation": "서울 송파구 올림픽로 300, 35층",
   "requirements": [
     {
-      "sourceSection": "responsibilities",
       "rawText": "진행 중인 A/B 테스트의 지표 상태를 주기적으로 점검하고 이상 신호를 정리",
+      "sourceSection": "responsibility",
       "competencies": [
-        {"name": "A/B Testing", "category": "Analysis"},
-        {"name": "지표 모니터링", "category": "Analysis"}
+        {
+          "name": "A/B Testing",
+          "category": "product"
+        },
+        {
+          "name": "지표 모니터링",
+          "category": "product"
+        }
       ],
-      "roles": ["Product DA"]
+      "roles": [
+        "Product DA"
+      ]
     },
     {
-      "sourceSection": "responsibilities",
       "rawText": "실험 결과 분석에 필요한 데이터와 차트를 준비하고 분석 문서 초안 작성",
+      "sourceSection": "responsibility",
       "competencies": [
-        {"name": "실험 분석", "category": "Analysis"},
-        {"name": "데이터 시각화", "category": "Hard Skill"},
-        {"name": "문서화", "category": "Soft Skill"}
+        {
+          "name": "실험 분석",
+          "category": "product"
+        },
+        {
+          "name": "데이터 시각화",
+          "category": "data"
+        },
+        {
+          "name": "문서화",
+          "category": "soft-skill"
+        }
       ],
-      "roles": ["Product DA"]
+      "roles": [
+        "Product DA"
+      ]
     },
     {
-      "sourceSection": "responsibilities",
       "rawText": "지표 정의, 이벤트 스펙, 분석 결과를 최신 문서로 유지하고 화면-이벤트 매핑 및 지표 정의서 등 기준 문서 보강",
+      "sourceSection": "responsibility",
       "competencies": [
-        {"name": "KPI·지표 설계", "category": "Analysis"},
-        {"name": "이벤트 설계", "category": "Analysis"},
-        {"name": "문서화", "category": "Soft Skill"}
+        {
+          "name": "KPI 설계",
+          "category": "product"
+        },
+        {
+          "name": "이벤트 설계",
+          "category": "product"
+        },
+        {
+          "name": "문서화",
+          "category": "soft-skill"
+        }
       ],
-      "roles": ["Product DA"]
+      "roles": [
+        "Product DA"
+      ]
     },
     {
-      "sourceSection": "responsibilities",
       "rawText": "SQL 쿼리를 실행해 데이터 확인·추출을 지원하고 분석가가 작성한 쿼리 결과를 재현하며 수치가 어긋나는 지점을 찾아 공유",
+      "sourceSection": "responsibility",
       "competencies": [
-        {"name": "SQL", "category": "Hard Skill"},
-        {"name": "데이터 검증", "category": "Analysis"},
-        {"name": "문제 해결", "category": "Soft Skill"}
+        {
+          "name": "SQL",
+          "category": "tools"
+        },
+        {
+          "name": "데이터 검증",
+          "category": "data"
+        },
+        {
+          "name": "문제 해결",
+          "category": "soft-skill"
+        }
       ],
-      "roles": ["Product DA", "Business DA"]
+      "roles": [
+        "Product DA",
+        "Business DA",
+        "BI Analyst"
+      ]
     },
     {
-      "sourceSection": "responsibilities",
       "rawText": "신규 배포된 이벤트가 의도대로 수집되는지 데이터 품질을 확인하고 누락·중복·정의 불일치를 기록",
+      "sourceSection": "responsibility",
       "competencies": [
-        {"name": "데이터 품질", "category": "Analysis"},
-        {"name": "이벤트 검증", "category": "Analysis"}
+        {
+          "name": "데이터 품질",
+          "category": "data"
+        },
+        {
+          "name": "이벤트 검증",
+          "category": "product"
+        }
       ],
-      "roles": ["Product DA"]
+      "roles": [
+        "Product DA"
+      ]
     },
     {
-      "sourceSection": "responsibilities",
       "rawText": "주간/월간 리포트와 대시보드 데이터를 갱신하고 반복 업무 중 자동화할 수 있는 부분을 찾아 개선 제안",
+      "sourceSection": "responsibility",
       "competencies": [
-        {"name": "대시보드", "category": "Hard Skill"},
-        {"name": "리포팅", "category": "Analysis"},
-        {"name": "업무 자동화", "category": "Hard Skill"}
+        {
+          "name": "대시보드",
+          "category": "tools"
+        },
+        {
+          "name": "리포팅",
+          "category": "business"
+        },
+        {
+          "name": "업무 자동화",
+          "category": "tools"
+        }
       ],
-      "roles": ["BI Analyst", "Business DA"]
+      "roles": [
+        "BI Analyst",
+        "Business DA"
+      ]
     },
     {
-      "sourceSection": "qualifications",
       "rawText": "여러 테이블을 JOIN하고 서브쿼리·CTE로 단계를 나누어 원하는 집계 결과를 SQL로 직접 만들어낼 수 있는 분",
+      "sourceSection": "qualification",
       "competencies": [
-        {"name": "SQL", "category": "Hard Skill"}
+        {
+          "name": "SQL",
+          "category": "tools"
+        }
       ],
-      "roles": ["Product DA", "Business DA", "BI Analyst"]
+      "roles": [
+        "Product DA",
+        "Business DA",
+        "BI Analyst"
+      ]
     },
     {
-      "sourceSection": "qualifications",
       "rawText": "쿼리 결과가 예상과 다를 때 조건과 조인 키를 하나씩 검증하며 원인을 찾아본 경험이 있는 분",
+      "sourceSection": "qualification",
       "competencies": [
-        {"name": "데이터 검증", "category": "Analysis"},
-        {"name": "문제 해결", "category": "Soft Skill"}
+        {
+          "name": "데이터 검증",
+          "category": "data"
+        },
+        {
+          "name": "문제 해결",
+          "category": "soft-skill"
+        }
       ],
-      "roles": ["Product DA", "Business DA"]
+      "roles": [
+        "Product DA",
+        "Business DA",
+        "BI Analyst"
+      ]
     },
     {
-      "sourceSection": "qualifications",
       "rawText": "Claude Code, Codex, Cursor 등 AI 도구를 활용해 SQL 작성, 문서 정리, 반복 업무 자동화를 직접 해본 경험이 있는 분",
+      "sourceSection": "qualification",
       "competencies": [
-        {"name": "AI 도구 활용", "category": "Hard Skill"},
-        {"name": "업무 자동화", "category": "Hard Skill"}
+        {
+          "name": "AI 도구 활용",
+          "category": "tools"
+        },
+        {
+          "name": "업무 자동화",
+          "category": "tools"
+        }
       ],
-      "roles": ["Product DA", "Business DA"]
+      "roles": [
+        "Product DA",
+        "Business DA"
+      ]
     },
     {
-      "sourceSection": "qualifications",
       "rawText": "본인이 한 작업을 다른 사람이 이해할 수 있게 글로 정리할 수 있는 분",
+      "sourceSection": "qualification",
       "competencies": [
-        {"name": "문서화", "category": "Soft Skill"},
-        {"name": "커뮤니케이션", "category": "Soft Skill"}
+        {
+          "name": "문서화",
+          "category": "soft-skill"
+        },
+        {
+          "name": "커뮤니케이션",
+          "category": "soft-skill"
+        }
       ],
-      "roles": ["Product DA", "Business DA", "PM", "기획"]
+      "roles": [
+        "Product DA",
+        "Business DA",
+        "PM",
+        "기획"
+      ]
     },
     {
-      "sourceSection": "qualifications",
       "rawText": "여러 건의 요청을 동시에 받아도 우선순위와 진행 상태를 스스로 관리할 수 있는 분",
+      "sourceSection": "qualification",
       "competencies": [
-        {"name": "우선순위 관리", "category": "Soft Skill"},
-        {"name": "업무 관리", "category": "Soft Skill"}
+        {
+          "name": "우선순위 관리",
+          "category": "soft-skill"
+        },
+        {
+          "name": "업무 관리",
+          "category": "soft-skill"
+        }
       ],
-      "roles": ["Product DA", "Business DA", "PM", "기획"]
+      "roles": [
+        "Product DA",
+        "Business DA",
+        "PM",
+        "기획"
+      ]
     }
   ]
 }

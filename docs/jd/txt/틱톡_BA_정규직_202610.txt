@@ -1,0 +1,37 @@
+회사명: 틱톡(TikTok)
+공고명: Global Business Solutions - Business Analyst (Graduate)
+직무명: Business Analyst
+채용 시작일: 2026-09-14
+채용 마감일: 상시채용
+고용형태: 정규직
+경력조건: 신입 이상
+근무지: 서울 강남구 영동대로 417 오토웨이타워
+JD URL: https://www.wanted.co.kr/wd/386413
+
+[포지션 소개]
+Global Business Solutions is a marketing solution, including TikTok For Business, that naturally connects companies and brands with audiences looking for new interests and curiosities to help solve business challenges across the funnel, from awareness to customer acquisition. We help businesses solve business problems across the funnel, from awareness to customer acquisition. We are looking for talented individuals to join our team. As a graduate, you will get opportunities to pursue bold ideas, tackle complex challenges, and unlock limitless growth.
+
+[담당업무]
+- Business Analysis and Management: Global Business Solutions business data analysis, develop strategic planning, provide solutions and implementation plans; based on the understanding and analysis of the specific business domains, continuously optimize control rules, product tools and business operations, to provide strong support for the implementation of the strategy.
+- Regular monitoring and data analysis on various business metrics of Outbound E-commerce, and provide corresponding solutions to assist the platform sales team to continuously improve consumer experience.
+- Business puzzle breakdown: familiar with Outbound e-commerce rules, deeply support sales and client solution team leader to do project task break-down, prioritization, monitoring important business progress; able to measure project output and efficiency through quantitative and qualitative analysis.
+
+[자격요건]
+- Individuals who are completing or have recently completed a Bachelor's degree in math, statistics, computer or a related discipline.
+- Strong capability of data analytics is required.
+- Outstanding reasoning capability and logic, with good problem solving methodologies, being able to independently output quality strategic solutions, strong learning and adaptive ability, strategic framework thinking, sensitivity and insight into the business.
+- Strategic thinking capacity, able to quickly understand the business and discover the connection between business and data performance.
+- Professional fluency in English.
+
+[우대사항]
+- Proficiency in BI visualization tools such as Tableau/Power BI is preferred, SQL is a plus.
+- Fast learner, passionate about participating in business, and able to adapt to high intensity and fast growth work environment.
+
+[기타]
+- 마감일: 상시채용
+- 원티드 공고 화면 표기: 신입 이상
+- 근무지역: 서울 강남구 영동대로 417 오토웨이타워
+
+[원본 보존 메모]
+이 파일은 Career 분석용 Source of Truth로 사용하기 위한 JD 원문 정리본입니다.
+Competency, Role, 적합도 등 분석 결과는 이 파일에 섞지 않고 별도 JSON/DB에서 관리합니다.

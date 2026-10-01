@@ -1,0 +1,371 @@
+{
+  "companyName": "지티씨솔루션",
+  "postingTitle": "통계·머신러닝 기반 AI 데이터 분석가 / 컨설턴트 모집",
+  "positionTitle": "AI/ML 데이터 분석가 / 컨설턴트",
+  "responsibilities": "고객·산업의 문제를 데이터 분석 과제로 구체화\n탐색적 데이터 분석과 가설 수립·검증\n통계·머신러닝 기반 예측 및 분류 모델 개발\n분석 결과 해석과 비즈니스 인사이트 도출\n새로운 AI 기술과 분석 방법론 학습 및 프로젝트 적용\n프로젝트 구성원 및 고객과 분석 결과 커뮤니케이션",
+  "qualifications": "통계학과 머신러닝의 기본 개념을 이해하고 있는 분\n데이터를 근거로 가설을 세우고 검증할 수 있는 분\nPython을 이용한 데이터 분석 경험이 있는 분\n익숙하지 않은 산업과 기술을 빠르게 학습할 수 있는 분\n하나의 정답에 집착하지 않고 다양한 해결 방법을 탐색하는 분\n자신의 분석 과정과 결과를 논리적으로 설명할 수 있는 분",
+  "preferredQualifications": "SQL을 활용한 데이터 추출·가공·분석 경험이 있는 분\nPySpark 등 분산처리 환경에서 대용량 데이터를 분석해 본 경험이 있는 분\n통계학·산업공학·수학·경제학·컴퓨터공학 등 관련 분야를 전공한 분\n실제 데이터를 활용한 통계분석 또는 머신러닝 프로젝트 경험이 있는 분\n시계열 분석·수요예측·이상탐지·최적화 프로젝트 경험이 있는 분\n새로운 산업과 데이터를 빠르게 이해하고 분석 과제로 구체화할 수 있는 분\n논문이나 새로운 분석 방법론을 학습하여 프로젝트에 적용해 본 경험이 있는 분",
+  "applicationStartDate": "2026-08-13",
+  "applicationEndDate": "2026-10-12",
+  "employmentType": "정규직",
+  "experienceLevel": "신입/경력 무관",
+  "workLocation": "경기 성남시 분당구 정자로 2 분당 정자동 푸르지오시티",
+  "requirements": [
+    {
+      "rawText": "고객·산업의 문제를 데이터 분석 과제로 구체화",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "문제 정의",
+          "category": "business"
+        },
+        {
+          "name": "데이터 분석",
+          "category": "data"
+        },
+        {
+          "name": "비즈니스 도메인 이해",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "IT Consultant",
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "탐색적 데이터 분석과 가설 수립·검증",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "EDA",
+          "category": "data"
+        },
+        {
+          "name": "가설 검증",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Scientist",
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "통계·머신러닝 기반 예측 및 분류 모델 개발",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "통계",
+          "category": "data"
+        },
+        {
+          "name": "Machine Learning",
+          "category": "data"
+        },
+        {
+          "name": "예측 모델링",
+          "category": "data"
+        },
+        {
+          "name": "분류 모델링",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "분석 결과 해석과 비즈니스 인사이트 도출",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "분석 결과 해석",
+          "category": "data"
+        },
+        {
+          "name": "비즈니스 인사이트",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "Data Scientist",
+        "IT Consultant"
+      ]
+    },
+    {
+      "rawText": "새로운 AI 기술과 분석 방법론 학습 및 프로젝트 적용",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "AI 기술",
+          "category": "data"
+        },
+        {
+          "name": "학습·적응력",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "Data Scientist",
+        "IT Consultant"
+      ]
+    },
+    {
+      "rawText": "프로젝트 구성원 및 고객과 분석 결과 커뮤니케이션",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "커뮤니케이션",
+          "category": "soft-skill"
+        },
+        {
+          "name": "분석 결과 설명",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "IT Consultant",
+        "Business DA",
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "통계학과 머신러닝의 기본 개념을 이해하고 있는 분",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "통계",
+          "category": "data"
+        },
+        {
+          "name": "Machine Learning",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "데이터를 근거로 가설을 세우고 검증할 수 있는 분",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "가설 검증",
+          "category": "data"
+        },
+        {
+          "name": "데이터 기반 의사결정",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "Python을 이용한 데이터 분석 경험이 있는 분",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "Python",
+          "category": "tools"
+        },
+        {
+          "name": "데이터 분석",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Scientist",
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "익숙하지 않은 산업과 기술을 빠르게 학습할 수 있는 분",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "학습·적응력",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "IT Consultant",
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "하나의 정답에 집착하지 않고 다양한 해결 방법을 탐색하는 분",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "문제 해결",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "IT Consultant",
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "자신의 분석 과정과 결과를 논리적으로 설명할 수 있는 분",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "논리적 사고",
+          "category": "soft-skill"
+        },
+        {
+          "name": "커뮤니케이션",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "IT Consultant",
+        "Business DA",
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "SQL을 활용한 데이터 추출·가공·분석 경험이 있는 분",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "SQL",
+          "category": "tools"
+        },
+        {
+          "name": "데이터 가공",
+          "category": "data"
+        },
+        {
+          "name": "데이터 분석",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "PySpark 등 분산처리 환경에서 대용량 데이터를 분석해 본 경험이 있는 분",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "PySpark",
+          "category": "tools"
+        },
+        {
+          "name": "대용량 데이터 처리",
+          "category": "data"
+        },
+        {
+          "name": "분산처리",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Engineer",
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "통계학·산업공학·수학·경제학·컴퓨터공학 등 관련 분야를 전공한 분",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "관련 전공",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "실제 데이터를 활용한 통계분석 또는 머신러닝 프로젝트 경험이 있는 분",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "통계 분석",
+          "category": "data"
+        },
+        {
+          "name": "Machine Learning",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "시계열 분석·수요예측·이상탐지·최적화 프로젝트 경험이 있는 분",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "시계열 분석",
+          "category": "data"
+        },
+        {
+          "name": "수요 예측",
+          "category": "data"
+        },
+        {
+          "name": "이상 탐지",
+          "category": "data"
+        },
+        {
+          "name": "최적화",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "새로운 산업과 데이터를 빠르게 이해하고 분석 과제로 구체화할 수 있는 분",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "비즈니스 도메인 이해",
+          "category": "business"
+        },
+        {
+          "name": "문제 정의",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "IT Consultant",
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "논문이나 새로운 분석 방법론을 학습하여 프로젝트에 적용해 본 경험이 있는 분",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "분석 방법론",
+          "category": "data"
+        },
+        {
+          "name": "학습·적응력",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "Data Scientist"
+      ]
+    }
+  ]
+}

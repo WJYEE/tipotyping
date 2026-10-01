@@ -1,0 +1,195 @@
+{
+  "companyName": "DB하이텍",
+  "postingTitle": "2026년 하반기 신입사원 모집",
+  "positionTitle": "IT · AI 자동화 및 데이터 분석",
+  "jdUrl": "https://www.jobda.im/position/229915/jd",
+  "responsibilities": "데이터 기반 AI 모델 개발 및 자동화 적용\n제조/품질/생산 데이터 분석 및 대시보드 구축\nAPI를 활용한 시스템 간 데이터 연계\nAI/데이터 분석 결과 리포팅 및 현업 적용 지원",
+  "qualifications": "Data Science, 컴퓨터/소프트웨어공학, 산업공학 등 관련 전공자\nPython, R 등 데이터 분석 및 프로그래밍 역량 보유자",
+  "preferredQualifications": "제조/품질/생산 현장 데이터 분석 및 공정 개선 경험자\n머신러닝/딥러닝(ML/DL) 모델 개발 및 서비스 적용 경험자\n쿠버네티스/도커 등 컨테이너 환경 및 데이터 파이프라인 구축 경험자",
+  "applicationStartDate": "2026-09-01",
+  "applicationEndDate": "2026-10-02",
+  "employmentType": "정규직",
+  "experienceLevel": "신입",
+  "workLocation": "경기(부천)",
+  "requirements": [
+    {
+      "rawText": "데이터 기반 AI 모델 개발 및 자동화 적용",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "AI 모델 개발",
+          "category": "data"
+        },
+        {
+          "name": "업무 자동화",
+          "category": "tools"
+        }
+      ],
+      "roles": [
+        "Data Scientist",
+        "IT Consultant"
+      ]
+    },
+    {
+      "rawText": "제조/품질/생산 데이터 분석 및 대시보드 구축",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "데이터 분석",
+          "category": "data"
+        },
+        {
+          "name": "제조 데이터 분석",
+          "category": "business"
+        },
+        {
+          "name": "데이터 시각화",
+          "category": "data"
+        },
+        {
+          "name": "대시보드",
+          "category": "tools"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "BI Analyst"
+      ]
+    },
+    {
+      "rawText": "API를 활용한 시스템 간 데이터 연계",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "API",
+          "category": "tools"
+        },
+        {
+          "name": "데이터 연계",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "IT Consultant",
+        "Data Engineer"
+      ]
+    },
+    {
+      "rawText": "AI/데이터 분석 결과 리포팅 및 현업 적용 지원",
+      "sourceSection": "responsibility",
+      "competencies": [
+        {
+          "name": "리포팅",
+          "category": "business"
+        },
+        {
+          "name": "현업 지원",
+          "category": "business"
+        },
+        {
+          "name": "커뮤니케이션",
+          "category": "soft-skill"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "IT Consultant"
+      ]
+    },
+    {
+      "rawText": "Data Science, 컴퓨터/소프트웨어공학, 산업공학 등 관련 전공자",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "데이터 관련 전공",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "Python, R 등 데이터 분석 및 프로그래밍 역량 보유자",
+      "sourceSection": "qualification",
+      "competencies": [
+        {
+          "name": "Python",
+          "category": "tools"
+        },
+        {
+          "name": "R",
+          "category": "tools"
+        },
+        {
+          "name": "데이터 분석",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Business DA",
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "제조/품질/생산 현장 데이터 분석 및 공정 개선 경험자",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "제조 데이터 분석",
+          "category": "business"
+        },
+        {
+          "name": "공정 개선",
+          "category": "business"
+        }
+      ],
+      "roles": [
+        "Business DA"
+      ]
+    },
+    {
+      "rawText": "머신러닝/딥러닝(ML/DL) 모델 개발 및 서비스 적용 경험자",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "Machine Learning",
+          "category": "data"
+        },
+        {
+          "name": "Deep Learning",
+          "category": "data"
+        },
+        {
+          "name": "AI 모델 개발",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Scientist"
+      ]
+    },
+    {
+      "rawText": "쿠버네티스/도커 등 컨테이너 환경 및 데이터 파이프라인 구축 경험자",
+      "sourceSection": "preferred",
+      "competencies": [
+        {
+          "name": "Kubernetes",
+          "category": "tools"
+        },
+        {
+          "name": "Docker",
+          "category": "tools"
+        },
+        {
+          "name": "데이터 파이프라인",
+          "category": "data"
+        }
+      ],
+      "roles": [
+        "Data Engineer",
+        "IT Consultant"
+      ]
+    }
+  ]
+}
