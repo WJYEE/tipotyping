@@ -40,6 +40,10 @@ describe("shouldAdvanceOnEnter", () => {
     expect(shouldAdvanceOnEnter({ ...base, phase: "answering" })).toBe(false);
   });
 
+  it("self-grading 단계(서술형 자가채점 중)에는 전역 Enter로 진행하지 않는다 (버튼 선택이 우선)", () => {
+    expect(shouldAdvanceOnEnter({ ...base, phase: "self-grading" })).toBe(false);
+  });
+
   it("Pause 중에는 Enter가 다음 문제로 진행시키지 않는다", () => {
     expect(shouldAdvanceOnEnter({ ...base, running: false })).toBe(false);
   });

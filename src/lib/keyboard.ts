@@ -22,7 +22,7 @@ export function isEssaySubmitEnter(e: EssayEnterLike): boolean {
   return isSubmitEnter(e) && e.ctrlOrMeta;
 }
 
-export type GamePhase = "answering" | "feedback";
+export type GamePhase = "answering" | "self-grading" | "feedback";
 
 export interface AdvanceEnterContext extends EnterKeyLike {
   phase: GamePhase;

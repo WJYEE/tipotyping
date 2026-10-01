@@ -11,6 +11,7 @@ import { getCorrectAnswerText } from "@/lib/questionSummary";
 import type { Question, QuestionRecord } from "@/types/domain";
 import { FeedbackPanel } from "@/features/game-typing/FeedbackPanel";
 import { QuestionView } from "@/features/game-typing/QuestionView";
+import { SelfGradingPanel } from "@/features/game-typing/SelfGradingPanel";
 
 const MIN_SESSION_MS = 10_000;
 
@@ -34,10 +35,11 @@ export function GameTypingScreen() {
   const [sessionReady, setSessionReady] = useState(false);
   const [cycleQueue, setCycleQueue] = useState<Question[]>([]);
   const [cursor, setCursor] = useState(0);
-  const [phase, setPhase] = useState<"answering" | "feedback">("answering");
+  const [phase, setPhase] = useState<"answering" | "self-grading" | "feedback">("answering");
   const [feedback, setFeedback] = useState<{ isCorrect: boolean; correctAnswerText: string } | null>(
     null,
   );
+  const [essayAnswer, setEssayAnswer] = useState("");
   const [running, setRunning] = useState(true);
   const [elapsedMs, setElapsedMs] = useState(0);
   const elapsedMsRef = useRef(0);
@@ -179,6 +181,14 @@ export function GameTypingScreen() {
 
   async function handleAnswer(userAnswer: string | Record<string, string>) {
     if (!currentQuestion || !sessionIdRef.current) return;
+
+    // 서술형: 자동 채점 없이 자가 채점 화면으로 넘어간다.
+    if (currentQuestion.type === "essay") {
+      setEssayAnswer(userAnswer as string);
+      setPhase("self-grading");
+      return;
+    }
+
     const evaluation = evaluateAnswer(currentQuestion, userAnswer);
     await attemptRepo.record({
       sessionId: sessionIdRef.current,
@@ -193,6 +203,20 @@ export function GameTypingScreen() {
       isCorrect: evaluation.isCorrect,
       correctAnswerText: getCorrectAnswerText(currentQuestion),
     });
+    setPhase("feedback");
+  }
+
+  async function handleSelfGrade(isCorrect: boolean) {
+    if (!currentQuestion || !sessionIdRef.current) return;
+    await attemptRepo.record({
+      sessionId: sessionIdRef.current,
+      questionId: currentQuestion.id,
+      questionType: currentQuestion.type,
+      isCorrect,
+      userAnswer: essayAnswer,
+      attemptedAt: Date.now(),
+    });
+    setFeedback({ isCorrect, correctAnswerText: getCorrectAnswerText(currentQuestion) });
     setPhase("feedback");
   }
 
@@ -282,6 +306,13 @@ export function GameTypingScreen() {
         {running ? (
           phase === "answering" ? (
             <QuestionView key={currentQuestion.id} question={currentQuestion} onSubmit={handleAnswer} />
+          ) : phase === "self-grading" ? (
+            <SelfGradingPanel
+              userAnswer={essayAnswer}
+              correctAnswerText={getCorrectAnswerText(currentQuestion)}
+              explanation={currentQuestion.explanation}
+              onGrade={handleSelfGrade}
+            />
           ) : (
             feedback && (
               <FeedbackPanel
