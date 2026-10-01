@@ -195,16 +195,10 @@ function RequirementRow({ requirement, competencies, roles, onSelectCompetency }
   const [competencyCategory, setCompetencyCategory] = useState<CompetencyCategory>("data");
   const [competencyName, setCompetencyName] = useState("");
   const [roleName, setRoleName] = useState("");
-  const [normalizedLabel, setNormalizedLabel] = useState(requirement.normalizedLabel ?? "");
 
   async function handleDeleteRequirement() {
     if (!confirm("이 Requirement를 삭제할까요?")) return;
     await requirementRepo.remove(requirement.id);
-  }
-
-  async function handleNormalizedLabelBlur() {
-    if (normalizedLabel === (requirement.normalizedLabel ?? "")) return;
-    await requirementRepo.update(requirement.id, { normalizedLabel: normalizedLabel.trim() || undefined });
   }
 
   async function handleAddCompetency() {
@@ -224,16 +218,7 @@ function RequirementRow({ requirement, competencies, roles, onSelectCompetency }
   return (
     <div className="flex flex-col gap-2.5 rounded-[6px] border border-career-border p-3">
       <div className="flex items-start justify-between gap-3">
-        <div className="flex flex-1 flex-col gap-1.5">
-          <p className="font-body text-sm text-career-text-primary">{requirement.rawText}</p>
-          <input
-            value={normalizedLabel}
-            onChange={(e) => setNormalizedLabel(e.target.value)}
-            onBlur={handleNormalizedLabelBlur}
-            placeholder="표준화 표현 (선택 — 예: A/B Testing 수행)"
-            className="rounded-[6px] border border-career-border bg-career-bg px-2 py-1 font-body text-xs text-career-text-tertiary outline-none focus:border-career-blue"
-          />
-        </div>
+        <p className="flex-1 font-body text-sm text-career-text-primary">{requirement.rawText}</p>
         <button type="button" onClick={handleDeleteRequirement} aria-label="Requirement 삭제">
           <TrashIcon className="h-4 w-4 text-career-text-muted hover:text-career-red" />
         </button>

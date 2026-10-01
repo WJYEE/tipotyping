@@ -147,10 +147,11 @@ export class TipoTypingDB extends Dexie {
       jobPostings: "id, companyId, createdAt, updatedAt, applicationEndDate",
     });
 
-    // v10: Requirement/Competency 표준화 구조. Requirement.text를 rawText로 이름만 바꾸고(값은
-    // 그대로 복사 — 원문을 고치지 않는다는 원칙 그대로), normalizedLabel(선택, 표준화 표현)을
-    // 새로 둔다. Competency에는 선택적 learningThemeKey(향후 Theme 연결용)를 추가한다 — 둘 다
-    // 기존 값이 없어도 유효한 선택 필드라 별도 데이터 변환이 필요 없다.
+    // v10: Requirement/Competency 표준화 구조. Requirement.text를 rawText로 이름만 바꾼다(값은
+    // 그대로 복사 — 원문을 고치지 않는다는 원칙 그대로). Competency에는 선택적 learningThemeKey
+    // (향후 Theme 연결용)를 추가한다 — 기존 값이 없어도 유효한 선택 필드라 별도 변환이 필요 없다.
+    // (처음엔 normalizedLabel도 함께 뒀지만, 외부 AI가 이미 정제된 Competency 키워드를 주는
+    // 구조로 단순화하면서 이 필드는 빼기로 했다 — 과거에 저장된 값이 있어도 무해하게 남을 뿐이다.)
     this.version(10).stores({}).upgrade(renameRequirementTextToRawText);
   }
 }

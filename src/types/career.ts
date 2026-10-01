@@ -43,13 +43,16 @@ export type RequirementSourceSection = "responsibility" | "qualification" | "pre
 
 export const REQUIREMENT_SOURCE_SECTIONS: RequirementSourceSection[] = ["responsibility", "qualification", "preferred"];
 
+/**
+ * sourceSection/rawText/competencies/roles 네 가지만 갖는다(competencies/roles는 관계 테이블로 연결).
+ * rawText는 JD 원문 그대로 — 회사마다 표현이 달라도 절대 고치지 않는다. 표준화는 이 앱이 직접
+ * 자연어를 분석해서 만들지 않고, Competency/Role이라는 이미 정제된 키워드를 그대로 연결하는 것으로
+ * 끝난다(예: ChatGPT/Claude 같은 외부 도구가 JD를 읽고 표준 키워드를 JSON으로 제공).
+ */
 export interface Requirement {
   id: string;
   jobPostingId: string;
-  /** JD 원문 그대로. 회사마다 표현이 달라도 이 값은 절대 고치지 않는다 — 표준화는 별도 필드로 관리한다. */
   rawText: string;
-  /** 사람이 보기 좋게 정리한 표준화 표현 (선택, 수동 입력). AI로 추측해 채우지 않는다. */
-  normalizedLabel?: string;
   sourceSection?: RequirementSourceSection;
   createdAt: number;
 }

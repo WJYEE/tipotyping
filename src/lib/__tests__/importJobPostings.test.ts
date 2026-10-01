@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { db } from "@/db/db";
-import { companyRepo, competencyRepo, jobPostingRepo, requirementRepo } from "@/db/repositories";
+import { companyRepo, competencyRepo, jobPostingRepo, requirementRepo, roleRepo } from "@/db/repositories";
 import { importJobPostings, parseJdImportJson } from "@/lib/importJobPostings";
 
 async function clearAllTables() {
@@ -111,16 +111,16 @@ describe("importJobPostings", () => {
     expect(await companyRepo.list()).toHaveLength(1);
   });
 
-  describe("requirements (Requirement/Competency 표준화 구조 확장)", () => {
-    it("requirements와 그 안의 competencies까지 함께 가져와 연결한다", async () => {
+  describe("requirements (sourceSection/rawText/competencies/roles만 받는 단순화된 구조)", () => {
+    it("requirements와 그 안의 competencies/roles까지 함께 가져와 연결한다", async () => {
       const result = await importJobPostings([
         validRow({
           requirements: [
             {
               rawText: "진행 중인 A/B Test 지표 주기적 점검",
-              normalizedLabel: "A/B Testing 수행",
               sourceSection: "responsibility",
-              competencies: [{ name: "A/B Testing", category: "product", learningThemeKey: "AB_TEST" }],
+              competencies: [{ name: "A/B Testing", category: "product" }],
+              roles: ["Business DA"],
             },
           ],
         }),
@@ -130,22 +130,28 @@ describe("importJobPostings", () => {
       const [jobPosting] = await jobPostingRepo.list();
       const [requirement] = await requirementRepo.listByJobPosting(jobPosting.id);
       expect(requirement.rawText).toBe("진행 중인 A/B Test 지표 주기적 점검");
-      expect(requirement.normalizedLabel).toBe("A/B Testing 수행");
       const [competency] = await requirementRepo.listCompetencies(requirement.id);
       expect(competency.name).toBe("A/B Testing");
-      expect(competency.learningThemeKey).toBe("AB_TEST");
+      const [role] = await requirementRepo.listRoles(requirement.id);
+      expect(role.name).toBe("Business DA");
     });
 
-    it("서로 다른 JD에서 같은 Competency 이름을 쓰면 하나로 통합된다(재사용)", async () => {
+    it("서로 다른 JD에서 같은 Competency/Role 이름을 쓰면 하나로 통합된다(재사용)", async () => {
       await importJobPostings([
         validRow({
           positionTitle: "A",
-          requirements: [{ rawText: "A/B Test 수행", competencies: [{ name: "A/B Testing", category: "product" }] }],
+          requirements: [
+            { rawText: "A/B Test 수행", competencies: [{ name: "A/B Testing", category: "product" }], roles: ["PM"] },
+          ],
         }),
         validRow({
           positionTitle: "B",
           requirements: [
-            { rawText: "진행 중인 A/B Test 지표 주기적 점검", competencies: [{ name: "A/B Testing", category: "product" }] },
+            {
+              rawText: "진행 중인 A/B Test 지표 주기적 점검",
+              competencies: [{ name: "A/B Testing", category: "product" }],
+              roles: ["PM"],
+            },
           ],
         }),
       ]);
@@ -154,10 +160,11 @@ describe("importJobPostings", () => {
       expect(competencies).toHaveLength(1);
       const trace = await competencyRepo.getDemandTrace(competencies[0].id);
       expect(trace).toHaveLength(2);
+      expect(await roleRepo.list()).toHaveLength(1);
     });
 
     it("requirements 중 하나라도 형식이 틀리면(rawText 없음) JD 행 전체를 오류 처리한다", async () => {
-      const result = await importJobPostings([validRow({ requirements: [{ normalizedLabel: "라벨만 있음" }] })]);
+      const result = await importJobPostings([validRow({ requirements: [{ sourceSection: "qualification" }] })]);
       expect(result.imported).toBe(0);
       expect(result.errors).toHaveLength(1);
       expect(result.errors[0].reason).toContain("rawText");
@@ -172,6 +179,31 @@ describe("importJobPostings", () => {
       ]);
       expect(result.imported).toBe(0);
       expect(result.errors[0].reason).toContain("category");
+    });
+
+    it("roles 항목이 문자열이 아니면 JD 행 전체를 오류 처리한다", async () => {
+      const result = await importJobPostings([validRow({ requirements: [{ rawText: "SQL", roles: [123] }] })]);
+      expect(result.imported).toBe(0);
+      expect(result.errors[0].reason).toContain("roles");
+    });
+
+    it("requirements에 알 수 없는 필드(예: 예전 normalizedLabel)가 섞여 있어도 무시하고 저장한다 (호환성 유지)", async () => {
+      const result = await importJobPostings([
+        validRow({
+          requirements: [
+            {
+              rawText: "SQL 능숙",
+              normalizedLabel: "예전 버전 필드 — 이제는 무시됨",
+              competencies: [{ name: "SQL", category: "data", learningThemeKey: "예전 필드도 무시됨" }],
+            },
+          ],
+        }),
+      ]);
+      expect(result).toEqual({ imported: 1, duplicates: 0, errors: [] });
+      const [jobPosting] = await jobPostingRepo.list();
+      const [requirement] = await requirementRepo.listByJobPosting(jobPosting.id);
+      expect(requirement.rawText).toBe("SQL 능숙");
+      expect((requirement as unknown as Record<string, unknown>).normalizedLabel).toBeUndefined();
     });
 
     it("requirements가 없으면 기존처럼 JD만 저장한다(하위 호환)", async () => {

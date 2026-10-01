@@ -432,7 +432,7 @@ describe("v9 → v10 migration (Requirement.text → rawText, 표준화 구조 �
       createdAt: 1,
       updatedAt: 1,
     });
-    // 업그레이드 전(v9 시절) 스키마: text 필드만 있고 rawText/normalizedLabel은 없다.
+    // 업그레이드 전(v9 시절) 스키마: text 필드만 있고 rawText는 없다.
     await legacy.table("requirements").add({
       id: "r1",
       jobPostingId: "jp1",
@@ -446,7 +446,6 @@ describe("v9 → v10 migration (Requirement.text → rawText, 표준화 구조 �
     await upgraded.open();
     const [requirement] = await upgraded.table("requirements").toArray();
     expect(requirement.rawText).toBe("SQL 능숙");
-    expect(requirement.normalizedLabel).toBeUndefined();
     upgraded.close();
   });
 

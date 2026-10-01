@@ -89,12 +89,7 @@ export function CompetencyDetailModal({ competencyId, onClose }: CompetencyDetai
                   >
                     {companyName} · {jobPosting.positionTitle}
                   </Link>
-                  {requirement.normalizedLabel && (
-                    <p className="mt-1 font-body text-xs font-semibold text-career-text-primary">
-                      {requirement.normalizedLabel}
-                    </p>
-                  )}
-                  <p className="mt-0.5 font-body text-xs text-career-text-tertiary">{requirement.rawText}</p>
+                  <p className="mt-1 font-body text-xs text-career-text-tertiary">{requirement.rawText}</p>
                 </li>
               ))}
             </ul>
