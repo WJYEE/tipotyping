@@ -59,3 +59,42 @@ export function getCorrectAnswerText(question: Question): string {
       return "";
   }
 }
+
+/** Feedback 화면에 보여줄 "문제" 텍스트 — 답변 중 실제로 보여줬던 쪽(용어/정의 한쪽만)을 그대로 쓴다. */
+export function getQuestionPromptText(question: Question): string {
+  switch (question.type) {
+    case "blank":
+      return question.payload.template;
+    case "term-to-def":
+      return question.payload.term;
+    case "def-to-term":
+      return question.payload.definition;
+    case "answer-input":
+      return question.payload.prompt;
+    case "multiple-choice":
+      return question.payload.prompt;
+    case "essay":
+      return question.payload.prompt;
+    default:
+      return "";
+  }
+}
+
+/** Feedback 화면에 보여줄 "내가 입력한 답" 텍스트. userAnswer의 형태는 evaluateAnswer와 동일하다. */
+export function formatUserAnswerText(
+  question: Question,
+  userAnswer: string | Record<string, string>,
+): string {
+  switch (question.type) {
+    case "blank": {
+      const answers = userAnswer as Record<string, string>;
+      return question.payload.blanks.map((b) => `${b.id}: ${answers[b.id] ?? ""}`).join(", ");
+    }
+    case "multiple-choice": {
+      const index = Number(userAnswer);
+      return question.payload.options[index] ?? String(userAnswer);
+    }
+    default:
+      return userAnswer as string;
+  }
+}

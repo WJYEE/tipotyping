@@ -413,6 +413,69 @@ describe("Session / Attempt / QuestionRecord", () => {
   });
 });
 
+describe("Game Typing '정답 수정' (questionRepo.update로 payload만 변경)", () => {
+  it("이미 채점된 기존 Attempt/QuestionRecord는 재채점하지 않고 그대로 둔다", async () => {
+    const category = await categoryRepo.create({ name: "카테고리", order: 0, isCustom: true });
+    const theme = await themeRepo.create({
+      categoryId: category.id,
+      name: "테마",
+      order: 0,
+      isCustom: true,
+      useDifficulty: false,
+    });
+    const question = await questionRepo.create({
+      categoryId: category.id,
+      themeId: theme.id,
+      type: "answer-input",
+      tagIds: [],
+      flagged: false,
+      favorite: false,
+      // 오타가 있던 원래 정답("20")으로 채점했더니 오답 처리됐다고 가정한다.
+      payload: { prompt: "1+1=?", answer: "20" },
+    });
+    const session = await sessionRepo.create({
+      startedAt: Date.now(),
+      endedAt: null,
+      totalDurationMs: 0,
+      themeIds: [theme.id],
+      tagIds: [],
+      questionTypes: ["answer-input"],
+      difficulties: [],
+      orderMode: "sequential",
+      totalAttempts: 0,
+      correctCount: 0,
+      wrongCount: 0,
+      accuracy: 0,
+    });
+    await attemptRepo.record({
+      sessionId: session.id,
+      questionId: question.id,
+      questionType: "answer-input",
+      isCorrect: false,
+      userAnswer: "2",
+      attemptedAt: Date.now(),
+    });
+
+    // Game Typing의 "정답 수정" CTA가 하는 것과 동일하게 payload만 수정한다(resetRecord 없이).
+    await questionRepo.update(question.id, { payload: { prompt: "1+1=?", answer: "2" } });
+
+    const [attempt] = await attemptRepo.listBySession(session.id);
+    expect(attempt.isCorrect).toBe(false); // 기존 Attempt는 그대로 오답으로 남는다
+
+    const record = await questionRecordRepo.get(question.id);
+    expect(record?.totalAttempts).toBe(1);
+    expect(record?.correctCount).toBe(0);
+    expect(record?.lastResult).toBe("wrong");
+
+    const updatedSession = await sessionRepo.get(session.id);
+    expect(updatedSession?.totalAttempts).toBe(1);
+    expect(updatedSession?.correctCount).toBe(0);
+
+    const updatedQuestion = await questionRepo.get(question.id);
+    expect(updatedQuestion?.payload).toEqual({ prompt: "1+1=?", answer: "2" });
+  });
+});
+
 describe("Settings", () => {
   it("임의의 key-value를 저장/조회한다", async () => {
     await settingsRepo.set("dashboardRange", "30d");

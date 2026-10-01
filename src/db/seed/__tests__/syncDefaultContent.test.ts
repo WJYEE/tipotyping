@@ -293,6 +293,28 @@ describe("syncDefaultContent: 이후 번들 업데이트", () => {
     expect(await syncDefaultContent({ force: true })).toMatchObject({ updated: 0, keptUserModified: 1 });
   });
 
+  it("Game Typing '정답 수정'(questionRepo.update로 payload만 변경)도 사용자 수정으로 인식해 보존한다", async () => {
+    await syncDefaultContent();
+    const bundled = (await db.questions.where("seedId").equals("sql-0001").first())!;
+    expect(bundled.type).toBe("blank");
+    const editedPayload = {
+      ...(bundled.payload as { template: string; blanks: { id: string; answer: string }[] }),
+      blanks: (bundled.payload as { blanks: { id: string; answer: string }[] }).blanks.map((b) => ({
+        ...b,
+        answer: `${b.answer}-수정됨`,
+      })),
+    };
+
+    // AnswerEditModal이 호출하는 것과 동일한 경로: payload만 바꾼다.
+    await questionRepo.update(bundled.id, { payload: editedPayload });
+
+    const result = await syncDefaultContent({ force: true });
+    expect(result.keptUserModified).toBe(1);
+
+    const after = (await db.questions.get(bundled.id))!;
+    expect(after.payload).toEqual(editedPayload);
+  });
+
   it("기본 Theme 이름을 바꿔도 seedKey로 계속 동기화되고, 새 Theme을 만들지 않는다", async () => {
     await syncDefaultContent();
     const sql = (await db.themes.filter((t) => t.seedKey === "SQL").first())!;

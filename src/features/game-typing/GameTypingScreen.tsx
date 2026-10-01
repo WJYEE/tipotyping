@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/Card";
-import { StarIcon, FlagIcon, TrashIcon } from "@/components/ui/icons";
+import { EditIcon, StarIcon, FlagIcon, TrashIcon } from "@/components/ui/icons";
 import { attemptRepo, questionRecordRepo, questionRepo, sessionRepo } from "@/db/repositories";
 import { sessionQualifies } from "@/db/repositories/sessionRepo";
 import { evaluateAnswer, requiresSelfGrading } from "@/lib/evaluateAnswer";
@@ -13,11 +13,21 @@ import {
   removeFromCycleQueue,
   type GameConfig,
 } from "@/lib/questionSelection";
-import { getCorrectAnswerText } from "@/lib/questionSummary";
+import { formatUserAnswerText, getCorrectAnswerText, getQuestionPromptText } from "@/lib/questionSummary";
 import type { Question, QuestionRecord } from "@/types/domain";
+import { AnswerEditModal } from "@/features/game-typing/AnswerEditModal";
 import { FeedbackPanel } from "@/features/game-typing/FeedbackPanel";
 import { QuestionView } from "@/features/game-typing/QuestionView";
 import { SelfGradingPanel } from "@/features/game-typing/SelfGradingPanel";
+
+interface FeedbackData {
+  isCorrect: boolean;
+  displayCode: string;
+  questionText: string;
+  userAnswerText: string;
+  correctAnswerText: string;
+  explanation?: string;
+}
 
 function formatClock(ms: number): string {
   const totalSeconds = Math.floor(ms / 1000);
@@ -40,10 +50,9 @@ export function GameTypingScreen() {
   const [cycleQueue, setCycleQueue] = useState<Question[]>([]);
   const [cursor, setCursor] = useState(0);
   const [phase, setPhase] = useState<"answering" | "self-grading" | "feedback">("answering");
-  const [feedback, setFeedback] = useState<{ isCorrect: boolean; correctAnswerText: string } | null>(
-    null,
-  );
+  const [feedback, setFeedback] = useState<FeedbackData | null>(null);
   const [essayAnswer, setEssayAnswer] = useState("");
+  const [editingAnswer, setEditingAnswer] = useState(false);
   const [running, setRunning] = useState(true);
   const [elapsedMs, setElapsedMs] = useState(0);
   const elapsedMsRef = useRef(0);
@@ -154,21 +163,24 @@ export function GameTypingScreen() {
     finishSession(true);
   }
 
-  // ESC로 종료
+  // ESC로 종료 (정답 수정 모달이 열려있으면 전역 단축키를 막아 모달과 충돌하지 않게 한다)
   useEffect(() => {
     function handleKey(e: KeyboardEvent) {
+      if (editingAnswer) return;
       if (e.key === "Escape") handleEnd();
     }
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [editingAnswer]);
 
   // Feedback 화면에서 Enter → 다음 문제.
   // 전역 리스너이지만 실제 진행 여부는 shouldAdvanceOnEnter가 판단한다:
   // IME 조합 중 / answering 단계 / Pause 중 / 메모 등 입력창에 포커스가 있으면 무시한다.
+  // 정답 수정 모달이 열려있을 때도 막는다(모달의 저장 버튼 Enter가 다음 문제로도 넘어가 버리는 것 방지).
   useEffect(() => {
     function handleKey(e: KeyboardEvent) {
+      if (editingAnswer) return;
       const advance = shouldAdvanceOnEnter({
         key: e.key,
         isComposing: e.isComposing || e.keyCode === 229,
@@ -181,7 +193,7 @@ export function GameTypingScreen() {
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, running]);
+  }, [phase, running, editingAnswer]);
 
   function advanceToNext() {
     setFeedback(null);
@@ -213,9 +225,15 @@ export function GameTypingScreen() {
       blankResults: evaluation.blankResults,
       attemptedAt: Date.now(),
     });
+    // Feedback에 보여줄 내용은 채점 시점 스냅샷이다 — 이후 "정답 수정"으로 문제가 바뀌어도
+    // 이미 기록된 이 Attempt에 대한 Feedback 표시는 바뀌지 않는다(재채점 아님).
     setFeedback({
       isCorrect: evaluation.isCorrect,
+      displayCode: currentQuestion.displayCode,
+      questionText: getQuestionPromptText(currentQuestion),
+      userAnswerText: formatUserAnswerText(currentQuestion, userAnswer),
       correctAnswerText: getCorrectAnswerText(currentQuestion),
+      explanation: currentQuestion.explanation,
     });
     setPhase("feedback");
   }
@@ -230,7 +248,14 @@ export function GameTypingScreen() {
       userAnswer: essayAnswer,
       attemptedAt: Date.now(),
     });
-    setFeedback({ isCorrect, correctAnswerText: getCorrectAnswerText(currentQuestion) });
+    setFeedback({
+      isCorrect,
+      displayCode: currentQuestion.displayCode,
+      questionText: getQuestionPromptText(currentQuestion),
+      userAnswerText: essayAnswer,
+      correctAnswerText: getCorrectAnswerText(currentQuestion),
+      explanation: currentQuestion.explanation,
+    });
     setPhase("feedback");
   }
 
@@ -332,6 +357,9 @@ export function GameTypingScreen() {
                 className={`h-5 w-5 ${currentQuestion.flagged ? "text-danger" : "text-text-muted"}`}
               />
             </button>
+            <button type="button" onClick={() => setEditingAnswer(true)} aria-label="정답 수정">
+              <EditIcon className="h-5 w-5 text-text-muted hover:text-accent" />
+            </button>
             <button type="button" onClick={handleDeleteQuestion} aria-label="문제 삭제">
               <TrashIcon className="h-5 w-5 text-text-muted hover:text-danger" />
             </button>
@@ -352,8 +380,11 @@ export function GameTypingScreen() {
             feedback && (
               <FeedbackPanel
                 isCorrect={feedback.isCorrect}
+                displayCode={feedback.displayCode}
+                questionText={feedback.questionText}
+                userAnswerText={feedback.userAnswerText}
                 correctAnswerText={feedback.correctAnswerText}
-                explanation={currentQuestion.explanation}
+                explanation={feedback.explanation}
               />
             )
           )
@@ -381,6 +412,10 @@ export function GameTypingScreen() {
           />
         </label>
       </Card>
+
+      {editingAnswer && currentQuestion && (
+        <AnswerEditModal question={currentQuestion} onClose={() => setEditingAnswer(false)} />
+      )}
     </div>
   );
 }
