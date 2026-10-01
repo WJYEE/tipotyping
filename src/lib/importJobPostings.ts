@@ -43,6 +43,20 @@ const EXPERIENCE_LEVEL_ALIASES = buildEnumAliasMap(EXPERIENCE_LEVELS, experience
 // "신입/경력 무관"(UI 라벨) 외에 요청에서 예로 든 축약형도 alias로 추가한다.
 EXPERIENCE_LEVEL_ALIASES.set("무관", "any");
 
+/**
+ * sourceSection은 한국어 라벨이 아니라 영문 복수형이 자연스레 섞여 들어온다(예: 원티드랩 JSON의
+ * "responsibilities"). canonical 키 자체(대소문자 무시)에 더해, 그 복수형/변형만 alias로 둔다.
+ */
+const SOURCE_SECTION_ALIASES: Map<string, RequirementSourceSection> = new Map([
+  ["responsibility", "responsibility"],
+  ["responsibilities", "responsibility"],
+  ["qualification", "qualification"],
+  ["qualifications", "qualification"],
+  ["preferred", "preferred"],
+  ["preferredqualification", "preferred"],
+  ["preferredqualifications", "preferred"],
+]);
+
 /** 값이 없으면 undefined, 문자열이 아니거나 alias를 못 찾으면 null(=검증 실패), 찾으면 canonical 값. */
 function resolveEnumAlias<T extends string>(raw: unknown, aliases: Map<string, T>): T | undefined | null {
   if (raw === undefined) return undefined;
@@ -123,8 +137,11 @@ function validateRequirement(raw: unknown, index: number): { requirement: JdImpo
   if (typeof r.rawText !== "string" || !r.rawText.trim()) {
     return { reason: `requirements[${index}].rawText는 필수 문자열입니다.` };
   }
-  if (r.sourceSection !== undefined && !REQUIREMENT_SOURCE_SECTIONS.includes(r.sourceSection as RequirementSourceSection)) {
-    return { reason: `requirements[${index}].sourceSection은 ${REQUIREMENT_SOURCE_SECTIONS.join("/")} 중 하나여야 합니다.` };
+  const sourceSection = resolveEnumAlias(r.sourceSection, SOURCE_SECTION_ALIASES);
+  if (sourceSection === null) {
+    return {
+      reason: `requirements[${index}].sourceSection은 ${REQUIREMENT_SOURCE_SECTIONS.join("/")} 또는 그 영문 복수형(responsibilities/qualifications/preferredQualification(s)) 중 하나여야 합니다.`,
+    };
   }
 
   const competencies: JdImportRequirementCompetency[] = [];
@@ -155,7 +172,7 @@ function validateRequirement(raw: unknown, index: number): { requirement: JdImpo
   return {
     requirement: {
       rawText: r.rawText.trim(),
-      sourceSection: r.sourceSection as RequirementSourceSection | undefined,
+      sourceSection,
       competencies,
       roles,
     },

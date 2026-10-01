@@ -278,5 +278,59 @@ describe("importJobPostings", () => {
       const [jobPosting] = await jobPostingRepo.list();
       expect(await requirementRepo.listByJobPosting(jobPosting.id)).toHaveLength(0);
     });
+
+    describe("sourceSection alias normalization (영문 단/복수형 모두 허용 → canonical로 저장)", () => {
+      const sourceSectionCases: [string, string][] = [
+        ["responsibility", "responsibility"],
+        ["responsibilities", "responsibility"], // 원티드랩 JSON처럼 복수형으로 들어오는 경우
+        ["RESPONSIBILITIES", "responsibility"], // 대소문자 무시
+        ["  responsibilities  ", "responsibility"], // 앞뒤 공백 무시
+        ["qualification", "qualification"],
+        ["qualifications", "qualification"],
+        ["preferred", "preferred"],
+        ["preferredQualification", "preferred"],
+        ["preferredQualifications", "preferred"],
+      ];
+      for (const [input, canonical] of sourceSectionCases) {
+        it(`sourceSection "${input}" → "${canonical}"으로 normalize해 저장한다`, async () => {
+          const result = await importJobPostings([
+            validRow({ requirements: [{ rawText: "텍스트", sourceSection: input }] }),
+          ]);
+          expect(result).toEqual({ imported: 1, duplicates: 0, errors: [] });
+          const [jobPosting] = await jobPostingRepo.list();
+          const [requirement] = await requirementRepo.listByJobPosting(jobPosting.id);
+          expect(requirement.sourceSection).toBe(canonical);
+        });
+      }
+
+      it("canonical/alias 어느 쪽이 아니면 오류로 기록한다 (임의 추론하지 않는다)", async () => {
+        const result = await importJobPostings([
+          validRow({ requirements: [{ rawText: "텍스트", sourceSection: "intro" }] }),
+        ]);
+        expect(result.imported).toBe(0);
+        expect(result.errors[0].reason).toContain("sourceSection");
+      });
+
+      it('원티드랩 JSON처럼 sourceSection이 "responsibilities"로 들어와도 정상 Import된다', async () => {
+        const result = await importJobPostings([
+          {
+            companyName: "원티드랩",
+            postingTitle: "데이터 분석가 인턴 [AI기술팀]",
+            positionTitle: "데이터 분석가 인턴 [AI기술팀]",
+            requirements: [
+              {
+                rawText: "진행 중인 A/B 테스트의 지표 상태를 주기적으로 점검하고 이상 신호를 정리",
+                sourceSection: "responsibilities",
+                competencies: [{ name: "A/B Testing", category: "product" }],
+              },
+            ],
+          },
+        ]);
+        expect(result).toEqual({ imported: 1, duplicates: 0, errors: [] });
+        const [jobPosting] = await jobPostingRepo.list();
+        const [requirement] = await requirementRepo.listByJobPosting(jobPosting.id);
+        expect(requirement.sourceSection).toBe("responsibility");
+      });
+    });
   });
 });
