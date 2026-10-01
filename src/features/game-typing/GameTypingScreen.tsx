@@ -2,11 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/Card";
-import { StarIcon, FlagIcon } from "@/components/ui/icons";
+import { StarIcon, FlagIcon, TrashIcon } from "@/components/ui/icons";
 import { attemptRepo, questionRecordRepo, questionRepo, sessionRepo } from "@/db/repositories";
 import { evaluateAnswer } from "@/lib/evaluateAnswer";
 import { shouldAdvanceOnEnter } from "@/lib/keyboard";
-import { buildCycleQueue, filterQuestions, type GameConfig } from "@/lib/questionSelection";
+import {
+  buildCycleQueue,
+  filterQuestions,
+  removeFromCycleQueue,
+  type GameConfig,
+} from "@/lib/questionSelection";
 import { getCorrectAnswerText } from "@/lib/questionSummary";
 import type { Question, QuestionRecord } from "@/types/domain";
 import { FeedbackPanel } from "@/features/game-typing/FeedbackPanel";
@@ -81,9 +86,11 @@ export function GameTypingScreen() {
       });
   }, [config]);
 
-  function startNewCycle() {
+  function startNewCycle(excludeId?: string) {
     if (!config) return;
-    const eligible = filterQuestions(questions, config);
+    // excludeId: 방금 삭제한 문제. useLiveQuery(questions) 갱신이 아직 반영되지 않았을 수 있어 명시적으로 제외한다.
+    const pool = excludeId ? questions.filter((q) => q.id !== excludeId) : questions;
+    const eligible = filterQuestions(pool, config);
     const queue = buildCycleQueue(
       eligible,
       config.themeIds,
@@ -240,6 +247,24 @@ export function GameTypingScreen() {
     await questionRepo.update(currentQuestion.id, { memo: memoDraft || undefined });
   }
 
+  async function handleDeleteQuestion() {
+    if (!currentQuestion) return;
+    if (!confirm("이 문제를 삭제할까요?")) return;
+
+    const idToRemove = currentQuestion.id;
+    await questionRepo.remove(idToRemove);
+
+    setFeedback(null);
+    setPhase("answering");
+
+    const { queue: remainingQueue, needsNewCycle } = removeFromCycleQueue(cycleQueue, cursor, idToRemove);
+    if (needsNewCycle) {
+      startNewCycle(idToRemove);
+    } else {
+      setCycleQueue(remainingQueue);
+    }
+  }
+
   if (!config) {
     return (
       <div className="mx-auto flex max-w-[640px] flex-col items-center gap-4 px-6 py-20 text-center">
@@ -299,6 +324,9 @@ export function GameTypingScreen() {
               <FlagIcon
                 className={`h-5 w-5 ${currentQuestion.flagged ? "text-danger" : "text-text-muted"}`}
               />
+            </button>
+            <button type="button" onClick={handleDeleteQuestion} aria-label="문제 삭제">
+              <TrashIcon className="h-5 w-5 text-text-muted hover:text-danger" />
             </button>
           </div>
         </div>

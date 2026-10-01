@@ -3,6 +3,7 @@ import {
   buildCycleQueue,
   filterQuestions,
   getDifficultyThemeIds,
+  removeFromCycleQueue,
   type GameConfig,
 } from "@/lib/questionSelection";
 import type { Question, QuestionRecord } from "@/types/domain";
@@ -200,5 +201,46 @@ describe("buildCycleQueue", () => {
     const questions = Array.from({ length: 10 }, (_, i) => makeQuestion(`q${i}`, "t1", "answer-input"));
     const queue = buildCycleQueue(questions, ["t1"], ["answer-input"], "random", new Map());
     expect(new Set(queue.map((q) => q.id)).size).toBe(10);
+  });
+});
+
+describe("removeFromCycleQueue", () => {
+  const queue = [
+    makeQuestion("q1", "t1", "answer-input"),
+    makeQuestion("q2", "t1", "answer-input"),
+    makeQuestion("q3", "t1", "answer-input"),
+  ];
+
+  it("큐에서 삭제된 문제를 제거하고, cursor는 그대로 둬도 다음 문제를 가리키게 된다", () => {
+    const result = removeFromCycleQueue(queue, 1, "q2");
+    expect(result.queue.map((q) => q.id)).toEqual(["q1", "q3"]);
+    expect(result.needsNewCycle).toBe(false);
+    // cursor(1)는 이제 남은 큐에서 q3(원래 다음 문제)를 가리킨다.
+    expect(result.queue[1].id).toBe("q3");
+  });
+
+  it("삭제된 문제가 큐의 첫 문제여도 cursor 0이 다음 문제를 가리킨다", () => {
+    const result = removeFromCycleQueue(queue, 0, "q1");
+    expect(result.queue.map((q) => q.id)).toEqual(["q2", "q3"]);
+    expect(result.needsNewCycle).toBe(false);
+    expect(result.queue[0].id).toBe("q2");
+  });
+
+  it("삭제된 문제가 큐의 마지막이면 더 보여줄 문제가 없어 새 사이클이 필요하다", () => {
+    const result = removeFromCycleQueue(queue, 2, "q3");
+    expect(result.queue.map((q) => q.id)).toEqual(["q1", "q2"]);
+    expect(result.needsNewCycle).toBe(true);
+  });
+
+  it("큐에 하나뿐인 문제를 삭제하면 빈 큐 + 새 사이클이 필요하다", () => {
+    const result = removeFromCycleQueue([makeQuestion("only", "t1", "answer-input")], 0, "only");
+    expect(result.queue).toEqual([]);
+    expect(result.needsNewCycle).toBe(true);
+  });
+
+  it("다른 문제들은 순서/내용 변화 없이 그대로 유지된다", () => {
+    const result = removeFromCycleQueue(queue, 1, "q2");
+    expect(result.queue[0]).toBe(queue[0]);
+    expect(result.queue[1]).toBe(queue[2]);
   });
 });

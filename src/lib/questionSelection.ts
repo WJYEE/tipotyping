@@ -120,3 +120,23 @@ export function buildCycleQueue(
 
   return queue;
 }
+
+export interface QueueAfterRemoval {
+  queue: Question[];
+  /** 삭제된 문제가 큐의 마지막 항목이어서 더 이상 "다음 문제"가 없으면 true (새 사이클 필요). */
+  needsNewCycle: boolean;
+}
+
+/**
+ * Game Typing에서 현재 문제를 바로 삭제할 때 사용한다.
+ * cursor는 그대로 둬도 된다 — 삭제된 문제를 빼면 다음 문제가 같은 인덱스로 당겨지기 때문이다.
+ * 단, 삭제된 문제가 큐의 마지막이었다면(cursor가 새 큐 길이 이상) 더 보여줄 문제가 없어 새 사이클이 필요하다.
+ */
+export function removeFromCycleQueue(
+  queue: Question[],
+  cursor: number,
+  idToRemove: string,
+): QueueAfterRemoval {
+  const next = queue.filter((q) => q.id !== idToRemove);
+  return { queue: next, needsNewCycle: cursor >= next.length };
+}
