@@ -1,19 +1,15 @@
 import { useRef, useState } from "react";
-import { UploadIcon } from "@/components/ui/icons";
+import { CopyIcon, UploadIcon } from "@/components/ui/icons";
 import { CareerModal } from "@/features/career/components/CareerModal";
+import { JD_IMPORT_PROMPT } from "@/features/career/jdImportPrompt";
+import { requirementSourceSectionLabel } from "@/features/career/jobPostingLabels";
 import { JdForm } from "@/features/career/jd-library/JdForm";
 import { importJobPostings, parseJdImportJson, type JdImportResult } from "@/lib/importJobPostings";
 import { parseRawJdText, type ParsedJdSections } from "@/lib/jdTextParser";
-import type { RequirementSourceSection } from "@/types/career";
 
 type Mode = "manual" | "paste" | "json";
 
 const MODE_LABEL: Record<Mode, string> = { manual: "직접 입력", paste: "JD 원문 붙여넣기", json: "JSON Import" };
-const SECTION_LABEL: Record<RequirementSourceSection, string> = {
-  responsibility: "담당업무",
-  qualification: "자격요건",
-  preferred: "우대사항",
-};
 
 interface JdAddModalProps {
   onClose: () => void;
@@ -58,7 +54,7 @@ function RawPasteTab({ onClose }: { onClose: () => void }) {
       <div className="flex flex-col gap-3">
         <p className="font-body text-xs text-career-text-secondary">
           {parsed.matchedSections.length > 0
-            ? `${parsed.matchedSections.map((s) => SECTION_LABEL[s]).join("/")} 섹션을 인식했습니다. 아래 내용을 검토하고 필요하면 수정한 뒤 저장하세요.`
+            ? `${parsed.matchedSections.map((s) => requirementSourceSectionLabel[s]).join("/")} 섹션을 인식했습니다. 아래 내용을 검토하고 필요하면 수정한 뒤 저장하세요.`
             : "담당업무/자격요건/우대사항 섹션 헤더를 찾지 못했습니다. 원문을 참고해 아래 필드에 직접 옮겨주세요."}
         </p>
         <details className="rounded-[6px] border border-career-border p-3">
@@ -114,6 +110,7 @@ function JsonImportTab({ onClose }: { onClose: () => void }) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<JdImportResult | null>(null);
+  const [copyState, setCopyState] = useState<"idle" | "copied" | "error">("idle");
 
   async function handleFile(file: File) {
     setBusy(true);
@@ -129,8 +126,39 @@ function JsonImportTab({ onClose }: { onClose: () => void }) {
     }
   }
 
+  async function handleCopyPrompt() {
+    try {
+      await navigator.clipboard.writeText(JD_IMPORT_PROMPT);
+      setCopyState("copied");
+    } catch {
+      setCopyState("error");
+    } finally {
+      setTimeout(() => setCopyState("idle"), 2000);
+    }
+  }
+
   return (
     <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2 rounded-[6px] border border-career-border bg-career-bg p-3">
+        <p className="font-body text-xs text-career-text-secondary">
+          JD 원문/PDF와 함께 ChatGPT에 전달하면, 이 Import 형식에 맞는 JSON을 바로 만들어줍니다.
+        </p>
+        <button
+          type="button"
+          onClick={handleCopyPrompt}
+          className="flex items-center justify-center gap-2 self-start rounded-[6px] border border-career-border bg-career-surface px-3 py-2 font-body text-xs font-semibold text-career-text-primary"
+        >
+          <CopyIcon className="h-3.5 w-3.5" />
+          ChatGPT용 프롬프트 복사
+        </button>
+        {copyState === "copied" && (
+          <span className="font-body text-xs font-semibold text-career-green">복사했습니다 ✓</span>
+        )}
+        {copyState === "error" && (
+          <span className="font-body text-xs font-semibold text-career-red">복사에 실패했습니다. 브라우저 권한을 확인해주세요.</span>
+        )}
+      </div>
+
       <p className="font-body text-xs text-career-text-secondary">
         JD 객체 하나 또는 배열(여러 JD)을 담은 JSON 파일을 올리세요. 필수 필드: companyName, postingTitle,
         positionTitle.

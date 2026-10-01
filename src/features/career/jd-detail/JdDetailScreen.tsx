@@ -8,14 +8,10 @@ import { CareerCard } from "@/features/career/components/CareerCard";
 import { CareerPill } from "@/features/career/components/CareerPill";
 import { CompetencyDetailModal } from "@/features/career/components/CompetencyDetailModal";
 import { COMPETENCY_CATEGORIES, competencyCategoryLabel, competencyCategoryTone } from "@/features/career/competencyLabels";
+import { requirementSourceSectionLabel } from "@/features/career/jobPostingLabels";
 import type { Competency, CompetencyCategory, JobPosting, Requirement, RequirementSourceSection, Role } from "@/types/career";
 
 const SECTIONS: RequirementSourceSection[] = ["responsibility", "qualification", "preferred"];
-const SECTION_LABEL: Record<RequirementSourceSection, string> = {
-  responsibility: "담당업무",
-  qualification: "자격요건",
-  preferred: "우대사항",
-};
 
 function sectionText(jobPosting: JobPosting, section: RequirementSourceSection): string {
   if (section === "responsibility") return jobPosting.responsibilities;
@@ -100,7 +96,7 @@ export function JdDetailScreen() {
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {SECTIONS.map((section) => (
           <CareerCard key={section} className="flex flex-col gap-2 p-5">
-            <h2 className="font-body text-[13px] font-bold text-career-text-primary">{SECTION_LABEL[section]}</h2>
+            <h2 className="font-body text-[13px] font-bold text-career-text-primary">{requirementSourceSectionLabel[section]}</h2>
             <p className="whitespace-pre-wrap font-body text-[13px] text-career-text-tertiary">
               {sectionText(jobPosting, section) || "입력된 내용이 없습니다."}
             </p>
@@ -119,7 +115,7 @@ export function JdDetailScreen() {
           >
             {SECTIONS.map((s) => (
               <option key={s} value={s}>
-                {SECTION_LABEL[s]}
+                {requirementSourceSectionLabel[s]}
               </option>
             ))}
           </select>
@@ -150,7 +146,7 @@ export function JdDetailScreen() {
             return (
               <div key={section} className="flex flex-col gap-3">
                 <span className="font-body text-xs font-semibold text-career-text-secondary">
-                  {SECTION_LABEL[section]}
+                  {requirementSourceSectionLabel[section]}
                 </span>
                 {rows.map((r) => (
                   <RequirementRow
