@@ -3,6 +3,16 @@ import { afterEach, describe, expect, it } from "vitest";
 import { pruneEmptySessions, upgradeAnswerInputAlternatives, upgradeCustomThemeDisplayCodes } from "@/db/schema";
 import { generateDisplayCode } from "@/lib/displayCode";
 
+const CAREER_V8_STORES = {
+  companies: "id, name",
+  jobPostings: "id, companyId, createdAt, updatedAt",
+  requirements: "id, jobPostingId, sourceSection, createdAt",
+  competencies: "id, &name, category",
+  roles: "id, &name",
+  requirementCompetencies: "id, requirementId, competencyId",
+  requirementRoles: "id, requirementId, roleId",
+};
+
 // v1(=displayCode 없음) → v2(=displayCode 채움) 업그레이드가 실제로 동작하는지
 // 별도의 DB 이름으로 격리해 검증한다. (schema.ts의 db 싱글톤과 겹치지 않도록)
 const DB_NAME = "tipotyping-migration-test";
@@ -326,6 +336,72 @@ class V7DB extends V6DB {
     this.version(7).stores({}).upgrade(pruneEmptySessions);
   }
 }
+
+class V9DB extends V7DB {
+  constructor() {
+    super();
+    this.version(8).stores(CAREER_V8_STORES);
+    this.version(9).stores({
+      jobPostings: "id, companyId, createdAt, updatedAt, applicationEndDate",
+    });
+  }
+}
+
+describe("v8 → v9 migration (JobPosting 채용일정/고용형태/경력조건/근무지역 필드 추가)", () => {
+  it("기존 JobPosting은 새 필드 없이도 그대로 남아있고(유실 없음), 새 필드는 undefined다", async () => {
+    const legacy = new V7DB();
+    legacy.version(8).stores(CAREER_V8_STORES);
+    await legacy.open();
+
+    const company = { id: "c1", name: "Toss", createdAt: 1 };
+    await legacy.table("companies").add(company);
+    await legacy.table("jobPostings").add({
+      id: "jp1",
+      companyId: "c1",
+      postingTitle: "2026 상반기 공채",
+      positionTitle: "Business Data Analyst",
+      responsibilities: "데이터 분석",
+      qualifications: "SQL 3년",
+      preferredQualifications: "Python",
+      createdAt: 1,
+      updatedAt: 1,
+    });
+    legacy.close();
+
+    const upgraded = new V9DB();
+    await upgraded.open();
+    const jobPostings = await upgraded.table("jobPostings").toArray();
+    expect(jobPostings).toHaveLength(1);
+    expect(jobPostings[0]).toMatchObject({
+      id: "jp1",
+      positionTitle: "Business Data Analyst",
+      responsibilities: "데이터 분석",
+    });
+    expect(jobPostings[0].applicationEndDate).toBeUndefined();
+    expect(jobPostings[0].employmentType).toBeUndefined();
+
+    // 새 필드를 가진 JobPosting도 정상적으로 추가할 수 있다.
+    await upgraded.table("jobPostings").add({
+      id: "jp2",
+      companyId: "c1",
+      postingTitle: "하반기 공채",
+      positionTitle: "PM",
+      responsibilities: "",
+      qualifications: "",
+      preferredQualifications: "",
+      applicationStartDate: "2026-09-01",
+      applicationEndDate: "2026-09-30",
+      employmentType: "full-time",
+      experienceLevel: "entry",
+      workLocation: "서울",
+      createdAt: 2,
+      updatedAt: 2,
+    });
+    const byDeadline = await upgraded.table("jobPostings").orderBy("applicationEndDate").toArray();
+    expect(byDeadline.map((jp: { id: string }) => jp.id)).toContain("jp2");
+    upgraded.close();
+  });
+});
 
 describe("v6 → v7 migration (Attempt 0개인 빈 Session 정리)", () => {
   it("totalAttempts가 0인 Session은 삭제하고, 1개 이상인 Session은 그대로 둔다", async () => {

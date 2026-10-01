@@ -5,7 +5,9 @@ import { EditIcon, PlusIcon, TrashIcon } from "@/components/ui/icons";
 import { companyRepo, jobPostingRepo } from "@/db/repositories";
 import { summarizeJobPostings, type JobPostingSummary } from "@/db/repositories/careerStatsRepo";
 import { CareerCard } from "@/features/career/components/CareerCard";
+import { CareerModal } from "@/features/career/components/CareerModal";
 import { CareerPill } from "@/features/career/components/CareerPill";
+import { JdAddModal } from "@/features/career/jd-library/JdAddModal";
 import { JdForm } from "@/features/career/jd-library/JdForm";
 import { analysisStatusLabel, analysisStatusTone } from "@/features/career/statusLabels";
 import type { JobPosting } from "@/types/career";
@@ -95,15 +97,14 @@ export function JdLibraryScreen() {
         )}
       </CareerCard>
 
-      {editing && (
-        <JdForm
-          initial={
-            editing === "new"
-              ? undefined
-              : { ...editing.jobPosting, companyName: companyNameById.get(editing.jobPosting.companyId) ?? "" }
-          }
-          onClose={() => setEditing(null)}
-        />
+      {editing === "new" && <JdAddModal onClose={() => setEditing(null)} />}
+      {editing && editing !== "new" && (
+        <CareerModal title="JD 수정" onClose={() => setEditing(null)}>
+          <JdForm
+            initial={{ ...editing.jobPosting, companyName: companyNameById.get(editing.jobPosting.companyId) ?? "" }}
+            onClose={() => setEditing(null)}
+          />
+        </CareerModal>
       )}
     </div>
   );

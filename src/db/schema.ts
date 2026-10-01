@@ -138,6 +138,14 @@ export class TipoTypingDB extends Dexie {
       requirementCompetencies: "id, requirementId, competencyId",
       requirementRoles: "id, requirementId, roleId",
     });
+
+    // v9: JobPosting에 채용 시작일/마감일·고용형태·신입/경력 조건·근무지역을 추가한다. 전부 선택
+    // 필드라 기존 JobPosting 문서는 그 값들이 없는 채로("undefined") 그대로 유효하다 — 데이터 변환이
+    // 필요 없고 기존 JD는 전혀 건드리지 않는다. applicationEndDate만 "마감 임박순" 정렬/필터를
+    // 염두에 두고 인덱스를 추가한다(나머지 새 필드는 지금 그런 조회가 없어 인덱스를 걸지 않는다).
+    this.version(9).stores({
+      jobPostings: "id, companyId, createdAt, updatedAt, applicationEndDate",
+    });
   }
 }
 

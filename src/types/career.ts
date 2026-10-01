@@ -9,6 +9,14 @@ export interface Company {
   createdAt: number;
 }
 
+export type EmploymentType = "full-time" | "contract" | "intern" | "freelance" | "other";
+
+export const EMPLOYMENT_TYPES: EmploymentType[] = ["full-time", "contract", "intern", "freelance", "other"];
+
+export type ExperienceLevel = "entry" | "experienced" | "any";
+
+export const EXPERIENCE_LEVELS: ExperienceLevel[] = ["entry", "experienced", "any"];
+
 export interface JobPosting {
   id: string;
   companyId: string;
@@ -16,10 +24,17 @@ export interface JobPosting {
   postingTitle: string;
   /** 직무명 (예: "Business Data Analyst") */
   positionTitle: string;
+  /** 원본 JD 출처 저장 및 이동 용도로만 쓴다 — 크롤링/자동 수집은 하지 않는다. */
   jdUrl?: string;
   responsibilities: string;
   qualifications: string;
   preferredQualifications: string;
+  /** "YYYY-MM-DD" (input type=date 값 그대로) */
+  applicationStartDate?: string;
+  applicationEndDate?: string;
+  employmentType?: EmploymentType;
+  experienceLevel?: ExperienceLevel;
+  workLocation?: string;
   createdAt: number;
   updatedAt: number;
 }
