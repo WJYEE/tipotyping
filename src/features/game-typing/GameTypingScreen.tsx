@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/Card";
 import { StarIcon, FlagIcon, TrashIcon } from "@/components/ui/icons";
 import { attemptRepo, questionRecordRepo, questionRepo, sessionRepo } from "@/db/repositories";
+import { sessionQualifies } from "@/db/repositories/sessionRepo";
 import { evaluateAnswer, requiresSelfGrading } from "@/lib/evaluateAnswer";
 import { shouldAdvanceOnEnter } from "@/lib/keyboard";
 import {
@@ -17,8 +18,6 @@ import type { Question, QuestionRecord } from "@/types/domain";
 import { FeedbackPanel } from "@/features/game-typing/FeedbackPanel";
 import { QuestionView } from "@/features/game-typing/QuestionView";
 import { SelfGradingPanel } from "@/features/game-typing/SelfGradingPanel";
-
-const MIN_SESSION_MS = 10_000;
 
 function formatClock(ms: number): string {
   const totalSeconds = Math.floor(ms / 1000);
@@ -62,9 +61,15 @@ export function GameTypingScreen() {
     return () => clearInterval(id);
   }, [running]);
 
-  // Session row는 화면 진입(START) 시 1회 생성한다.
+  // Session row는 화면 진입(START) 시 1회만 생성한다.
+  // sessionRepo.create()는 비동기라 완료 전까지 sessionIdRef.current가 비어있다. 이 guard만으로는
+  // React StrictMode의 effect 이중 실행(마운트 시 setup→cleanup→setup)처럼 두 번째 호출이 첫 번째
+  // create()의 완료를 기다리지 않고 들어오는 경우를 막지 못해 Session이 중복 생성된다.
+  // → create()를 시작하기 "전"에 동기적으로 잠그는 별도 ref로 막는다.
+  const sessionCreateStartedRef = useRef(false);
   useEffect(() => {
-    if (!config || sessionIdRef.current) return;
+    if (!config || sessionCreateStartedRef.current) return;
+    sessionCreateStartedRef.current = true;
     sessionRepo
       .create({
         startedAt: Date.now(),
@@ -128,7 +133,9 @@ export function GameTypingScreen() {
       if (navigateAway) navigate("/");
       return;
     }
-    const qualifies = elapsedMsRef.current >= MIN_SESSION_MS;
+    // totalAttempts는 attemptRepo.record가 매 제출마다 Session에 실시간으로 반영해두므로 DB에서 바로 읽는다.
+    const session = await sessionRepo.get(sessionId);
+    const qualifies = sessionQualifies(session?.totalAttempts ?? 0, elapsedMsRef.current);
     if (qualifies) {
       await sessionRepo.update(sessionId, {
         endedAt: Date.now(),

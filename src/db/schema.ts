@@ -105,6 +105,11 @@ export class TipoTypingDB extends Dexie {
     // 실제 배열(alternatives)로 마이그레이션한다. 쉼표가 있다는 이유만으로 무조건 나누지 않고,
     // 모든 조각이 독립된 정답처럼 보일 때만 분리한다(숫자/Big-O 표기 등은 보존).
     this.version(6).stores({}).upgrade(upgradeAnswerInputAlternatives);
+
+    // v7: Session 생성 경쟁 상태(effect 이중 실행)와 "10초 이상이면 무조건 기록" 정책 때문에
+    // Attempt가 0개인 빈 Session이 남아있던 버그를 고쳤다. 이미 저장된 빈 Session(및 혹시 남아있을
+    // 관련 Attempt)을 정리한다. totalAttempts가 0인 Session은 분석적으로 의미가 없어 삭제해도 안전하다.
+    this.version(7).stores({}).upgrade(pruneEmptySessions);
   }
 }
 
@@ -116,6 +121,15 @@ export async function upgradeAnswerInputAlternatives(tx: Transaction): Promise<v
     if (next !== q.payload.answer) {
       await tx.table("questions").update(q.id, { payload: { ...q.payload, answer: next } });
     }
+  }
+}
+
+export async function pruneEmptySessions(tx: Transaction): Promise<void> {
+  const sessions = (await tx.table("sessions").toArray()) as Session[];
+  for (const session of sessions) {
+    if (session.totalAttempts !== 0) continue;
+    await tx.table("attempts").where("sessionId").equals(session.id).delete();
+    await tx.table("sessions").delete(session.id);
   }
 }
 

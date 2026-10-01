@@ -10,6 +10,7 @@ import {
   tagRepo,
   themeRepo,
 } from "@/db/repositories";
+import { MIN_SESSION_MS, sessionQualifies } from "@/db/repositories/sessionRepo";
 import { syncDefaultContent } from "@/db/seed/seed";
 import { defaultQuestions } from "@/db/seed/defaultQuestions";
 
@@ -465,6 +466,59 @@ describe("sessionRepo.discard", () => {
 
     expect(await sessionRepo.get(session.id)).toBeUndefined();
     expect(await attemptRepo.listBySession(session.id)).toHaveLength(0);
+  });
+});
+
+describe("sessionQualifies", () => {
+  it("10초 이상 + Attempt 1개 이상이어야 정식 기록으로 남는다", () => {
+    expect(sessionQualifies(1, MIN_SESSION_MS)).toBe(true);
+    expect(sessionQualifies(5, MIN_SESSION_MS + 1)).toBe(true);
+  });
+
+  it("Attempt를 하나도 제출하지 않았으면 10초를 넘겨도 기록하지 않는다 (빈 Session 버그 수정)", () => {
+    expect(sessionQualifies(0, MIN_SESSION_MS)).toBe(false);
+    expect(sessionQualifies(0, MIN_SESSION_MS * 10)).toBe(false);
+  });
+
+  it("Attempt가 있어도 10초 미만이면 기존 정책대로 기록하지 않는다", () => {
+    expect(sessionQualifies(3, MIN_SESSION_MS - 1)).toBe(false);
+  });
+
+  it("Attempt도 없고 10초도 못 채우면 당연히 기록하지 않는다", () => {
+    expect(sessionQualifies(0, 0)).toBe(false);
+  });
+
+  it("실제 repo 흐름: 10초 이상 머물렀지만 한 문제도 제출하지 않은 Session은 discard 대상이다", async () => {
+    const category = await categoryRepo.create({ name: "카테고리", order: 0, isCustom: true });
+    const theme = await themeRepo.create({
+      categoryId: category.id,
+      name: "테마",
+      order: 0,
+      isCustom: true,
+      useDifficulty: false,
+    });
+    const session = await sessionRepo.create({
+      startedAt: Date.now(),
+      endedAt: null,
+      totalDurationMs: 0,
+      themeIds: [theme.id],
+      tagIds: [],
+      questionTypes: ["answer-input"],
+      difficulties: [],
+      orderMode: "sequential",
+      totalAttempts: 0,
+      correctCount: 0,
+      wrongCount: 0,
+      accuracy: 0,
+    });
+
+    // GameTypingScreen.finishSession과 동일하게: DB에 실시간 반영된 totalAttempts를 읽어 판단한다.
+    const fetched = await sessionRepo.get(session.id);
+    const qualifies = sessionQualifies(fetched?.totalAttempts ?? 0, MIN_SESSION_MS + 5000);
+    expect(qualifies).toBe(false);
+
+    await sessionRepo.discard(session.id);
+    expect(await sessionRepo.get(session.id)).toBeUndefined();
   });
 });
 

@@ -1,6 +1,6 @@
 import Dexie from "dexie";
 import { afterEach, describe, expect, it } from "vitest";
-import { upgradeAnswerInputAlternatives, upgradeCustomThemeDisplayCodes } from "@/db/schema";
+import { pruneEmptySessions, upgradeAnswerInputAlternatives, upgradeCustomThemeDisplayCodes } from "@/db/schema";
 import { generateDisplayCode } from "@/lib/displayCode";
 
 // v1(=displayCode 없음) → v2(=displayCode 채움) 업그레이드가 실제로 동작하는지
@@ -316,6 +316,115 @@ describe("v5 → v6 migration (answer-input 복수 정답 쉼표 문자열 → �
     await upgraded.open();
     const [question] = await upgraded.table("questions").toArray();
     expect(question.payload.answer).toBe("10,000");
+    upgraded.close();
+  });
+});
+
+class V7DB extends V6DB {
+  constructor() {
+    super();
+    this.version(7).stores({}).upgrade(pruneEmptySessions);
+  }
+}
+
+describe("v6 → v7 migration (Attempt 0개인 빈 Session 정리)", () => {
+  it("totalAttempts가 0인 Session은 삭제하고, 1개 이상인 Session은 그대로 둔다", async () => {
+    const legacy = new LegacyV2DB();
+    legacy.version(3).stores({});
+    legacy.version(4).stores({});
+    legacy.version(5).stores({ questions: V2_QUESTIONS_INDEX + ", seedId" });
+    legacy.version(6).stores({});
+    await legacy.open();
+
+    await legacy.table("sessions").add({
+      id: "empty-session",
+      startedAt: 1,
+      endedAt: 2,
+      totalDurationMs: 15000,
+      themeIds: ["t1"],
+      tagIds: [],
+      questionTypes: ["answer-input"],
+      difficulties: [],
+      orderMode: "sequential",
+      totalAttempts: 0,
+      correctCount: 0,
+      wrongCount: 0,
+      accuracy: 0,
+    });
+    await legacy.table("sessions").add({
+      id: "real-session",
+      startedAt: 1,
+      endedAt: 2,
+      totalDurationMs: 15000,
+      themeIds: ["t1"],
+      tagIds: [],
+      questionTypes: ["answer-input"],
+      difficulties: [],
+      orderMode: "sequential",
+      totalAttempts: 1,
+      correctCount: 1,
+      wrongCount: 0,
+      accuracy: 1,
+    });
+    await legacy.table("attempts").add({
+      id: "a1",
+      sessionId: "real-session",
+      questionId: "q1",
+      questionType: "answer-input",
+      isCorrect: true,
+      userAnswer: "2",
+      attemptedAt: 2,
+    });
+    legacy.close();
+
+    const upgraded = new V7DB();
+    await upgraded.open();
+    const sessions = await upgraded.table("sessions").toArray();
+    expect(sessions.map((s) => s.id)).toEqual(["real-session"]);
+    const attempts = await upgraded.table("attempts").toArray();
+    expect(attempts.map((a) => a.id)).toEqual(["a1"]);
+    upgraded.close();
+  });
+
+  it("빈 Session을 가리키는 Attempt가 (비정상적으로) 남아있어도 함께 정리한다", async () => {
+    const legacy = new LegacyV2DB();
+    legacy.version(3).stores({});
+    legacy.version(4).stores({});
+    legacy.version(5).stores({ questions: V2_QUESTIONS_INDEX + ", seedId" });
+    legacy.version(6).stores({});
+    await legacy.open();
+
+    await legacy.table("sessions").add({
+      id: "empty-session",
+      startedAt: 1,
+      endedAt: null,
+      totalDurationMs: 0,
+      themeIds: ["t1"],
+      tagIds: [],
+      questionTypes: ["answer-input"],
+      difficulties: [],
+      orderMode: "sequential",
+      totalAttempts: 0,
+      correctCount: 0,
+      wrongCount: 0,
+      accuracy: 0,
+    });
+    // totalAttempts 집계와 실제 attempts 행이 어긋난 비정상 상태를 흉내낸다.
+    await legacy.table("attempts").add({
+      id: "stray-attempt",
+      sessionId: "empty-session",
+      questionId: "q1",
+      questionType: "answer-input",
+      isCorrect: true,
+      userAnswer: "2",
+      attemptedAt: 2,
+    });
+    legacy.close();
+
+    const upgraded = new V7DB();
+    await upgraded.open();
+    expect(await upgraded.table("sessions").toArray()).toEqual([]);
+    expect(await upgraded.table("attempts").toArray()).toEqual([]);
     upgraded.close();
   });
 });
