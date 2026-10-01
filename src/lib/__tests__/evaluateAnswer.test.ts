@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { evaluateAnswer } from "@/lib/evaluateAnswer";
+import { evaluateAnswer, requiresSelfGrading } from "@/lib/evaluateAnswer";
 import type { Question } from "@/types/domain";
 
 function base(overrides: Partial<Question>): Question {
@@ -76,7 +76,7 @@ describe("evaluateAnswer", () => {
     expect(evaluateAnswer(q, "다른말").isCorrect).toBe(false);
   });
 
-  it("essay: referenceAnswer가 아닌 answer로 exact match 채점한다", () => {
+  it("essay: payload는 exact match로도 평가 가능하지만, 실제 게임 흐름은 Self-grading을 쓴다(requiresSelfGrading 참고)", () => {
     const q = base({ type: "essay", payload: { prompt: "설명하시오", answer: "정답 문장" } });
     expect(evaluateAnswer(q, "정답 문장").isCorrect).toBe(true);
     expect(evaluateAnswer(q, "다른 문장").isCorrect).toBe(false);
@@ -89,5 +89,30 @@ describe("evaluateAnswer", () => {
     });
     expect(evaluateAnswer(q, "2").isCorrect).toBe(true);
     expect(evaluateAnswer(q, "0").isCorrect).toBe(false);
+  });
+});
+
+describe("requiresSelfGrading", () => {
+  it("essay는 Self-grading이 필요하다 (Exact Match 자동채점을 쓰지 않는다)", () => {
+    const essay = base({ type: "essay", payload: { prompt: "p", answer: "a" } });
+    expect(requiresSelfGrading(essay)).toBe(true);
+  });
+
+  it("나머지 5개 유형은 Self-grading이 필요 없다 (기존 자동채점 유지)", () => {
+    const blank = base({
+      type: "blank",
+      payload: { template: "{{b1}}", blanks: [{ id: "b1", answer: "x" }] },
+    });
+    const termToDef = base({ type: "term-to-def", payload: { term: "t", definition: "d" } });
+    const defToTerm = base({ type: "def-to-term", payload: { term: "t", definition: "d" } });
+    const answerInput = base({ type: "answer-input", payload: { prompt: "p", answer: "a" } });
+    const multipleChoice = base({
+      type: "multiple-choice",
+      payload: { prompt: "p", options: ["a", "b"], correctIndex: 0 },
+    });
+
+    for (const q of [blank, termToDef, defToTerm, answerInput, multipleChoice]) {
+      expect(requiresSelfGrading(q)).toBe(false);
+    }
   });
 });

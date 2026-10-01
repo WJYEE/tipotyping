@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/Card";
 import { StarIcon, FlagIcon, TrashIcon } from "@/components/ui/icons";
 import { attemptRepo, questionRecordRepo, questionRepo, sessionRepo } from "@/db/repositories";
-import { evaluateAnswer } from "@/lib/evaluateAnswer";
+import { evaluateAnswer, requiresSelfGrading } from "@/lib/evaluateAnswer";
 import { shouldAdvanceOnEnter } from "@/lib/keyboard";
 import {
   buildCycleQueue,
@@ -189,8 +189,8 @@ export function GameTypingScreen() {
   async function handleAnswer(userAnswer: string | Record<string, string>) {
     if (!currentQuestion || !sessionIdRef.current) return;
 
-    // 서술형: 자동 채점 없이 자가 채점 화면으로 넘어간다.
-    if (currentQuestion.type === "essay") {
+    // 서술형: 자동 채점 없이 자가 채점 화면으로 넘어간다 (Attempt는 아직 기록하지 않는다).
+    if (requiresSelfGrading(currentQuestion)) {
       setEssayAnswer(userAnswer as string);
       setPhase("self-grading");
       return;

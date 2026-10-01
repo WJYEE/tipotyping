@@ -13,6 +13,14 @@ function exact(a: string, b: string): boolean {
 }
 
 /**
+ * essay는 Exact Match 자동 채점 대신 Self-grading(사용자가 직접 정오답을 선택)을 사용한다.
+ * 나머지 5개 유형은 evaluateAnswer의 자동 채점 결과를 그대로 쓴다.
+ */
+export function requiresSelfGrading(question: Question): boolean {
+  return question.type === "essay";
+}
+
+/**
  * userAnswer 형태는 문제 유형에 따라 다르다.
  * - blank: 빈칸 id → 입력값 Record
  * - multiple-choice: 선택한 보기 index(문자열)
