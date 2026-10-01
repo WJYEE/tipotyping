@@ -74,8 +74,8 @@ JSON은 **JD 객체 하나** 또는 **JD 객체의 배열**, 둘 다 허용한�
 | `jdUrl` | 선택 | 문자열이면 그대로 저장. 형식(URL 유효성) 검증은 하지 않는다. |
 | `responsibilities` / `qualifications` / `preferredQualifications` | 선택 | 문자열. 생략하면 빈 문자열로 저장된다. |
 | `applicationStartDate` / `applicationEndDate` | 선택 | `/^\d{4}-\d{2}-\d{2}$/` 정규식만 검사한다(실존하는 날짜인지는 검증하지 않음 — `2026-13-99`도 통과). |
-| `employmentType` | 선택 | `full-time`/`contract`/`intern`/`freelance`/`other` 중 하나가 아니면 그 JD 행 전체가 오류 처리된다. 한글 라벨(정규직 등)이 아니라 **이 영문 키 그대로** 넣어야 한다 — 라벨 매핑은 `src/features/career/jobPostingLabels.ts` 참고. |
-| `experienceLevel` | 선택 | `entry`/`experienced`/`any` 중 하나. 역시 영문 키. |
+| `employmentType` | 선택 | canonical 영문 키(`full-time`/`contract`/`intern`/`freelance`/`other`) **또는** 대응하는 한국어 라벨(정규직/계약직/인턴/프리랜서/기타, `jobPostingLabels.ts`의 `employmentTypeLabel`과 동일)을 받는다. 대소문자·앞뒤 공백은 무시한다. DB에는 항상 canonical 영문 키로 저장된다(DB 스키마/UI 표시는 바뀌지 않음). 어느 쪽에도 매칭되지 않으면 그 JD 행 전체가 오류 처리된다 — 임의로 추론하지 않는다. |
+| `experienceLevel` | 선택 | 같은 규칙. canonical 영문 키(`entry`/`experienced`/`any`) 또는 한국어 라벨(신입/경력/신입·경력 무관, `experienceLevelLabel`과 동일 — "무관"만 써도 `any`로 인식). |
 | `workLocation` | 선택 | 자유 문자열. |
 | `requirements` | 선택 | 배열이 아니면 오류. 각 항목 규칙은 3장. 생략하면 Requirement 없이 JD만 저장된다. |
 

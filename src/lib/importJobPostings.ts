@@ -11,6 +11,7 @@ import { competencyRepo } from "@/db/repositories/competencyRepo";
 import { jobPostingRepo } from "@/db/repositories/jobPostingRepo";
 import { requirementRepo } from "@/db/repositories/requirementRepo";
 import { roleRepo } from "@/db/repositories/roleRepo";
+import { employmentTypeLabel, experienceLevelLabel } from "@/features/career/jobPostingLabels";
 import {
   COMPETENCY_CATEGORIES,
   EMPLOYMENT_TYPES,
@@ -22,6 +23,32 @@ import {
   type JobPosting,
   type RequirementSourceSection,
 } from "@/types/career";
+
+/**
+ * employmentType/experienceLevel의 canonical enum은 그대로 두고(DB/UI는 영문 enum만 안다),
+ * Import 입력만 한국어 표현도 받아준다. UI가 이미 쓰는 라벨(jobPostingLabels.ts)을 그대로
+ * alias로 재사용해 어휘가 두 군데로 갈라지지 않게 한다 — 라벨을 새로 만들지 않는다.
+ */
+function buildEnumAliasMap<T extends string>(values: readonly T[], labels: Record<T, string>): Map<string, T> {
+  const map = new Map<string, T>();
+  for (const value of values) {
+    map.set(value.toLowerCase(), value); // canonical 영문 키 자체도 대소문자 무시하고 허용
+    map.set(labels[value].toLowerCase(), value); // 기존 UI 한국어 라벨
+  }
+  return map;
+}
+
+const EMPLOYMENT_TYPE_ALIASES = buildEnumAliasMap(EMPLOYMENT_TYPES, employmentTypeLabel);
+const EXPERIENCE_LEVEL_ALIASES = buildEnumAliasMap(EXPERIENCE_LEVELS, experienceLevelLabel);
+// "신입/경력 무관"(UI 라벨) 외에 요청에서 예로 든 축약형도 alias로 추가한다.
+EXPERIENCE_LEVEL_ALIASES.set("무관", "any");
+
+/** 값이 없으면 undefined, 문자열이 아니거나 alias를 못 찾으면 null(=검증 실패), 찾으면 canonical 값. */
+function resolveEnumAlias<T extends string>(raw: unknown, aliases: Map<string, T>): T | undefined | null {
+  if (raw === undefined) return undefined;
+  if (typeof raw !== "string") return null;
+  return aliases.get(raw.trim().toLowerCase()) ?? null;
+}
 
 export interface JdImportRequirementCompetency {
   name: string;
@@ -165,11 +192,17 @@ function validateRow(raw: unknown): { row: JdImportRow } | { reason: string } {
     }
   }
 
-  if (r.employmentType !== undefined && !EMPLOYMENT_TYPES.includes(r.employmentType as EmploymentType)) {
-    return { reason: `"employmentType"은 ${EMPLOYMENT_TYPES.join("/")} 중 하나여야 합니다.` };
+  const employmentType = resolveEnumAlias(r.employmentType, EMPLOYMENT_TYPE_ALIASES);
+  if (employmentType === null) {
+    return {
+      reason: `"employmentType"은 ${EMPLOYMENT_TYPES.join("/")} 또는 그에 대응하는 한국어 표현(${EMPLOYMENT_TYPES.map((t) => employmentTypeLabel[t]).join("/")}) 중 하나여야 합니다.`,
+    };
   }
-  if (r.experienceLevel !== undefined && !EXPERIENCE_LEVELS.includes(r.experienceLevel as ExperienceLevel)) {
-    return { reason: `"experienceLevel"은 ${EXPERIENCE_LEVELS.join("/")} 중 하나여야 합니다.` };
+  const experienceLevel = resolveEnumAlias(r.experienceLevel, EXPERIENCE_LEVEL_ALIASES);
+  if (experienceLevel === null) {
+    return {
+      reason: `"experienceLevel"은 ${EXPERIENCE_LEVELS.join("/")} 또는 그에 대응하는 한국어 표현(${EXPERIENCE_LEVELS.map((l) => experienceLevelLabel[l]).join("/")}) 중 하나여야 합니다.`,
+    };
   }
 
   const requirements: JdImportRequirement[] = [];
@@ -195,8 +228,8 @@ function validateRow(raw: unknown): { row: JdImportRow } | { reason: string } {
       preferredQualifications: (r.preferredQualifications as string | undefined) ?? "",
       applicationStartDate: r.applicationStartDate as string | undefined,
       applicationEndDate: r.applicationEndDate as string | undefined,
-      employmentType: r.employmentType as EmploymentType | undefined,
-      experienceLevel: r.experienceLevel as ExperienceLevel | undefined,
+      employmentType,
+      experienceLevel,
       workLocation: r.workLocation as string | undefined,
       requirements,
     },

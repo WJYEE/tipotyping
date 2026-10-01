@@ -81,10 +81,76 @@ describe("importJobPostings", () => {
     expect(result.errors[0].reason).toContain("YYYY-MM-DD");
   });
 
-  it("employmentType/experienceLevel이 허용값이 아니면 오류로 기록한다", async () => {
-    const result = await importJobPostings([validRow({ employmentType: "정규직" })]);
+  it("employmentType/experienceLevel이 canonical 값도, 지원하는 한국어 alias도 아니면 오류로 기록한다 (임의 추론하지 않는다)", async () => {
+    const result = await importJobPostings([validRow({ employmentType: "파트타임" })]);
     expect(result.imported).toBe(0);
     expect(result.errors[0].reason).toContain("employmentType");
+  });
+
+  it("experienceLevel이 지원하지 않는 값이면 오류로 기록한다", async () => {
+    const result = await importJobPostings([validRow({ experienceLevel: "주니어" })]);
+    expect(result.imported).toBe(0);
+    expect(result.errors[0].reason).toContain("experienceLevel");
+  });
+
+  describe("enum alias normalization (한국어/영어 입력 모두 허용 → canonical로 저장)", () => {
+    const employmentCases: [string, string][] = [
+      ["정규직", "full-time"],
+      ["full-time", "full-time"],
+      ["FULL-TIME", "full-time"], // 대소문자 무시
+      ["  정규직  ", "full-time"], // 앞뒤 공백 무시
+      ["계약직", "contract"],
+      ["contract", "contract"],
+      ["인턴", "intern"],
+      ["intern", "intern"],
+      ["프리랜서", "freelance"],
+      ["freelance", "freelance"],
+      ["기타", "other"],
+      ["other", "other"],
+    ];
+    for (const [input, canonical] of employmentCases) {
+      it(`employmentType "${input}" → "${canonical}"으로 normalize해 저장한다`, async () => {
+        const result = await importJobPostings([validRow({ employmentType: input })]);
+        expect(result).toEqual({ imported: 1, duplicates: 0, errors: [] });
+        const [saved] = await jobPostingRepo.list();
+        expect(saved.employmentType).toBe(canonical);
+      });
+    }
+
+    const experienceCases: [string, string][] = [
+      ["신입", "entry"],
+      ["entry", "entry"],
+      ["ENTRY", "entry"], // 대소문자 무시
+      ["경력", "experienced"],
+      ["experienced", "experienced"],
+      ["무관", "any"],
+      ["신입/경력 무관", "any"], // 기존 UI 라벨 그대로도 허용
+      ["any", "any"],
+      [" any ", "any"], // 앞뒤 공백 무시
+    ];
+    for (const [input, canonical] of experienceCases) {
+      it(`experienceLevel "${input}" → "${canonical}"으로 normalize해 저장한다`, async () => {
+        const result = await importJobPostings([validRow({ experienceLevel: input })]);
+        expect(result).toEqual({ imported: 1, duplicates: 0, errors: [] });
+        const [saved] = await jobPostingRepo.list();
+        expect(saved.experienceLevel).toBe(canonical);
+      });
+    }
+
+    it("원티드랩 JSON의 \"employmentType\": \"인턴\"이 정상 Import되어 canonical \"intern\"으로 저장된다", async () => {
+      const result = await importJobPostings([
+        {
+          companyName: "원티드랩",
+          postingTitle: "데이터 분석가 인턴 [AI기술팀]",
+          positionTitle: "데이터 분석가 인턴 [AI기술팀]",
+          employmentType: "인턴",
+          workLocation: "서울 송파구 올림픽로 300, 35층",
+        },
+      ]);
+      expect(result).toEqual({ imported: 1, duplicates: 0, errors: [] });
+      const [saved] = await jobPostingRepo.list();
+      expect(saved.employmentType).toBe("intern");
+    });
   });
 
   it("허용된 선택 필드는 그대로 저장한다", async () => {
