@@ -6,6 +6,7 @@ import { db } from "@/db/db";
 import { companyRepo, competencyRepo, jobPostingRepo, requirementRepo, roleRepo } from "@/db/repositories";
 import { CareerCard } from "@/features/career/components/CareerCard";
 import { CareerPill } from "@/features/career/components/CareerPill";
+import { CompetencyDetailModal } from "@/features/career/components/CompetencyDetailModal";
 import { COMPETENCY_CATEGORIES, competencyCategoryLabel, competencyCategoryTone } from "@/features/career/competencyLabels";
 import type { Competency, CompetencyCategory, JobPosting, Requirement, RequirementSourceSection, Role } from "@/types/career";
 
@@ -41,8 +42,9 @@ export function JdDetailScreen() {
   const competencyLinks = useLiveQuery(() => db.requirementCompetencies.toArray(), []) ?? [];
   const roleLinks = useLiveQuery(() => db.requirementRoles.toArray(), []) ?? [];
 
-  const [newRequirementText, setNewRequirementText] = useState("");
+  const [newRequirementRawText, setNewRequirementRawText] = useState("");
   const [newRequirementSection, setNewRequirementSection] = useState<RequirementSourceSection>("qualification");
+  const [selectedCompetencyId, setSelectedCompetencyId] = useState<string | null>(null);
 
   // useLiveQuery는 "아직 로딩 중"과 "조회 결과 없음(삭제된 JD 등)"을 둘 다 undefined로 돌려주므로
   // 구분하지 않고 한 화면으로 처리한다 — 어차피 로딩은 짧고, 없는 JD면 자연히 이 문구로 멈춘다.
@@ -58,13 +60,13 @@ export function JdDetailScreen() {
   const roleById = new Map(roles.map((r) => [r.id, r]));
 
   async function handleAddRequirement() {
-    if (!newRequirementText.trim() || !jobPostingId) return;
+    if (!newRequirementRawText.trim() || !jobPostingId) return;
     await requirementRepo.create({
       jobPostingId,
-      text: newRequirementText.trim(),
+      rawText: newRequirementRawText.trim(),
       sourceSection: newRequirementSection,
     });
-    setNewRequirementText("");
+    setNewRequirementRawText("");
   }
 
   return (
@@ -122,9 +124,9 @@ export function JdDetailScreen() {
             ))}
           </select>
           <input
-            value={newRequirementText}
-            onChange={(e) => setNewRequirementText(e.target.value)}
-            placeholder="예: SQL을 활용한 데이터 추출 및 분석 경험"
+            value={newRequirementRawText}
+            onChange={(e) => setNewRequirementRawText(e.target.value)}
+            placeholder="예: SQL을 활용한 데이터 추출 및 분석 경험 (JD 원문 그대로)"
             className="flex-1 rounded-[6px] border border-career-border bg-career-surface px-3 py-2 font-body text-sm text-career-text-primary outline-none focus:border-career-blue"
           />
           <button
@@ -166,6 +168,7 @@ export function JdDetailScreen() {
                         .map((l) => roleById.get(l.roleId))
                         .filter((r2): r2 is Role => !!r2)
                     }
+                    onSelectCompetency={setSelectedCompetencyId}
                   />
                 ))}
               </div>
@@ -173,6 +176,10 @@ export function JdDetailScreen() {
           })
         )}
       </CareerCard>
+
+      {selectedCompetencyId && (
+        <CompetencyDetailModal competencyId={selectedCompetencyId} onClose={() => setSelectedCompetencyId(null)} />
+      )}
     </div>
   );
 }
@@ -181,16 +188,23 @@ interface RequirementRowProps {
   requirement: Requirement;
   competencies: Competency[];
   roles: Role[];
+  onSelectCompetency: (competencyId: string) => void;
 }
 
-function RequirementRow({ requirement, competencies, roles }: RequirementRowProps) {
+function RequirementRow({ requirement, competencies, roles, onSelectCompetency }: RequirementRowProps) {
   const [competencyCategory, setCompetencyCategory] = useState<CompetencyCategory>("data");
   const [competencyName, setCompetencyName] = useState("");
   const [roleName, setRoleName] = useState("");
+  const [normalizedLabel, setNormalizedLabel] = useState(requirement.normalizedLabel ?? "");
 
   async function handleDeleteRequirement() {
     if (!confirm("이 Requirement를 삭제할까요?")) return;
     await requirementRepo.remove(requirement.id);
+  }
+
+  async function handleNormalizedLabelBlur() {
+    if (normalizedLabel === (requirement.normalizedLabel ?? "")) return;
+    await requirementRepo.update(requirement.id, { normalizedLabel: normalizedLabel.trim() || undefined });
   }
 
   async function handleAddCompetency() {
@@ -210,7 +224,16 @@ function RequirementRow({ requirement, competencies, roles }: RequirementRowProp
   return (
     <div className="flex flex-col gap-2.5 rounded-[6px] border border-career-border p-3">
       <div className="flex items-start justify-between gap-3">
-        <p className="font-body text-sm text-career-text-primary">{requirement.text}</p>
+        <div className="flex flex-1 flex-col gap-1.5">
+          <p className="font-body text-sm text-career-text-primary">{requirement.rawText}</p>
+          <input
+            value={normalizedLabel}
+            onChange={(e) => setNormalizedLabel(e.target.value)}
+            onBlur={handleNormalizedLabelBlur}
+            placeholder="표준화 표현 (선택 — 예: A/B Testing 수행)"
+            className="rounded-[6px] border border-career-border bg-career-bg px-2 py-1 font-body text-xs text-career-text-tertiary outline-none focus:border-career-blue"
+          />
+        </div>
         <button type="button" onClick={handleDeleteRequirement} aria-label="Requirement 삭제">
           <TrashIcon className="h-4 w-4 text-career-text-muted hover:text-career-red" />
         </button>
@@ -220,7 +243,9 @@ function RequirementRow({ requirement, competencies, roles }: RequirementRowProp
         <div className="flex flex-wrap items-center gap-1.5">
           {competencies.map((c) => (
             <CareerPill key={c.id} tone={competencyCategoryTone[c.category]} className="gap-1">
-              {c.name}
+              <button type="button" onClick={() => onSelectCompetency(c.id)} className="hover:underline">
+                {c.name}
+              </button>
               <button
                 type="button"
                 onClick={() => requirementRepo.unlinkCompetency(requirement.id, c.id)}

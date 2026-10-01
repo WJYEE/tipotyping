@@ -47,7 +47,7 @@ describe("jobPostingRepo.remove", () => {
     const jobPosting = await createJobPosting();
     const requirement = await requirementRepo.create({
       jobPostingId: jobPosting.id,
-      text: "SQL 능숙",
+      rawText: "SQL 능숙",
       sourceSection: "qualification",
     });
     const competency = await competencyRepo.getOrCreate("SQL", "data");
@@ -70,7 +70,7 @@ describe("jobPostingRepo.remove", () => {
 describe("requirementRepo link/unlink", () => {
   it("같은 조합을 두 번 link해도 중복 저장하지 않는다", async () => {
     const jobPosting = await createJobPosting();
-    const requirement = await requirementRepo.create({ jobPostingId: jobPosting.id, text: "SQL" });
+    const requirement = await requirementRepo.create({ jobPostingId: jobPosting.id, rawText: "SQL" });
     const competency = await competencyRepo.getOrCreate("SQL", "data");
 
     await requirementRepo.linkCompetency(requirement.id, competency.id);
@@ -81,7 +81,7 @@ describe("requirementRepo link/unlink", () => {
 
   it("unlink하면 연결이 사라지지만 Requirement/Competency 자체는 남는다", async () => {
     const jobPosting = await createJobPosting();
-    const requirement = await requirementRepo.create({ jobPostingId: jobPosting.id, text: "SQL" });
+    const requirement = await requirementRepo.create({ jobPostingId: jobPosting.id, rawText: "SQL" });
     const competency = await competencyRepo.getOrCreate("SQL", "data");
     await requirementRepo.linkCompetency(requirement.id, competency.id);
 
@@ -94,7 +94,7 @@ describe("requirementRepo link/unlink", () => {
 
   it("Requirement 삭제 시 연결된 Competency/Role 링크도 함께 지운다", async () => {
     const jobPosting = await createJobPosting();
-    const requirement = await requirementRepo.create({ jobPostingId: jobPosting.id, text: "SQL" });
+    const requirement = await requirementRepo.create({ jobPostingId: jobPosting.id, rawText: "SQL" });
     const competency = await competencyRepo.getOrCreate("SQL", "data");
     await requirementRepo.linkCompetency(requirement.id, competency.id);
 
@@ -114,8 +114,8 @@ describe("summarizeJobPostings / deriveJobPostingStatus 연동", () => {
 
   it("Requirement는 있지만 일부만 태깅됐으면 '정리 중'이다", async () => {
     const jobPosting = await createJobPosting();
-    const r1 = await requirementRepo.create({ jobPostingId: jobPosting.id, text: "SQL" });
-    await requirementRepo.create({ jobPostingId: jobPosting.id, text: "Python" });
+    const r1 = await requirementRepo.create({ jobPostingId: jobPosting.id, rawText: "SQL" });
+    await requirementRepo.create({ jobPostingId: jobPosting.id, rawText: "Python" });
     const competency = await competencyRepo.getOrCreate("SQL", "data");
     const role = await roleRepo.getOrCreate("Business DA");
     await requirementRepo.linkCompetency(r1.id, competency.id);
@@ -128,7 +128,7 @@ describe("summarizeJobPostings / deriveJobPostingStatus 연동", () => {
 
   it("모든 Requirement가 Competency와 Role 둘 다 태깅되면 '정리 완료'다", async () => {
     const jobPosting = await createJobPosting();
-    const r1 = await requirementRepo.create({ jobPostingId: jobPosting.id, text: "SQL" });
+    const r1 = await requirementRepo.create({ jobPostingId: jobPosting.id, rawText: "SQL" });
     const competency = await competencyRepo.getOrCreate("SQL", "data");
     const role = await roleRepo.getOrCreate("Business DA");
     await requirementRepo.linkCompetency(r1.id, competency.id);
@@ -149,8 +149,8 @@ describe("careerStatsRepo", () => {
   it("getOverviewStats: 저장 JD 수와 연결된 Competency 종류 수를 실제 데이터로 센다", async () => {
     const jd1 = await createJobPosting({ companyName: "Toss" });
     const jd2 = await createJobPosting({ companyName: "Kurly" });
-    const r1 = await requirementRepo.create({ jobPostingId: jd1.id, text: "SQL" });
-    const r2 = await requirementRepo.create({ jobPostingId: jd2.id, text: "SQL 역량" });
+    const r1 = await requirementRepo.create({ jobPostingId: jd1.id, rawText: "SQL" });
+    const r2 = await requirementRepo.create({ jobPostingId: jd2.id, rawText: "SQL 역량" });
     const sql = await competencyRepo.getOrCreate("SQL", "data");
     await requirementRepo.linkCompetency(r1.id, sql.id);
     await requirementRepo.linkCompetency(r2.id, sql.id);
@@ -179,8 +179,8 @@ describe("careerStatsRepo", () => {
   it("getCompetencyBubbleStats: 서로 다른 JD 수를 demandCount로, 전체 JD 수를 totalJd로 돌려준다", async () => {
     const jd1 = await createJobPosting({ companyName: "Toss" });
     const jd2 = await createJobPosting({ companyName: "Kurly" });
-    const r1 = await requirementRepo.create({ jobPostingId: jd1.id, text: "SQL" });
-    const r2 = await requirementRepo.create({ jobPostingId: jd2.id, text: "SQL" });
+    const r1 = await requirementRepo.create({ jobPostingId: jd1.id, rawText: "SQL" });
+    const r2 = await requirementRepo.create({ jobPostingId: jd2.id, rawText: "SQL" });
     const sql = await competencyRepo.getOrCreate("SQL", "data");
     await requirementRepo.linkCompetency(r1.id, sql.id);
     await requirementRepo.linkCompetency(r2.id, sql.id);
@@ -193,9 +193,9 @@ describe("careerStatsRepo", () => {
 
   it("getRoleMixStats: Role별 태깅된 Requirement 비율을 돌려준다", async () => {
     const jd1 = await createJobPosting();
-    const r1 = await requirementRepo.create({ jobPostingId: jd1.id, text: "a" });
-    const r2 = await requirementRepo.create({ jobPostingId: jd1.id, text: "b" });
-    const r3 = await requirementRepo.create({ jobPostingId: jd1.id, text: "c" });
+    const r1 = await requirementRepo.create({ jobPostingId: jd1.id, rawText: "a" });
+    const r2 = await requirementRepo.create({ jobPostingId: jd1.id, rawText: "b" });
+    const r3 = await requirementRepo.create({ jobPostingId: jd1.id, rawText: "c" });
     const da = await roleRepo.getOrCreate("Business DA");
     const pm = await roleRepo.getOrCreate("PM");
     await requirementRepo.linkRole(r1.id, da.id);
@@ -225,5 +225,62 @@ describe("careerStatsRepo", () => {
     const recent = await careerStatsRepo.getRecentJobPostings(2);
     expect(recent).toHaveLength(2);
     expect(recent[0].jobPosting.positionTitle).toBe("C");
+  });
+});
+
+describe("competencyRepo.getOrCreate / update (표준화 구조)", () => {
+  it("같은 이름으로 재사용할 때는 learningThemeKey를 덮어쓰지 않는다", async () => {
+    const first = await competencyRepo.getOrCreate("SQL", "data", "SQL");
+    const second = await competencyRepo.getOrCreate("SQL", "data", "다른값");
+    expect(second.id).toBe(first.id);
+    expect((await competencyRepo.get(first.id))?.learningThemeKey).toBe("SQL");
+  });
+
+  it("update로 learningThemeKey를 나중에 설정할 수 있다", async () => {
+    const competency = await competencyRepo.getOrCreate("SQL", "data");
+    expect(competency.learningThemeKey).toBeUndefined();
+
+    await competencyRepo.update(competency.id, { learningThemeKey: "SQL" });
+
+    expect((await competencyRepo.get(competency.id))?.learningThemeKey).toBe("SQL");
+  });
+});
+
+describe("competencyRepo.getDemandTrace (Competency → JD → rawText 역추적)", () => {
+  it("같은 Competency를 요구한 서로 다른 JD의 Requirement 원문까지 역추적한다", async () => {
+    const jd1 = await createJobPosting({ companyName: "Toss", positionTitle: "Business DA" });
+    const jd2 = await createJobPosting({ companyName: "Kurly", positionTitle: "Product DA" });
+    const r1 = await requirementRepo.create({
+      jobPostingId: jd1.id,
+      rawText: "진행 중인 A/B Test 지표 주기적 점검",
+    });
+    const r2 = await requirementRepo.create({ jobPostingId: jd2.id, rawText: "A/B Test 수행" });
+    const competency = await competencyRepo.getOrCreate("A/B Testing", "product");
+    await requirementRepo.linkCompetency(r1.id, competency.id);
+    await requirementRepo.linkCompetency(r2.id, competency.id);
+
+    const trace = await competencyRepo.getDemandTrace(competency.id);
+
+    expect(trace).toHaveLength(2);
+    const rawTexts = trace.map((t) => t.requirement.rawText).sort();
+    expect(rawTexts).toEqual(["A/B Test 수행", "진행 중인 A/B Test 지표 주기적 점검"]);
+    const companyNames = trace.map((t) => t.companyName).sort();
+    expect(companyNames).toEqual(["Kurly", "Toss"]);
+  });
+
+  it("아무도 요구하지 않은 Competency는 빈 배열이다", async () => {
+    const competency = await competencyRepo.getOrCreate("Unused", "data");
+    expect(await competencyRepo.getDemandTrace(competency.id)).toEqual([]);
+  });
+
+  it("Requirement가 삭제되면 역추적 목록에서도 사라진다", async () => {
+    const jobPosting = await createJobPosting();
+    const requirement = await requirementRepo.create({ jobPostingId: jobPosting.id, rawText: "SQL" });
+    const competency = await competencyRepo.getOrCreate("SQL", "data");
+    await requirementRepo.linkCompetency(requirement.id, competency.id);
+
+    await requirementRepo.remove(requirement.id);
+
+    expect(await competencyRepo.getDemandTrace(competency.id)).toEqual([]);
   });
 });

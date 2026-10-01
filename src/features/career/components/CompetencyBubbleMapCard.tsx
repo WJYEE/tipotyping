@@ -16,9 +16,10 @@ const MAX_SIZE = 148;
 
 interface CompetencyBubbleMapCardProps {
   bubbles: CompetencyBubbleStat[];
+  onSelectCompetency?: (competencyId: string) => void;
 }
 
-export function CompetencyBubbleMapCard({ bubbles }: CompetencyBubbleMapCardProps) {
+export function CompetencyBubbleMapCard({ bubbles, onSelectCompetency }: CompetencyBubbleMapCardProps) {
   const maxDemand = Math.max(1, ...bubbles.map((b) => b.demandCount));
 
   return (
@@ -53,8 +54,10 @@ export function CompetencyBubbleMapCard({ bubbles }: CompetencyBubbleMapCardProp
                 const cls = CATEGORY_CLASSES[bubble.competency.category];
                 const size = Math.round(MIN_SIZE + (MAX_SIZE - MIN_SIZE) * (bubble.demandCount / maxDemand));
                 return (
-                  <div
+                  <button
                     key={bubble.competency.id}
+                    type="button"
+                    onClick={() => onSelectCompetency?.(bubble.competency.id)}
                     className={`flex shrink-0 flex-col items-center justify-center gap-1 rounded-full border p-2 text-center ${cls.bubble}`}
                     style={{ width: size, height: size }}
                   >
@@ -64,7 +67,7 @@ export function CompetencyBubbleMapCard({ bubbles }: CompetencyBubbleMapCardProp
                     <span className={`font-display text-[13px] font-bold ${cls.text}`}>
                       {bubble.demandCount} / {bubble.totalJd}
                     </span>
-                  </div>
+                  </button>
                 );
               })}
             </div>

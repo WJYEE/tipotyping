@@ -41,20 +41,29 @@ export interface JobPosting {
 
 export type RequirementSourceSection = "responsibility" | "qualification" | "preferred";
 
+export const REQUIREMENT_SOURCE_SECTIONS: RequirementSourceSection[] = ["responsibility", "qualification", "preferred"];
+
 export interface Requirement {
   id: string;
   jobPostingId: string;
-  text: string;
+  /** JD 원문 그대로. 회사마다 표현이 달라도 이 값은 절대 고치지 않는다 — 표준화는 별도 필드로 관리한다. */
+  rawText: string;
+  /** 사람이 보기 좋게 정리한 표준화 표현 (선택, 수동 입력). AI로 추측해 채우지 않는다. */
+  normalizedLabel?: string;
   sourceSection?: RequirementSourceSection;
   createdAt: number;
 }
 
 export type CompetencyCategory = "data" | "business" | "product" | "tools";
 
+export const COMPETENCY_CATEGORIES: CompetencyCategory[] = ["data", "business", "product", "tools"];
+
 export interface Competency {
   id: string;
   name: string;
   category: CompetencyCategory;
+  /** 향후 TipoTyping Theme 연결용 키(Theme.seedKey 등과 매칭 예정). 지금은 저장만 하고 실제 이동 기능은 없다. */
+  learningThemeKey?: string;
   createdAt: number;
 }
 

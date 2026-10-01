@@ -1,6 +1,11 @@
 import Dexie from "dexie";
 import { afterEach, describe, expect, it } from "vitest";
-import { pruneEmptySessions, upgradeAnswerInputAlternatives, upgradeCustomThemeDisplayCodes } from "@/db/schema";
+import {
+  pruneEmptySessions,
+  renameRequirementTextToRawText,
+  upgradeAnswerInputAlternatives,
+  upgradeCustomThemeDisplayCodes,
+} from "@/db/schema";
 import { generateDisplayCode } from "@/lib/displayCode";
 
 const CAREER_V8_STORES = {
@@ -399,6 +404,62 @@ describe("v8 → v9 migration (JobPosting 채용일정/고용형태/경력조건
     });
     const byDeadline = await upgraded.table("jobPostings").orderBy("applicationEndDate").toArray();
     expect(byDeadline.map((jp: { id: string }) => jp.id)).toContain("jp2");
+    upgraded.close();
+  });
+});
+
+class V10DB extends V9DB {
+  constructor() {
+    super();
+    this.version(10).stores({}).upgrade(renameRequirementTextToRawText);
+  }
+}
+
+describe("v9 → v10 migration (Requirement.text → rawText, 표준화 구조 도입)", () => {
+  it("기존 Requirement의 text 값이 rawText로 그대로 옮겨진다 (원문 유실 없음)", async () => {
+    const legacy = new V9DB();
+    await legacy.open();
+
+    await legacy.table("companies").add({ id: "c1", name: "Toss", createdAt: 1 });
+    await legacy.table("jobPostings").add({
+      id: "jp1",
+      companyId: "c1",
+      postingTitle: "2026 상반기 공채",
+      positionTitle: "Business Data Analyst",
+      responsibilities: "",
+      qualifications: "",
+      preferredQualifications: "",
+      createdAt: 1,
+      updatedAt: 1,
+    });
+    // 업그레이드 전(v9 시절) 스키마: text 필드만 있고 rawText/normalizedLabel은 없다.
+    await legacy.table("requirements").add({
+      id: "r1",
+      jobPostingId: "jp1",
+      text: "SQL 능숙",
+      sourceSection: "qualification",
+      createdAt: 1,
+    });
+    legacy.close();
+
+    const upgraded = new V10DB();
+    await upgraded.open();
+    const [requirement] = await upgraded.table("requirements").toArray();
+    expect(requirement.rawText).toBe("SQL 능숙");
+    expect(requirement.normalizedLabel).toBeUndefined();
+    upgraded.close();
+  });
+
+  it("text가 없던(비정상) Requirement는 빈 문자열 rawText로 안전하게 채운다", async () => {
+    const legacy = new V9DB();
+    await legacy.open();
+    await legacy.table("requirements").add({ id: "r1", jobPostingId: "jp1", createdAt: 1 });
+    legacy.close();
+
+    const upgraded = new V10DB();
+    await upgraded.open();
+    const [requirement] = await upgraded.table("requirements").toArray();
+    expect(requirement.rawText).toBe("");
     upgraded.close();
   });
 });
