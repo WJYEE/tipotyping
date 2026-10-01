@@ -2,6 +2,15 @@ import Dexie, { type EntityTable, type Transaction } from "dexie";
 import { splitIfAlternativeAnswers } from "@/lib/answerAlternatives";
 import { generateDisplayCode, planCustomThemeRecode } from "@/lib/displayCode";
 import type {
+  Company,
+  Competency,
+  JobPosting,
+  Requirement,
+  RequirementCompetency,
+  RequirementRole,
+  Role,
+} from "@/types/career";
+import type {
   Attempt,
   Category,
   Question,
@@ -21,6 +30,13 @@ export class TipoTypingDB extends Dexie {
   sessions!: EntityTable<Session, "id">;
   attempts!: EntityTable<Attempt, "id">;
   settings!: EntityTable<SettingsRecord, "id">;
+  companies!: EntityTable<Company, "id">;
+  jobPostings!: EntityTable<JobPosting, "id">;
+  requirements!: EntityTable<Requirement, "id">;
+  competencies!: EntityTable<Competency, "id">;
+  roles!: EntityTable<Role, "id">;
+  requirementCompetencies!: EntityTable<RequirementCompetency, "id">;
+  requirementRoles!: EntityTable<RequirementRole, "id">;
 
   constructor() {
     super("tipotyping");
@@ -110,6 +126,18 @@ export class TipoTypingDB extends Dexie {
     // Attempt가 0개인 빈 Session이 남아있던 버그를 고쳤다. 이미 저장된 빈 Session(및 혹시 남아있을
     // 관련 Attempt)을 정리한다. totalAttempts가 0인 Session은 분석적으로 의미가 없어 삭제해도 안전하다.
     this.version(7).stores({}).upgrade(pruneEmptySessions);
+
+    // v8: Career 서비스 영역의 데이터 모델 추가 (JobPosting/Requirement/Competency/Role 및
+    // 연결 관계). 전부 새 테이블이라 데이터 마이그레이션은 필요 없다. Learning 테이블은 건드리지 않는다.
+    this.version(8).stores({
+      companies: "id, name",
+      jobPostings: "id, companyId, createdAt, updatedAt",
+      requirements: "id, jobPostingId, sourceSection, createdAt",
+      competencies: "id, &name, category",
+      roles: "id, &name",
+      requirementCompetencies: "id, requirementId, competencyId",
+      requirementRoles: "id, requirementId, roleId",
+    });
   }
 }
 

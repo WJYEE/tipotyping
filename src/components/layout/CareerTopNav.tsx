@@ -3,7 +3,7 @@ import { PlusIcon } from "@/components/ui/icons";
 
 const CAREER_NAV_TABS: { path: string; label: string; disabled?: boolean }[] = [
   { path: "/career", label: "Dashboard" },
-  { path: "/career/jd-library", label: "JD Library", disabled: true },
+  { path: "/career/jd-library", label: "JD Library" },
   { path: "/career/my-evidence", label: "My Evidence", disabled: true },
 ];
 
@@ -41,7 +41,8 @@ export function CareerTopNav() {
       <div className="flex items-center gap-6">
         <nav className="flex items-center gap-4">
           {CAREER_NAV_TABS.map((tab) => {
-            const isActive = location.pathname === tab.path;
+            const isActive =
+              tab.path === "/career" ? location.pathname === "/career" : location.pathname.startsWith(tab.path);
             return (
               <button
                 key={tab.path}
@@ -64,8 +65,8 @@ export function CareerTopNav() {
 
         <button
           type="button"
-          disabled
-          className="flex items-center gap-2 rounded-[6px] bg-career-text-primary px-4 py-2.5 font-body text-[13px] font-bold text-white opacity-60"
+          onClick={() => navigate("/career/jd-library")}
+          className="flex items-center gap-2 rounded-[6px] bg-career-text-primary px-4 py-2.5 font-body text-[13px] font-bold text-white"
         >
           <PlusIcon className="h-3.5 w-3.5" />
           JD 저장

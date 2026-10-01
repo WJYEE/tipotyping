@@ -9,13 +9,11 @@ import { syncDefaultContent } from "@/db/seed/seed";
 import type { Attempt, Question, Session, Tag, Theme } from "@/types/domain";
 
 async function clearAllTables() {
-  await db.transaction(
-    "rw",
-    [db.categories, db.themes, db.tags, db.questions, db.questionRecords, db.sessions, db.attempts, db.settings],
-    async () => {
-      await Promise.all(db.tables.map((t) => t.clear()));
-    },
-  );
+  // db.tables를 그대로 순회한다 — 잠금 범위를 테이블 목록과 분리해 하드코딩하면 새 테이블(Career 등)이
+  // 추가될 때마다 범위 밖 테이블을 clear()하려다 NotFoundError가 나는 식으로 깨진다.
+  await db.transaction("rw", db.tables, async () => {
+    await Promise.all(db.tables.map((t) => t.clear()));
+  });
 }
 
 beforeEach(clearAllTables);

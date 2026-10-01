@@ -1,29 +1,37 @@
+import { useLiveQuery } from "dexie-react-hooks";
+import { careerStatsRepo } from "@/db/repositories/careerStatsRepo";
 import { CompetencyBubbleMapCard } from "@/features/career/components/CompetencyBubbleMapCard";
 import { OverviewSection } from "@/features/career/components/OverviewSection";
 import { PreparationGapCard } from "@/features/career/components/PreparationGapCard";
 import { RecentSavedJdCard } from "@/features/career/components/RecentSavedJdCard";
 import { RoleMixCard } from "@/features/career/components/RoleMixCard";
-import {
-  competencyBubbles,
-  overviewMetrics,
-  preparationGapRows,
-  roleMixEntries,
-  savedJdRows,
-} from "@/features/career/mockData";
+
+const EMPTY_OVERVIEW = {
+  savedJdCount: 0,
+  extractedCompetencyCount: 0,
+  connectedEvidenceCount: 0,
+  preparationGapCount: 0,
+  lastUpdatedAt: null,
+};
 
 export function CareerDashboardScreen() {
+  const overview = useLiveQuery(() => careerStatsRepo.getOverviewStats(), []) ?? EMPTY_OVERVIEW;
+  const bubbles = useLiveQuery(() => careerStatsRepo.getCompetencyBubbleStats(), []) ?? [];
+  const roleMix = useLiveQuery(() => careerStatsRepo.getRoleMixStats(), []) ?? [];
+  const recentJds = useLiveQuery(() => careerStatsRepo.getRecentJobPostings(5), []) ?? [];
+
   return (
     <div className="mx-auto flex max-w-[1440px] flex-col gap-8 px-6 py-8 md:px-11 md:py-8">
-      <OverviewSection lastAnalyzedAt="2026.10.01 13:40" metrics={overviewMetrics} />
+      <OverviewSection stats={overview} />
 
       <div className="flex flex-col gap-6 lg:flex-row">
-        <CompetencyBubbleMapCard bubbles={competencyBubbles} />
-        <RoleMixCard entries={roleMixEntries} onSelectRole={(role) => console.log("select role", role.id)} />
+        <CompetencyBubbleMapCard bubbles={bubbles} />
+        <RoleMixCard stats={roleMix} />
       </div>
 
-      <PreparationGapCard rows={preparationGapRows} />
+      <PreparationGapCard />
 
-      <RecentSavedJdCard rows={savedJdRows} totalCount={14} />
+      <RecentSavedJdCard rows={recentJds} totalCount={overview.savedJdCount} />
     </div>
   );
 }
