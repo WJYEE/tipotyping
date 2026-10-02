@@ -35,6 +35,12 @@ export function TopNav() {
           >
             Career
           </Link>
+          <Link
+            to="/stellation"
+            className="rounded-pill px-3.5 py-1.5 font-body text-[13px] font-semibold text-text-secondary hover:text-text-primary"
+          >
+            Stellation
+          </Link>
         </div>
       </div>
 

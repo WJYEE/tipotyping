@@ -1,4 +1,4 @@
-/* Knowledge Sky 전용 스타일. 이 파일은 /constellation-lab lazy chunk에서만 로드되며 기존 토큰/전역 스타일을 건드리지 않는다. */
+/* Stellation 전용 스타일. 이 파일은 /stellation lazy chunk에서만 로드되며 기존 토큰/전역 스타일을 건드리지 않는다. */
 .sky-root {
   position: fixed;
   inset: 0;
@@ -41,24 +41,56 @@
   color: rgba(214, 223, 245, 0.42);
 }
 
-.sky-home {
+.sky-nav {
   position: absolute;
   top: 22px;
   left: 26px;
   z-index: 2;
+  display: flex;
+  gap: 22px;
+}
+.sky-nav__link,
+.sky-back {
   font-size: 12px;
   letter-spacing: 0.14em;
   color: rgba(200, 210, 235, 0.48);
   text-decoration: none;
   transition: color 200ms ease;
 }
-.sky-home:hover {
+.sky-nav__link:hover,
+.sky-back:hover {
   color: rgba(225, 232, 250, 0.9);
 }
-.sky-home:focus-visible {
+.sky-nav__link:focus-visible,
+.sky-back:focus-visible {
   outline: 1px solid rgba(225, 232, 250, 0.7);
   outline-offset: 4px;
   border-radius: 2px;
+}
+
+/* Focus 중에만 나타나는 Universe 복귀 버튼(모바일에는 ESC가 없다). */
+.sky-back {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 2;
+  padding: 8px 6px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  animation: sky-back-in 500ms ease both;
+}
+@keyframes sky-back-in {
+  from {
+    opacity: 0;
+  }
+}
+@media (pointer: coarse) {
+  .sky-back,
+  .sky-nav__link {
+    padding: 12px 8px;
+    min-height: 44px;
+  }
 }
 
 .sky-note {
@@ -102,5 +134,8 @@
   .sky-fade {
     transition: none;
     opacity: 1;
+  }
+  .sky-back {
+    animation: none;
   }
 }

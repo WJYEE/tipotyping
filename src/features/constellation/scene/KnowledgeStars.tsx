@@ -1,5 +1,5 @@
-import { useEffect, useMemo } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useEffect, useMemo, useRef } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
 import {
   AddEquation,
   BufferAttribute,
@@ -12,6 +12,7 @@ import {
   Vector2,
   ZeroFactor,
 } from "three";
+import { clampDt, damp, emphasisTarget, EMPHASIS_LAMBDA } from "@/features/constellation/model/starFocus";
 import { starVisual, type StarVisual } from "@/features/constellation/model/starVisual";
 import type { StarNode } from "@/features/constellation/model/types";
 import { KNOWLEDGE_FRAGMENT, KNOWLEDGE_VERTEX } from "@/features/constellation/scene/knowledgeShaders";
@@ -45,9 +46,22 @@ export function packKnowledgeStars(stars: StarNode[]) {
  * 합성은 RGB 가산 + framebuffer alpha 불변이다. three의 AdditiveBlending은 alpha 채널에도 SRC_ALPHA를 더해
  * quad 전체가 불투명한 검은 사각형이 되므로 쓰지 않는다(BackdropStars와 같은 방식).
  */
-export function KnowledgeStars({ stars, reducedMotion }: { stars: StarNode[]; reducedMotion: boolean }) {
+export function KnowledgeStars({
+  stars,
+  reducedMotion,
+  hoveredId = null,
+  selectedId = null,
+}: {
+  stars: StarNode[];
+  reducedMotion: boolean;
+  /** hover/선택 강조(선택). 둘 다 없으면 렌더 결과는 기존과 비트 단위로 같다. */
+  hoveredId?: string | null;
+  selectedId?: string | null;
+}) {
+  const invalidate = useThree((s) => s.invalidate);
+  const packed = useMemo(() => packKnowledgeStars(stars), [stars]);
   const geometry = useMemo(() => {
-    const d = packKnowledgeStars(stars);
+    const d = packed;
     const g = new InstancedBufferGeometry();
     g.setAttribute("position", new BufferAttribute(new Float32Array([-1, -1, 0, 1, -1, 0, 1, 1, 0, -1, 1, 0]), 3));
     g.setIndex([0, 1, 2, 0, 2, 3]);
@@ -58,7 +72,22 @@ export function KnowledgeStars({ stars, reducedMotion }: { stars: StarNode[]; re
     g.setAttribute("aSize", new InstancedBufferAttribute(d.size, 2));
     g.instanceCount = d.count;
     return g;
-  }, [stars]);
+  }, [packed]);
+
+  // 승인된 luminosity(원본)와 현재 강조 배율. 강조는 배율 1(원본 그대로)로 되돌아가는 일시적 상태일 뿐이다.
+  const baseLuminosity = useMemo(() => Float32Array.from({ length: packed.count }, (_, i) => packed.shape[i * 4 + 3]), [packed]);
+  const emphasis = useRef<Float32Array>(new Float32Array(0));
+  useEffect(() => {
+    emphasis.current = new Float32Array(packed.count).fill(1);
+  }, [packed]);
+  const indexById = useMemo(() => new Map(stars.map((s, i) => [s.id, i])), [stars]);
+  const hoveredIndex = hoveredId === null ? -1 : (indexById.get(hoveredId) ?? -1);
+  const selectedIndex = selectedId === null ? -1 : (indexById.get(selectedId) ?? -1);
+  const emphasisGoal = useRef({ hovered: -1, selected: -1 });
+  useEffect(() => {
+    emphasisGoal.current = { hovered: hoveredIndex, selected: selectedIndex };
+    invalidate();
+  }, [hoveredIndex, selectedIndex, invalidate]);
 
   const material = useMemo(
     () =>
@@ -89,9 +118,33 @@ export function KnowledgeStars({ stars, reducedMotion }: { stars: StarNode[]; re
   useEffect(() => () => geometry.dispose(), [geometry]);
   useEffect(() => () => material.dispose(), [material]);
 
-  useFrame(({ clock, size }) => {
+  useFrame(({ clock, size }, delta) => {
     material.uniforms.uTime.value = reducedMotion ? 0 : clock.elapsedTime;
     material.uniforms.uResolution.value.set(size.width, size.height);
+
+    // hover/선택 강조: 목표 배율로 감쇠. 배율이 1로 돌아오면 원본 luminosity를 그대로 써서 외형이 변하지 않는다.
+    const current = emphasis.current;
+    if (current.length !== packed.count) return;
+    const goal = emphasisGoal.current;
+    const dt = clampDt(delta);
+    let changed = false;
+    let moving = false;
+    for (let i = 0; i < packed.count; i++) {
+      const target = emphasisTarget(i, goal.hovered, goal.selected);
+      let next = reducedMotion ? target : damp(current[i], target, EMPHASIS_LAMBDA, dt);
+      if (Math.abs(next - target) < 0.002) next = target;
+      else moving = true;
+      if (next !== current[i]) {
+        current[i] = next;
+        packed.shape[i * 4 + 3] = next === 1 ? baseLuminosity[i] : baseLuminosity[i] * next;
+        changed = true;
+      }
+    }
+    if (changed) {
+      const attr = geometry.getAttribute("aShape") as InstancedBufferAttribute;
+      attr.needsUpdate = true;
+    }
+    if (moving) invalidate();
   });
 
   return <primitive object={mesh} />;
