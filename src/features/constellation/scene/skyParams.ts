@@ -2,10 +2,11 @@ export interface SkyParams {
   milkyWay: number;
   glow: number;
   vignette: number;
+  haze: number;
   seed: number;
 }
 
-export const DEFAULT_SKY_PARAMS: SkyParams = { milkyWay: 1, glow: 1, vignette: 1, seed: 7.31 };
+export const DEFAULT_SKY_PARAMS: SkyParams = { milkyWay: 1, glow: 1, vignette: 1, haze: 1, seed: 7.31 };
 
 /**
  * 개발 중 눈으로 조정하기 위한 URL 오버라이드. 예: /constellation-lab?milkyWay=2&glow=1.5
@@ -19,5 +20,5 @@ export function parseSkyParams(search: string): SkyParams {
     const v = Number(raw);
     return Number.isFinite(v) && v >= 0 && v <= max ? v : DEFAULT_SKY_PARAMS[key];
   };
-  return { milkyWay: read("milkyWay", 6), glow: read("glow", 6), vignette: read("vignette", 2), seed: read("seed", 1000) };
+  return { milkyWay: read("milkyWay", 6), glow: read("glow", 6), vignette: read("vignette", 2), haze: read("haze", 6), seed: read("seed", 1000) };
 }

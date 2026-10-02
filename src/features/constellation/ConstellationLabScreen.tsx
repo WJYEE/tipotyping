@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { buildCuratedSky } from "@/features/constellation/model/curatedSky";
+import { ForestSilhouette } from "@/features/constellation/environment/ForestSilhouette";
 import { SkyBackdrop } from "@/features/constellation/scene/SkyBackdrop";
 import { SkyScene } from "@/features/constellation/scene/SkyScene";
 import type { LabelAnchor } from "@/features/constellation/scene/SkyRig";
@@ -77,6 +78,8 @@ export function ConstellationLabScreen() {
         ))}
         {!webgl && <p className="sky-note">이 환경에서는 WebGL을 사용할 수 없어 별을 표시하지 못합니다.</p>}
       </div>
+
+      <ForestSilhouette />
 
       <Link to="/" className="sky-home">
         ← Home

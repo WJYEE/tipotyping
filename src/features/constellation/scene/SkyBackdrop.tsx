@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { DEFAULT_SKY_PARAMS, parseSkyParams } from "@/features/constellation/scene/skyParams";
+import { forestHorizon } from "@/features/constellation/environment/forestLayout";
 import { SKY_FRAGMENT, SKY_VERTEX } from "@/features/constellation/scene/skyShader";
 
 // WebGL을 쓸 수 없을 때의 정적 대체: 같은 톤의 아주 옅은 CSS 그라디언트.
@@ -47,6 +48,8 @@ function createSkyRenderer(canvas: HTMLCanvasElement, params: typeof DEFAULT_SKY
   gl.uniform1f(u("uGlow"), params.glow);
   gl.uniform1f(u("uVignette"), params.vignette);
   gl.uniform1f(u("uSeed"), params.seed);
+  gl.uniform1f(u("uHaze"), params.haze);
+  const uHorizon = u("uHorizon");
 
   return {
     draw() {
@@ -59,6 +62,7 @@ function createSkyRenderer(canvas: HTMLCanvasElement, params: typeof DEFAULT_SKY
       }
       gl.viewport(0, 0, w, h);
       gl.uniform2f(uRes, w, h);
+      gl.uniform1f(uHorizon, forestHorizon(w, h));
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     },
     dispose() {

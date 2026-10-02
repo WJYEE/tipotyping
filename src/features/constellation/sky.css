@@ -70,6 +70,22 @@
   color: rgba(200, 210, 235, 0.45);
 }
 
+/* 숲 실루엣: 정적인 장식. 별(canvas)과 라벨 위, Home 링크 아래. */
+.sky-forest {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.sky-forest::after {
+  content: "";
+  display: block;
+  height: env(safe-area-inset-bottom, 0px);
+  background: #020309;
+}
+
 .sky-sr-only {
   position: absolute;
   width: 1px;

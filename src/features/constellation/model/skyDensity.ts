@@ -58,21 +58,38 @@ const ANGLE = -0.52;
 const COS = Math.cos(ANGLE);
 const SIN = Math.sin(ANGLE);
 
-/** skyShader.ts의 Milky Way 밀도(band·along·cloud)와 먼지 띠. 0~약 1.4. */
+/** GLSL mix */
+const mix = (a: number, b: number, t: number) => a + (b - a) * t;
+
+/**
+ * skyShader.ts의 Milky Way 구조를 그대로 옮긴 것. 두 곳을 함께 수정해야 한다.
+ * density: 은하수 본체 + 옅은 haze(0~약 1.5), dust: 먼지 lane/덩어리로 별이 줄어드는 정도(0~1).
+ */
 export function milkyWayStructure(px: number, py: number): { density: number; dust: number } {
   const qx = COS * px + SIN * py;
   const qy = -SIN * px + COS * py;
-  const bend = (fbm(qx * 0.9 + 5 + SX, 2.3 + SY) - 0.5) * 0.34;
-  const d = qy - bend;
-  const band = Math.exp(-Math.pow(d / 0.3, 2));
-  const along = 0.55 + 0.45 * fbm(qx * 0.8 - 4 + SX, 8.1 + SY);
-  const cloud = 0.35 + 1.15 * fbm(qx * 2.4 + SX * 1.3, qy * 2.4 + SY * 1.3);
-  const dust = smoothstep(0.52, 0.78, fbm(qx * 3.6 + 11 + SX, qy * 5.2 + 11 + SY));
-  return { density: band * along * cloud, dust: dust * band };
+  const wx = fbm(qx * 0.8 + SX + 7, qy * 0.8 + SY + 7) - 0.5;
+  const wy = fbm(qx * 0.8 + SX + 19, qy * 0.8 + SY + 19) - 0.5;
+  const qwx = qx + wx * 0.3;
+  const qwy = qy + wy * 0.3;
+  const bend = (fbm(qwx * 0.9 + 5 + SX, 2.3 + SY) - 0.5) * 0.5;
+  const d = qwy - bend;
+  const widthMod = 0.26 + 0.14 * fbm(qwx * 0.7 + 2 + SX, 5.5 + SY);
+  const side = mix(1.28, 1.0, smoothstep(-0.05, 0.05, d));
+  const wd = widthMod * side;
+  const band = Math.exp(-Math.pow(d / wd, 2));
+  const haze = Math.exp(-Math.pow(d / (wd * 2), 2));
+  const along = 0.22 + 0.78 * smoothstep(0.25, 0.75, fbm(qwx * 0.8 - 4 + SX, 8.1 + SY));
+  const cloud = 0.25 + 1.35 * fbm(qwx * 2.4 + SX * 1.3, qwy * 2.4 + SY * 1.3);
+  const laneC = 0.04 + (fbm(qwx * 1.6 + 9 + SX, 3.3 + SY) - 0.5) * 0.12;
+  const lane = Math.exp(-Math.pow((d - laneC) / 0.055, 2)) * smoothstep(0.35, 0.7, fbm(qwx * 2.2 + 1 + SX, qwy * 3 + SY));
+  const dust = smoothstep(0.52, 0.78, fbm(qwx * 3.6 + 11 + SX, qwy * 5.2 + 11 + SY));
+  const body = Math.max(0, band * along * cloud * (1 - 0.6 * dust * band - 0.85 * lane));
+  return { density: body + 0.22 * haze * along, dust: Math.min(1, 0.6 * dust * band + 0.85 * lane) };
 }
 
 /** 별 밀도 상대값. 대략 0(비어 있음) ~ DENSITY_MAX. */
-export const DENSITY_MAX = 2.4;
+export const DENSITY_MAX = 2.8;
 
 export function starDensity(px: number, py: number): number {
   // 1) 큰 규모의 빈 공간: 낮은 값 영역은 거의 비어 있다.
@@ -82,6 +99,6 @@ export function starDensity(px: number, py: number): number {
   const clump = 0.45 + 0.75 * smoothstep(0.3, 0.72, fbm(px * 4.2 - 21, py * 4.2 + 9));
   // 3) Milky Way 쪽이 약간 더 촘촘하고, 먼지 띠에서는 줄어든다.
   const mw = milkyWayStructure(px, py);
-  const galactic = 1 + 0.9 * Math.min(1.4, mw.density) - 0.55 * mw.dust;
+  const galactic = 1 + 1.2 * Math.min(1.4, mw.density) - 0.6 * mw.dust;
   return base * clump * Math.max(0.2, galactic);
 }

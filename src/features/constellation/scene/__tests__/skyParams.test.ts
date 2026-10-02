@@ -10,6 +10,7 @@ describe("parseSkyParams", () => {
     expect(p.milkyWay).toBe(2.5);
     expect(p.glow).toBe(DEFAULT_SKY_PARAMS.glow);
     expect(p.vignette).toBe(DEFAULT_SKY_PARAMS.vignette);
+    expect(parseSkyParams("?haze=2").haze).toBe(2);
     expect(p.seed).toBe(12);
   });
 });
