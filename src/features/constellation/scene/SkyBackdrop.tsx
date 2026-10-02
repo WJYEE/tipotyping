@@ -1,82 +1,121 @@
 import { useEffect, useRef } from "react";
-import { createRng } from "@/features/constellation/model/rng";
+import { DEFAULT_SKY_PARAMS, parseSkyParams } from "@/features/constellation/scene/skyParams";
+import { SKY_FRAGMENT, SKY_VERTEX } from "@/features/constellation/scene/skyShader";
 
-// 단색 검정이 아닌 "깊은 밤하늘" 배경. 작은 2D canvas에 한 번만 그려 CSS로 늘려 쓴다(비용이 거의 없다).
-// 완만한 수직 그라디언트 + 아주 옅은 대각선 은하수 띠 + 넓은 성운 얼룩 + 비네팅으로 구성한다.
-const W = 960;
-const H = 540;
-const SEED = 7102026;
+// WebGL을 쓸 수 없을 때의 정적 대체: 같은 톤의 아주 옅은 CSS 그라디언트.
+const FALLBACK_BG =
+  "radial-gradient(ellipse 85% 75% at 50% 42%, #070a14 0%, #04060d 70%, #02030a 100%), #04060d";
 
-export function paintSky(ctx: CanvasRenderingContext2D) {
-  const rng = createRng(SEED);
-
-  // 1) 완만한 깊이 그라디언트: 위는 거의 검정에 가까운 남색, 아래는 아주 약간 밝고 따뜻함
-  const base = ctx.createLinearGradient(0, 0, 0, H);
-  base.addColorStop(0, "#03050b");
-  base.addColorStop(0.45, "#070b18");
-  base.addColorStop(0.8, "#0c1224");
-  base.addColorStop(1, "#13172a");
-  ctx.fillStyle = base;
-  ctx.fillRect(0, 0, W, H);
-
-  // 2) 넓고 아주 옅은 성운 얼룩(차가운/따뜻한 톤이 번갈아). 형태가 읽히지 않을 정도로만.
-  const blobs: [number, number, number, string][] = [
-    [0.22, 0.32, 0.34, "rgba(70,90,150,0.07)"],
-    [0.74, 0.62, 0.38, "rgba(60,80,140,0.06)"],
-    [0.5, 0.18, 0.3, "rgba(110,90,140,0.04)"],
-    [0.86, 0.2, 0.26, "rgba(70,95,150,0.05)"],
-    [0.12, 0.8, 0.3, "rgba(120,95,90,0.035)"],
-  ];
-  for (const [bx, by, br, color] of blobs) {
-    const g = ctx.createRadialGradient(bx * W, by * H, 0, bx * W, by * H, br * W);
-    g.addColorStop(0, color);
-    g.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = g;
-    ctx.fillRect(0, 0, W, H);
+function compile(gl: WebGLRenderingContext, type: number, src: string): WebGLShader | null {
+  const shader = gl.createShader(type);
+  if (!shader) return null;
+  gl.shaderSource(shader, src);
+  gl.compileShader(shader);
+  if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+    gl.deleteShader(shader);
+    return null;
   }
-
-  // 3) 대각선 은하수 띠: 가우시안 분포로 흩뿌린 아주 작은 점. 밀집부가 밝은 안개처럼 보인다.
-  const angle = -0.42;
-  const cos = Math.cos(angle);
-  const sin = Math.sin(angle);
-  for (let i = 0; i < 9000; i++) {
-    const along = (rng() - 0.5) * W * 1.5;
-    const across = (rng() + rng() + rng() - 1.5) * 70; // 가운데로 몰림
-    const x = W / 2 + along * cos - across * sin;
-    const y = H / 2 + along * sin + across * cos;
-    const warm = rng() < 0.3;
-    const a = 0.012 + rng() * 0.03;
-    ctx.fillStyle = warm ? `rgba(215,190,170,${a})` : `rgba(165,190,235,${a})`;
-    const s = 0.5 + rng() * 1.1;
-    ctx.fillRect(x, y, s, s);
-  }
-
-  // 4) 비네팅: 가장자리를 눌러 시선을 중앙의 별에 둔다
-  const vignette = ctx.createRadialGradient(W / 2, H / 2, H * 0.28, W / 2, H / 2, W * 0.62);
-  vignette.addColorStop(0, "rgba(0,0,0,0)");
-  vignette.addColorStop(1, "rgba(0,0,0,0.5)");
-  ctx.fillStyle = vignette;
-  ctx.fillRect(0, 0, W, H);
+  return shader;
 }
 
+/** 풀스크린 삼각형 하나를 그리는 draw 함수를 만든다. 실패하면 null. */
+function createSkyRenderer(canvas: HTMLCanvasElement, params: typeof DEFAULT_SKY_PARAMS) {
+  const gl = (canvas.getContext("webgl", { antialias: false, alpha: false, depth: false, stencil: false }) ??
+    canvas.getContext("experimental-webgl")) as WebGLRenderingContext | null;
+  if (!gl) return null;
+
+  const vs = compile(gl, gl.VERTEX_SHADER, SKY_VERTEX);
+  const fs = compile(gl, gl.FRAGMENT_SHADER, SKY_FRAGMENT);
+  const program = gl.createProgram();
+  if (!vs || !fs || !program) return null;
+  gl.attachShader(program, vs);
+  gl.attachShader(program, fs);
+  gl.linkProgram(program);
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return null;
+  gl.useProgram(program);
+
+  const buffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+  const loc = gl.getAttribLocation(program, "aPos");
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+  const u = (name: string) => gl.getUniformLocation(program, name);
+  const uRes = u("uRes");
+  gl.uniform1f(u("uMilkyWay"), params.milkyWay);
+  gl.uniform1f(u("uGlow"), params.glow);
+  gl.uniform1f(u("uVignette"), params.vignette);
+  gl.uniform1f(u("uSeed"), params.seed);
+
+  return {
+    draw() {
+      // 배경은 저주파라 1 CSS px당 1 픽셀이면 충분하다(고DPI에서도 dithering이 곱게 남는다).
+      const w = Math.max(1, Math.round(canvas.clientWidth));
+      const h = Math.max(1, Math.round(canvas.clientHeight));
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+      }
+      gl.viewport(0, 0, w, h);
+      gl.uniform2f(uRes, w, h);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    },
+    dispose() {
+      gl.deleteProgram(program);
+      gl.deleteShader(vs);
+      gl.deleteShader(fs);
+      gl.deleteBuffer(buffer);
+    },
+  };
+}
+
+/**
+ * GPU procedural 밤하늘. 프레임 루프 없이 mount/resize/context 복구 때만 한 번 그린다.
+ * 개발 서버에서는 ?milkyWay=&glow=&vignette=&seed= 로 값을 바꿔 볼 수 있다.
+ */
 export function SkyBackdrop() {
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = ref.current;
-    const ctx = canvas?.getContext("2d");
-    if (!canvas || !ctx) return;
-    paintSky(ctx);
+    if (!canvas) return;
+    const params = import.meta.env.DEV ? parseSkyParams(window.location.search) : DEFAULT_SKY_PARAMS;
+    let renderer = createSkyRenderer(canvas, params);
+    if (!renderer) {
+      canvas.style.background = FALLBACK_BG;
+      return;
+    }
+
+    let raf = 0;
+    const schedule = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => renderer?.draw());
+    };
+    schedule();
+
+    const observer = new ResizeObserver(schedule);
+    observer.observe(canvas);
+    const onLost = (e: Event) => {
+      e.preventDefault();
+      renderer = null;
+    };
+    // 컨텍스트가 복구되면 프로그램을 다시 만들어 한 번 더 그린다.
+    const onRestored = () => {
+      renderer = createSkyRenderer(canvas, params);
+      if (renderer) schedule();
+    };
+    canvas.addEventListener("webglcontextlost", onLost);
+    canvas.addEventListener("webglcontextrestored", onRestored);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      observer.disconnect();
+      canvas.removeEventListener("webglcontextlost", onLost);
+      canvas.removeEventListener("webglcontextrestored", onRestored);
+      renderer?.dispose();
+    };
   }, []);
 
-  return (
-    <canvas
-      ref={ref}
-      width={W}
-      height={H}
-      aria-hidden="true"
-      className="absolute inset-0 h-full w-full"
-      style={{ backgroundColor: "#05070f" }}
-    />
-  );
+  return <canvas ref={ref} aria-hidden="true" className="absolute inset-0 h-full w-full" style={{ backgroundColor: "#04060d" }} />;
 }

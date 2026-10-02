@@ -26,16 +26,6 @@ function useMediaQuery(query: string): boolean {
   return matches;
 }
 
-function useViewportSize() {
-  const [size, setSize] = useState(() => ({ width: window.innerWidth, height: window.innerHeight }));
-  useEffect(() => {
-    const onResize = () => setSize({ width: window.innerWidth, height: window.innerHeight });
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-  return size;
-}
-
 /**
  * Phase 1: 별의 시각 품질만 확인하는 독립 prototype. 소수의 curated mock 별자리를 쓰며 IndexedDB를 읽거나 쓰지 않는다.
  * UI는 최소한(Home 링크, 라벨)으로 두고 Detail Panel/클릭 이동은 구현하지 않는다.
@@ -44,7 +34,6 @@ export function ConstellationLabScreen() {
   const sky = useMemo(() => buildCuratedSky(), []);
   const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const coarsePointer = useMediaQuery("(pointer: coarse)");
-  const viewport = useViewportSize();
   const webgl = useMemo(() => hasWebGL(), []);
   const [ready, setReady] = useState(false);
 
@@ -73,7 +62,7 @@ export function ConstellationLabScreen() {
       <SkyBackdrop />
 
       <div className="sky-fade" data-ready={ready}>
-        {webgl && <SkyScene sky={sky} reducedMotion={reducedMotion} anchors={anchors} viewport={viewport} coarsePointer={coarsePointer} />}
+        {webgl && <SkyScene sky={sky} reducedMotion={reducedMotion} anchors={anchors} coarsePointer={coarsePointer} />}
         {labels.map((l, i) => (
           <div
             key={l.key}

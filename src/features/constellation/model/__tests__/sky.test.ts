@@ -3,7 +3,6 @@ import { buildCuratedSky } from "@/features/constellation/model/curatedSky";
 import { createRng, hashString } from "@/features/constellation/model/rng";
 import { starVisual, studyAmount } from "@/features/constellation/model/starVisual";
 import { buildLineGeometry } from "@/features/constellation/scene/ConstellationLines";
-import { generateBackdropStars } from "@/features/constellation/scene/StarPoints";
 
 describe("rng", () => {
   it("같은 seed는 항상 같은 수열을 만든다", () => {
@@ -49,32 +48,69 @@ describe("curated sky", () => {
 
 describe("starVisual", () => {
   const sky = buildCuratedSky();
+  const visuals = sky.stars.map((s) => ({ star: s, v: starVisual(s) }));
 
-  it("미학습 별은 사라지지 않고 아주 희미하다", () => {
+  it("미학습 별은 사라지지 않고 아주 희미한 작은 점이다", () => {
     const unstudied = sky.stars.find((s) => s.attemptCount === 0)!;
     const v = starVisual(unstudied);
-    expect(v.brightness).toBeGreaterThan(0.05);
-    expect(v.brightness).toBeLessThan(0.25);
-    expect(v.spike).toBe(0);
+    expect(v.tier).toBe(1);
+    expect(v.luminosity).toBeGreaterThan(0.15);
+    expect(v.luminosity).toBeLessThan(0.4);
+    expect(v.rayLengthH).toBe(0);
   });
 
-  it("학습량은 밝기를 올리되 크기는 크게 키우지 않는다", () => {
+  it("학습량은 광도와 광학 범위를 키우되 core는 항상 아주 작다", () => {
     expect(studyAmount(0)).toBe(0);
     expect(studyAmount(1000)).toBe(1);
-    for (const star of sky.stars) {
-      const v = starVisual(star);
-      expect(v.coreRadius).toBeLessThanOrEqual(2.2);
-      expect(v.haloRadius).toBeLessThanOrEqual(20);
-      expect(v.brightness).toBeLessThanOrEqual(1);
-      expect(v.twinkleAmp).toBeLessThanOrEqual(0.08);
+    for (const { v } of visuals) {
+      expect(v.coreSigma).toBeLessThanOrEqual(0.9);
+      expect(v.psfRadius).toBeLessThanOrEqual(4);
+      expect(v.luminosity).toBeLessThanOrEqual(1);
+      expect(v.rayLengthH).toBeLessThanOrEqual(100);
+      expect(v.twinkleAmp).toBeLessThanOrEqual(0.06);
+    }
+    const base = sky.stars.find((s) => s.attemptCount > 10)!;
+    const few = starVisual({ ...base, attemptCount: 5 });
+    const many = starVisual({ ...base, attemptCount: 5000 });
+    expect(many.luminosity).toBeGreaterThan(few.luminosity);
+    expect(many.psfRadius).toBeGreaterThan(few.psfRadius);
+    expect(many.psfRadius).toBeLessThanOrEqual(4); // 극단값에서도 지나치게 커지지 않는다
+  });
+
+  it("tier 위계: 대부분 작고 조용하며 밝은 별과 Anchor는 소수다", () => {
+    const n = visuals.length;
+    const count = (t: number) => visuals.filter(({ v }) => v.tier === t).length;
+    expect(count(1) / n).toBeGreaterThan(0.4);
+    expect(count(1) + count(2)).toBeGreaterThanOrEqual(Math.ceil(n * 0.6));
+    expect(count(3)).toBeGreaterThan(0);
+    expect(count(3) / n).toBeLessThan(0.2);
+    expect(count(4)).toBeGreaterThanOrEqual(2);
+    expect(count(4)).toBeLessThanOrEqual(4);
+  });
+
+  it("회절 ray는 tier가 올라갈수록 길어지고, 대각선 ray는 Anchor에만 있다", () => {
+    const maxRay = (t: number) => Math.max(0, ...visuals.filter(({ v }) => v.tier === t).map(({ v }) => v.rayLengthH));
+    expect(maxRay(1)).toBe(0);
+    expect(maxRay(2)).toBeGreaterThan(0);
+    expect(maxRay(2)).toBeLessThan(12);
+    expect(maxRay(3)).toBeGreaterThan(maxRay(2));
+    expect(maxRay(4)).toBeGreaterThan(maxRay(3) * 2);
+    for (const { star, v } of visuals) {
+      expect(v.diagGain > 0).toBe(v.tier === 4);
+      if (v.tier === 4) expect(star.mastered).toBe(true);
     }
   });
 
-  it("회절 스파이크는 소수의 숙달된 별에만 있다", () => {
-    const spiky = sky.stars.filter((s) => starVisual(s).spike > 0);
-    expect(spiky.length).toBeGreaterThan(0);
-    expect(spiky.length).toBeLessThanOrEqual(Math.ceil(sky.stars.length * 0.15));
-    expect(spiky.every((s) => s.mastered)).toBe(true);
+  it("ray 각도와 가로세로 비율이 별마다 다르다(모두 같은 + 모양이 아니다)", () => {
+    const lit = visuals.filter(({ v }) => v.tier >= 3).map(({ v }) => v);
+    expect(new Set(lit.map((v) => v.rayAngle.toFixed(3))).size).toBeGreaterThan(Math.floor(lit.length / 2));
+    expect(lit.some((v) => v.rayLengthH !== v.rayLengthV)).toBe(true);
+  });
+
+  it("색온도는 대부분 중립 근처이고 아주 일부만 벗어난다", () => {
+    const near = visuals.filter(({ v }) => Math.abs(v.temperature - 0.5) < 0.2).length;
+    expect(near / visuals.length).toBeGreaterThan(0.7);
+    for (const { v } of visuals) expect(v.temperature).toBeLessThanOrEqual(0.85);
   });
 
   it("정확도가 높을수록 반짝임이 안정적이고 색온도는 더 차갑다", () => {
@@ -100,14 +136,5 @@ describe("scene data", () => {
       expect(d).toBeGreaterThan(0.5); // 별 중심과 일치하는 끝점이 없다
     }
     g.dispose();
-  });
-
-  it("배경 별은 개수와 무관하게 결정적이며 대부분 희미하다", () => {
-    const a = generateBackdropStars(800);
-    const b = generateBackdropStars(800);
-    expect(Array.from(a.position.slice(0, 30))).toEqual(Array.from(b.position.slice(0, 30)));
-    let dim = 0;
-    for (let i = 0; i < a.count; i++) if (a.bright[i] < 0.35) dim++;
-    expect(dim / a.count).toBeGreaterThan(0.8);
   });
 });
