@@ -27,6 +27,41 @@
   will-change: transform;
   text-shadow: 0 0 14px rgba(3, 5, 11, 0.95);
 }
+/* Focus 중에는 별이 주인공이 되도록 라벨을 아주 약하게만 낮춘다(숨기지 않는다). */
+.sky-label {
+  transition: opacity 700ms ease;
+}
+.sky-root[data-focus="true"] .sky-label {
+  opacity: 0.6;
+}
+/* Focus된 Knowledge Star의 이름. Card/Pill/Ring 없이 작은 텍스트만. 위치는 LabelProjector가 정한다. */
+.sky-star-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+.sky-star-label__text {
+  position: absolute;
+  left: 12px;
+  top: 11px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(226, 236, 255, 0.9);
+  text-shadow: 0 0 10px rgba(3, 5, 11, 0.95), 0 0 3px rgba(3, 5, 11, 0.9);
+  animation: sky-star-label-in 320ms ease-out both;
+}
+@keyframes sky-star-label-in {
+  from {
+    opacity: 0;
+  }
+}
+
 .sky-label--category {
   font-size: 11px;
   font-weight: 500;
@@ -136,6 +171,12 @@
     opacity: 1;
   }
   .sky-back {
+    animation: none;
+  }
+  .sky-label {
+    transition: none;
+  }
+  .sky-star-label__text {
     animation: none;
   }
 }

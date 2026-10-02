@@ -46,7 +46,7 @@ export function overviewDistance(aspect: number): number {
 }
 
 /** Focus 시 Overview 대비 카메라 거리. 조금만 다가간다(별은 화면에서 일정한 px 크기라 커 보이지 않는다). */
-export const FOCUS_DISTANCE_RATIO = 0.8;
+export const FOCUS_DISTANCE_RATIO = 0.92;
 
 export interface CameraPose {
   /** 카메라가 바라보는 점(z=0 평면) */
@@ -138,9 +138,9 @@ export function selectionAfterEscape(): SelectedStarId {
 // hover/Focus 때만 luminosity 배율을 아주 조금 바꾼다.
 
 export const HOVER_BOOST = 1.12;
-export const SELECTED_BOOST = 1.08;
+export const SELECTED_BOOST = 1.17;
 /** Focus 중 선택되지 않은 별: 사라지거나 검게 되지 않고 우선순위만 약간 낮아진다. */
-export const DIM_FACTOR = 0.8;
+export const DIM_FACTOR = 0.9;
 
 export function emphasisTarget(index: number, hoveredIndex: number, selectedIndex: number): number {
   let m = 1;

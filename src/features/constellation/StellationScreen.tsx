@@ -5,6 +5,7 @@ import { buildCuratedSky } from "@/features/constellation/model/curatedSky";
 import { ForestSilhouette } from "@/features/constellation/environment/ForestSilhouette";
 import { SkyBackdrop } from "@/features/constellation/scene/SkyBackdrop";
 import { SkyScene } from "@/features/constellation/scene/SkyScene";
+import type { Vec3 } from "@/features/constellation/model/types";
 import type { LabelAnchor } from "@/features/constellation/scene/SkyRig";
 import "@/features/constellation/sky.css";
 
@@ -70,13 +71,28 @@ export function StellationScreen() {
     [sky],
   );
   const labelEls = useRef<(HTMLDivElement | null)[]>([]);
+  // Focus된 별의 이름 label. 별자리 label과 같은 LabelProjector(월드→화면 투영, DOM 직접 갱신)를 재사용하므로
+  // 카메라가 움직이는 동안에도 React state 갱신 없이 별을 따라간다.
+  const starLabelEl = useRef<HTMLDivElement>(null);
+  const selectedPosition = useRef<Vec3>([0, 0, 0]);
+  useEffect(() => {
+    if (selectedStar) selectedPosition.current = selectedStar.position;
+  }, [selectedStar]);
   const anchors = useMemo<LabelAnchor[]>(
-    () => labels.map((l, i) => ({ position: l.position, element: () => labelEls.current[i] ?? null })),
+    () => [
+      ...labels.map((l, i) => ({ position: l.position, element: () => labelEls.current[i] ?? null })),
+      {
+        get position() {
+          return selectedPosition.current;
+        },
+        element: () => starLabelEl.current,
+      },
+    ],
     [labels],
   );
 
   return (
-    <main className="sky-root" aria-label="Stellation">
+    <main className="sky-root" aria-label="Stellation" data-focus={selectedStar ? "true" : "false"}>
       <h1 className="sky-sr-only">Stellation</h1>
       <SkyBackdrop />
 
@@ -105,6 +121,14 @@ export function StellationScreen() {
             {l.text}
           </div>
         ))}
+        {/* 원점(0x0)이 별 위치에 투영된다. 이름은 별 오른쪽 아래에 놓여 가로/세로 회절 ray와 겹치지 않는다. */}
+        <div ref={starLabelEl} className="sky-star-label" aria-hidden="true">
+          {selectedStar && (
+            <span key={selectedStar.id} className="sky-star-label__text">
+              {selectedStar.label}
+            </span>
+          )}
+        </div>
         {!webgl && <p className="sky-note">이 환경에서는 WebGL을 사용할 수 없어 별을 표시하지 못합니다.</p>}
       </div>
 
