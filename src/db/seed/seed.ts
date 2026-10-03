@@ -80,7 +80,18 @@ export async function syncDefaultContent(options: { force?: boolean } = {}): Pro
 
   await db.transaction(
     "rw",
-    [db.categories, db.themes, db.tags, db.questions, db.questionRecords, db.attempts, db.sessions, db.settings],
+    [
+      db.categories,
+      db.themes,
+      db.tags,
+      db.questions,
+      db.questionRecords,
+      db.attempts,
+      db.sessions,
+      db.settings,
+      db.knowledgeConcepts,
+      db.questionConcepts,
+    ],
     async () => {
       const state = await getDefaultContentState();
       if (!options.force && state?.version === DEFAULT_CONTENT_VERSION && state.bundleHash === bundleHash) {
@@ -117,10 +128,13 @@ export async function syncDefaultContent(options: { force?: boolean } = {}): Pro
           for (const attempt of attempts) affectedSessionIds.add(attempt.sessionId);
           await db.attempts.where("questionId").anyOf(bundledIds).delete();
           await db.questionRecords.bulkDelete(bundledIds);
+          await db.questionConcepts.where("questionId").anyOf(bundledIds).delete();
           await db.questions.bulkDelete(bundledIds);
           result.retiredQuestions += bundledIds.length;
         }
-        if (themeQuestions.length === bundledIds.length) {
+        // 사용자가 만든 개념(별)이 남아 있는 Theme도 데이터 손실을 막기 위해 지우지 않는다.
+        const themeConceptCount = await db.knowledgeConcepts.where("themeId").equals(retiredTheme.id).count();
+        if (themeQuestions.length === bundledIds.length && themeConceptCount === 0) {
           await db.themes.delete(retiredTheme.id);
           themes.splice(themes.indexOf(retiredTheme), 1);
           result.retiredThemes++;

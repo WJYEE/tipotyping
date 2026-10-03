@@ -1,3 +1,6 @@
+// [역할 구분] 이 파일은 시각/데모용 fallback이다. 실제 학습 데이터의 별은 KnowledgeConcept(DB, src/types/knowledge.ts)이며
+// 이 mock과 연결되어 있지 않다(DB에 seed하지도 않는다). 실데이터 Stellation으로의 전환은 다음 Phase에서
+// ConceptEvidence → ConceptStarInput(src/lib/knowledge/conceptEvidence.ts) → StarNode 경로로 한다.
 // Phase 1 전용 curated mock sky. 일부러 4개 별자리만 사용해 "별의 사실감"을 확인한다.
 // 이름은 실제 Category / Theme / 개념 태그를 따르고, 학습 수치는 합성값이다. DB를 읽거나 쓰지 않는다.
 // 좌표는 손으로 배치했다(결정적). 월드 단위: 카메라 z=100, fov 40 기준 화면 높이 ≈ 73, 16:9 너비 ≈ 129.

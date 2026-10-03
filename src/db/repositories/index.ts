@@ -13,3 +13,5 @@ export { requirementRepo } from "./requirementRepo";
 export { competencyRepo } from "./competencyRepo";
 export { roleRepo } from "./roleRepo";
 export { careerStatsRepo } from "./careerStatsRepo";
+export { conceptRepo } from "./conceptRepo";
+export { questionConceptRepo } from "./questionConceptRepo";

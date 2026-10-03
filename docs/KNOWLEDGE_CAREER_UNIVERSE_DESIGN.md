@@ -1248,3 +1248,16 @@ flowchart LR
 ---
 
 *End of document — Draft / Design Review Required.*
+
+---
+
+## Appendix. Knowledge Concept Foundation 구현 메모 (Dexie v11)
+
+설계 스케치와 달라진 점/구현에서 확정한 점만 기록한다.
+
+- **스키마(v11, additive-only)**: `knowledgeConcepts: "id, themeId, &[themeId+nameKey]"`, `questionConcepts: "id, questionId, conceptId, &[questionId+conceptId]"`. 데이터 변환 없음, 두 테이블은 빈 채로 시작. `seedKey`는 필요해질 때 optional 필드로 추가(스키마 변경 불필요)하기로 하고 이번에는 뺐다.
+- **`nameKey`**: `name`을 NFKC·공백 정리·소문자로 정규화한 값. 같은 Theme 안의 중복 개념을 DB 유일 인덱스로 막는다(보관된 개념 포함 — 새로 만들지 말고 복원). 의미 병합("JOIN" vs "SQL JOIN")은 하지 않고, alias는 `findMatches` 후보 조회에만 쓴다.
+- **QuestionConcept**: 문제당 primary 최대 1개(새 primary 연결 시 기존 primary는 secondary로 강등), 연결은 멱등, 보관된 개념에는 새 연결 불가. Question 삭제 시 연결도 같은 트랜잭션에서 삭제(개념은 유지). Theme은 개념(보관 포함)이 남아 있으면 삭제 불가.
+- **증거 집계**: `computeConceptEvidence`(순수) — Attempt가 원천, primary/secondary 모두 증거로 센다. 저장하지 않는다. Mastery/Memory/Stage는 다음 Phase.
+- **백업 호환**: `ADDITIVE_SCHEMA_VERSIONS`에 등록된(= 테이블 추가만 있었던) 버전만 거친 이전 버전 백업은 복원 가능(없는 테이블은 빈 테이블). 변환 마이그레이션(v6/v7/v10)이 필요한 옛 백업과 앱보다 새 버전 백업은 계속 거부. 앞으로 additive-only 버전을 추가하면 이 레지스트리에 등록한다.
+

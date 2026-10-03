@@ -106,7 +106,7 @@ export const questionRepo = {
   async remove(id: string): Promise<void> {
     let affectedSessionIds: string[] = [];
 
-    await db.transaction("rw", [db.questions, db.questionRecords, db.attempts, db.settings], async () => {
+    await db.transaction("rw", [db.questions, db.questionRecords, db.attempts, db.settings, db.questionConcepts], async () => {
       // 번들 기본 문제를 지우면 이후 기본 문제은행 동기화에서 다시 만들지 않도록 기록한다.
       const question = await db.questions.get(id);
       if (question?.seedId) await markSeedQuestionDeleted(question.seedId);
@@ -115,6 +115,8 @@ export const questionRepo = {
       affectedSessionIds = [...new Set(attempts.map((a) => a.sessionId))];
 
       await db.attempts.where("questionId").equals(id).delete();
+      // 개념 연결(증거 연결)도 함께 정리한다. 개념(별) 자체와 id는 그대로 유지된다.
+      await db.questionConcepts.where("questionId").equals(id).delete();
       await db.questionRecords.delete(id);
       await db.questions.delete(id);
     });

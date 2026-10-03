@@ -10,6 +10,7 @@ import type {
   RequirementRole,
   Role,
 } from "@/types/career";
+import type { KnowledgeConcept, QuestionConcept } from "@/types/knowledge";
 import type {
   Attempt,
   Category,
@@ -37,6 +38,8 @@ export class TipoTypingDB extends Dexie {
   roles!: EntityTable<Role, "id">;
   requirementCompetencies!: EntityTable<RequirementCompetency, "id">;
   requirementRoles!: EntityTable<RequirementRole, "id">;
+  knowledgeConcepts!: EntityTable<KnowledgeConcept, "id">;
+  questionConcepts!: EntityTable<QuestionConcept, "id">;
 
   constructor() {
     super("tipotyping");
@@ -153,8 +156,23 @@ export class TipoTypingDB extends Dexie {
     // (처음엔 normalizedLabel도 함께 뒀지만, 외부 AI가 이미 정제된 Competency 키워드를 주는
     // 구조로 단순화하면서 이 필드는 빼기로 했다 — 과거에 저장된 값이 있어도 무해하게 남을 뿐이다.)
     this.version(10).stores({}).upgrade(renameRequirementTextToRawText);
+
+    // v11: Knowledge Universe의 KnowledgeConcept(별)와 Question ↔ Concept M:N join. 전부 새 테이블이라
+    // 기존 데이터는 변환하지 않고 두 테이블은 빈 채로 시작한다(개념이 없는 Question도 정상). Tag에서 개념을
+    // 자동으로 만들지 않는다. 다른 테이블의 스키마/인덱스는 바꾸지 않는다.
+    this.version(11).stores(KNOWLEDGE_V11_STORES);
   }
 }
+
+/**
+ * v11에서 추가된 테이블. 인덱스 설계:
+ * - knowledgeConcepts: themeId(Theme별 목록), &[themeId+nameKey](같은 Theme 안에서 정규화된 이름이 같은 개념 중복 생성 방지 — DB 제약)
+ * - questionConcepts: questionId / conceptId(양방향 조회), &[questionId+conceptId](같은 연결 중복 방지 — DB 제약)
+ */
+export const KNOWLEDGE_V11_STORES = {
+  knowledgeConcepts: "id, themeId, &[themeId+nameKey]",
+  questionConcepts: "id, questionId, conceptId, &[questionId+conceptId]",
+};
 
 export async function renameRequirementTextToRawText(tx: Transaction): Promise<void> {
   const requirements = (await tx.table("requirements").toArray()) as Record<string, unknown>[];

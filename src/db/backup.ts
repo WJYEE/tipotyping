@@ -4,8 +4,29 @@ import { db } from "@/db/db";
 
 export const BACKUP_FILE_PREFIX = "tipotyping-backup";
 
+/**
+ * "새 테이블만 추가"했고 기존 데이터 변환(upgrade)이 없는 스키마 버전 → 그 버전에서 추가된 테이블.
+ * 이 버전들만 거쳐 온 이전 버전 백업은 그대로 복원할 수 있다(없는 테이블은 빈 테이블로 복원).
+ * 데이터를 변환하는 마이그레이션(v6, v7, v10 등)을 거쳐야 하는 오래된 백업은 계속 거부한다.
+ * 앞으로 additive-only 버전을 추가하면 여기에 등록한다.
+ */
+export const ADDITIVE_SCHEMA_VERSIONS: Record<number, string[]> = {
+  11: ["knowledgeConcepts", "questionConcepts"],
+};
+
+/** 이전 버전 백업이 안전하게 복원 가능하면, 그 백업이 가져야 할 테이블 이름 집합을 돌려준다. 불가능하면 null. */
+function expectedTablesForOlderBackup(backupVersion: number): Set<string> | null {
+  const expected = new Set(db.tables.map((t) => t.name));
+  for (let v = Math.floor(backupVersion) + 1; v <= db.verno; v++) {
+    const added = ADDITIVE_SCHEMA_VERSIONS[v];
+    if (!added) return null;
+    for (const name of added) expected.delete(name);
+  }
+  return expected;
+}
+
 export interface BackupFile {
-  /** 백업 당시 Dexie 스키마 버전(db.verno). 복원 시 현재 버전과 다르면 거부한다. */
+  /** 백업 당시 Dexie 스키마 버전(db.verno). 현재보다 새 버전이거나, 이후 변환 마이그레이션이 있었던 옛 버전이면 복원을 거부한다. */
   schemaVersion: number;
   exportedAt: string;
   tables: Record<string, unknown[]>;
@@ -68,15 +89,20 @@ export function parseBackupFile(text: string): BackupFile {
  * - 백업에 담긴 테이블 구성이 현재 앱의 테이블 구성과 완전히 같아야 한다.
  */
 export function validateBackupForRestore(backup: BackupFile): void {
+  let expectedTableNames = new Set(db.tables.map((t) => t.name));
   if (backup.schemaVersion !== db.verno) {
-    throw new Error(
-      `백업 파일의 버전(${backup.schemaVersion})이 현재 앱 버전(${db.verno})과 달라 복원할 수 없습니다.`,
-    );
+    // 이전 버전 백업은 그 이후 버전이 모두 "테이블 추가만" 있었던 경우에만 복원할 수 있다.
+    const older = backup.schemaVersion < db.verno ? expectedTablesForOlderBackup(backup.schemaVersion) : null;
+    if (!older) {
+      throw new Error(
+        `백업 파일의 버전(${backup.schemaVersion})이 현재 앱 버전(${db.verno})과 달라 복원할 수 없습니다.`,
+      );
+    }
+    expectedTableNames = older;
   }
-  const currentTableNames = new Set(db.tables.map((t) => t.name));
   const backupTableNames = new Set(Object.keys(backup.tables));
-  const missing = [...currentTableNames].filter((n) => !backupTableNames.has(n));
-  const extra = [...backupTableNames].filter((n) => !currentTableNames.has(n));
+  const missing = [...expectedTableNames].filter((n) => !backupTableNames.has(n));
+  const extra = [...backupTableNames].filter((n) => !expectedTableNames.has(n));
   if (missing.length > 0 || extra.length > 0) {
     throw new Error("백업 파일의 테이블 구성이 현재 앱과 다릅니다.");
   }
@@ -94,7 +120,8 @@ export async function restoreBackup(backup: BackupFile): Promise<void> {
   await db.transaction("rw", db.tables, async () => {
     for (const table of db.tables) {
       await table.clear();
-      const rows = backup.tables[table.name];
+      // 이전 버전 백업에는 이후 추가된 테이블이 없다 — 빈 테이블로 복원한다.
+      const rows = backup.tables[table.name] ?? [];
       if (rows.length > 0) {
         await table.bulkAdd(rows);
       }
