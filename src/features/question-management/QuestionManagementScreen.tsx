@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -17,6 +18,7 @@ export function QuestionManagementScreen() {
   const tags = useLiveQuery(() => tagRepo.list(), []) ?? [];
   const questions = useLiveQuery(() => questionRepo.list(), []) ?? [];
 
+  const navigate = useNavigate();
   const [filters, setFilters] = useState<QuestionFilterState>(EMPTY_FILTERS);
   const [editing, setEditing] = useState<Question | "new" | null>(null);
 
@@ -50,6 +52,9 @@ export function QuestionManagementScreen() {
         </div>
         <div className="flex items-center gap-2">
           <ImportPanel />
+          <Button variant="secondary" className="!px-4 !py-2 text-sm" onClick={() => navigate("/questions/concepts")}>
+            🌟 Knowledge Concepts
+          </Button>
           <Button
             variant="primary"
             className="!px-4 !py-2 text-sm"

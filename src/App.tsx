@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { CareerTopNav } from "@/components/layout/CareerTopNav";
 import { TopNav } from "@/components/layout/TopNav";
+import { ConceptBootstrapScreen } from "@/features/concept-bootstrap/ConceptBootstrapScreen";
 import { CareerDashboardScreen } from "@/features/career/CareerDashboardScreen";
 import { JdDetailScreen } from "@/features/career/jd-detail/JdDetailScreen";
 import { JdLibraryScreen } from "@/features/career/jd-library/JdLibraryScreen";
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="/play/typing" element={<GameTypingScreen />} />
         <Route path="/play/result" element={<ResultPlaceholder />} />
         <Route path="/questions" element={<QuestionManagementScreen />} />
+        <Route path="/questions/concepts" element={<ConceptBootstrapScreen />} />
         <Route
           path={STELLATION_PATH}
           element={
