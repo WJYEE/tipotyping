@@ -80,6 +80,8 @@ interface QuestionBase {
   flagged: boolean;
   favorite: boolean;
   memo?: string;
+  /** 패키지 가져오기로 들어온 문제의 검수 상태. 없으면(기본 문제·직접 만든 문제) 검수 개념을 적용하지 않는다. */
+  reviewStatus?: "needs_human_review" | "reviewed" | "rejected";
   /** 번들 기본 문제에서 온 경우 그 seedId. 사용자 생성/Import 문제에는 없다. */
   seedId?: string;
   /** 마지막으로 번들 내용을 반영했을 때의 내용 해시. 현재 내용과 다르면 사용자가 수정한 것으로 본다. */

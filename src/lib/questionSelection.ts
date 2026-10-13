@@ -12,6 +12,11 @@ export interface SelectionFilters {
    * 난이도 필터는 이 Theme의 문제에만 적용하고, 나머지 Theme 문제는 난이도와 무관하게 포함한다.
    */
   difficultyThemeIds: string[];
+  /**
+   * 지정하면 검수 상태(reviewStatus)가 있는 문제 중 이 목록에 있는 것만 출제한다. 검수 개념이 없는
+   * 문제(기본 문제·직접 만든 문제)는 영향받지 않는다. 패키지 문제은행에서 미검수 초안을 빼고 풀 때 쓴다.
+   */
+  reviewStatuses?: ("needs_human_review" | "reviewed" | "rejected")[];
 }
 
 export interface GameConfig extends SelectionFilters {
@@ -32,6 +37,9 @@ export function filterQuestions(questions: Question[], filters: SelectionFilters
   return questions.filter((q) => {
     if (!filters.themeIds.includes(q.themeId)) return false;
     if (!filters.questionTypes.includes(q.type)) return false;
+    if (filters.reviewStatuses && q.reviewStatus && !filters.reviewStatuses.includes(q.reviewStatus)) {
+      return false;
+    }
     if (filters.tagIds.length > 0 && !q.tagIds.some((id) => filters.tagIds.includes(id))) {
       return false;
     }

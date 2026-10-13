@@ -2,6 +2,7 @@ import { useLiveQuery } from "dexie-react-hooks";
 import { statsRepo } from "@/db/repositories";
 import { BackupRestoreCard } from "@/features/dashboard/BackupRestoreCard";
 import { RecentSessionsCard } from "@/features/dashboard/RecentSessionsCard";
+import { PackageEntryCard } from "@/features/dashboard/PackageEntryCard";
 import { StellationEntryCard } from "@/features/dashboard/StellationEntryCard";
 import { StatsRow } from "@/features/dashboard/StatsRow";
 import { ThemeStatsCard } from "@/features/dashboard/ThemeStatsCard";
@@ -17,6 +18,7 @@ export function HomeDashboard() {
   return (
     <div className="mx-auto flex max-w-[1280px] flex-col gap-8 px-6 py-10 md:px-10">
       <WelcomeHero />
+      <PackageEntryCard />
       <StellationEntryCard />
       <StatsRow stats={overallStats} />
       <div className="flex flex-col gap-6 lg:flex-row">

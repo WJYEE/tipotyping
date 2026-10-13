@@ -5,6 +5,7 @@ import { PlusIcon } from "@/components/ui/icons";
 const NAV_TABS: { path: string; label: string; disabled?: boolean }[] = [
   { path: "/", label: "Home" },
   { path: "/play", label: "Play" },
+  { path: "/packages", label: "Packages" },
   { path: "/questions", label: "Questions" },
   { path: "/records", label: "Records", disabled: true },
 ];

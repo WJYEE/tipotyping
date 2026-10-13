@@ -16,3 +16,4 @@ export { careerStatsRepo } from "./careerStatsRepo";
 export { conceptRepo } from "./conceptRepo";
 export { questionConceptRepo } from "./questionConceptRepo";
 export { conceptBootstrapRepo } from "./conceptBootstrapRepo";
+export { packageRepo } from "./packageRepo";

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "oa_ai",
+    "name": "OA 및 AI 활용 역량",
+    "package": "KB-Bridge",
+    "sortOrder": 1,
+    "questionCount": 10
+  },
+  {
+    "id": "agent",
+    "name": "AI 에이전트 활용 기초",
+    "package": "KB-Bridge",
+    "sortOrder": 2,
+    "questionCount": 14
+  },
+  {
+    "id": "python",
+    "name": "Python",
+    "package": "KB-Bridge",
+    "sortOrder": 3,
+    "questionCount": 15
+  },
+  {
+    "id": "sql",
+    "name": "SQL",
+    "package": "KB-Bridge",
+    "sortOrder": 4,
+    "questionCount": 16
+  },
+  {
+    "id": "ai_analysis",
+    "name": "AI 기반 데이터 분석",
+    "package": "KB-Bridge",
+    "sortOrder": 5,
+    "questionCount": 11
+  },
+  {
+    "id": "ml",
+    "name": "머신러닝",
+    "package": "KB-Bridge",
+    "sortOrder": 6,
+    "questionCount": 14
+  },
+  {
+    "id": "dl",
+    "name": "딥러닝",
+    "package": "KB-Bridge",
+    "sortOrder": 7,
+    "questionCount": 10
+  },
+  {
+    "id": "dashboard",
+    "name": "대시보드·기초통계",
+    "package": "KB-Bridge",
+    "sortOrder": 8,
+    "questionCount": 10
+  },
+  {
+    "id": "cert_sqld",
+    "name": "자격증 · SQLD",
+    "package": "확장",
+    "sortOrder": 9,
+    "questionCount": 8
+  },
+  {
+    "id": "cert_invest",
+    "name": "자격증 · 투자자산운용사",
+    "package": "확장",
+    "sortOrder": 10,
+    "questionCount": 8
+  },
+  {
+    "id": "language",
+    "name": "언어",
+    "package": "확장",
+    "sortOrder": 11,
+    "questionCount": 7
+  }
+]

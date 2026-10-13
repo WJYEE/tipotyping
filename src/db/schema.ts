@@ -12,6 +12,14 @@ import type {
 } from "@/types/career";
 import type { KnowledgeConcept, QuestionConcept } from "@/types/knowledge";
 import type {
+  ConceptNote,
+  DerivedQuestion,
+  Memo,
+  PackageContentMapping,
+  PracticeTask,
+  ResourceLink,
+} from "@/types/package";
+import type {
   Attempt,
   Category,
   Question,
@@ -40,6 +48,12 @@ export class TipoTypingDB extends Dexie {
   requirementRoles!: EntityTable<RequirementRole, "id">;
   knowledgeConcepts!: EntityTable<KnowledgeConcept, "id">;
   questionConcepts!: EntityTable<QuestionConcept, "id">;
+  packageContentMap!: EntityTable<PackageContentMapping, "id">;
+  derivedQuestions!: EntityTable<DerivedQuestion, "id">;
+  conceptNotes!: EntityTable<ConceptNote, "id">;
+  practiceTasks!: EntityTable<PracticeTask, "id">;
+  memos!: EntityTable<Memo, "id">;
+  resourceLinks!: EntityTable<ResourceLink, "id">;
 
   constructor() {
     super("tipotyping");
@@ -161,8 +175,27 @@ export class TipoTypingDB extends Dexie {
     // 기존 데이터는 변환하지 않고 두 테이블은 빈 채로 시작한다(개념이 없는 Question도 정상). Tag에서 개념을
     // 자동으로 만들지 않는다. 다른 테이블의 스키마/인덱스는 바꾸지 않는다.
     this.version(11).stores(KNOWLEDGE_V11_STORES);
+
+    // v12: 학습 패키지(WJYEE/KB-Bridge/Self-Study)와 패키지 콘텐츠. 전부 새 테이블이라 기존 데이터는 변환하지
+    // 않는다. 문제는 기존 questions 테이블을 그대로 쓰고, 패키지 소속은 packageContentMap으로만 표현한다.
+    this.version(12).stores(PACKAGE_V12_STORES);
   }
 }
+
+/**
+ * v12에서 추가된 테이블.
+ * - packageContentMap: 패키지 ↔ 콘텐츠 N:M. &[packageId+kind+contentId]로 같은 연결 중복을 DB 제약으로 막는다.
+ * - derivedQuestions: 원본 Question(parentQuestionId)에 연결된 파생질문.
+ * - conceptNotes / practiceTasks / memos / resourceLinks: 카테고리별 개념·실습·메모·추천 사이트.
+ */
+export const PACKAGE_V12_STORES = {
+  packageContentMap: "id, packageId, kind, contentId, [packageId+kind], &[packageId+kind+contentId]",
+  derivedQuestions: "id, parentQuestionId, categoryKey",
+  conceptNotes: "id, categoryKey",
+  practiceTasks: "id, categoryKey",
+  memos: "id, category, origin, updatedAt",
+  resourceLinks: "id, category, origin",
+};
 
 /**
  * v11에서 추가된 테이블. 인덱스 설계:

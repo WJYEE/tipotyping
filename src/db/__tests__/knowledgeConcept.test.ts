@@ -60,9 +60,12 @@ async function solve(questionId: string, isCorrect: boolean, attemptedAt: number
   await attemptRepo.record({ sessionId: session.id, questionId, questionType: "answer-input", isCorrect, userAnswer: "a", attemptedAt });
 }
 
+/** v12에서 추가된 패키지 테이블 — v10/v11 백업에는 없다. */
+const V12_TABLES = ["packageContentMap", "derivedQuestions", "conceptNotes", "practiceTasks", "memos", "resourceLinks"];
+
 describe("스키마", () => {
-  it("v11이고 새 테이블 두 개가 있다", () => {
-    expect(db.verno).toBe(11);
+  it("v12이고 v11 지식 테이블 두 개가 있다", () => {
+    expect(db.verno).toBe(12);
     const names = db.tables.map((t) => t.name);
     expect(names).toContain("knowledgeConcepts");
     expect(names).toContain("questionConcepts");
@@ -393,7 +396,7 @@ describe("백업/복원과 knowledge 테이블", () => {
   it("신규 백업은 새 테이블을 포함하고 왕복 후 그대로 복원된다", async () => {
     await seedKnowledge();
     const backup = await createBackup();
-    expect(backup.schemaVersion).toBe(11);
+    expect(backup.schemaVersion).toBe(12);
     expect(backup.tables.knowledgeConcepts).toHaveLength(2);
     expect(backup.tables.questionConcepts).toHaveLength(2);
 
@@ -416,6 +419,7 @@ describe("백업/복원과 knowledge 테이블", () => {
     const v10Backup: BackupFile = { ...backup, schemaVersion: 10, tables: { ...backup.tables } };
     delete v10Backup.tables.knowledgeConcepts;
     delete v10Backup.tables.questionConcepts;
+    for (const name of V12_TABLES) delete v10Backup.tables[name];
 
     // 복원 전에 현재 DB에 개념이 있어도, 복원은 "백업 시점 상태"이므로 비워진다.
     await conceptRepo.create({ name: "복원 전 개념", themeId: sql.id });
@@ -433,6 +437,7 @@ describe("백업/복원과 knowledge 테이블", () => {
     const tables = { ...backup.tables };
     delete tables.knowledgeConcepts;
     delete tables.questionConcepts;
+    for (const name of V12_TABLES) delete tables[name];
     expect(() => validateBackupForRestore({ ...backup, schemaVersion: 9, tables })).toThrow();
     expect(() => validateBackupForRestore({ ...backup, schemaVersion: 3, tables })).toThrow();
   });
@@ -442,6 +447,7 @@ describe("백업/복원과 knowledge 테이블", () => {
     const v10: BackupFile = { ...backup, schemaVersion: 10, tables: { ...backup.tables } };
     delete v10.tables.knowledgeConcepts;
     delete v10.tables.questionConcepts;
+    for (const name of V12_TABLES) delete v10.tables[name];
 
     const missingCategories = { ...v10, tables: { ...v10.tables } };
     delete missingCategories.tables.categories;
@@ -453,7 +459,7 @@ describe("백업/복원과 knowledge 테이블", () => {
 
   it("앱보다 새 버전 백업은 거부한다", async () => {
     const backup = await createBackup();
-    expect(() => validateBackupForRestore({ ...backup, schemaVersion: 12 })).toThrow();
+    expect(() => validateBackupForRestore({ ...backup, schemaVersion: 13 })).toThrow();
   });
 
   it("복원 중 실패하면(손상된 행) 기존 데이터가 그대로 보존된다", async () => {

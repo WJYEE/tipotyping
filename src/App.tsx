@@ -9,6 +9,8 @@ import { JdLibraryScreen } from "@/features/career/jd-library/JdLibraryScreen";
 import { HomeDashboard } from "@/features/dashboard/HomeDashboard";
 import { GameSetupScreen } from "@/features/game-setup/GameSetupScreen";
 import { GameTypingScreen } from "@/features/game-typing/GameTypingScreen";
+import { PackageScreen } from "@/features/packages/PackageScreen";
+import { PackageSelectScreen } from "@/features/packages/PackageSelectScreen";
 import { QuestionManagementScreen } from "@/features/question-management/QuestionManagementScreen";
 import { ResultPlaceholder } from "@/features/result/ResultPlaceholder";
 import { ThemeSelectionScreen } from "@/features/theme-selection/ThemeSelectionScreen";
@@ -33,6 +35,9 @@ export default function App() {
         <Route path="/play/setup" element={<GameSetupScreen />} />
         <Route path="/play/typing" element={<GameTypingScreen />} />
         <Route path="/play/result" element={<ResultPlaceholder />} />
+        <Route path="/packages" element={<PackageSelectScreen />} />
+        <Route path="/packages/:packageId" element={<PackageScreen />} />
+        <Route path="/packages/:packageId/:tab" element={<PackageScreen />} />
         <Route path="/questions" element={<QuestionManagementScreen />} />
         <Route path="/questions/concepts" element={<ConceptBootstrapScreen />} />
         <Route

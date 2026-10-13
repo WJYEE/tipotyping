@@ -12,6 +12,7 @@ export const BACKUP_FILE_PREFIX = "tipotyping-backup";
  */
 export const ADDITIVE_SCHEMA_VERSIONS: Record<number, string[]> = {
   11: ["knowledgeConcepts", "questionConcepts"],
+  12: ["packageContentMap", "derivedQuestions", "conceptNotes", "practiceTasks", "memos", "resourceLinks"],
 };
 
 /** 이전 버전 백업이 안전하게 복원 가능하면, 그 백업이 가져야 할 테이블 이름 집합을 돌려준다. 불가능하면 null. */
