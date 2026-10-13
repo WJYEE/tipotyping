@@ -119,10 +119,10 @@ JSON 파일은 **문제(ImportRow) 객체의 배열**이다. 감싸는 객체(`{
 | AI | RAG | `RAG` | false |
 | AI | AI Agent | `AGENT` | false |
 | AI | AI 기초 | `AIBASIC` | false |
+| AI | 프롬프트 엔지니어링 | `PROMPT` | false |
+| AI | 업무자동화 | `AUTO` | false |
 | 취업 | NCS | `NCS` | false |
 | 취업 | 인적성 | `APTI` | false |
-| 취업 | 면접 | `INTV` | false |
-| 취업 | 직무지식 | `JOB` | false |
 | 언어 | 영어 | `ENG` | false |
 | 언어 | OPIc | `OPIC` | false |
 | 언어 | 일본어 | `JPN` | false |

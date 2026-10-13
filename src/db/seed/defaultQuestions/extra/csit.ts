@@ -382,4 +382,12 @@ export const csitExtraQuestions = [
     term: "HEAD",
     def: "현재 체크아웃된 브랜치 또는 커밋을 가리키는 포인터",
   }),
+
+  // ── 학습 문제 추가분 ──
+  db.d2t({
+    id: "db-0019",
+    tags: ["기본키"],
+    term: "기본키",
+    def: "관계형 데이터베이스에서 각 행을 유일하게 식별하며 중복과 NULL을 허용하지 않는 키",
+  }),
 ];

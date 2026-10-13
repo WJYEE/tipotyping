@@ -35,6 +35,12 @@ export function CareerTopNav() {
           >
             Learning · TipoTyping
           </Link>
+          <Link
+            to="/stellation"
+            className="rounded-pill px-3.5 py-2 font-body text-[13px] font-semibold text-career-purple"
+          >
+            Stellation
+          </Link>
         </div>
       </div>
 

@@ -52,11 +52,11 @@ export const DEFAULT_THEME_PREFIXES: Record<string, string> = {
   RAG: "RAG",
   "AI Agent": "AGENT",
   "AI 기초": "AIBASIC",
+  "프롬프트 엔지니어링": "PROMPT",
+  업무자동화: "AUTO",
   // 취업
   NCS: "NCS",
   인적성: "APTI",
-  면접: "INTV",
-  직무지식: "JOB",
   // 언어
   영어: "ENG",
   OPIc: "OPIC",

@@ -1,0 +1,90 @@
+[
+  {
+    "categoryId": "oa_ai",
+    "categoryName": "OA 및 AI 활용 역량",
+    "summary": "생성형 AI의 출력은 확률적 생성 결과이므로 정확성과 출처를 별도로 검증한다. 프롬프트에는 목적·맥락·입력·제약·출력 형식·검증 기준을 명시한다. OA 자동화는 반복적이고 규칙이 명확한 작업부터 시작한다.",
+    "practice": "프롬프트 설계 → 결과 검토 → 근거 확인 → 개선; 민감정보 입력 및 외부 공유 전 보안 확인",
+    "pitfalls": "환각과 단순 오타, 자동화와 의사결정 대체, API 키와 서비스 계정 권한을 구별한다.",
+    "file": "content/category_study_guides/oa_ai.md"
+  },
+  {
+    "categoryId": "agent",
+    "categoryName": "AI 에이전트 활용 기초",
+    "summary": "워크플로우는 트리거·데이터 수집·변환·조건 분기·전송·예외처리로 구성한다. n8n의 Loop Over Items, Merge, IF, Sort, Limit, Aggregate는 각기 다른 데이터 처리 역할을 수행한다. RAG는 외부 문서를 검색해 생성 답변의 근거로 사용하는 방식이며 정답을 보장하지 않는다.",
+    "practice": "RSS→정제→중복 제거→Gmail 발송; 금융상품 KPI 변화→임계값 판정→근거와 함께 알림; 문서 수집→청킹→임베딩→검색→답변",
+    "pitfalls": "JSON 문자열과 객체, 인증과 권한, 검색 실패와 모델 환각, 노드 재실행 시 중복 발송을 구별한다.",
+    "file": "content/category_study_guides/agent.md"
+  },
+  {
+    "categoryId": "python",
+    "categoryName": "Python",
+    "summary": "자료형(list·tuple·dict·set), 조건문, 반복문, 함수, 슬라이싱, 컴프리헨션, 예외처리부터 시작한다. Pandas는 필터링·결측치·groupby·merge·인덱스 처리, NumPy는 벡터화 연산을 익힌다.",
+    "practice": "입력 데이터→자료형 검사→필터링→집계→검증; 문제를 작은 함수로 나눠 테스트",
+    "pitfalls": "가변 기본 인자, 얕은 복사, and/or와 |/&, reset_index(drop=True), isdigit()의 한계를 주의한다.",
+    "file": "content/category_study_guides/python.md"
+  },
+  {
+    "categoryId": "sql",
+    "categoryName": "SQL",
+    "summary": "SELECT/WHERE/GROUP BY/HAVING/ORDER BY의 역할과 논리적 처리 순서를 구분한다. JOIN은 테이블 관계와 카디널리티를 고려하고, 윈도우 함수는 행을 유지한 채 순위·누적·비교 값을 만든다.",
+    "practice": "Sakila 등의 연습 DB로 고객·주문·상품 JOIN→그룹 집계→Top-N 추출; 인덱스와 실행계획은 성능 분석에 사용",
+    "pitfalls": "NULL이 포함된 NOT IN, LEFT JOIN 뒤 COUNT(*), WHERE와 HAVING, ROW_NUMBER와 RANK를 비교한다.",
+    "file": "content/category_study_guides/sql.md"
+  },
+  {
+    "categoryId": "ai_analysis",
+    "categoryName": "AI 기반 데이터 분석",
+    "summary": "데이터 분석은 문제 정의→데이터 이해→품질 점검→분석/모델링→검증→의사결정의 순서로 진행한다. ERD는 엔터티와 관계를 나타내며 1:N·N:M 구조를 구별한다. Text-to-SQL과 MCP는 데이터 접근을 도울 수 있지만 권한·쿼리 검증이 필요하다.",
+    "practice": "금융 업무 질문→필요 테이블 식별→읽기 전용 SQL 생성→결과 검증→인사이트·근거 제시",
+    "pitfalls": "상관관계와 인과관계, 데이터 접근 권한과 결과 정확성, 계정계·채널계·정보계의 역할을 구별한다.",
+    "file": "content/category_study_guides/ai_analysis.md"
+  },
+  {
+    "categoryId": "ml",
+    "categoryName": "머신러닝",
+    "summary": "지도학습은 정답 레이블로 학습하고 비지도학습은 군집·차원축소 등의 구조를 찾는다. 학습·검증·테스트 분리와 누수 방지가 핵심이다. 분류는 Precision·Recall·F1·ROC-AUC, 회귀는 MAE·RMSE·R²를 목적에 맞게 해석한다.",
+    "practice": "문제/타깃 정의→분할→전처리 fit은 학습에만→모델 학습→검증→오류 분석",
+    "pitfalls": "불균형 데이터에서 Accuracy 착시, 임계값과 정밀도-재현율 트레이드오프, 과적합과 데이터 누수를 구별한다.",
+    "file": "content/category_study_guides/ml.md"
+  },
+  {
+    "categoryId": "dl",
+    "categoryName": "딥러닝",
+    "summary": "신경망은 입력·은닉·출력층과 가중치 학습으로 패턴을 표현한다. 역전파·경사하강법, 배치·에포크·학습률을 이해한다. 시퀀스에는 RNN/LSTM/GRU, 텍스트 검색에는 임베딩과 유사도 개념을 적용한다.",
+    "practice": "데이터 분할→베이스라인→신경망 학습→검증 손실 비교→과적합 대응",
+    "pitfalls": "학습 성능과 일반화 성능, 임베딩 유사도와 사실 여부, 모델 복잡도와 데이터 규모를 구별한다.",
+    "file": "content/category_study_guides/dl.md"
+  },
+  {
+    "categoryId": "dashboard",
+    "categoryName": "대시보드·기초통계",
+    "summary": "평균·중앙값·분산·표준편차·결측치 처리의 해석을 익힌다. 대시보드는 사용자·결정·핵심 KPI를 먼저 정의한 뒤 차트·필터·드릴다운을 설계한다. Power BI는 데이터 모델 관계와 측정값의 필터 컨텍스트가 중요하다.",
+    "practice": "금융 KPI 대시보드: 기업/기간 선택→매출·이익 변화→이상치 강조→근거 원문 링크; 차트 3개 이내로 시작",
+    "pitfalls": "표본 수와 비율, 평균과 중앙값, 합계와 평균의 집계 수준, 시각적 상관과 인과를 구별한다.",
+    "file": "content/category_study_guides/dashboard.md"
+  },
+  {
+    "categoryId": "cert_sqld",
+    "categoryName": "자격증 · SQLD",
+    "summary": "데이터 모델링(엔터티·속성·관계·정규화)과 SQL 기본/활용(JOIN·서브쿼리·집계·윈도우 함수)을 반복한다. 문제 풀이 뒤 오답 원인을 개념·문법·NULL 처리로 분류한다.",
+    "practice": "ERD를 그린 뒤 테이블 생성→샘플 데이터 입력→SQL 실행 결과로 검증",
+    "pitfalls": "NULL 비교, 집계 대상, 조인 후 중복행, 윈도우 함수의 PARTITION BY를 특히 점검한다.",
+    "file": "content/category_study_guides/cert_sqld.md"
+  },
+  {
+    "categoryId": "cert_invest",
+    "categoryName": "자격증 · 투자자산운용사",
+    "summary": "금융상품·주식·채권·펀드·위험과 수익률·분산투자·금리와 채권가격 관계 등을 구분한다. 세금과 규제는 적용 시점에 따라 달라질 수 있어 최신 공식 자료로 검증한다.",
+    "practice": "가상의 투자자 위험성향→자산배분 선택→변동성·유동성·손실 가능성 설명",
+    "pitfalls": "기대수익과 확정수익, 변동성과 원금손실, 수익률과 실현손익을 구별한다.",
+    "file": "content/category_study_guides/cert_invest.md"
+  },
+  {
+    "categoryId": "language",
+    "categoryName": "언어",
+    "summary": "업무 상황에서 요청·확인·일정 조율·문제 설명·간단한 발표를 짧고 명료한 문장으로 연습한다. 금융/데이터 용어는 정의만 외우기보다 업무 사례를 한 문장으로 설명한다.",
+    "practice": "영어로 분석 목적 1문장→방법 2문장→결과 1문장→한계 1문장 발표",
+    "pitfalls": "과도한 직역, 모호한 수치 설명, 추측을 사실처럼 말하는 표현을 피한다.",
+    "file": "content/category_study_guides/language.md"
+  }
+]

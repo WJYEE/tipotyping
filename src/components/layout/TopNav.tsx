@@ -5,6 +5,7 @@ import { PlusIcon } from "@/components/ui/icons";
 const NAV_TABS: { path: string; label: string; disabled?: boolean }[] = [
   { path: "/", label: "Home" },
   { path: "/play", label: "Play" },
+  { path: "/packages", label: "Packages" },
   { path: "/questions", label: "Questions" },
   { path: "/records", label: "Records", disabled: true },
 ];
@@ -34,6 +35,12 @@ export function TopNav() {
             className="rounded-pill px-3.5 py-1.5 font-body text-[13px] font-semibold text-text-secondary hover:text-text-primary"
           >
             Career
+          </Link>
+          <Link
+            to="/stellation"
+            className="rounded-pill px-3.5 py-1.5 font-body text-[13px] font-semibold text-text-secondary hover:text-text-primary"
+          >
+            Stellation
           </Link>
         </div>
       </div>

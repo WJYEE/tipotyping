@@ -1,0 +1,223 @@
+[
+  {
+    "id": "LAB-001",
+    "category": "Python",
+    "title": "Pandas 고객 거래 요약",
+    "task": "거래 CSV를 읽어 결측·중복을 점검하고 고객별 거래 횟수와 총액을 집계한 뒤 상위 10명을 표로 제출",
+    "tools": "Python/Pandas",
+    "evaluation": [
+      "결측치 처리 근거",
+      "groupby 집계 검증",
+      "출력 재현"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-002",
+    "category": "Python",
+    "title": "API 응답 파싱",
+    "task": "공개 API JSON 응답을 읽고 필드가 누락된 경우도 안전하게 처리하는 스크립트 작성",
+    "tools": "Python/requests",
+    "evaluation": [
+      "HTTP 상태 확인",
+      "예외 처리",
+      "API 키 하드코딩 금지"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-003",
+    "category": "SQL",
+    "title": "Sakila JOIN 실습",
+    "task": "고객별 대여 횟수를 구하고 대여가 없는 고객도 0으로 표시",
+    "tools": "Sakila 또는 동등한 연습 DB",
+    "evaluation": [
+      "LEFT JOIN",
+      "COUNT(비NULL 키)",
+      "GROUP BY"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-004",
+    "category": "SQL",
+    "title": "지역별 매출 Top-1",
+    "task": "region별 매출 1위 담당자를 윈도우 함수로 조회",
+    "tools": "가상 sales 테이블",
+    "evaluation": [
+      "PARTITION BY",
+      "ORDER BY",
+      "동점 정책"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-005",
+    "category": "SQL",
+    "title": "쿼리 성능 비교",
+    "task": "인덱스 유무에 따른 EXPLAIN 계획을 비교하고 결과 차이를 기록",
+    "tools": "로컬 연습 DB",
+    "evaluation": [
+      "실행 계획",
+      "조건",
+      "측정환경 기록"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-006",
+    "category": "AI Agent",
+    "title": "금융 뉴스 RSS 자동화",
+    "task": "RSS 뉴스 수집→중복 제거→요약→이메일 발송 워크플로우를 설계",
+    "tools": "n8n/RSS/Gmail",
+    "evaluation": [
+      "중복 방지",
+      "실패 재시도",
+      "출처 링크"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-007",
+    "category": "AI Agent",
+    "title": "상담 데이터 분류",
+    "task": "가상 상담 20건을 유형별 JSON으로 분류하고 잘못된 JSON·환각을 점검",
+    "tools": "n8n/LLM/JSON",
+    "evaluation": [
+      "스키마 검증",
+      "평가표",
+      "개인정보 배제"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-008",
+    "category": "AI Agent",
+    "title": "근거 기반 RAG Q&A",
+    "task": "공개 금융 용어 자료를 청크로 나누고 검색 근거가 없는 질문에는 모른다고 답하도록 구현",
+    "tools": "RAG/Vector DB",
+    "evaluation": [
+      "청크 전략",
+      "출처",
+      "근거 없는 답변 억제"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-009",
+    "category": "AI 기반 데이터 분석",
+    "title": "Text-to-SQL 보안 검토",
+    "task": "가상 고객 데이터마트에서 자연어→SQL 결과를 읽기 전용으로 검증",
+    "tools": "ERD/SQL/LLM",
+    "evaluation": [
+      "금지 SQL 차단",
+      "허용 스키마",
+      "결과 확인"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-010",
+    "category": "AI 기반 데이터 분석",
+    "title": "DART+ECOS 분석 기획",
+    "task": "한 기업의 재무 변화와 거시 지표를 비교하고 출처 링크를 첨부한 요약 작성",
+    "tools": "OpenDART/ECOS",
+    "evaluation": [
+      "기간 일치",
+      "지표 단위",
+      "인과관계 과장 금지"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-011",
+    "category": "머신러닝",
+    "title": "불균형 분류 평가",
+    "task": "양성 1% 가상 데이터를 만들어 정확도와 Recall/PR-AUC를 비교",
+    "tools": "Python/scikit-learn",
+    "evaluation": [
+      "Confusion Matrix",
+      "baseline",
+      "데이터 누수 방지"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-012",
+    "category": "대시보드",
+    "title": "매출 KPI 대시보드 재현",
+    "task": "월별 매출·전월 대비 증감률·지역별 매출·상위 상품을 한 화면에 구성",
+    "tools": "Power BI",
+    "evaluation": [
+      "KPI 정의",
+      "날짜 차원",
+      "필터 상호작용"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-013",
+    "category": "대시보드",
+    "title": "금융 소비 대시보드",
+    "task": "월별 거래액·시간대별 거래·업종별 비중을 시각화하고 이상 변화를 3줄로 해석",
+    "tools": "Power BI/가상 거래 데이터",
+    "evaluation": [
+      "사용자 정의",
+      "적절한 차트",
+      "원천 데이터 검증"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-014",
+    "category": "대시보드",
+    "title": "대시보드 평가 과제",
+    "task": "제시된 대시보드의 잘못된 차트·모호한 KPI·과도한 색 사용을 찾아 개선안을 그리기",
+    "tools": "Power BI 또는 와이어프레임",
+    "evaluation": [
+      "의사결정 질문",
+      "비교 가능성",
+      "가독성"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-015",
+    "category": "OA 및 AI 활용 역량",
+    "title": "프롬프트 평가표",
+    "task": "같은 업무를 수행하는 프롬프트 3개를 정확성·비용·재현성으로 비교",
+    "tools": "LLM/스프레드시트",
+    "evaluation": [
+      "평가셋",
+      "판정 기준",
+      "실패 사례"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-016",
+    "category": "자격증 SQLD",
+    "title": "모델링 미니 테스트",
+    "task": "가상 ERD에서 PK/FK와 정규화 위반을 찾고 수정 근거를 작성",
+    "tools": "ERD",
+    "evaluation": [
+      "키",
+      "관계",
+      "갱신 이상"
+    ],
+    "status": "proposed_original_task"
+  },
+  {
+    "id": "LAB-017",
+    "category": "언어",
+    "title": "업무 보고 영어",
+    "task": "일정 지연을 상사에게 알리고 해결 계획을 영어 3문장으로 작성",
+    "tools": "영어",
+    "evaluation": [
+      "상황",
+      "조치",
+      "다음 일정"
+    ],
+    "status": "proposed_original_task"
+  }
+]

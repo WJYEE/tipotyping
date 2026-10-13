@@ -1,0 +1,426 @@
+[
+  {
+    "id": "NOTE-001",
+    "category": "취업·커리어",
+    "title": "자소서는 행동·경험·생각으로",
+    "body": "평범한 갈등 서사보다 실제 행동, 어려운 미션, 해결 단계와 배운 점을 구체적으로 기록한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-002",
+    "category": "취업·커리어",
+    "title": "높은 목표의 해결 과정",
+    "body": "도전적인 목표를 어떻게 쪼개고 실행했는지 설명할 수 있어야 한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-003",
+    "category": "취업·커리어",
+    "title": "기업 분석의 세 가지 자료",
+    "body": "기업 뉴스·임직원 LinkedIn·채용공고를 연결해 신사업과 채용 니즈를 추정한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-004",
+    "category": "취업·커리어",
+    "title": "현업 사례 벤치마킹",
+    "body": "기업이 이미 만든 서비스를 재현하고 내 아이디어를 더해 개선 효과를 측정한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-005",
+    "category": "취업·커리어",
+    "title": "숨겨진 채용 니즈",
+    "body": "JD의 표면적 기술뿐 아니라 해당 조직이 실제 해결하려는 문제를 찾아본다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-006",
+    "category": "취업·커리어",
+    "title": "다른 직무의 언어",
+    "body": "PM·컨설턴트·개발자·분석가의 프레임워크와 업무 범위를 이해한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-007",
+    "category": "취업·커리어",
+    "title": "직무 선택은 현업 관점에서",
+    "body": "프로젝트를 만들고 끝내기보다 운영·유지보수·비용·성능 병목을 고민한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-008",
+    "category": "취업·커리어",
+    "title": "포트폴리오 영상",
+    "body": "동작하는 서비스의 실제 사용 장면을 짧은 영상으로 남긴다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-009",
+    "category": "취업·커리어",
+    "title": "성과는 사용자 가치로",
+    "body": "내가 만든 도구를 다른 사람도 사용하고 도움받은 사례를 기록한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-010",
+    "category": "취업·커리어",
+    "title": "면접의 가치관 질문",
+    "body": "10년 뒤 어떤 사람이 되고 싶은지 업무 가치관과 연결해 생각한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-011",
+    "category": "취업·커리어",
+    "title": "자격증의 실효성",
+    "body": "자격증은 지원 직무·현업 활용성과 준비 비용을 비교해 선택한다.",
+    "source": "강의 중 개인 메모; 개인적 조언이며 보편적 사실 아님",
+    "verified": false
+  },
+  {
+    "id": "NOTE-012",
+    "category": "취업·커리어",
+    "title": "기술 학습 범위",
+    "body": "모든 기술을 깊게 하기보다 직무에 필요한 활용·검증·협업 수준을 먼저 정한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-013",
+    "category": "취업·커리어",
+    "title": "해외 사례 조사",
+    "body": "국내 사례 외에 해외 금융·AI 서비스의 실제 기능과 적용 가능성을 확인한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-014",
+    "category": "취업·커리어",
+    "title": "금융권 관심사 파악",
+    "body": "금융당국·지자체의 공식 정책과 사업 계획을 공모전·신사업 주제와 연결한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-015",
+    "category": "취업·커리어",
+    "title": "공유하는 학습",
+    "body": "혼자 정리하는 데서 끝내지 말고 다른 수강생에게 공유해 피드백을 받는다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-016",
+    "category": "프로젝트·공모전",
+    "title": "문제 하나에 해결책 여러 개",
+    "body": "Problem을 먼저 날카롭게 정의한 뒤 Solution 후보를 비교한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-017",
+    "category": "프로젝트·공모전",
+    "title": "올인원보다 좁은 타깃",
+    "body": "대상 사용자를 구체적으로 정하고 한 가지 문제를 깊게 해결한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-018",
+    "category": "프로젝트·공모전",
+    "title": "PRD의 명확성",
+    "body": "아이디어를 문서로 설명하고 요구사항·검증 기준·범위를 명시한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-019",
+    "category": "프로젝트·공모전",
+    "title": "정량적 개선",
+    "body": "기존보다 오류를 얼마나 더 발견했는지 등 측정 가능한 차이를 만든다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-020",
+    "category": "프로젝트·공모전",
+    "title": "실제 사용 가능한 MVP",
+    "body": "모든 기능보다 작동하는 핵심 흐름과 사용자 검증을 우선한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-021",
+    "category": "프로젝트·공모전",
+    "title": "MECE와 문제 구조화",
+    "body": "분류가 겹치거나 빠지지 않는지 점검해 문제를 정리한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-022",
+    "category": "프로젝트·공모전",
+    "title": "역기획 연습",
+    "body": "기존 서비스의 화면·흐름·지표를 분석해 기획 근거를 만든다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-023",
+    "category": "프로젝트·공모전",
+    "title": "Actionable Plan",
+    "body": "실행 주체·기간·검증방법이 없는 추상적 제안은 줄인다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-024",
+    "category": "프로젝트·공모전",
+    "title": "실패와 병목 기록",
+    "body": "예상과 다른 결과, 원인, 수정 시도, 재현 조건을 기록한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-025",
+    "category": "프로젝트·공모전",
+    "title": "수상작 벤치마킹",
+    "body": "유사 주제의 실제 수상작·발표자료·검증 방식부터 확인한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-026",
+    "category": "프로젝트·공모전",
+    "title": "데이터 파생 변수",
+    "body": "원천 변수 외에 의미 있는 파생변수를 만들고 검증해 분석력을 높인다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-027",
+    "category": "프로젝트·공모전",
+    "title": "AI의 핵심 가치",
+    "body": "AI가 단순 장식이 아니라 실제 문제 해결에 기여하는지 확인한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-028",
+    "category": "AI·데이터 실무",
+    "title": "AI Agent 설명 체크리스트",
+    "body": "정의·등장 배경·장단점·한계·대체 방법·활용 방안을 설명할 수 있어야 한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-029",
+    "category": "AI·데이터 실무",
+    "title": "토큰과 비용",
+    "body": "모델을 비교할 때 성능뿐 아니라 처리시간·토큰·비용을 측정한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-030",
+    "category": "AI·데이터 실무",
+    "title": "프롬프트 유지보수",
+    "body": "실제 운영에서는 입력 변동·예외·출력 스키마를 관리해야 한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-031",
+    "category": "AI·데이터 실무",
+    "title": "Prompt Chaining",
+    "body": "작업을 분할하고 각 단계의 결과를 검증하면 운영이 쉬워질 수 있다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-032",
+    "category": "AI·데이터 실무",
+    "title": "자동화 대상 선정",
+    "body": "단순하고 반복적이며 규칙이 명확한 업무부터 자동화한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-033",
+    "category": "AI·데이터 실무",
+    "title": "n8n 뉴스 자동화",
+    "body": "RSS→n8n→Gmail 자동 전달은 API·JSON·트리거 이해를 보여주는 작은 실습이다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-034",
+    "category": "AI·데이터 실무",
+    "title": "RAG 장애 기록",
+    "body": "PDF 추출 오류나 빈 페이지 문제를 입력·변환·LLM 단계로 분리해 조사한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-035",
+    "category": "AI·데이터 실무",
+    "title": "Text-to-SQL과 보안",
+    "body": "AI 생성 SQL의 정확도뿐 아니라 최소 권한과 개인정보 노출 가능성을 검증한다.",
+    "source": "수업 노트 기반",
+    "verified": false
+  },
+  {
+    "id": "NOTE-036",
+    "category": "AI·데이터 실무",
+    "title": "금융 IT 데이터 구조",
+    "body": "계정계·정보계·채널계와 ERD의 역할을 구분한다.",
+    "source": "수업 노트 기반",
+    "verified": false
+  },
+  {
+    "id": "NOTE-037",
+    "category": "AI·데이터 실무",
+    "title": "SQL 대용량 학습",
+    "body": "Sakila 등 연습 DB로 JOIN을 익히고 큰 데이터에서 실행 계획·인덱스를 연습한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-038",
+    "category": "AI·데이터 실무",
+    "title": "BI 대시보드 실전",
+    "body": "보고서 사용자·KPI 정의·차트 해석을 먼저 정하고 시각화를 만든다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-039",
+    "category": "AI·데이터 실무",
+    "title": "기술 비교 메모",
+    "body": "새 도구는 장점·한계·대체 도구·실무 사용 상황을 함께 정리한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-040",
+    "category": "업무·협업",
+    "title": "첫 보고로 방향 확인",
+    "body": "요구사항을 이해한 대로 요약해 먼저 확인받는다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-041",
+    "category": "업무·협업",
+    "title": "중간보고 선제 수행",
+    "body": "마감 전에 진행률·위험·도움이 필요한 부분을 먼저 알린다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-042",
+    "category": "업무·협업",
+    "title": "7일 과제 운영",
+    "body": "초기에 분석·범위를 잡고 중간 시점에 진행 상황을 공유한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-043",
+    "category": "업무·협업",
+    "title": "상사의 질문 예상",
+    "body": "보고 전에 상대방이 물어볼 쟁점·근거·대안을 준비한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-044",
+    "category": "업무·협업",
+    "title": "요약 역량",
+    "body": "복잡한 업무를 목적·현황·이슈·다음 행동으로 압축해 전달한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-045",
+    "category": "업무·협업",
+    "title": "WBS",
+    "body": "업무를 실행 가능한 단위로 분해하고 담당·일정을 관리한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-046",
+    "category": "업무·협업",
+    "title": "체크리스트 재사용",
+    "body": "반복되는 오류 검증 절차를 문서화해 다음 프로젝트에 재사용한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-047",
+    "category": "업무·협업",
+    "title": "오류 감각 기르기",
+    "body": "에러 발생 시 어느 단계에서 고칠지 가설을 세우고 직접 실험한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-048",
+    "category": "업무·협업",
+    "title": "공유와 협업",
+    "body": "내가 만든 자료·도구를 팀과 나누고 다른 사람의 활용 결과를 수집한다.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-049",
+    "category": "추천 책·학습",
+    "title": "기획의 정석",
+    "body": "기획 문제 정의와 설득 구조 참고.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-050",
+    "category": "추천 책·학습",
+    "title": "돈의 심리학",
+    "body": "금융·행동 의사결정 참고.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-051",
+    "category": "추천 책·학습",
+    "title": "Zero to One",
+    "body": "사업·차별화 사고 참고.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-052",
+    "category": "추천 책·학습",
+    "title": "Give and Take",
+    "body": "협업·조직 행동 참고.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  },
+  {
+    "id": "NOTE-053",
+    "category": "추천 책·학습",
+    "title": "시대예보: 호명사회",
+    "body": "사회 변화 관찰 참고.",
+    "source": "강의 중 개인 메모",
+    "verified": false
+  }
+]

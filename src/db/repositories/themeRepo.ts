@@ -33,6 +33,11 @@ export const themeRepo = {
     if (questionCount > 0) {
       throw new Error("문제가 남아있는 Theme은 삭제할 수 없습니다.");
     }
+    // 보관된 개념도 별의 identity를 가지므로 Theme 삭제로 고아가 되지 않게 막는다.
+    const conceptCount = await db.knowledgeConcepts.where("themeId").equals(id).count();
+    if (conceptCount > 0) {
+      throw new Error("개념(KnowledgeConcept)이 남아있는 Theme은 삭제할 수 없습니다.");
+    }
     await db.themes.delete(id);
   },
 };

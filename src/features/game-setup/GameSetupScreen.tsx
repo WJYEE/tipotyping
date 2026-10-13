@@ -33,7 +33,10 @@ const ORDER_MODES: { value: OrderMode; label: string; desc: string }[] = [
 export function GameSetupScreen() {
   const navigate = useNavigate();
   const location = useLocation();
-  const themeIds: string[] = (location.state as { themeIds?: string[] } | null)?.themeIds ?? [];
+  const navState = location.state as { themeIds?: string[]; reviewStatuses?: GameConfig["reviewStatuses"]; orderMode?: OrderMode } | null;
+  const themeIds: string[] = navState?.themeIds ?? [];
+  // 패키지 문제은행에서 "검수 전 초안 제외"로 들어온 경우에만 전달된다.
+  const reviewStatuses = navState?.reviewStatuses;
 
   const themes = useLiveQuery(() => themeRepo.list(), []) ?? [];
   const questions = useLiveQuery(() => questionRepo.list(), []) ?? [];
@@ -45,7 +48,7 @@ export function GameSetupScreen() {
   const [types, setTypes] = useState<Set<QuestionType>>(new Set(ALL_TYPES));
   const [tagIds, setTagIds] = useState<Set<string>>(new Set());
   const [difficulties, setDifficulties] = useState<Set<Difficulty>>(new Set());
-  const [orderMode, setOrderMode] = useState<OrderMode>("sequential");
+  const [orderMode, setOrderMode] = useState<OrderMode>(navState?.orderMode ?? "sequential");
 
   if (themeIds.length === 0) {
     return (
@@ -78,6 +81,7 @@ export function GameSetupScreen() {
     difficulties: showDifficulty ? [...difficulties] : [],
     difficultyThemeIds: getDifficultyThemeIds(themes, themeIds),
     orderMode,
+    ...(reviewStatuses ? { reviewStatuses } : {}),
   };
   const matchingCount = filterQuestions(questions, config).length;
 

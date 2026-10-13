@@ -1,0 +1,4676 @@
+[
+  {
+    "id": "TIPO-0001",
+    "categoryId": "oa_ai",
+    "topic": "생성형 AI",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "LLM이 근거 없는 내용을 사실처럼 답하는 현상은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "과적합"
+      },
+      {
+        "id": "2",
+        "text": "캐싱"
+      },
+      {
+        "id": "3",
+        "text": "정규화"
+      },
+      {
+        "id": "4",
+        "text": "환각(Hallucination)"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "LLM 출력은 그럴듯해도 근거가 없을 수 있어 출처와 원문 확인이 필요하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "생성형 AI"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0001-D1",
+      "TIPO-0001-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0002",
+    "categoryId": "oa_ai",
+    "topic": "프롬프트",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "출력 형식을 일정하게 유지하고 싶을 때 가장 직접적인 방법은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "질문을 짧게만 한다"
+      },
+      {
+        "id": "2",
+        "text": "무작위 예시를 추가한다"
+      },
+      {
+        "id": "3",
+        "text": "JSON 스키마와 필수 키를 명시한다"
+      },
+      {
+        "id": "4",
+        "text": "모델에게 자유롭게 쓰게 한다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "필드명·타입·예시를 명시하면 구조화 출력 검증이 쉬워진다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "프롬프트"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0002-D1",
+      "TIPO-0002-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0003",
+    "categoryId": "oa_ai",
+    "topic": "프롬프트",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "복잡한 작업을 단계별 프롬프트로 나누는 기법은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Bagging"
+      },
+      {
+        "id": "2",
+        "text": "Prompt Chaining"
+      },
+      {
+        "id": "3",
+        "text": "One-hot Encoding"
+      },
+      {
+        "id": "4",
+        "text": "Index Scan"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "작업을 여러 단계로 분해해 각 단계의 입력·출력을 연결한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "프롬프트"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0003-D1",
+      "TIPO-0003-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0004",
+    "categoryId": "oa_ai",
+    "topic": "프롬프트",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "같은 질문을 여러 번 풀어 답의 일관성을 비교하는 접근은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Self-consistency"
+      },
+      {
+        "id": "2",
+        "text": "Dropout"
+      },
+      {
+        "id": "3",
+        "text": "JOIN"
+      },
+      {
+        "id": "4",
+        "text": "ETL"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "다양한 추론 경로의 답을 비교하는 방식으로, 항상 정답을 보장하지는 않는다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "프롬프트"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0004-D1",
+      "TIPO-0004-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0005",
+    "categoryId": "oa_ai",
+    "topic": "OA",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "엑셀에서 조건에 맞는 값의 합계를 구할 때 사용하는 함수는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "COUNT"
+      },
+      {
+        "id": "2",
+        "text": "VLOOKUP"
+      },
+      {
+        "id": "3",
+        "text": "LEFT"
+      },
+      {
+        "id": "4",
+        "text": "SUMIF"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "SUMIF는 지정한 범위에서 조건을 만족하는 값만 합산한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "OA"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0005-D1",
+      "TIPO-0005-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0006",
+    "categoryId": "oa_ai",
+    "topic": "OA",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "엑셀 피벗 테이블의 대표적인 목적은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "네트워크를 설정한다"
+      },
+      {
+        "id": "2",
+        "text": "문서에 서명한다"
+      },
+      {
+        "id": "3",
+        "text": "행·열 기준으로 데이터를 요약·집계한다"
+      },
+      {
+        "id": "4",
+        "text": "파일을 암호화한다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "피벗 테이블은 범주별 합계·건수 등 요약에 적합하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "OA"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0006-D1",
+      "TIPO-0006-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0007",
+    "categoryId": "oa_ai",
+    "topic": "AI 활용",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "AI가 만든 금융 관련 숫자를 보고서에 사용할 때 우선할 일은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "문장을 예쁘게 바꾼다"
+      },
+      {
+        "id": "2",
+        "text": "원천 데이터와 계산식을 대조한다"
+      },
+      {
+        "id": "3",
+        "text": "출처 없이 복사한다"
+      },
+      {
+        "id": "4",
+        "text": "더 큰 모델이면 검증을 생략한다"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "검증 가능한 원천 데이터·기간·단위 확인이 필요하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "AI 활용"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0007-D1",
+      "TIPO-0007-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0008",
+    "categoryId": "oa_ai",
+    "topic": "검색",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "구글 검색에서 특정 문구가 그대로 포함된 결과를 찾는 일반적인 방법은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "문구를 큰따옴표로 감싼다"
+      },
+      {
+        "id": "2",
+        "text": "문구 앞에 #을 붙인다"
+      },
+      {
+        "id": "3",
+        "text": "문구를 괄호로만 감싼다"
+      },
+      {
+        "id": "4",
+        "text": "문구 뒤에 특수기호를 붙인다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "큰따옴표 검색은 정확한 구문 검색에 활용된다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "검색"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0008-D1",
+      "TIPO-0008-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0009",
+    "categoryId": "oa_ai",
+    "topic": "업무효율",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "반복 업무 자동화 대상으로 가장 적합한 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "예외가 매번 다른 고위험 승인"
+      },
+      {
+        "id": "2",
+        "text": "모호한 인사 평가"
+      },
+      {
+        "id": "3",
+        "text": "법적 책임 판단"
+      },
+      {
+        "id": "4",
+        "text": "규칙이 일정한 일일 보고서 전송"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "규칙이 명확하고 반복 빈도가 높은 업무부터 자동화하는 편이 안전하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "업무효율"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0009-D1",
+      "TIPO-0009-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0010",
+    "categoryId": "oa_ai",
+    "topic": "AI 활용",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "프롬프트 결과의 품질을 평가할 때 적절한 기준은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "토큰 수만 본다"
+      },
+      {
+        "id": "2",
+        "text": "모델 브랜드만 본다"
+      },
+      {
+        "id": "3",
+        "text": "정확성·재현성·비용·처리시간을 함께 본다"
+      },
+      {
+        "id": "4",
+        "text": "답변 길이만 본다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "업무 적용 가능성은 정확도뿐 아니라 비용과 운영 안정성에도 좌우된다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "AI 활용"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0010-D1",
+      "TIPO-0010-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0011",
+    "categoryId": "agent",
+    "topic": "기초",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "일반적인 자동화와 AI Agent를 구분할 때 중요한 요소는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "항상 정답이다"
+      },
+      {
+        "id": "2",
+        "text": "상황에 따라 도구 선택·단계 수행·결과 점검이 가능하다"
+      },
+      {
+        "id": "3",
+        "text": "반드시 로봇 하드웨어가 있다"
+      },
+      {
+        "id": "4",
+        "text": "반드시 인터넷이 필요 없다"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "Agent는 목표를 위해 계획·도구 호출·상태 반영 등의 루프를 가질 수 있다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0011-D1",
+      "TIPO-0011-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0012",
+    "categoryId": "agent",
+    "topic": "n8n",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "정해진 시각마다 워크플로우를 실행하려면?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Schedule Trigger"
+      },
+      {
+        "id": "2",
+        "text": "Merge"
+      },
+      {
+        "id": "3",
+        "text": "Set"
+      },
+      {
+        "id": "4",
+        "text": "Stop and Error"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "Schedule Trigger는 예약 실행을 시작한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "n8n"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0012-D1",
+      "TIPO-0012-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0013",
+    "categoryId": "agent",
+    "topic": "n8n",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "RSS 뉴스가 새로 올라오면 자동으로 가져오는 출발점은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "수동으로 CSV 복사"
+      },
+      {
+        "id": "2",
+        "text": "Power BI 새로 고침"
+      },
+      {
+        "id": "3",
+        "text": "PDF 인쇄"
+      },
+      {
+        "id": "4",
+        "text": "RSS 관련 트리거 또는 주기적 RSS 조회"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "RSS를 읽어 새 항목을 자동 처리하는 흐름을 구성할 수 있다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "n8n"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0013-D1",
+      "TIPO-0013-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0014",
+    "categoryId": "agent",
+    "topic": "n8n",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "조건에 따라 워크플로우의 실행 경로를 나누는 노드는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Limit"
+      },
+      {
+        "id": "2",
+        "text": "Sort"
+      },
+      {
+        "id": "3",
+        "text": "IF 또는 Switch"
+      },
+      {
+        "id": "4",
+        "text": "Aggregate"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "IF는 조건 분기, Switch는 여러 경로 분기에 사용한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "n8n"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0014-D1",
+      "TIPO-0014-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0015",
+    "categoryId": "agent",
+    "topic": "n8n",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "여러 항목을 하나씩 또는 배치로 처리할 때 사용하는 노드는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Manual Trigger"
+      },
+      {
+        "id": "2",
+        "text": "Loop Over Items"
+      },
+      {
+        "id": "3",
+        "text": "Webhook Response"
+      },
+      {
+        "id": "4",
+        "text": "Sticky Note"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "반복 처리가 필요한 경우 Loop Over Items를 사용한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "n8n"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0015-D1",
+      "TIPO-0015-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0016",
+    "categoryId": "agent",
+    "topic": "n8n",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "배열에서 상위 5개 항목만 남기려면 가장 직접적인 노드는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Limit"
+      },
+      {
+        "id": "2",
+        "text": "Merge"
+      },
+      {
+        "id": "3",
+        "text": "Webhook"
+      },
+      {
+        "id": "4",
+        "text": "Email Trigger"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "Sort로 순서를 정한 뒤 Limit으로 개수를 제한할 수 있다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "n8n"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0016-D1",
+      "TIPO-0016-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0017",
+    "categoryId": "agent",
+    "topic": "n8n",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "여러 레코드를 하나의 목록이나 집계 결과로 모으는 용도는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Wait"
+      },
+      {
+        "id": "2",
+        "text": "Schedule Trigger"
+      },
+      {
+        "id": "3",
+        "text": "Webhook"
+      },
+      {
+        "id": "4",
+        "text": "Aggregate"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "Aggregate는 항목을 모아 다음 단계에 전달할 때 유용하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "n8n"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0017-D1",
+      "TIPO-0017-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0018",
+    "categoryId": "agent",
+    "topic": "JSON",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "JSON.parse가 수행하는 작업은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "SQL을 실행한다"
+      },
+      {
+        "id": "2",
+        "text": "API 키를 생성한다"
+      },
+      {
+        "id": "3",
+        "text": "JSON 문자열을 자바스크립트 값으로 변환한다"
+      },
+      {
+        "id": "4",
+        "text": "객체를 이미지로 바꾼다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "유효한 JSON 문자열을 파싱해 객체·배열 등의 값으로 만든다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "JSON"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0018-D1",
+      "TIPO-0018-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0019",
+    "categoryId": "agent",
+    "topic": "API",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "API 호출에 401 상태가 반환될 때 먼저 의심할 문제는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "테이블 중복"
+      },
+      {
+        "id": "2",
+        "text": "인증 정보가 없거나 유효하지 않다"
+      },
+      {
+        "id": "3",
+        "text": "항상 서버 디스크 부족"
+      },
+      {
+        "id": "4",
+        "text": "정상 처리 완료"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "401은 인증 관련 실패를 의미한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "API"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0019-D1",
+      "TIPO-0019-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0020",
+    "categoryId": "agent",
+    "topic": "RAG",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "RAG에서 검색 단계의 목적은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "질문과 관련된 외부 근거 문서를 가져온다"
+      },
+      {
+        "id": "2",
+        "text": "모델 가중치를 매번 학습한다"
+      },
+      {
+        "id": "3",
+        "text": "GPU를 초기화한다"
+      },
+      {
+        "id": "4",
+        "text": "사용자 비밀번호를 저장한다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "검색된 문맥을 생성 모델의 입력으로 제공해 근거 기반 답변을 돕는다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "RAG"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0020-D1",
+      "TIPO-0020-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0021",
+    "categoryId": "agent",
+    "topic": "RAG",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "Embedding의 일반적인 역할은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "문서를 무조건 PDF로 변환한다"
+      },
+      {
+        "id": "2",
+        "text": "SQL 문법을 검사한다"
+      },
+      {
+        "id": "3",
+        "text": "네트워크를 암호화한다"
+      },
+      {
+        "id": "4",
+        "text": "텍스트 의미를 벡터로 표현한다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "벡터 표현을 이용해 의미적 유사도 검색 등을 수행할 수 있다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "RAG"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0021-D1",
+      "TIPO-0021-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0022",
+    "categoryId": "agent",
+    "topic": "RAG",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "문서 청크에 overlap을 두는 이유는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "문서를 암호화한다"
+      },
+      {
+        "id": "2",
+        "text": "중복을 항상 제거한다"
+      },
+      {
+        "id": "3",
+        "text": "청크 경계에서 문맥이 끊기는 문제를 완화한다"
+      },
+      {
+        "id": "4",
+        "text": "토큰 비용을 반드시 0으로 만든다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "일부 중복 문맥을 유지해 경계 주변 정보 누락을 줄인다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "RAG"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0022-D1",
+      "TIPO-0022-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0023",
+    "categoryId": "agent",
+    "topic": "보안",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "금융 상담 내용을 외부 LLM에 보낼 때 우선 검토할 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "폰트 크기"
+      },
+      {
+        "id": "2",
+        "text": "개인정보·민감정보 처리 및 전송 권한"
+      },
+      {
+        "id": "3",
+        "text": "UI 색상"
+      },
+      {
+        "id": "4",
+        "text": "모델 이름 길이"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "데이터 최소화·비식별화·접근 통제 등 조직 정책이 우선이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "보안"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0023-D1",
+      "TIPO-0023-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0024",
+    "categoryId": "agent",
+    "topic": "운영",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "LLM 자동 분류 결과가 JSON 형식에서 자주 벗어난다면?",
+    "options": [
+      {
+        "id": "1",
+        "text": "스키마 검증과 실패 시 재시도·예외 처리를 둔다"
+      },
+      {
+        "id": "2",
+        "text": "검증 없이 DB에 저장한다"
+      },
+      {
+        "id": "3",
+        "text": "출력을 모두 버린다"
+      },
+      {
+        "id": "4",
+        "text": "질문을 제거한다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "생성 결과는 구조 검증과 오류 처리가 필요하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "운영"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0024-D1",
+      "TIPO-0024-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0025",
+    "categoryId": "python",
+    "topic": "자료형",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "Python에서 변경할 수 없는 자료형은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "list"
+      },
+      {
+        "id": "2",
+        "text": "dict"
+      },
+      {
+        "id": "3",
+        "text": "set"
+      },
+      {
+        "id": "4",
+        "text": "tuple"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "튜플은 불변이며 내부에 가변 객체를 담는 경우는 별도로 고려해야 한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "자료형"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0025-D1",
+      "TIPO-0025-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0026",
+    "categoryId": "python",
+    "topic": "조건문",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "조건에 따라 코드를 실행할 때 사용하는 구문은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "class만 사용"
+      },
+      {
+        "id": "2",
+        "text": "import만 사용"
+      },
+      {
+        "id": "3",
+        "text": "if / elif / else"
+      },
+      {
+        "id": "4",
+        "text": "try / except만 사용"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "조건식 결과에 따라 실행 경로를 나눈다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "조건문"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0026-D1",
+      "TIPO-0026-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0027",
+    "categoryId": "python",
+    "topic": "반복문",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "range(2, 5)를 순회할 때 나오는 값은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "5만"
+      },
+      {
+        "id": "2",
+        "text": "2, 3, 4"
+      },
+      {
+        "id": "3",
+        "text": "2, 3, 4, 5"
+      },
+      {
+        "id": "4",
+        "text": "1, 2, 3, 4"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "range의 종료 값은 포함되지 않는다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "반복문"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0027-D1",
+      "TIPO-0027-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0028",
+    "categoryId": "python",
+    "topic": "함수",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "함수 안에서 결과를 호출자에게 반환하는 키워드는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "return"
+      },
+      {
+        "id": "2",
+        "text": "print"
+      },
+      {
+        "id": "3",
+        "text": "pass"
+      },
+      {
+        "id": "4",
+        "text": "break"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "print는 출력, return은 반환이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "함수"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0028-D1",
+      "TIPO-0028-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0029",
+    "categoryId": "python",
+    "topic": "가변 기본값",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "def f(x, a=[]): a.append(x); return a 의 위험은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "매 호출 새 리스트가 생긴다"
+      },
+      {
+        "id": "2",
+        "text": "리스트를 수정할 수 없다"
+      },
+      {
+        "id": "3",
+        "text": "항상 SyntaxError가 난다"
+      },
+      {
+        "id": "4",
+        "text": "기본 리스트가 호출 간 공유될 수 있다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "가변 기본값은 함수 정의 시 한 번 생성된다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "가변 기본값"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0029-D1",
+      "TIPO-0029-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0030",
+    "categoryId": "python",
+    "topic": "리스트",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "[10,20,30,40][1:3]의 결과는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "[20, 30, 40]"
+      },
+      {
+        "id": "2",
+        "text": "[30, 40]"
+      },
+      {
+        "id": "3",
+        "text": "[20, 30]"
+      },
+      {
+        "id": "4",
+        "text": "[10, 20]"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "슬라이스는 시작 포함, 끝 제외이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "리스트"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0030-D1",
+      "TIPO-0030-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0031",
+    "categoryId": "python",
+    "topic": "복사",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "a = [[0]*2]*3에서 a[0][0]=1이면?",
+    "options": [
+      {
+        "id": "1",
+        "text": "모든 값이 1이 된다"
+      },
+      {
+        "id": "2",
+        "text": "세 행의 첫 번째 값이 모두 1이 된다"
+      },
+      {
+        "id": "3",
+        "text": "첫 행만 바뀐다"
+      },
+      {
+        "id": "4",
+        "text": "TypeError가 난다"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "내부 리스트의 참조가 반복 복제된다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "복사"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0031-D1",
+      "TIPO-0031-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0032",
+    "categoryId": "python",
+    "topic": "예외",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "존재하지 않는 딕셔너리 키를 d['x']로 조회하면?",
+    "options": [
+      {
+        "id": "1",
+        "text": "KeyError가 발생할 수 있다"
+      },
+      {
+        "id": "2",
+        "text": "항상 None을 반환한다"
+      },
+      {
+        "id": "3",
+        "text": "항상 0을 반환한다"
+      },
+      {
+        "id": "4",
+        "text": "SyntaxError가 난다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "get을 사용하면 기본값을 지정할 수 있다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "예외"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0032-D1",
+      "TIPO-0032-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0033",
+    "categoryId": "python",
+    "topic": "파일",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "with open(...) 구문을 쓰는 대표적 이유는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "무조건 더 빠르다"
+      },
+      {
+        "id": "2",
+        "text": "암호화를 자동 수행한다"
+      },
+      {
+        "id": "3",
+        "text": "모든 인코딩 오류를 막는다"
+      },
+      {
+        "id": "4",
+        "text": "블록 종료 시 파일 자원을 정리하기 쉽다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "컨텍스트 매니저가 자원 정리를 돕는다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "파일"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0033-D1",
+      "TIPO-0033-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0034",
+    "categoryId": "python",
+    "topic": "Pandas",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "df[df['age'] >= 30]의 의미는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "30개 행만 반환한다"
+      },
+      {
+        "id": "2",
+        "text": "모든 값을 30으로 바꾼다"
+      },
+      {
+        "id": "3",
+        "text": "age가 30 이상인 행만 필터링한다"
+      },
+      {
+        "id": "4",
+        "text": "age 열을 삭제한다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "불리언 마스크를 이용한 행 선택이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "Pandas"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0034-D1",
+      "TIPO-0034-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0035",
+    "categoryId": "python",
+    "topic": "Pandas",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "Pandas에서 조건 두 개의 OR 결합에 사용하는 연산자는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "OR 연산자를 쓴다"
+      },
+      {
+        "id": "2",
+        "text": "각 조건을 괄호로 감싼 뒤 파이프 연산자를 쓴다"
+      },
+      {
+        "id": "3",
+        "text": "파이썬 or를 Series에 직접 쓴다"
+      },
+      {
+        "id": "4",
+        "text": "AND 연산자를 쓴다"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "Series 불리언 연산에는 비트 연산자 파이프와 앰퍼샌드를 사용한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "Pandas"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0035-D1",
+      "TIPO-0035-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0036",
+    "categoryId": "python",
+    "topic": "Pandas",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "reset_index(drop=True)의 효과는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "기존 인덱스를 컬럼으로 보존하지 않고 새로 매긴다"
+      },
+      {
+        "id": "2",
+        "text": "모든 열을 삭제한다"
+      },
+      {
+        "id": "3",
+        "text": "결측치를 제거한다"
+      },
+      {
+        "id": "4",
+        "text": "행을 정렬한다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "drop=True는 기존 인덱스 컬럼 생성을 막는다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "Pandas"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0036-D1",
+      "TIPO-0036-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0037",
+    "categoryId": "python",
+    "topic": "Pandas",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "groupby('dept')['pay'].mean()은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "전체 평균만 구한다"
+      },
+      {
+        "id": "2",
+        "text": "부서를 삭제한다"
+      },
+      {
+        "id": "3",
+        "text": "최댓값을 구한다"
+      },
+      {
+        "id": "4",
+        "text": "부서별 pay 평균을 구한다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "기본적으로 결측값을 제외하고 그룹별 평균을 계산한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "Pandas"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0037-D1",
+      "TIPO-0037-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0038",
+    "categoryId": "python",
+    "topic": "데이터 수집",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "requests.get(url)의 일반적인 역할은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "파일을 컴파일한다"
+      },
+      {
+        "id": "2",
+        "text": "웹페이지를 항상 합법적으로 크롤링한다"
+      },
+      {
+        "id": "3",
+        "text": "HTTP GET 요청을 보낸다"
+      },
+      {
+        "id": "4",
+        "text": "DB를 자동 생성한다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "요청 후 상태 코드·응답·이용 약관 등을 확인해야 한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "데이터 수집"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0038-D1",
+      "TIPO-0038-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0039",
+    "categoryId": "python",
+    "topic": "코딩",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "[int(x) for x in ['3','2.5','7'] if x.isdigit()]의 결과는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "ValueError"
+      },
+      {
+        "id": "2",
+        "text": "[3, 7]"
+      },
+      {
+        "id": "3",
+        "text": "[3, 2, 7]"
+      },
+      {
+        "id": "4",
+        "text": "[3, 2.5, 7]"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "isdigit()이 거짓인 '2.5'는 int 변환 대상에서 제외된다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "코딩"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0039-D1",
+      "TIPO-0039-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0040",
+    "categoryId": "sql",
+    "topic": "기초",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "WHERE와 HAVING의 주요 차이는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "WHERE는 행, HAVING은 집계된 그룹 조건을 필터링한다"
+      },
+      {
+        "id": "2",
+        "text": "둘은 항상 같다"
+      },
+      {
+        "id": "3",
+        "text": "HAVING은 정렬 전용"
+      },
+      {
+        "id": "4",
+        "text": "WHERE는 SELECT 뒤에만 쓴다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "집계 전 필터는 WHERE, 집계 후 그룹 필터는 HAVING이 일반적이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0040-D1",
+      "TIPO-0040-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0041",
+    "categoryId": "sql",
+    "topic": "기초",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "NULL과 비교할 때 올바른 조건은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "= NULL"
+      },
+      {
+        "id": "2",
+        "text": "== NULL"
+      },
+      {
+        "id": "3",
+        "text": "IN NULL"
+      },
+      {
+        "id": "4",
+        "text": "IS NULL"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "NULL 비교에는 IS NULL 또는 IS NOT NULL을 사용한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0041-D1",
+      "TIPO-0041-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0042",
+    "categoryId": "sql",
+    "topic": "기초",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "중복 없는 부서명 목록을 구하는 구문은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "SELECT COUNT(dept) FROM employees"
+      },
+      {
+        "id": "2",
+        "text": "SELECT dept FROM employees"
+      },
+      {
+        "id": "3",
+        "text": "SELECT DISTINCT dept FROM employees"
+      },
+      {
+        "id": "4",
+        "text": "SELECT UNIQUE * FROM employees"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "DISTINCT는 조회 결과의 중복 행을 제거한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0042-D1",
+      "TIPO-0042-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0043",
+    "categoryId": "sql",
+    "topic": "기초",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "COUNT(*)와 COUNT(col)의 차이는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "COUNT(col)은 중복을 제거한다"
+      },
+      {
+        "id": "2",
+        "text": "COUNT(col)은 NULL을 제외한다"
+      },
+      {
+        "id": "3",
+        "text": "COUNT(*)는 NULL 행을 제외한다"
+      },
+      {
+        "id": "4",
+        "text": "항상 같은 값이다"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "COUNT(*)는 행 수, COUNT(col)은 해당 컬럼이 NULL이 아닌 행 수이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0043-D1",
+      "TIPO-0043-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0044",
+    "categoryId": "sql",
+    "topic": "기초",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "LEFT JOIN으로 주문 없는 고객까지 포함하려면?",
+    "options": [
+      {
+        "id": "1",
+        "text": "customers LEFT JOIN orders"
+      },
+      {
+        "id": "2",
+        "text": "customers INNER JOIN orders"
+      },
+      {
+        "id": "3",
+        "text": "orders INNER JOIN customers"
+      },
+      {
+        "id": "4",
+        "text": "customers CROSS JOIN orders만 가능"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "LEFT JOIN은 왼쪽 테이블의 모든 행을 유지한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0044-D1",
+      "TIPO-0044-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0045",
+    "categoryId": "sql",
+    "topic": "기초",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "주문이 없는 고객 수를 0으로 표시할 때 적합한 집계는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "COUNT(*)"
+      },
+      {
+        "id": "2",
+        "text": "SUM(o.order_id)"
+      },
+      {
+        "id": "3",
+        "text": "MAX(o.order_id)"
+      },
+      {
+        "id": "4",
+        "text": "COUNT(o.order_id)"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "LEFT JOIN에서 COUNT(*)는 매칭 없는 고객도 1로 셀 수 있다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0045-D1",
+      "TIPO-0045-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0046",
+    "categoryId": "sql",
+    "topic": "중급",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "서브쿼리 결과에 NULL이 포함되면 NOT IN이 주의가 필요한 이유는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "NOT IN은 JOIN만 허용한다"
+      },
+      {
+        "id": "2",
+        "text": "NULL이 무조건 제거된다"
+      },
+      {
+        "id": "3",
+        "text": "비교 결과가 UNKNOWN이 되어 기대한 행이 제외될 수 있다"
+      },
+      {
+        "id": "4",
+        "text": "NULL은 자동으로 0이 된다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "NULL 가능성이 있으면 NOT EXISTS 등 대안을 검토한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "중급"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0046-D1",
+      "TIPO-0046-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0047",
+    "categoryId": "sql",
+    "topic": "중급",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "CTE를 정의할 때 사용하는 키워드는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "UNION ALL만"
+      },
+      {
+        "id": "2",
+        "text": "WITH"
+      },
+      {
+        "id": "3",
+        "text": "PARTITION"
+      },
+      {
+        "id": "4",
+        "text": "TRIGGER"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "WITH 구문은 이름 붙인 중간 쿼리를 정의한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "중급"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0047-D1",
+      "TIPO-0047-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0048",
+    "categoryId": "sql",
+    "topic": "중급",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "ROW_NUMBER() OVER(PARTITION BY region ORDER BY amount DESC)는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "지역별로 금액 내림차순 행 번호를 매긴다"
+      },
+      {
+        "id": "2",
+        "text": "전체 행에 같은 번호를 준다"
+      },
+      {
+        "id": "3",
+        "text": "지역별 평균을 구한다"
+      },
+      {
+        "id": "4",
+        "text": "중복을 삭제한다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "PARTITION BY로 번호 부여 그룹을 나눈다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "중급"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0048-D1",
+      "TIPO-0048-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0049",
+    "categoryId": "sql",
+    "topic": "중급",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "RANK와 DENSE_RANK의 차이는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "둘 다 항상 동일하다"
+      },
+      {
+        "id": "2",
+        "text": "DENSE_RANK는 동점을 허용하지 않는다"
+      },
+      {
+        "id": "3",
+        "text": "RANK는 정렬이 필요 없다"
+      },
+      {
+        "id": "4",
+        "text": "동점 이후 RANK는 순위가 건너뛰고 DENSE_RANK는 건너뛰지 않는다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "동점이 있는 경우 순위의 공백 여부가 다르다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "중급"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0049-D1",
+      "TIPO-0049-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0050",
+    "categoryId": "sql",
+    "topic": "중급",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "UNION과 UNION ALL의 차이는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "UNION은 열 개수 무관"
+      },
+      {
+        "id": "2",
+        "text": "둘 다 중복 유지"
+      },
+      {
+        "id": "3",
+        "text": "UNION은 중복 제거, UNION ALL은 중복 유지"
+      },
+      {
+        "id": "4",
+        "text": "UNION ALL은 정렬 전용"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "UNION ALL은 중복 제거 작업이 없어 효율적일 수 있다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "중급"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0050-D1",
+      "TIPO-0050-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0051",
+    "categoryId": "sql",
+    "topic": "중급",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "가격 세 번째로 높은 행을 MySQL/PostgreSQL에서 고를 때?",
+    "options": [
+      {
+        "id": "1",
+        "text": "OFFSET 3 LIMIT 1"
+      },
+      {
+        "id": "2",
+        "text": "ORDER BY price DESC LIMIT 1 OFFSET 2"
+      },
+      {
+        "id": "3",
+        "text": "ORDER BY price ASC LIMIT 1"
+      },
+      {
+        "id": "4",
+        "text": "LIMIT 3"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "동일 가격이 없다는 전제에서 OFFSET 2는 앞의 두 행을 건너뛴다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "중급"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0051-D1",
+      "TIPO-0051-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0052",
+    "categoryId": "sql",
+    "topic": "심화",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "복합 인덱스 (a,b)에서 일반적으로 효율적으로 활용되는 조건은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "선두 컬럼 a를 포함한 검색 조건"
+      },
+      {
+        "id": "2",
+        "text": "항상 b 단독 검색"
+      },
+      {
+        "id": "3",
+        "text": "모든 LIKE '%x'"
+      },
+      {
+        "id": "4",
+        "text": "모든 함수 적용 검색"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "인덱스 선두 컬럼과 실행 계획을 고려한다. DBMS별 예외가 있다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "심화"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0052-D1",
+      "TIPO-0052-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0053",
+    "categoryId": "sql",
+    "topic": "심화",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "EXPLAIN을 사용하는 주된 이유는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "데이터를 무조건 삭제하기 위해"
+      },
+      {
+        "id": "2",
+        "text": "트랜잭션을 커밋하기 위해"
+      },
+      {
+        "id": "3",
+        "text": "DB를 백업하기 위해"
+      },
+      {
+        "id": "4",
+        "text": "쿼리 실행 계획을 살펴보기 위해"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "실행 계획을 확인해 접근 경로와 예상 비용을 점검한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "심화"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0053-D1",
+      "TIPO-0053-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0054",
+    "categoryId": "sql",
+    "topic": "심화",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "트랜잭션 ACID의 I는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Inheritance"
+      },
+      {
+        "id": "2",
+        "text": "Iteration"
+      },
+      {
+        "id": "3",
+        "text": "Isolation(격리성)"
+      },
+      {
+        "id": "4",
+        "text": "Index"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "격리성은 동시 실행 트랜잭션의 간섭을 제어한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "심화"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0054-D1",
+      "TIPO-0054-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0055",
+    "categoryId": "sql",
+    "topic": "심화",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "인덱스를 무조건 많이 만들면 안 되는 이유는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "트랜잭션이 불가능해진다"
+      },
+      {
+        "id": "2",
+        "text": "쓰기 비용과 저장 공간이 늘 수 있다"
+      },
+      {
+        "id": "3",
+        "text": "조회 속도가 반드시 감소한다"
+      },
+      {
+        "id": "4",
+        "text": "JOIN을 금지한다"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "인덱스는 읽기 이점과 유지 비용의 균형이 필요하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "심화"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0055-D1",
+      "TIPO-0055-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0056",
+    "categoryId": "ai_analysis",
+    "topic": "금융 IT",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "ERD가 SQL 작성 전에 유용한 이유는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "테이블·키·관계를 파악해 올바른 JOIN을 설계할 수 있다"
+      },
+      {
+        "id": "2",
+        "text": "쿼리 속도를 항상 100배 높인다"
+      },
+      {
+        "id": "3",
+        "text": "보안 규칙을 자동 작성한다"
+      },
+      {
+        "id": "4",
+        "text": "원장을 자동 복제한다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "ERD는 엔터티와 관계의 구조를 나타낸다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "금융 IT"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0056-D1",
+      "TIPO-0056-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0057",
+    "categoryId": "ai_analysis",
+    "topic": "금융 IT",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "금융권 정보계의 일반적인 역할은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "실시간 모든 결제를 직접 승인한다"
+      },
+      {
+        "id": "2",
+        "text": "ATM 화면만 담당한다"
+      },
+      {
+        "id": "3",
+        "text": "외부기관 연결만 담당한다"
+      },
+      {
+        "id": "4",
+        "text": "분석·보고에 필요한 데이터를 제공한다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "업무계·계정계와 분리해 분석 부하와 보안 경계를 관리한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "금융 IT"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0057-D1",
+      "TIPO-0057-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0058",
+    "categoryId": "ai_analysis",
+    "topic": "금융 IT",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "채널계의 예로 가장 적절한 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "신용평가 모델만"
+      },
+      {
+        "id": "2",
+        "text": "결산 전표만"
+      },
+      {
+        "id": "3",
+        "text": "모바일 앱·웹 등 고객 접점"
+      },
+      {
+        "id": "4",
+        "text": "데이터 웨어하우스"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "채널계는 사용자 요청이 들어오는 접점을 담당한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "금융 IT"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0058-D1",
+      "TIPO-0058-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0059",
+    "categoryId": "ai_analysis",
+    "topic": "DDD",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "Bounded Context가 의미하는 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "모델의 토큰 제한"
+      },
+      {
+        "id": "2",
+        "text": "업무 모델과 용어가 일관되게 적용되는 경계"
+      },
+      {
+        "id": "3",
+        "text": "데이터베이스 파일 크기 제한"
+      },
+      {
+        "id": "4",
+        "text": "네트워크 대역폭"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "도메인 책임과 의미의 경계를 구분한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "DDD"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0059-D1",
+      "TIPO-0059-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0060",
+    "categoryId": "ai_analysis",
+    "topic": "DDD",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "Ubiquitous Language를 사용하는 목적은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "현업·개발자가 업무 용어를 같은 의미로 사용한다"
+      },
+      {
+        "id": "2",
+        "text": "영어만 사용한다"
+      },
+      {
+        "id": "3",
+        "text": "모든 DB를 합친다"
+      },
+      {
+        "id": "4",
+        "text": "SQL을 없앤다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "승인·매입·청구처럼 혼동하기 쉬운 용어를 명확히 정의한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "DDD"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0060-D1",
+      "TIPO-0060-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0061",
+    "categoryId": "ai_analysis",
+    "topic": "Text-to-SQL",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "Text-to-SQL 결과를 안전하게 실행하기 위한 방법은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "운영 원장에 쓰기 권한 부여"
+      },
+      {
+        "id": "2",
+        "text": "모든 테이블 개방"
+      },
+      {
+        "id": "3",
+        "text": "로그 미보관"
+      },
+      {
+        "id": "4",
+        "text": "읽기 전용 권한·쿼리 검증·대상 스키마 제한"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "생성된 SQL도 검증과 최소 권한이 필요하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "Text-to-SQL"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0061-D1",
+      "TIPO-0061-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0062",
+    "categoryId": "ai_analysis",
+    "topic": "MCP",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "MCP의 목적에 가까운 설명은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "데이터 압축 형식"
+      },
+      {
+        "id": "2",
+        "text": "SQL 데이터 타입"
+      },
+      {
+        "id": "3",
+        "text": "AI 애플리케이션과 도구·데이터 소스의 연결 인터페이스를 표준화한다"
+      },
+      {
+        "id": "4",
+        "text": "머신러닝 손실함수"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "MCP는 외부 도구·리소스를 AI에 연결하기 위한 프로토콜이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "MCP"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0062-D1",
+      "TIPO-0062-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0063",
+    "categoryId": "ai_analysis",
+    "topic": "API",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "OpenDART로 주로 얻는 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "카드 비밀번호"
+      },
+      {
+        "id": "2",
+        "text": "기업 공시와 재무 관련 데이터"
+      },
+      {
+        "id": "3",
+        "text": "실시간 개인 신용점수"
+      },
+      {
+        "id": "4",
+        "text": "모든 국가의 날씨"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "OpenDART는 전자공시 정보를 제공한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "API"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0063-D1",
+      "TIPO-0063-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0064",
+    "categoryId": "ai_analysis",
+    "topic": "API",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "ECOS API로 조회하기 적절한 지표는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "한국은행 금리·환율 등 경제통계"
+      },
+      {
+        "id": "2",
+        "text": "개별 카드 비밀번호"
+      },
+      {
+        "id": "3",
+        "text": "특정 개인의 계좌번호"
+      },
+      {
+        "id": "4",
+        "text": "사내 직원 평가"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "ECOS는 한국은행 경제통계 시스템이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "API"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0064-D1",
+      "TIPO-0064-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0065",
+    "categoryId": "ai_analysis",
+    "topic": "분석",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "재무비율을 기업 간 비교할 때 먼저 확인할 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "차트 색상만"
+      },
+      {
+        "id": "2",
+        "text": "기업명 글자 수"
+      },
+      {
+        "id": "3",
+        "text": "로고 이미지"
+      },
+      {
+        "id": "4",
+        "text": "기간·단위·산업 특성·회계 기준"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "분모·회계 기준·산업 구조 차이가 해석에 영향을 준다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "분석"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0065-D1",
+      "TIPO-0065-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0066",
+    "categoryId": "ai_analysis",
+    "topic": "검증",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "AI가 제안한 분석 인사이트를 보고할 때 필요한 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "검증 없이 확정한다"
+      },
+      {
+        "id": "2",
+        "text": "숫자를 반올림해 없앤다"
+      },
+      {
+        "id": "3",
+        "text": "데이터 근거와 계산 과정을 재현 가능하게 남긴다"
+      },
+      {
+        "id": "4",
+        "text": "출처를 숨긴다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "의사결정 지원에서는 근거 추적성과 재현성이 중요하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "검증"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0066-D1",
+      "TIPO-0066-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0067",
+    "categoryId": "ml",
+    "topic": "기초",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "지도학습의 대표적인 사례는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "연관 규칙 탐색"
+      },
+      {
+        "id": "2",
+        "text": "이탈 여부 레이블로 신규 고객 이탈을 예측한다"
+      },
+      {
+        "id": "3",
+        "text": "레이블 없이 군집화"
+      },
+      {
+        "id": "4",
+        "text": "PCA로 차원 축소"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "지도학습은 정답 레이블을 이용한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0067-D1",
+      "TIPO-0067-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0068",
+    "categoryId": "ml",
+    "topic": "기초",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "K-Means는 어떤 종류의 알고리즘인가?",
+    "options": [
+      {
+        "id": "1",
+        "text": "비지도학습 군집화"
+      },
+      {
+        "id": "2",
+        "text": "지도학습 분류"
+      },
+      {
+        "id": "3",
+        "text": "강화학습"
+      },
+      {
+        "id": "4",
+        "text": "시계열 분해 전용"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "비슷한 데이터를 K개의 군집으로 나눈다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0068-D1",
+      "TIPO-0068-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0069",
+    "categoryId": "ml",
+    "topic": "분류 평가",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "양성이 1%인 데이터에서 모두 음성으로 예측하면?",
+    "options": [
+      {
+        "id": "1",
+        "text": "양성 재현율 99%"
+      },
+      {
+        "id": "2",
+        "text": "F1은 항상 1"
+      },
+      {
+        "id": "3",
+        "text": "정밀도가 100%"
+      },
+      {
+        "id": "4",
+        "text": "정확도는 높아도 양성 재현율은 0이다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "불균형 분류에서는 정확도만 보면 위험하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "분류 평가"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0069-D1",
+      "TIPO-0069-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0070",
+    "categoryId": "ml",
+    "topic": "분류 평가",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "Precision의 계산식은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "TN / (TN + FP)"
+      },
+      {
+        "id": "2",
+        "text": "(TP+TN)/전체"
+      },
+      {
+        "id": "3",
+        "text": "TP / (TP + FP)"
+      },
+      {
+        "id": "4",
+        "text": "TP / (TP + FN)"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "정밀도는 양성이라고 예측한 것 중 실제 양성 비율이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "분류 평가"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0070-D1",
+      "TIPO-0070-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0071",
+    "categoryId": "ml",
+    "topic": "분류 평가",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "Recall의 계산식은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "FP / (TP + FP)"
+      },
+      {
+        "id": "2",
+        "text": "TP / (TP + FN)"
+      },
+      {
+        "id": "3",
+        "text": "TP / (TP + FP)"
+      },
+      {
+        "id": "4",
+        "text": "TN / (TN + FN)"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "재현율은 실제 양성 중 찾아낸 비율이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "분류 평가"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0071-D1",
+      "TIPO-0071-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0072",
+    "categoryId": "ml",
+    "topic": "분류 평가",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "F1 Score의 정의는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Precision과 Recall의 조화평균"
+      },
+      {
+        "id": "2",
+        "text": "정확도의 제곱"
+      },
+      {
+        "id": "3",
+        "text": "오차의 평균"
+      },
+      {
+        "id": "4",
+        "text": "ROC 면적의 두 배"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "F1 = 2PR/(P+R), 둘 다 0인 경우 처리 정책을 확인한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "분류 평가"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0072-D1",
+      "TIPO-0072-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0073",
+    "categoryId": "ml",
+    "topic": "회귀 평가",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "MAE의 의미는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "오차 제곱의 평균"
+      },
+      {
+        "id": "2",
+        "text": "설명력 비율"
+      },
+      {
+        "id": "3",
+        "text": "정밀도"
+      },
+      {
+        "id": "4",
+        "text": "예측값과 실제값의 절대오차 평균"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "MAE는 큰 오차를 제곱으로 더 크게 벌주지는 않는다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "회귀 평가"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0073-D1",
+      "TIPO-0073-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0074",
+    "categoryId": "ml",
+    "topic": "회귀 평가",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "RMSE가 MAE보다 큰 경우에 대한 설명은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "항상 과적합이다"
+      },
+      {
+        "id": "2",
+        "text": "데이터 누수의 증거다"
+      },
+      {
+        "id": "3",
+        "text": "가능하며 큰 오차에 더 민감하다"
+      },
+      {
+        "id": "4",
+        "text": "수학적으로 불가능하다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "RMSE는 오차를 제곱해 평균 낸 뒤 제곱근을 취한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "회귀 평가"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0074-D1",
+      "TIPO-0074-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0075",
+    "categoryId": "ml",
+    "topic": "데이터 누수",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "테스트 분할 전에 전체 데이터로 스케일러를 fit하면?",
+    "options": [
+      {
+        "id": "1",
+        "text": "정규화가 불가능해진다"
+      },
+      {
+        "id": "2",
+        "text": "테스트 정보가 학습 전처리에 반영되는 누수 위험이 있다"
+      },
+      {
+        "id": "3",
+        "text": "항상 최선이다"
+      },
+      {
+        "id": "4",
+        "text": "레이블이 사라진다"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "전처리 fit은 학습 데이터에서만 수행해야 한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "데이터 누수"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0075-D1",
+      "TIPO-0075-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0076",
+    "categoryId": "ml",
+    "topic": "과적합",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "학습 성능은 매우 좋지만 테스트 성능이 나쁘면?",
+    "options": [
+      {
+        "id": "1",
+        "text": "과적합 가능성을 의심한다"
+      },
+      {
+        "id": "2",
+        "text": "무조건 데이터가 완벽하다"
+      },
+      {
+        "id": "3",
+        "text": "학습을 더 오래 하면 항상 해결"
+      },
+      {
+        "id": "4",
+        "text": "검증 불필요"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "일반화 성능을 확인해야 한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "과적합"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0076-D1",
+      "TIPO-0076-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0077",
+    "categoryId": "ml",
+    "topic": "교차검증",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "K-fold 교차검증의 목적은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "데이터를 암호화한다"
+      },
+      {
+        "id": "2",
+        "text": "모델을 반드시 K배 빠르게 한다"
+      },
+      {
+        "id": "3",
+        "text": "레이블을 제거한다"
+      },
+      {
+        "id": "4",
+        "text": "데이터 분할에 따른 성능 변동을 평가한다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "여러 분할에서 모델 성능을 비교한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "교차검증"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0077-D1",
+      "TIPO-0077-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0078",
+    "categoryId": "ml",
+    "topic": "특성",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "PCA를 주로 사용하는 목적은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "레이블을 만든다"
+      },
+      {
+        "id": "2",
+        "text": "결측치를 반드시 제거한다"
+      },
+      {
+        "id": "3",
+        "text": "분산을 보존하는 방향으로 차원을 축소한다"
+      },
+      {
+        "id": "4",
+        "text": "항상 인과관계를 증명한다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "주성분을 통해 고차원 정보를 요약한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "특성"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0078-D1",
+      "TIPO-0078-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0079",
+    "categoryId": "ml",
+    "topic": "트리",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "Random Forest의 기본 아이디어는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "항상 신경망이다"
+      },
+      {
+        "id": "2",
+        "text": "여러 의사결정나무의 예측을 결합한다"
+      },
+      {
+        "id": "3",
+        "text": "하나의 직선만 학습한다"
+      },
+      {
+        "id": "4",
+        "text": "레이블 없이만 학습한다"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "배깅 기반 앙상블로 분산 감소를 기대할 수 있다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "트리"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0079-D1",
+      "TIPO-0079-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0080",
+    "categoryId": "ml",
+    "topic": "모델링",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "클래스 불균형에서 PR-AUC가 유용할 수 있는 이유는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "양성 탐지의 정밀도·재현율 균형을 볼 수 있다"
+      },
+      {
+        "id": "2",
+        "text": "정확도와 항상 같다"
+      },
+      {
+        "id": "3",
+        "text": "회귀에서만 쓴다"
+      },
+      {
+        "id": "4",
+        "text": "데이터 누수를 자동 방지한다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "양성 클래스가 희귀한 문제에서 PR 곡선이 유용하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "모델링"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0080-D1",
+      "TIPO-0080-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0081",
+    "categoryId": "dl",
+    "topic": "기초",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "신경망에서 가중치를 갱신하기 위해 사용하는 대표적 방법은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "GROUP BY"
+      },
+      {
+        "id": "2",
+        "text": "JOIN"
+      },
+      {
+        "id": "3",
+        "text": "데이터베이스 인덱스"
+      },
+      {
+        "id": "4",
+        "text": "역전파와 경사하강법"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "역전파로 손실의 기울기를 계산한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0081-D1",
+      "TIPO-0081-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0082",
+    "categoryId": "dl",
+    "topic": "기초",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "ReLU 함수의 정의는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "1/x"
+      },
+      {
+        "id": "2",
+        "text": "sin(x)"
+      },
+      {
+        "id": "3",
+        "text": "max(0, x)"
+      },
+      {
+        "id": "4",
+        "text": "x²"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "양수는 유지하고 음수는 0으로 만든다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0082-D1",
+      "TIPO-0082-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0083",
+    "categoryId": "dl",
+    "topic": "학습",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "학습률이 너무 크면 발생할 수 있는 문제는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "손실함수가 사라진다"
+      },
+      {
+        "id": "2",
+        "text": "최적점 주변에서 진동하거나 발산할 수 있다"
+      },
+      {
+        "id": "3",
+        "text": "항상 더 정확해진다"
+      },
+      {
+        "id": "4",
+        "text": "데이터가 자동 증가한다"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "학습률은 갱신 폭을 결정한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "학습"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0083-D1",
+      "TIPO-0083-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0084",
+    "categoryId": "dl",
+    "topic": "과적합",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "Dropout의 주된 목적은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "학습 중 일부 뉴런 출력을 무작위로 비활성화해 과적합을 완화한다"
+      },
+      {
+        "id": "2",
+        "text": "데이터를 삭제한다"
+      },
+      {
+        "id": "3",
+        "text": "추론 중 모든 뉴런을 끈다"
+      },
+      {
+        "id": "4",
+        "text": "SQL 속도를 높인다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "Dropout은 정규화 기법 중 하나이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "과적합"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0084-D1",
+      "TIPO-0084-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0085",
+    "categoryId": "dl",
+    "topic": "CNN",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "CNN이 이미지 처리에서 활용하는 핵심 연산은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "SQL JOIN"
+      },
+      {
+        "id": "2",
+        "text": "정렬 병합"
+      },
+      {
+        "id": "3",
+        "text": "해시 파티셔닝"
+      },
+      {
+        "id": "4",
+        "text": "합성곱(Convolution)"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "합성곱 필터로 지역적 특징을 추출한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "CNN"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0085-D1",
+      "TIPO-0085-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0086",
+    "categoryId": "dl",
+    "topic": "RNN",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "RNN이 순차 데이터에 적합한 이유는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "항상 이미지 전용"
+      },
+      {
+        "id": "2",
+        "text": "입력이 반드시 고정 길이"
+      },
+      {
+        "id": "3",
+        "text": "이전 시점의 상태를 다음 계산에 반영한다"
+      },
+      {
+        "id": "4",
+        "text": "순서를 무시한다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "은닉 상태를 이용해 순차적 의존성을 표현한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "RNN"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0086-D1",
+      "TIPO-0086-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0087",
+    "categoryId": "dl",
+    "topic": "LSTM",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "LSTM이 기본 RNN 대비 해결하려는 대표적 문제는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "데이터베이스 잠금"
+      },
+      {
+        "id": "2",
+        "text": "장기 의존성 학습의 어려움"
+      },
+      {
+        "id": "3",
+        "text": "SQL NULL"
+      },
+      {
+        "id": "4",
+        "text": "GPU 전원"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "게이트 구조로 정보 흐름을 조절한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "LSTM"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0087-D1",
+      "TIPO-0087-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0088",
+    "categoryId": "dl",
+    "topic": "Transformer",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "Transformer의 핵심 구성 요소 중 하나는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Self-Attention"
+      },
+      {
+        "id": "2",
+        "text": "GROUP BY"
+      },
+      {
+        "id": "3",
+        "text": "K-Means 중심점"
+      },
+      {
+        "id": "4",
+        "text": "B-tree"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "Attention으로 토큰 간 관계를 모델링한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "Transformer"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0088-D1",
+      "TIPO-0088-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0089",
+    "categoryId": "dl",
+    "topic": "Embedding",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "텍스트 임베딩이란?",
+    "options": [
+      {
+        "id": "1",
+        "text": "문서를 항상 이미지로 변환한 것"
+      },
+      {
+        "id": "2",
+        "text": "데이터베이스 백업"
+      },
+      {
+        "id": "3",
+        "text": "프롬프트 삭제"
+      },
+      {
+        "id": "4",
+        "text": "텍스트를 수치 벡터로 표현한 것"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "임베딩은 의미 유사도 검색 등에 활용된다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "Embedding"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0089-D1",
+      "TIPO-0089-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0090",
+    "categoryId": "dl",
+    "topic": "평가",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "검증 데이터의 역할은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "항상 학습 가중치에 직접 사용"
+      },
+      {
+        "id": "2",
+        "text": "레이블을 없앤다"
+      },
+      {
+        "id": "3",
+        "text": "학습 중 모델·하이퍼파라미터 선택을 돕는다"
+      },
+      {
+        "id": "4",
+        "text": "최종 테스트 결과를 대신한다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "테스트 데이터는 최종 평가에 분리하는 편이 바람직하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "평가"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0090-D1",
+      "TIPO-0090-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0091",
+    "categoryId": "dashboard",
+    "topic": "Power BI",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "Power Query의 대표적인 역할은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "머신러닝 학습만"
+      },
+      {
+        "id": "2",
+        "text": "데이터 가져오기와 변환·정제"
+      },
+      {
+        "id": "3",
+        "text": "보고서 게시 승인만"
+      },
+      {
+        "id": "4",
+        "text": "파워포인트 애니메이션"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "Power Query는 ETL 성격의 전처리에 쓰인다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "Power BI"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0091-D1",
+      "TIPO-0091-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0092",
+    "categoryId": "dashboard",
+    "topic": "Power BI",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "DAX를 사용하는 대표적인 목적은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "측정값과 계산 열 등 분석 계산 정의"
+      },
+      {
+        "id": "2",
+        "text": "웹 서버 배포"
+      },
+      {
+        "id": "3",
+        "text": "Python 패키지 설치"
+      },
+      {
+        "id": "4",
+        "text": "이미지 압축"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "DAX는 데이터 모델 기반 계산 언어이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "Power BI"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0092-D1",
+      "TIPO-0092-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0093",
+    "categoryId": "dashboard",
+    "topic": "모델링",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "스타 스키마의 특징은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "모든 테이블을 하나로 합침"
+      },
+      {
+        "id": "2",
+        "text": "관계가 없음"
+      },
+      {
+        "id": "3",
+        "text": "행이 반드시 5개"
+      },
+      {
+        "id": "4",
+        "text": "팩트 테이블을 차원 테이블이 둘러싼 구조"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "차원과 팩트를 구분해 분석 모델을 구성한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "모델링"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0093-D1",
+      "TIPO-0093-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0094",
+    "categoryId": "dashboard",
+    "topic": "KPI",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "좋은 KPI 정의에 반드시 포함할 요소는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "글꼴 크기만"
+      },
+      {
+        "id": "2",
+        "text": "개발 언어만"
+      },
+      {
+        "id": "3",
+        "text": "계산식·기간·단위·필터 기준"
+      },
+      {
+        "id": "4",
+        "text": "차트 색상만"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "같은 숫자를 재현할 수 있도록 정의해야 한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "KPI"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0094-D1",
+      "TIPO-0094-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0095",
+    "categoryId": "dashboard",
+    "topic": "시각화",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "시간에 따른 매출 추세를 표현하기 좋은 차트는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "게이지 하나만"
+      },
+      {
+        "id": "2",
+        "text": "선 그래프"
+      },
+      {
+        "id": "3",
+        "text": "원형 차트만"
+      },
+      {
+        "id": "4",
+        "text": "지도만"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "연속된 시점 간 변화 표현에 적합하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "시각화"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0095-D1",
+      "TIPO-0095-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0096",
+    "categoryId": "dashboard",
+    "topic": "시각화",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "비율 합이 100%인 적은 범주를 보여줄 때 사용할 수 있는 차트는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "원형 또는 도넛 차트"
+      },
+      {
+        "id": "2",
+        "text": "산점도만"
+      },
+      {
+        "id": "3",
+        "text": "박스플롯만"
+      },
+      {
+        "id": "4",
+        "text": "히트맵만"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "범주가 많으면 막대 차트가 비교에 더 적합할 수 있다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "시각화"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0096-D1",
+      "TIPO-0096-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0097",
+    "categoryId": "dashboard",
+    "topic": "기초통계",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "중앙값이 평균보다 이상치에 덜 민감한 이유는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "항상 최대값을 쓴다"
+      },
+      {
+        "id": "2",
+        "text": "모든 값의 제곱을 쓴다"
+      },
+      {
+        "id": "3",
+        "text": "결측을 자동 제거하지 않는다"
+      },
+      {
+        "id": "4",
+        "text": "값의 순서상 가운데를 사용하기 때문이다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "극단값이 평균을 크게 이동시킬 수 있다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초통계"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0097-D1",
+      "TIPO-0097-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0098",
+    "categoryId": "dashboard",
+    "topic": "기초통계",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "표준편차가 나타내는 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "최빈값"
+      },
+      {
+        "id": "2",
+        "text": "상관의 방향"
+      },
+      {
+        "id": "3",
+        "text": "데이터가 평균 주변에 퍼진 정도"
+      },
+      {
+        "id": "4",
+        "text": "데이터 건수만"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "분산의 제곱근으로 산포도를 나타낸다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초통계"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0098-D1",
+      "TIPO-0098-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0099",
+    "categoryId": "dashboard",
+    "topic": "기초통계",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "상관계수 0.9만으로 결론 낼 수 없는 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "추가 분석 필요"
+      },
+      {
+        "id": "2",
+        "text": "한 변수가 다른 변수의 원인이라는 주장"
+      },
+      {
+        "id": "3",
+        "text": "강한 양의 선형 관계 가능성"
+      },
+      {
+        "id": "4",
+        "text": "함께 증가하는 경향"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "상관관계는 인과관계를 보장하지 않는다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초통계"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0099-D1",
+      "TIPO-0099-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0100",
+    "categoryId": "dashboard",
+    "topic": "설계",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "임원용 대시보드 첫 화면에서 우선할 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "핵심 지표와 의사결정에 필요한 이상 변화"
+      },
+      {
+        "id": "2",
+        "text": "가능한 모든 컬럼 나열"
+      },
+      {
+        "id": "3",
+        "text": "차트 수 최대화"
+      },
+      {
+        "id": "4",
+        "text": "장식 효과 우선"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "사용자와 의사결정 질문에 맞춰 정보 우선순위를 정한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "설계"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0100-D1",
+      "TIPO-0100-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0101",
+    "categoryId": "cert_sqld",
+    "topic": "모델링",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "기본키(Primary Key)의 성질은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "중복을 허용한다"
+      },
+      {
+        "id": "2",
+        "text": "반드시 문자열이다"
+      },
+      {
+        "id": "3",
+        "text": "NULL만 허용한다"
+      },
+      {
+        "id": "4",
+        "text": "유일성과 NOT NULL을 만족한다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "기본키는 행을 식별하는 데 사용한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "모델링"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0101-D1",
+      "TIPO-0101-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0102",
+    "categoryId": "cert_sqld",
+    "topic": "모델링",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "정규화의 일반적인 목적은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "모든 테이블을 합친다"
+      },
+      {
+        "id": "2",
+        "text": "쿼리를 항상 빠르게 한다"
+      },
+      {
+        "id": "3",
+        "text": "데이터 중복과 갱신 이상을 줄인다"
+      },
+      {
+        "id": "4",
+        "text": "모든 JOIN을 없앤다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "정규화는 데이터 정합성 유지에 도움이 된다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "모델링"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0102-D1",
+      "TIPO-0102-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0103",
+    "categoryId": "cert_sqld",
+    "topic": "SQL 기본",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "INNER JOIN의 결과는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "무조건 카티전 곱"
+      },
+      {
+        "id": "2",
+        "text": "조인 조건을 만족하는 양쪽 행"
+      },
+      {
+        "id": "3",
+        "text": "왼쪽 모든 행"
+      },
+      {
+        "id": "4",
+        "text": "오른쪽 모든 행"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "INNER JOIN은 조건에 일치하는 행을 반환한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "SQL 기본"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0103-D1",
+      "TIPO-0103-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0104",
+    "categoryId": "cert_sqld",
+    "topic": "SQL 기본",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "GROUP BY 이후 그룹 조건을 제한하는 절은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "HAVING"
+      },
+      {
+        "id": "2",
+        "text": "WHERE만"
+      },
+      {
+        "id": "3",
+        "text": "ORDER BY"
+      },
+      {
+        "id": "4",
+        "text": "LIMIT"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "HAVING은 집계 그룹을 대상으로 조건을 적용한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "SQL 기본"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0104-D1",
+      "TIPO-0104-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0105",
+    "categoryId": "cert_sqld",
+    "topic": "SQL 활용",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "상관 서브쿼리의 특징은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "항상 독립 실행된다"
+      },
+      {
+        "id": "2",
+        "text": "무조건 1행"
+      },
+      {
+        "id": "3",
+        "text": "JOIN 사용 불가"
+      },
+      {
+        "id": "4",
+        "text": "외부 쿼리의 컬럼을 참조할 수 있다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "상관 서브쿼리는 외부 행과 연관된 조건을 사용한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "SQL 활용"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0105-D1",
+      "TIPO-0105-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0106",
+    "categoryId": "cert_sqld",
+    "topic": "SQL 활용",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "윈도우 함수가 GROUP BY 집계와 다른 점은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "ORDER BY를 금지한다"
+      },
+      {
+        "id": "2",
+        "text": "집계 불가"
+      },
+      {
+        "id": "3",
+        "text": "원본 행을 유지하면서 분석값을 계산할 수 있다"
+      },
+      {
+        "id": "4",
+        "text": "항상 행을 1개로 줄인다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "윈도우 함수는 행 단위 결과에 순위·누적값 등을 부여한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "SQL 활용"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0106-D1",
+      "TIPO-0106-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0107",
+    "categoryId": "cert_sqld",
+    "topic": "SQL 활용",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "EXISTS의 평가 목적은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "정렬한다"
+      },
+      {
+        "id": "2",
+        "text": "서브쿼리 결과 행의 존재 여부를 검사한다"
+      },
+      {
+        "id": "3",
+        "text": "모든 값을 합산한다"
+      },
+      {
+        "id": "4",
+        "text": "열을 삭제한다"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "EXISTS는 조건을 만족하는 행이 하나라도 있는지 검사한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "SQL 활용"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0107-D1",
+      "TIPO-0107-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0108",
+    "categoryId": "cert_sqld",
+    "topic": "최적화",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "인덱스의 대표적인 장점은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "특정 조회 조건에서 탐색 비용을 줄일 수 있다"
+      },
+      {
+        "id": "2",
+        "text": "쓰기 비용이 항상 0"
+      },
+      {
+        "id": "3",
+        "text": "디스크가 필요 없다"
+      },
+      {
+        "id": "4",
+        "text": "모든 쿼리가 빨라진다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "인덱스는 조회 패턴에 따라 이점이 달라진다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "최적화"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0108-D1",
+      "TIPO-0108-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0109",
+    "categoryId": "cert_invest",
+    "topic": "기초 금융",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "채권 가격과 시장금리의 일반적인 관계는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "항상 함께 상승한다"
+      },
+      {
+        "id": "2",
+        "text": "관계가 없다"
+      },
+      {
+        "id": "3",
+        "text": "금리와 무관하게 고정된다"
+      },
+      {
+        "id": "4",
+        "text": "시장금리가 상승하면 기존 고정금리 채권 가격은 하락한다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "기존 채권 현금흐름의 할인율이 높아지면 현재가치가 낮아진다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초 금융"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0109-D1",
+      "TIPO-0109-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0110",
+    "categoryId": "cert_invest",
+    "topic": "기초 금융",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "분산투자의 핵심 목적은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "모든 손실을 제거한다"
+      },
+      {
+        "id": "2",
+        "text": "세금을 무조건 없앤다"
+      },
+      {
+        "id": "3",
+        "text": "자산 간 상관관계를 활용해 위험을 분산한다"
+      },
+      {
+        "id": "4",
+        "text": "수익을 항상 보장한다"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "분산 효과는 자산 간 상관관계에 영향을 받는다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초 금융"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0110-D1",
+      "TIPO-0110-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0111",
+    "categoryId": "cert_invest",
+    "topic": "기초 금융",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "듀레이션이 일반적으로 나타내는 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "외환 거래량"
+      },
+      {
+        "id": "2",
+        "text": "채권 가격의 금리 민감도와 관련된 지표"
+      },
+      {
+        "id": "3",
+        "text": "주식 배당률"
+      },
+      {
+        "id": "4",
+        "text": "기업 매출 증가율"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "듀레이션이 클수록 동일 금리 변화에 가격 민감도가 커지는 경향이 있다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "기초 금융"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0111-D1",
+      "TIPO-0111-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0112",
+    "categoryId": "cert_invest",
+    "topic": "금융상품",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "ETF의 특징으로 적절한 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "거래소에서 주식처럼 매매할 수 있는 펀드"
+      },
+      {
+        "id": "2",
+        "text": "원금이 항상 보장된다"
+      },
+      {
+        "id": "3",
+        "text": "은행 예금과 동일하다"
+      },
+      {
+        "id": "4",
+        "text": "거래소에서 거래할 수 없다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "ETF는 기초지수·자산 등을 추종하는 구조가 흔하다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "금융상품"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0112-D1",
+      "TIPO-0112-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0113",
+    "categoryId": "cert_invest",
+    "topic": "위험",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "샤프지수가 비교하는 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "총수익만"
+      },
+      {
+        "id": "2",
+        "text": "매출 대비 부채"
+      },
+      {
+        "id": "3",
+        "text": "거래량 대비 시가총액"
+      },
+      {
+        "id": "4",
+        "text": "초과수익률을 총위험(표준편차)으로 나눈 값"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "위험 대비 성과 비교에 활용한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "위험"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0113-D1",
+      "TIPO-0113-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0114",
+    "categoryId": "cert_invest",
+    "topic": "위험",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "베타(Beta)가 주로 나타내는 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "만기 일수"
+      },
+      {
+        "id": "2",
+        "text": "배당금 총액"
+      },
+      {
+        "id": "3",
+        "text": "시장 움직임에 대한 자산 수익률의 민감도"
+      },
+      {
+        "id": "4",
+        "text": "절대 손실액"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "베타는 시장 위험 노출의 한 측정치다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "위험"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0114-D1",
+      "TIPO-0114-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0115",
+    "categoryId": "cert_invest",
+    "topic": "법규",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "투자자 적합성 원칙과 관련 깊은 행위는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "수익을 보장한다"
+      },
+      {
+        "id": "2",
+        "text": "고객의 투자목적·경험·재산상황 등을 고려한다"
+      },
+      {
+        "id": "3",
+        "text": "모든 고객에게 같은 상품만 권한다"
+      },
+      {
+        "id": "4",
+        "text": "위험을 설명하지 않는다"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "투자자 특성에 맞는 권유 여부를 검토한다. 구체적 법령은 최신 기준 확인 필요.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "법규"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0115-D1",
+      "TIPO-0115-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0116",
+    "categoryId": "cert_invest",
+    "topic": "세제",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "금융상품 세제 문제를 학습할 때 특히 주의할 것은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "적용 시점과 개정 법령을 확인한다"
+      },
+      {
+        "id": "2",
+        "text": "오래된 요약만 암기한다"
+      },
+      {
+        "id": "3",
+        "text": "세율은 절대 바뀌지 않는다"
+      },
+      {
+        "id": "4",
+        "text": "상품 이름만 외운다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "세법은 변경될 수 있으므로 출제 기준일을 명시해야 한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "세제"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0116-D1",
+      "TIPO-0116-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0117",
+    "categoryId": "language",
+    "topic": "영어",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "상사에게 진행 상황을 자연스럽게 말하는 문장은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "I finishing first draft yesterday."
+      },
+      {
+        "id": "2",
+        "text": "I finish draft tomorrow yesterday."
+      },
+      {
+        "id": "3",
+        "text": "I am finished share."
+      },
+      {
+        "id": "4",
+        "text": "I've finished the first draft, and I'll share it today."
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "현재완료와 미래 계획을 자연스럽게 연결한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "영어"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0117-D1",
+      "TIPO-0117-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0118",
+    "categoryId": "language",
+    "topic": "영어",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "상대방에게 설명을 다시 요청하는 자연스러운 표현은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "I don't explain you."
+      },
+      {
+        "id": "2",
+        "text": "Why you no speak?"
+      },
+      {
+        "id": "3",
+        "text": "Could you walk me through that again?"
+      },
+      {
+        "id": "4",
+        "text": "You repeat me immediately."
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "walk me through는 단계별 설명을 부탁하는 표현이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "영어"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0118-D1",
+      "TIPO-0118-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0119",
+    "categoryId": "language",
+    "topic": "영어",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "업무상 마감 기한을 정중히 묻는 표현은?",
+    "options": [
+      {
+        "id": "1",
+        "text": "When it must?"
+      },
+      {
+        "id": "2",
+        "text": "When would you need this by?"
+      },
+      {
+        "id": "3",
+        "text": "When you needing?"
+      },
+      {
+        "id": "4",
+        "text": "You deadline what?"
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "need this by는 필요한 시점을 묻는다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "영어"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0119-D1",
+      "TIPO-0119-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0120",
+    "categoryId": "language",
+    "topic": "일본어",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "「ありがとうございます」의 의미는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "감사합니다"
+      },
+      {
+        "id": "2",
+        "text": "죄송합니다"
+      },
+      {
+        "id": "3",
+        "text": "안녕히 가세요"
+      },
+      {
+        "id": "4",
+        "text": "처음 뵙겠습니다"
+      }
+    ],
+    "correctOptionId": "1",
+    "explanation": "정중한 감사 표현이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "일본어"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0120-D1",
+      "TIPO-0120-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0121",
+    "categoryId": "language",
+    "topic": "일본어",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "「もう一度お願いします」의 의미는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "처음부터 끝났습니다"
+      },
+      {
+        "id": "2",
+        "text": "내일 오겠습니다"
+      },
+      {
+        "id": "3",
+        "text": "괜찮지 않습니다"
+      },
+      {
+        "id": "4",
+        "text": "한 번 더 부탁드립니다"
+      }
+    ],
+    "correctOptionId": "4",
+    "explanation": "もう一度는 한 번 더라는 의미다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "일본어"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0121-D1",
+      "TIPO-0121-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0122",
+    "categoryId": "language",
+    "topic": "스페인어",
+    "type": "multiple_choice",
+    "difficulty": "intermediate",
+    "question": "¿Puede repetirlo, por favor?의 의미는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "어디에 있나요?"
+      },
+      {
+        "id": "2",
+        "text": "이름이 무엇인가요?"
+      },
+      {
+        "id": "3",
+        "text": "다시 말씀해 주시겠어요?"
+      },
+      {
+        "id": "4",
+        "text": "얼마인가요?"
+      }
+    ],
+    "correctOptionId": "3",
+    "explanation": "반복 설명을 정중히 요청하는 문장이다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "스페인어"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0122-D1",
+      "TIPO-0122-D2"
+    ]
+  },
+  {
+    "id": "TIPO-0123",
+    "categoryId": "language",
+    "topic": "스페인어",
+    "type": "multiple_choice",
+    "difficulty": "intro",
+    "question": "Estoy aprendiendo español.의 의미는?",
+    "options": [
+      {
+        "id": "1",
+        "text": "저는 일을 끝냈어요."
+      },
+      {
+        "id": "2",
+        "text": "저는 스페인어를 배우고 있어요."
+      },
+      {
+        "id": "3",
+        "text": "저는 스페인어를 가르쳤어요."
+      },
+      {
+        "id": "4",
+        "text": "저는 집에 가요."
+      }
+    ],
+    "correctOptionId": "2",
+    "explanation": "estar + 현재분사로 진행 중인 동작을 표현한다.",
+    "sourceType": "newly_authored_from_learning_topics",
+    "sourceRef": "KB-Bridge notes / user topic plan (concept-aligned; not a verbatim class question)",
+    "reviewStatus": "needs_human_review",
+    "tags": [
+      "스페인어"
+    ],
+    "derivedQuestionIds": [
+      "TIPO-0123-D1",
+      "TIPO-0123-D2"
+    ]
+  }
+]

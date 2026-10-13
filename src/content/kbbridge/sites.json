@@ -1,0 +1,415 @@
+[
+  {
+    "category": "Python",
+    "title": "CodeUp Python 기초 100제",
+    "url": "https://codeup.kr/problemsetsol.php?psid=33",
+    "whenToUse": "기초 코딩 반복 연습",
+    "verification": "문항 복제 금지"
+  },
+  {
+    "category": "Python",
+    "title": "WikiDocs 책 7002",
+    "url": "https://wikidocs.net/book/7002",
+    "whenToUse": "파이썬 등 원문 주제 확인 후 참고",
+    "verification": "페이지 내용 미검증"
+  },
+  {
+    "category": "Python",
+    "title": "WikiDocs 163302",
+    "url": "https://wikidocs.net/163302",
+    "whenToUse": "참고 학습자료",
+    "verification": "페이지 내용 미검증"
+  },
+  {
+    "category": "Python",
+    "title": "SBS 샌드위치 코딩",
+    "url": "https://www.youtube.com/watch?v=I5cq54MFQCo",
+    "whenToUse": "코딩·알고리즘 개념 도입",
+    "verification": "영상 내용 미검증"
+  },
+  {
+    "category": "Python",
+    "title": "샌드위치 알고리즘",
+    "url": "https://www.youtube.com/watch?v=Ov2thQVBf0U",
+    "whenToUse": "알고리즘 사고 소개",
+    "verification": "영상 내용 미검증"
+  },
+  {
+    "category": "Python",
+    "title": "Google Drive 수업자료",
+    "url": "https://drive.google.com/drive/u/0/folders/1t1dZzu8bxu5mTxbVeibLwp2RygoLzmrk",
+    "whenToUse": "원본 수업자료 참고",
+    "verification": "접근권한 필요"
+  },
+  {
+    "category": "AI Agent",
+    "title": "Claude Academy",
+    "url": "https://academy.claude.com/ko",
+    "whenToUse": "Claude 활용 학습",
+    "verification": "공개 링크"
+  },
+  {
+    "category": "AI Agent",
+    "title": "프롬프트 템플릿 100",
+    "url": "https://spartaclub.kr/blog/chatgpt-prompt-templates",
+    "whenToUse": "프롬프트 패턴 참고",
+    "verification": "문항 복제 금지"
+  },
+  {
+    "category": "AI Agent",
+    "title": "NAVER Cloud 프롬프트 포럼",
+    "url": "https://www.ncloud-forums.com/topic/370/",
+    "whenToUse": "Self-consistency 참고",
+    "verification": "페이지 내용 미검증"
+  },
+  {
+    "category": "AI Agent",
+    "title": "공공 AI 에이전트 영상",
+    "url": "https://www.youtube.com/watch?v=yyU1I5ezQDU",
+    "whenToUse": "AI Agent 적용 사례",
+    "verification": "영상 내용 미검증"
+  },
+  {
+    "category": "AI Agent",
+    "title": "Day4 n8n Docker",
+    "url": "https://app.notion.com/p/Day4-n8n-3c96c0708acc80d987c9d478303305e3",
+    "whenToUse": "수업 노트",
+    "verification": "비공개 접근 가능성"
+  },
+  {
+    "category": "AI Agent",
+    "title": "Google Sheets",
+    "url": "https://app.notion.com/p/Google-Sheets-3cc6c0708acc803c921ef4212ce730d8",
+    "whenToUse": "n8n 연동 실습",
+    "verification": "비공개 접근 가능성"
+  },
+  {
+    "category": "AI Agent",
+    "title": "Day6 RAG",
+    "url": "https://app.notion.com/p/Day6-RAG-3c96c0708acc800db02adc7cf3f05caa",
+    "whenToUse": "RAG 수업",
+    "verification": "비공개 접근 가능성"
+  },
+  {
+    "category": "AI Agent",
+    "title": "Day7 n8n 프로젝트",
+    "url": "https://app.notion.com/p/Day7-n8n-3cd6c0708acc80b2be25ecca1248a04b",
+    "whenToUse": "자동화 프로젝트",
+    "verification": "비공개 접근 가능성"
+  },
+  {
+    "category": "AI 기반 데이터 분석",
+    "title": "금융 IT 시스템과 ERD",
+    "url": "https://app.notion.com/p/Day1-IT-ERD-3cd6c0708acc8038b128c78b02e5d688",
+    "whenToUse": "금융 데이터 구조",
+    "verification": "비공개 접근 가능성"
+  },
+  {
+    "category": "AI 기반 데이터 분석",
+    "title": "Text-to-SQL과 MCP",
+    "url": "https://app.notion.com/p/Day2-Text-to-SQL-MCP-3cd6c0708acc80c390cfeb51eaa31bce",
+    "whenToUse": "AI 데이터 조회 보안",
+    "verification": "비공개 접근 가능성"
+  },
+  {
+    "category": "머신러닝",
+    "title": "Day9 ML_1",
+    "url": "https://app.notion.com/p/Day9-ML_1-3cd6c0708acc8085bb8cfe2fe7981205",
+    "whenToUse": "머신러닝 수업",
+    "verification": "비공개 접근 가능성"
+  },
+  {
+    "category": "대시보드",
+    "title": "Power BI 기초",
+    "url": "https://app.notion.com/p/Day3-4-PowerBI-3cd6c0708acc8054a236d9632cfca9a8",
+    "whenToUse": "Power BI 실습",
+    "verification": "비공개 접근 가능성"
+  },
+  {
+    "category": "대시보드",
+    "title": "기초통계",
+    "url": "https://app.notion.com/p/Day5-3cd6c0708acc80998b17e1e0fcbda8aa",
+    "whenToUse": "통계 개념",
+    "verification": "비공개 접근 가능성"
+  },
+  {
+    "category": "대시보드",
+    "title": "Power BI 팀 프로젝트",
+    "url": "https://app.notion.com/p/Day6-8-PowerBI-3cd6c0708acc8064b05dc0a959f36e68",
+    "whenToUse": "대시보드 실습",
+    "verification": "비공개 접근 가능성"
+  },
+  {
+    "category": "데이터/금융",
+    "title": "금융상품 한눈에",
+    "url": "https://finlife.fss.or.kr/finlife/main/main.do?menuNo=700000",
+    "whenToUse": "금융상품 비교 정보",
+    "verification": "공식 사이트"
+  },
+  {
+    "category": "데이터/금융",
+    "title": "SkillLens Invest",
+    "url": "https://skilllense-invest.vercel.app/",
+    "whenToUse": "투자 데이터 서비스 참고",
+    "verification": "외부 개인 프로젝트"
+  },
+  {
+    "category": "데이터/금융",
+    "title": "투자 한입 대시보드",
+    "url": "https://investment-bite.vercel.app/",
+    "whenToUse": "Yahoo Finance 기반 시각화 참고",
+    "verification": "외부 개인 프로젝트"
+  },
+  {
+    "category": "데이터/금융",
+    "title": "Streamlit 사례",
+    "url": "https://dakerskills.streamlit.app/",
+    "whenToUse": "데이터 앱 UI 참고",
+    "verification": "외부 개인 프로젝트"
+  },
+  {
+    "category": "디자인",
+    "title": "ColorSpace",
+    "url": "https://mycolor.space/",
+    "whenToUse": "색상 팔레트 조합",
+    "verification": "첨부 사이트 문서"
+  },
+  {
+    "category": "디자인",
+    "title": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/Main_Page?uselang=ko",
+    "whenToUse": "라이선스 확인 후 SVG·이미지 활용",
+    "verification": "라이선스 확인 필요"
+  },
+  {
+    "category": "디자인",
+    "title": "Flaticon",
+    "url": "https://www.flaticon.com/",
+    "whenToUse": "아이콘·일러스트 탐색",
+    "verification": "라이선스 확인 필요"
+  },
+  {
+    "category": "API",
+    "title": "Open-Meteo",
+    "url": "https://open-meteo.com/",
+    "whenToUse": "날씨 API 연습",
+    "verification": "첨부 사이트 문서"
+  },
+  {
+    "category": "자동화",
+    "title": "n8n",
+    "url": "https://n8n.io/",
+    "whenToUse": "노코드 워크플로우 자동화",
+    "verification": "공식 사이트"
+  },
+  {
+    "category": "자동화",
+    "title": "Zapier",
+    "url": "https://zapier.com/",
+    "whenToUse": "SaaS 연동 자동화",
+    "verification": "공식 사이트"
+  },
+  {
+    "category": "자동화",
+    "title": "Make",
+    "url": "https://www.make.com/",
+    "whenToUse": "시각적 자동화",
+    "verification": "공식 사이트"
+  },
+  {
+    "category": "개발도구",
+    "title": "Redmine",
+    "url": "https://www.redmine.org/",
+    "whenToUse": "이슈·프로젝트 관리",
+    "verification": "첨부 사이트 문서"
+  },
+  {
+    "category": "개발도구",
+    "title": "GitHub",
+    "url": "https://github.com/",
+    "whenToUse": "버전관리·협업",
+    "verification": "공식 사이트"
+  },
+  {
+    "category": "정보검색",
+    "title": "구글링 팁",
+    "url": "https://hipposdata.tistory.com/entry/구글검색구글링-하는-법",
+    "whenToUse": "검색 연산자",
+    "verification": "링크 미검증"
+  },
+  {
+    "category": "뉴스",
+    "title": "Newsify",
+    "url": "https://newsify.co/",
+    "whenToUse": "뉴스 큐레이션",
+    "verification": "첨부 사이트 문서"
+  },
+  {
+    "category": "음악",
+    "title": "Flow Music",
+    "url": "https://www.flowmusic.app/",
+    "whenToUse": "음악 제작·탐색",
+    "verification": "첨부 사이트 문서"
+  },
+  {
+    "category": "채용",
+    "title": "캐치",
+    "url": "https://www.catch.co.kr/",
+    "whenToUse": "기업·채용 탐색",
+    "verification": "주소 확인 필요"
+  },
+  {
+    "category": "채용",
+    "title": "인디스워크",
+    "url": "https://inthiswork.com/",
+    "whenToUse": "직무별 채용공고",
+    "verification": "주소 확인 필요"
+  },
+  {
+    "category": "채용",
+    "title": "링커리어",
+    "url": "https://linkareer.com/",
+    "whenToUse": "신입·대외활동·채용",
+    "verification": "주소 확인 필요"
+  },
+  {
+    "category": "채용",
+    "title": "원티드",
+    "url": "https://www.wanted.co.kr/",
+    "whenToUse": "직무·기업 채용 탐색",
+    "verification": "주소 확인 필요"
+  },
+  {
+    "category": "채용",
+    "title": "그룹바이",
+    "url": "https://groupby.kr/",
+    "whenToUse": "스타트업 채용 탐색",
+    "verification": "주소 확인 필요"
+  },
+  {
+    "category": "기업분석",
+    "title": "LinkedIn",
+    "url": "https://www.linkedin.com/",
+    "whenToUse": "기업 임직원·직무·사업동향 조사",
+    "verification": "공개 프로필 기준"
+  },
+  {
+    "category": "기업분석",
+    "title": "OpenDART",
+    "url": "https://opendart.fss.or.kr/",
+    "whenToUse": "공시·재무 데이터",
+    "verification": "공식 사이트"
+  },
+  {
+    "category": "기업분석",
+    "title": "한국은행 ECOS",
+    "url": "https://ecos.bok.or.kr/",
+    "whenToUse": "거시경제 지표",
+    "verification": "공식 사이트"
+  },
+  {
+    "category": "기업분석",
+    "title": "FRED",
+    "url": "https://fred.stlouisfed.org/",
+    "whenToUse": "미국 경제통계",
+    "verification": "공식 사이트"
+  },
+  {
+    "category": "AI 활용",
+    "title": "공공기관 AI 행정비서 기사",
+    "url": "https://www.mk.co.kr/news/society/12010861",
+    "whenToUse": "AI 업무 개선 사례",
+    "verification": "기사 내용 미검증"
+  },
+  {
+    "category": "AI 활용",
+    "title": "AI 행정비서 기사 Tech42",
+    "url": "https://www.tech42.co.kr/문서-지옥이-싫었다비전공-공무원-혼자서-쓴-공직/",
+    "whenToUse": "AI 업무 개선 사례",
+    "verification": "기사 내용 미검증"
+  },
+  {
+    "category": "코딩 연습",
+    "title": "프로그래머스 코딩테스트 입문",
+    "url": "https://school.programmers.co.kr/learn/challenges/beginner?order=acceptance_desc",
+    "whenToUse": "Python 기초 문제 반복 풀이",
+    "verification": "사용 전 링크 및 내용 확인"
+  },
+  {
+    "category": "코딩 연습",
+    "title": "AtCoder",
+    "url": "https://atcoder.jp/",
+    "whenToUse": "알고리즘 실전 연습",
+    "verification": "사용 전 링크 및 내용 확인"
+  },
+  {
+    "category": "코딩 연습",
+    "title": "LeetCode",
+    "url": "https://leetcode.com/",
+    "whenToUse": "SQL/Python 인터뷰 연습",
+    "verification": "사용 전 링크 및 내용 확인"
+  },
+  {
+    "category": "코딩 연습",
+    "title": "Jungol",
+    "url": "https://jungol.co.kr/",
+    "whenToUse": "기초 알고리즘 연습",
+    "verification": "사용 전 링크 및 내용 확인"
+  },
+  {
+    "category": "코딩 연습",
+    "title": "SW Expert Academy",
+    "url": "https://swexpertacademy.com/main/main.do",
+    "whenToUse": "문제 해결과 구현 훈련",
+    "verification": "사용 전 링크 및 내용 확인"
+  },
+  {
+    "category": "금융 리서치",
+    "title": "신한금융 신한인사이트",
+    "url": "https://www.shinhangroup.com/kr/archive/insight/extend?current=1",
+    "whenToUse": "금융 트렌드 및 서비스 사례 조사",
+    "verification": "사용 전 링크 및 내용 확인"
+  },
+  {
+    "category": "금융 리서치",
+    "title": "하나금융연구소",
+    "url": "https://www.hanaif.re.kr/boardList.do?menuId=MN3000&tabMenuId=N",
+    "whenToUse": "금융 산업 리서치",
+    "verification": "사용 전 링크 및 내용 확인"
+  },
+  {
+    "category": "금융 리서치",
+    "title": "KB 경영연구소",
+    "url": "https://www.kbfg.com/kbresearch/report/reportList.do",
+    "whenToUse": "금융산업과 시장 동향 확인",
+    "verification": "사용 전 링크 및 내용 확인"
+  },
+  {
+    "category": "금융 리서치",
+    "title": "KDB 미래전략연구소",
+    "url": "https://rd.kdb.co.kr/index.jsp",
+    "whenToUse": "산업 및 금융 분석",
+    "verification": "사용 전 링크 및 내용 확인"
+  },
+  {
+    "category": "금융 리서치",
+    "title": "한국은행 경제연구원",
+    "url": "https://www.bok.or.kr/imer/singl/rsrchrData/list.do?menuNo=500216",
+    "whenToUse": "경제 연구자료 참고",
+    "verification": "사용 전 링크 및 내용 확인"
+  },
+  {
+    "category": "AI 자동화",
+    "title": "n8n 워크플로우 템플릿",
+    "url": "https://n8n.io/workflows/",
+    "whenToUse": "워크플로우 구조 참고 및 실습",
+    "verification": "사용 전 링크 및 내용 확인"
+  },
+  {
+    "category": "금융 사례",
+    "title": "AI·데이터 문제해결은행",
+    "url": "https://www.kdata.or.kr/datahub/portal/support/board/10/48",
+    "whenToUse": "데이터 기반 문제 해결 사례 탐색",
+    "verification": "사용 전 링크 및 내용 확인"
+  }
+]
